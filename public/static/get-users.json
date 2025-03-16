@@ -1,5 +1,5 @@
 {
-  "data": [    
+  "data": [
     {
       "email": "foo@bar.com",
       "username": "foo",
@@ -10,43 +10,43 @@
       "email": "jane.doe@example.com",
       "username": "jane_doe",
       "gender": "F",
-      "age": 28 
+      "age": 28
     },
     {
       "email": "john.smith@domain.com",
       "username": "john_smith",
       "gender": "M",
-      "age": 35 
+      "age": 35
     },
     {
       "email": "alice.jones@webmail.com",
       "username": "alice_jones",
       "gender": "F",
-      "age": 27 
+      "age": 27
     },
     {
       "email": "charlie.brown@company.org",
       "username": "charlie_brown",
       "gender": "M",
-      "age": 40 
+      "age": 40
     },
     {
       "email": "emma.williams@sample.com",
       "username": "emma_williams",
       "gender": "F",
-      "age": 30 
+      "age": 30
     },
     {
       "email": "david.martin@newdomain.net",
       "username": "david_martin",
       "gender": "M",
-      "age": 38 
+      "age": 38
     },
     {
       "email": "susan.green@randommail.com",
       "username": "susan_green",
       "gender": "F",
-      "age": 25  
+      "age": 25
     }
   ]
 }
