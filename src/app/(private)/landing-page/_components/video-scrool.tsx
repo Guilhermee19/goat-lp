@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-const VideoScroll = () => {
+const VideoScrool = () => {
   return (
     <>
       <div className="flex flex-col overflow-hidden mb-16">
@@ -32,4 +32,4 @@ const VideoScroll = () => {
   );
 };
 
-export default VideoScroll;
+export default VideoScrool;
