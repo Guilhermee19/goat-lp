@@ -1,32 +1,30 @@
 'use client';
 
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import Image from 'next/image';
+import Header from './header';
 
 const VideoScrool = () => {
   return (
     <>
       <div className="flex flex-col overflow-hidden mb-16">
-        {/* <ContainerScroll
+        <ContainerScroll
           titleComponent={
             <>
-              <h1 className="text-4xl font-semibold text-black dark:text-white">
-                Unleash the power of <br />
-                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                  Scroll Animations
-                </span>
-              </h1>
+              <Header></Header>
             </>
           }
-        > */}
-        <Image
-          src={`/a73face01a4d63fc1f894eb3808172ef.png`}
-          alt="hero"
-          height={720}
-          width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top w-10/12"
-          draggable={false}
-        />
-        {/* </ContainerScroll> */}
+          className="!p-0"
+        >
+          <Image
+            src={`/a73face01a4d63fc1f894eb3808172ef.png`}
+            alt="hero"
+            height={1920}
+            width={1080}
+            className="mx-auto rounded-2xl object-cover object-left-top size-full !p-0"
+            draggable={false}
+          />
+        </ContainerScroll>
       </div>
     </>
   );

@@ -34,10 +34,10 @@ const Header = () => {
         <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
           <div
             className={cn(
-              'group rounded-full border max-w-max border-black/5 bg-bgSecondary text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800',
+              'group rounded-full border max-w-max border-black/5 bg-bgSecondary text-base text-white transition-all ease-in hover:cursor-pointer ',
             )}
           >
-            <AnimatedShinyText className="w-full max-w-max inline-flex items-center justify-center px-4 py-1  transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <AnimatedShinyText className="w-full max-w-max inline-flex items-center justify-center px-4 py-1  transition ease-out">
               <span className="flex items-center text-base text-main">
                 <Icon name="zap" className="size-5"></Icon> Goatcom
               </span>
