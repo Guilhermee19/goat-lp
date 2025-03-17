@@ -4,6 +4,7 @@ import { getLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 import './styles/globals.scss';
 import QueryProvider from './query-provider';
+import { Navbar } from '@/components/ui/navbar';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -32,7 +33,10 @@ export default async function LocaleLayout({ children }: Props) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <QueryProvider>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>
+            <Navbar />
+            {children}
+          </NextIntlClientProvider>
         </QueryProvider>
       </body>
     </html>
