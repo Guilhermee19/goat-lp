@@ -82,8 +82,7 @@ const Header = () => {
 
           <TextAnimate
             animation="blurInUp"
-            by="character"
-            once
+            by="word"
             className="text-white text-center mt-8 text-xl font-sourceSans3 font-normal"
           >
             Simples, rápido e sem complicação. Tudo o que você precisa para
