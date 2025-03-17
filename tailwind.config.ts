@@ -64,6 +64,8 @@ const config: Config = {
           'linear-gradient(180deg, rgba(23,9,33,1) 0%, rgba(30,26,34,1) 100%)',
         'degrade-red':
           'linear-gradient(180deg, rgba(29,14,24,1) 0%, rgba(32,27,30,1) 100%)',
+        'degrade-gray':
+          'linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(0,0,0,1) 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -130,6 +132,18 @@ const config: Config = {
             transform: 'translateZ(0) rotate(360deg)',
           },
         },
+        'reveal-up': {
+          '0%': { opacity: '0', transform: 'translateY(80%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'reveal-down': {
+          '0%': { opacity: '0', transform: 'translateY(-80%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'content-blur': {
+          '0%': { filter: 'blur(0.3rem)' },
+          '100%': { filter: 'blur(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -144,6 +158,13 @@ const config: Config = {
       fontFamily: {
         hankenGrotesk: ['Hanken Grotesk', 'sans-serif'],
         sourceSans3: ['Source Sans 3', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
+      transitionTimingFunction: {
+        'minor-spring': 'cubic-bezier(0.18,0.89,0.82,1.04)',
+      },
+      translate: {
+        labalVert: 'rotate(-90deg) translateX(50%) translateY(-100%)',
       },
     },
   },

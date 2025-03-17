@@ -71,7 +71,7 @@ const Header = () => {
             </AnimatedShinyText>
           </div>
 
-          <p className="mt-10 text-4xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
+          <p className="mt-10 text-5xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
             <AuroraText className="font-light font-hankenGrotesk text-6xl">
               Venda mais. venda melhor.
             </AuroraText>
@@ -84,7 +84,7 @@ const Header = () => {
             animation="blurInUp"
             by="character"
             once
-            className="text-white text-center mt-8 text-lg font-sourceSans3 font-normal"
+            className="text-white text-center mt-8 text-xl font-sourceSans3 font-normal"
           >
             Simples, rápido e sem complicação. Tudo o que você precisa para
             escalar.

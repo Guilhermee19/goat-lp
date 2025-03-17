@@ -170,7 +170,7 @@ export function AuroraText({
         {children}
       </span>
 
-      <div
+      <span
         className="absolute inset-0"
         style={{
           opacity: isReady ? 1 : 0,
@@ -207,7 +207,7 @@ export function AuroraText({
           }}
           className="h-full w-full"
         />
-      </div>
+      </span>
     </span>
   );
 }
