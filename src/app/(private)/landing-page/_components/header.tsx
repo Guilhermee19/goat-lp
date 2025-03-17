@@ -2,29 +2,49 @@
 
 import { AnimatedShinyText } from '@/components/magicui/animated-shiny-text';
 import { AuroraText } from '@/components/magicui/aurora-text';
-import { AvatarCircles } from '@/components/magicui/avatar-circles';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 
 const Header = () => {
-  const avatars = [
+  const people = [
     {
-      imageUrl: 'https://avatars.githubusercontent.com/u/16860528',
-      profileUrl: 'https://github.com/dillionverma',
+      id: 1,
+      name: 'John Doe',
+      designation: 'Software Engineer',
+      image: 'https://avatars.githubusercontent.com/u/16860528',
     },
     {
-      imageUrl: 'https://avatars.githubusercontent.com/u/20110627',
-      profileUrl: 'https://github.com/tomonarifeehan',
+      id: 2,
+      name: 'Robert Johnson',
+      designation: 'Product Manager',
+      image: 'https://avatars.githubusercontent.com/u/20110627',
     },
     {
-      imageUrl: 'https://avatars.githubusercontent.com/u/106103625',
-      profileUrl: 'https://github.com/BankkRoll',
+      id: 3,
+      name: 'Jane Smith',
+      designation: 'Data Scientist',
+      image: 'https://avatars.githubusercontent.com/u/106103625',
     },
     {
-      imageUrl: 'https://avatars.githubusercontent.com/u/59228569',
-      profileUrl: 'https://github.com/safethecode',
+      id: 4,
+      name: 'Emily Davis',
+      designation: 'UX Designer',
+      image: 'https://avatars.githubusercontent.com/u/59228569',
+    },
+    {
+      id: 5,
+      name: 'Tyler Durden',
+      designation: 'Soap Developer',
+      image: 'https://avatars.githubusercontent.com/u/59228562',
+    },
+    {
+      id: 6,
+      name: 'Dora',
+      designation: 'The Explorer',
+      image: 'https://avatars.githubusercontent.com/u/59228568',
     },
   ];
 
@@ -34,14 +54,14 @@ const Header = () => {
         <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
           <div
             className={cn(
-              'group rounded-full border max-w-max border-black/5 bg-bgSecondary text-base text-white transition-all ease-in hover:cursor-pointer ',
+              'group rounded-full border max-w-max border-black/5 bg-bgSecondary text-base transition-all ease-in hover:cursor-pointer ',
             )}
           >
             <AnimatedShinyText className="w-full max-w-max inline-flex items-center justify-center px-4 py-1  transition ease-out">
               <span className="flex items-center text-base text-main">
                 <Icon name="zap" className="size-5"></Icon> Goatcom
               </span>
-              <span className="flex items-center text-base text-white w-amx mx-2">
+              <span className="flex items-center text-white text-base w-amx mx-2">
                 Explore os nossos planos e comece a vender hoje mesmo
               </span>
               <Icon
@@ -51,14 +71,14 @@ const Header = () => {
             </AnimatedShinyText>
           </div>
 
-          <h1 className="mt-10 text-4xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
+          <p className="mt-10 text-4xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
             <AuroraText className="font-light font-hankenGrotesk text-6xl">
               Venda mais. venda melhor.
             </AuroraText>
             <AuroraText className="font-light font-hankenGrotesk text-6xl">
               Seja um GOAT.
             </AuroraText>
-          </h1>
+          </p>
 
           <TextAnimate
             animation="blurInUp"
@@ -79,7 +99,10 @@ const Header = () => {
             </ShimmerButton>
 
             <div className="flex items-center gap-2">
-              <AvatarCircles avatarUrls={avatars} />
+              <div className="flex flex-row items-center justify-center w-full">
+                <AnimatedTooltip items={people} />
+              </div>
+
               {/* <div className="w-max">
                 <div className="flex items-center gap-1">
                   <Icon name="star" className="size-4 text-yellow-400"></Icon>

@@ -14,6 +14,7 @@ const config: Config = {
         background: '#000000',
         main: '#FF5500',
         bgSecondary: '#130600',
+        label: '#7D7D7D',
         foreground: 'hsl(var(--foreground))',
         card: {
           DEFAULT: 'hsl(var(--card))',
@@ -54,6 +55,16 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
+      backgroundImage: {
+        'degrade-green':
+          'linear-gradient(180deg, rgba(10,32,29,1) 0%, rgba(26,32,31,1) 100%)',
+        'degrade-blue':
+          'linear-gradient(180deg, rgba(10,25,32,1) 0%, rgba(3,8,10,1) 100%)',
+        'degrade-purple':
+          'linear-gradient(180deg, rgba(23,9,33,1) 0%, rgba(30,26,34,1) 100%)',
+        'degrade-red':
+          'linear-gradient(180deg, rgba(29,14,24,1) 0%, rgba(32,27,30,1) 100%)',
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -92,12 +103,43 @@ const config: Config = {
             transform: 'translateY(calc(-100% - var(--gap)))',
           },
         },
+        'shiny-text': {
+          '0%, 90%, 100%': {
+            'background-position': 'calc(-100% - var(--shiny-width)) 0',
+          },
+          '30%, 60%': {
+            'background-position': 'calc(100% + var(--shiny-width)) 0',
+          },
+        },
+        'shimmer-slide': {
+          to: {
+            transform: 'translate(calc(100cqw - 100%), 0)',
+          },
+        },
+        'spin-around': {
+          '0%': {
+            transform: 'translateZ(0) rotate(0)',
+          },
+          '15%, 35%': {
+            transform: 'translateZ(0) rotate(90deg)',
+          },
+          '65%, 85%': {
+            transform: 'translateZ(0) rotate(270deg)',
+          },
+          '100%': {
+            transform: 'translateZ(0) rotate(360deg)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         marquee: 'marquee var(--duration) infinite linear',
         'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+        'shiny-text': 'shiny-text 8s infinite',
+        'shimmer-slide':
+          'shimmer-slide var(--speed) ease-in-out infinite alternate',
+        'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
       },
       fontFamily: {
         hankenGrotesk: ['Hanken Grotesk', 'sans-serif'],

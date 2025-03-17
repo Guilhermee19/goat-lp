@@ -68,7 +68,14 @@ export const Tabs = ({
               />
             )}
 
-            <span className="relative block text-white">{tab.title}</span>
+            {/* <span className=" text-white">{tab.title}</span> */}
+            <span
+              className={cn('relative block', {
+                'text-black font-semibold': active.value === tab.value,
+              })}
+            >
+              {tab.title}
+            </span>
           </button>
         ))}
       </div>
