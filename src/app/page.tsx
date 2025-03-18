@@ -7,6 +7,7 @@ import SlideRevolutionizing from './_components/slide-revolutionizing';
 import { Functionalities } from './_components/functionalities';
 import ConvertWithoutLimit from './_components/convert-without-limit';
 import SellToTheWorld from './_components/sell-to-the-world';
+import ScrollVelocity from './_components/scroll-velocity';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <SlideRevolutionizing></SlideRevolutionizing>
       <ConvertWithoutLimit></ConvertWithoutLimit>
       <SellToTheWorld></SellToTheWorld>
+      <ScrollVelocity></ScrollVelocity>
       <div className="h-96"></div>
     </>
   );
