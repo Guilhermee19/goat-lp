@@ -10,7 +10,7 @@ interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: {
     number: string;
     label: string;
-    title: string | React.ReactNode | any;
+    title: string | React.ReactNode;
     description: string;
     subDescription: string;
     bgColor: string;
@@ -23,7 +23,7 @@ interface ExpandableProps {
   list?: {
     number: string;
     label: string;
-    title: string | React.ReactNode | any;
+    title: string | React.ReactNode;
     description: string;
     subDescription: string;
     bgColor: string;
