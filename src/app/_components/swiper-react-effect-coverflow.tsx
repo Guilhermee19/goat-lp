@@ -32,7 +32,7 @@ export default function SwiperCoverflow({
   }, [tabIndex]);
 
   // Atualiza o tabIndex quando o slide mudar
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: { activeIndex: number }) => {
     setTabIndex(swiper.activeIndex);
   };
 
@@ -42,10 +42,10 @@ export default function SwiperCoverflow({
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         effect={'coverflow'}
         grabCursor={true}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         centeredSlides={true}
         slidesPerView={2}
         spaceBetween={10}

@@ -5,7 +5,7 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import dynamic from 'next/dynamic';
 import TextAnimationDegrade from '../title-animation';
 
-export default function SellToTheWorld() {
+export default function GlobalCheckout() {
   const globeConfig = {
     pointSize: 100,
     globeColor: '#0c8d91',
