@@ -1,10 +1,12 @@
 'use client';
 
-import { AuroraText } from '@/components/magicui/aurora-text';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { Tabs } from '@/components/ui/tabs';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
+import SwiperCoverflow from '../swiper-react-effect-coverflow';
+import { useState } from 'react';
+import TextAnimationDegrade from '../title-animation';
 
 export function Functionalities() {
   const tabs = [
@@ -30,20 +32,30 @@ export function Functionalities() {
     },
   ];
 
+  const [tabIndex, setTabIndex] = useState(0);
+
   return (
     <div className="w-full mt-20">
-      <h2 className="font-hankenGrotesk font-extralight text-white w-full text-center text-5xl">
-        <span className="underline"> Tudo que você precisa </span>, em um só
+      <h2 className="font-hankenGrotesk font-light text-white w-full text-center text-5xl">
+        <span className="underline"> Tudo que você precisa</span>, em um só
         lugar.
       </h2>
 
-      <div className="h-[20rem] md:h-[50rem] [perspective:1000px] relative b flex flex-col max-w-6xl mx-auto w-full  items-start justify-start my-40">
+      <div className="[perspective:1000px] relative b flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-14">
         <Tabs
           tabs={tabs}
+          tabIndex={tabIndex}
+          setTabIndex={setTabIndex} // Passa a função setTabIndex para o Tabs
           tabClassName="text-white"
           containerClassName="!w-max !mx-auto !py-2 !px-3 !justify-center !border !border-solid !border-[#393939] !rounded-full"
         />
       </div>
+
+      <SwiperCoverflow
+        tabs={tabs}
+        tabIndex={tabIndex} // Passa o tabIndex para o SwiperCoverflow
+        setTabIndex={setTabIndex} // Passa a função setTabIndex para o SwiperCoverflow
+      />
     </div>
   );
 }
@@ -51,22 +63,18 @@ export function Functionalities() {
 const NacionalContent = () => {
   return (
     <div className="bg-degrade-green rounded-[40px] p-16 flex items-center justify-between border border-solid border-[#393939]">
-      <div className="w-1/2 max-w-max">
-        <p className="w-full text-4xl font-bold tracking-tighter flex flex-col items-start justify-start md:text-5xl lg:text-7xl">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            Converta sem
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            limites no Brasil
-          </AuroraText>
-        </p>
+      <div className="relative z-50 w-full lg:w-1/2 max-w-max">
+        <TextAnimationDegrade
+          title={['Converta sem', 'limites no Brasil']}
+          className="items-start"
+        ></TextAnimationDegrade>
 
-        <p className="max-w-96 text-lg text-label">
+        <p className="max-w-96 text-base lg:text-lg text-white lg:text-label">
           Processamento rápido e seguro para vendas no Brasil, aceitando Pix,
           boleto e cartões de crédito sem complicação.
         </p>
 
-        <div className="flex items-center gap-4 mt-10">
+        <div className="flex items-center flex-col lg:flex-row gap-4 mt-10">
           <ShimmerButton
             className="shadow-2xl min-w-max py-2"
             background="#FF5500"
@@ -91,7 +99,7 @@ const NacionalContent = () => {
       <Image
         width={450}
         height={450}
-        className="w-1/2 size-full object-contain"
+        className="absolute opacity-50 lg:opacity-100 lg:relative right-4 top-4 w-1/2 size-full object-contain"
         alt="Image Card Product Convert"
         src="/card product convert.png"
       ></Image>
@@ -102,25 +110,18 @@ const NacionalContent = () => {
 const GlobalContent = () => {
   return (
     <div className="bg-degrade-blue rounded-[40px] p-16 flex items-center justify-between border border-solid border-[#393939]">
-      <div className="w-1/2 max-w-max">
-        <p className="w-full text-4xl font-bold tracking-tighter flex flex-col items-start justify-start md:text-5xl lg:text-7xl">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            Venda para o
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            mundo, sem
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            barreiras
-          </AuroraText>
-        </p>
+      <div className="relative z-50 w-full lg:w-1/2 max-w-max">
+        <TextAnimationDegrade
+          title={['Venda para o', 'mundo, sem', 'barreiras']}
+          className="items-start"
+        ></TextAnimationDegrade>
 
-        <p className="max-w-96 text-lg text-label">
+        <p className="max-w-96 text-base lg:text-lg text-white lg:text-label">
           Venda para qualquer lugar do mundo com suporte a múltiplas moedas e
           formas de pagamento internacionais.
         </p>
 
-        <div className="flex items-center gap-4 mt-10">
+        <div className="flex items-center flex-col lg:flex-row gap-4 mt-10">
           <ShimmerButton
             className="shadow-2xl min-w-max py-2"
             background="#FF5500"
@@ -145,7 +146,7 @@ const GlobalContent = () => {
       <Image
         width={450}
         height={450}
-        className="w-1/2 size-full object-contain"
+        className="absolute opacity-50 lg:opacity-100 lg:relative right-4 top-4 w-1/2 size-full object-contain"
         alt="Image Credit Card"
         src="/credit card.png"
       ></Image>
@@ -156,21 +157,17 @@ const GlobalContent = () => {
 const LandingContent = () => {
   return (
     <div className="bg-degrade-purple rounded-[40px] p-16 flex items-center justify-between border border-solid border-[#393939]">
-      <div className="w-1/2 max-w-max">
-        <p className="w-full text-4xl font-bold tracking-tighter flex flex-col items-start justify-start md:text-5xl lg:text-7xl">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            Páginas de alta
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            conversão
-          </AuroraText>
-        </p>
+      <div className="relative z-50 w-full lg:w-1/2 max-w-max">
+        <TextAnimationDegrade
+          title={['Páginas de alta', 'conversão']}
+          className="items-start"
+        ></TextAnimationDegrade>
 
-        <p className="max-w-96 text-lg text-label">
+        <p className="max-w-96 text-base lg:text-lg text-white lg:text-label">
           Páginas rápidas, responsivas e criadas para maximizar conversões.
         </p>
 
-        <div className="flex items-center gap-4 mt-10">
+        <div className="flex items-center flex-col lg:flex-row gap-4 mt-10">
           <ShimmerButton
             className="shadow-2xl min-w-max py-2"
             background="#FF5500"
@@ -195,7 +192,7 @@ const LandingContent = () => {
       <Image
         width={450}
         height={450}
-        className="w-1/2 size-full object-contain"
+        className="absolute opacity-50 lg:opacity-100 lg:relative right-4 top-4 w-1/2 size-full object-contain"
         alt="Image High Conversion Page"
         src="/high conversion page.png"
       ></Image>
@@ -206,22 +203,18 @@ const LandingContent = () => {
 const EcommercesContent = () => {
   return (
     <div className="bg-degrade-red rounded-[40px] p-16 flex items-center justify-between border border-solid border-[#393939]">
-      <div className="w-1/2 max-w-max">
-        <p className="w-full text-4xl font-bold tracking-tighter flex flex-col items-start justify-start md:text-5xl lg:text-7xl">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            Lojas virtuais
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-6xl">
-            escaláveis
-          </AuroraText>
-        </p>
+      <div className="relative z-50 w-full lg:w-1/2 max-w-max">
+        <TextAnimationDegrade
+          title={['Lojas virtuais', 'escaláveis']}
+          className="items-start"
+        ></TextAnimationDegrade>
 
-        <p className="max-w-96 text-lg text-label">
+        <p className="max-w-96 text-base lg:text-lg text-white lg:text-label">
           Configure sua loja online em minutos e venda produtos físicos ou
           digitais sem limite.
         </p>
 
-        <div className="flex items-center gap-4 mt-10">
+        <div className="flex items-center flex-col lg:flex-row gap-4 mt-10">
           <ShimmerButton
             className="shadow-2xl min-w-max py-2"
             background="#FF5500"
@@ -246,7 +239,7 @@ const EcommercesContent = () => {
       <Image
         width={450}
         height={450}
-        className="w-1/2 size-full object-contain"
+        className="absolute opacity-50 lg:opacity-100 lg:relative right-4 top-4 w-1/2 size-full object-contain"
         alt="Image Online Stores"
         src="/online stores.png"
       ></Image>

@@ -80,7 +80,7 @@ export function MarqueeTools() {
       </p>
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-10">
-        <Marquee reverse pauseOnHover className="[--duration:40s]">
+        <Marquee pauseOnHover className="[--duration:20s]">
           {reviews.map((review) => (
             <ReviewCard key={review.link} {...review} />
           ))}

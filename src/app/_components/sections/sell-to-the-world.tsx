@@ -1,11 +1,9 @@
 'use client';
 
-import { AuroraText } from '@/components/magicui/aurora-text';
 import { Meteors } from '@/components/magicui/meteors';
-import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
-import Icon from '@/shared/icon/icon';
 import dynamic from 'next/dynamic';
+import TextAnimationDegrade from '../title-animation';
 
 export default function SellToTheWorld() {
   const globeConfig = {
@@ -396,7 +394,7 @@ export default function SellToTheWorld() {
   ];
 
   const World = dynamic(
-    () => import('../../components/ui/globe').then((m) => m.World),
+    () => import('../../../components/ui/globe').then((m) => m.World),
     {
       ssr: false,
     },
@@ -411,44 +409,19 @@ export default function SellToTheWorld() {
           </p>
         </div>
 
-        <p className="mt-10 text-5xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
-          <AuroraText className="font-light font-hankenGrotesk text-6xl">
-            Converta sem limites
-          </AuroraText>
-          <AuroraText className="font-light font-hankenGrotesk text-6xl">
-            no Brasil
-          </AuroraText>
-        </p>
+        <TextAnimationDegrade
+          title={['Venda para qualquer', 'lugar do mundo']}
+          className="mt-5"
+        ></TextAnimationDegrade>
 
         <TextAnimate
           animation="slideUp"
           by="word"
-          className="max-w-2xl w-11/12 text-white text-center mt-8 text-xl font-sourceSans3 font-normal"
+          className="max-w-2xl w-11/12 text-white text-center mt-8 text-lg font-sourceSans3 font-normal"
         >
-          Venda mais, sem barreiras. Nosso checkout foi projetado para eliminar
-          fricções e garantir conversões absurdas.
+          Seu negócio sem fronteiras. Alcance clientes internacionais sem dor de
+          cabeça.
         </TextAnimate>
-
-        <div className="flex items-center gap-4 mt-10">
-          <ShimmerButton
-            className="shadow-2xl min-w-max py-2"
-            background="#FF5500"
-          >
-            <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-              Criar sua conta
-              <Icon name="arrow_right" className="size-4"></Icon>
-            </span>
-          </ShimmerButton>
-
-          <ShimmerButton
-            className="shadow-2xl min-w-max py-2"
-            background="#191919"
-          >
-            <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-              Veja como funciona
-            </span>
-          </ShimmerButton>
-        </div>
 
         <div className="relative w-full h-[70vh]">
           <div className="absolute left-10 top-0 w-full h-[35vh]">

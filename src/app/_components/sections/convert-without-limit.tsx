@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import TextAnimationDegrade from '../title-animation';
 
 const fadeInScaleContainer = {
   hidden: { opacity: 0 },
@@ -99,13 +100,26 @@ const WobbleCardDemo = ({
             </div>
           )}
 
+          {/* {title_1 && (
+            <TextAnimationDegrade
+              title={[title_1]}
+              classText="text-3xl"
+            ></TextAnimationDegrade>
+          )}
+          {title_2 && (
+            <TextAnimationDegrade
+              title={[title_2]}
+              classText="text-3xl"
+            ></TextAnimationDegrade>
+          )} */}
+
           {title_1 && (
             <AuroraText className="font-light font-hankenGrotesk text-3xl">
               {title_1}
             </AuroraText>
           )}
           {title_2 && (
-            <AuroraText className="font-light font-hankenGrotesk text-3xl">
+            <AuroraText className="font-light font-hankenGrotesk text-3xl -mt-3">
               {title_2}
             </AuroraText>
           )}
@@ -222,22 +236,18 @@ export default function ConvertWithoutLimit() {
           </p>
         </div>
 
-        <p className="mt-10 text-5xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
-          <AuroraText className="font-light font-hankenGrotesk text-6xl">
-            Venda para qualquer
-          </AuroraText>
-          <AuroraText className="font-light font-hankenGrotesk text-6xl">
-            lugar do mundo
-          </AuroraText>
-        </p>
+        <TextAnimationDegrade
+          title={['Converta sem limites', 'no Brasil']}
+          className="mt-10"
+        ></TextAnimationDegrade>
 
         <TextAnimate
           animation="slideUp"
           by="word"
           className="max-w-2xl w-11/12 text-white text-center mt-8 text-xl font-sourceSans3 font-normal"
         >
-          Seu negócio sem fronteiras. Alcance clientes internacionais sem dor de
-          cabeça.
+          Venda mais, sem barreiras. Nosso checkout foi projetado para eliminar
+          fricções e garantir conversões absurdas.
         </TextAnimate>
 
         <div className="flex items-center gap-4 mt-10">

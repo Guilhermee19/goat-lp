@@ -5,6 +5,8 @@ import { ReactNode } from 'react';
 import './styles/globals.scss';
 import QueryProvider from './query-provider';
 import { Navbar } from '@/components/ui/navbar';
+import { Source_Sans_3 } from 'next/font/google';
+import { Hanken_Grotesk } from 'next/font/google';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -15,6 +17,20 @@ const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sourceSans3',
+  weight: ['200', '300', '400', '500', '600', '700'],
+});
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-hankenGrotesk',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 type Props = {
@@ -30,7 +46,7 @@ export default async function LocaleLayout({ children }: Props) {
         <title>Boilerplate NextJs</title>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.className} ${geistMono.className} ${sourceSans3.className} ${hankenGrotesk.className} antialiased`}
       >
         <QueryProvider>
           <NextIntlClientProvider>

@@ -17,11 +17,13 @@ interface VelocityScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultVelocity?: number;
   className?: string;
   numRows?: number;
+  reverse?: boolean;
 }
 
 interface ParallaxProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   baseVelocity: number;
+  reverse?: boolean;
 }
 
 export const wrap = (min: number, max: number, v: number) => {
@@ -32,6 +34,7 @@ export const wrap = (min: number, max: number, v: number) => {
 function ParallaxText({
   children,
   baseVelocity = 100,
+  reverse = false,
   ...props
 }: ParallaxProps) {
   const baseX = useMotionValue(0);
@@ -86,7 +89,10 @@ function ParallaxText({
   return (
     <div
       ref={containerRef}
-      className="w-full overflow-hidden whitespace-nowrap"
+      className={cn(
+        'w-full overflow-hidden whitespace-nowrap flex',
+        reverse ? 'justify-end' : 'justify-start',
+      )}
       {...props}
     >
       <motion.div className="inline-block" style={{ x }}>
@@ -119,6 +125,7 @@ export function VelocityScroll({
         <ParallaxText
           key={i}
           baseVelocity={defaultVelocity * (i % 2 === 0 ? 1 : -1)}
+          reverse={i % 2 !== 0} // inverte a posição da linha ímpar
         >
           {children}
         </ParallaxText>

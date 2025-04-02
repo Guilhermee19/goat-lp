@@ -1,0 +1,71 @@
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import { useRef, useEffect } from 'react';
+
+type Tab = {
+  title: string;
+  value: string;
+  content?: string | React.ReactNode;
+};
+
+export default function SwiperCoverflow({
+  tabs,
+  tabIndex,
+  setTabIndex,
+}: {
+  tabs: Tab[];
+  tabIndex: number;
+  setTabIndex: (tabIndex: number) => void;
+}) {
+  const swiperRef = useRef<any>(null);
+
+  // Atualiza o slide quando o tabIndex for alterado
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.slideTo) {
+      swiperRef.current.slideTo(tabIndex);
+    }
+  }, [tabIndex]);
+
+  // Atualiza o tabIndex quando o slide mudar
+  const handleSlideChange = (swiper: any) => {
+    setTabIndex(swiper.activeIndex);
+  };
+
+  return (
+    <>
+      <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        effect={'coverflow'}
+        grabCursor={true}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
+        centeredSlides={true}
+        slidesPerView={2}
+        spaceBetween={10}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={false}
+        onSlideChange={handleSlideChange}
+        modules={[Autoplay, EffectCoverflow, Pagination]}
+      >
+        {tabs.map((tab, idx) => (
+          <SwiperSlide className="w-full" key={idx}>
+            {tab.content}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
+  );
+}

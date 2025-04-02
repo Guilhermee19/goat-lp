@@ -3,8 +3,8 @@
 import { HTMLAttributes, useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
-import { AuroraText } from '@/components/magicui/aurora-text';
 import Icon from '@/shared/icon/icon';
+import TextAnimationDegrade from '../title-animation';
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: {
@@ -44,14 +44,10 @@ export default function SlideRevolutionizing({
       number: '01',
       label: 'Por que a Goatcom?',
       title: (
-        <div className="flex flex-col">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            Converta sem
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            limites no Brasil
-          </AuroraText>
-        </div>
+        <TextAnimationDegrade
+          title={['Sonhe grande. Inove rápido.', 'Chegue longe com a Goatcom']}
+          className="mt-8"
+        ></TextAnimationDegrade>
       ),
       description:
         'A Goatcom não apenas acompanha as tendências do e-commerce, ela as redefine, impulsionando inovação, tecnologia e resultados reais para transformar o mercado.',
@@ -63,14 +59,10 @@ export default function SlideRevolutionizing({
       number: '02',
       label: 'Inovação',
       title: (
-        <div className="flex flex-col">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            Inovação que transforma
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            o E-commerce
-          </AuroraText>
-        </div>
+        <TextAnimationDegrade
+          title={['Inovação que transforma', 'o E-commerce']}
+          className="mt-8"
+        ></TextAnimationDegrade>
       ),
       description:
         'Na Goatcom, inovação não é apenas um conceito, é a nossa essência. Criamos soluções que antecipam o futuro do e-commerce, transformando desafios em oportunidades e tecnologia em resultados reais. ',
@@ -82,14 +74,10 @@ export default function SlideRevolutionizing({
       number: '03',
       label: 'Simplicaide',
       title: (
-        <div className="flex flex-col">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            Simplicidade que impulsiona
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            os seus resultados
-          </AuroraText>
-        </div>
+        <TextAnimationDegrade
+          title={['Simplicidade que impulsiona', 'os seus resultados']}
+          className="mt-8"
+        ></TextAnimationDegrade>
       ),
       description:
         'Na Goatcom, acreditamos que a inovação deve ser simples. Nossa plataforma foi criada para facilitar sua vida, sem complicação, sem curva de aprendizado. Com uma interface intuitiva e recursos poderosos, você tem tudo o que precisa ao alcance de poucos cliques. Tecnologia avançada, sem complexidade – porque resultados vêm quando a experiência é fácil.',
@@ -102,14 +90,10 @@ export default function SlideRevolutionizing({
       number: '04',
       label: 'Compromisso',
       title: (
-        <div className="flex flex-col">
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            Compromisso direto com
-          </AuroraText>
-          <AuroraText className="w-full font-light font-hankenGrotesk text-5xl">
-            o seu sucesso
-          </AuroraText>
-        </div>
+        <TextAnimationDegrade
+          title={['Compromisso direto com', 'o seu sucesso']}
+          className="mt-8"
+        ></TextAnimationDegrade>
       ),
       description:
         'Na Goatcom, nosso compromisso vai além da tecnologia. Estamos aqui para garantir que cada solução entregue gere impacto real no seu negócio. Do suporte à inovação contínua, trabalhamos lado a lado com você para alcançar resultados de verdade.',
@@ -135,11 +119,11 @@ export default function SlideRevolutionizing({
 
   return (
     <div className="mt-10 max-w-6xl mx-auto w-full">
-      <h2 className="font-hankenGrotesk font-extralight text-white w-full text-start mb-20 text-5xl">
+      <h2 className="font-hankenGrotesk font-extralight text-white w-full text-start text-5xl">
         Revolucionando o jeito de vender online
       </h2>
 
-      <div className="w-full h-px bg-[#393939] mb-20"></div>
+      <div className="w-full h-px bg-[#393939] mt-16 mb-12"></div>
 
       <div className={cn('flex w-full', className)}>
         {list.map((item, index) => (
@@ -198,11 +182,14 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
             >
               {item.number}
             </p>
-            <div className="size-4 flex justify-center items-center">
+            <div className="flex-1 size-4 flex items-end justify-center">
               <p
-                className={cn('min-w-max w-max text-white -rotate-90 pl-20', {
-                  'text-main': index === activeItem,
-                })}
+                className={cn(
+                  'min-w-60 text-white -rotate-90 origin-center mb-32 text-xl',
+                  {
+                    'text-main': index === activeItem,
+                  },
+                )}
               >
                 {item.label}
               </p>
@@ -210,12 +197,19 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
           </div>
 
           {index === activeItem && (
-            <div className="w-full max-w-4xl mt-14 mx-5 flex flex-col">
+            <div
+              className={cn(
+                'w-60px overflow-hidden max-w-4xl mt-14 mx-5 flex flex-col',
+                {
+                  'w-max overflow-visible': index === activeItem,
+                },
+              )}
+            >
               {item.title}
               <p className="text-white mt-14 max-h-52 overflow-hidden text-xl">
                 {item.description}
               </p>
-              <strong className="text-white mt-3 mb-5 max-h-52 overflow-hidden">
+              <strong className="max-w-md text-white mt-3 mb-5 max-h-52 overflow-hidden">
                 {item.subDescription}
               </strong>
 

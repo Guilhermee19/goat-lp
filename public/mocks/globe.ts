@@ -12997,4 +12997,4 @@ export const GLOBE_JSON = {
       },
     },
   ],
-}
+};

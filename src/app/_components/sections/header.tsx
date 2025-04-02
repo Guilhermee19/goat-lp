@@ -1,12 +1,12 @@
 'use client';
 
 import { AnimatedShinyText } from '@/components/magicui/animated-shiny-text';
-import { AuroraText } from '@/components/magicui/aurora-text';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
+import TextAnimationDegrade from '../title-animation';
 
 const Header = () => {
   const people = [
@@ -52,46 +52,44 @@ const Header = () => {
     <>
       <div className="bg-background shadow-lg rounded-lg p-5 mt-2 w-full">
         <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
-          <div
-            className={cn(
-              'group rounded-full border max-w-max border-black/5 bg-bgSecondary text-base transition-all ease-in hover:cursor-pointer ',
-            )}
-          >
-            <AnimatedShinyText className="w-full max-w-max inline-flex items-center justify-center px-4 py-1  transition ease-out">
-              <span className="flex items-center text-base text-main">
-                <Icon name="zap" className="size-5"></Icon> Goatcom
-              </span>
-              <span className="flex items-center text-white text-base w-amx mx-2">
-                Explore os nossos planos e comece a vender hoje mesmo
-              </span>
-              <Icon
-                name="arrow_right"
-                className="size-4 ml-1 transition-transform text-main duration-300 ease-in-out group-hover:translate-x-0.5"
-              ></Icon>
-            </AnimatedShinyText>
+          <div className="degradeBorder">
+            <div
+              className={cn(
+                'group rounded-full max-w-max bg-bgSecondary text-base transition-all ease-in hover:cursor-pointer overflow-hidden',
+              )}
+            >
+              <AnimatedShinyText className="animatedShiny">
+                <span className="flex items-center text-sm font-extralight font-sourceSans3 text-main">
+                  <Icon name="zap" className="size-5"></Icon> Goatcom
+                </span>
+                <span className="flex items-center text-white font-extralight font-sourceSans3 text-sm w-max mx-2">
+                  Explore os nossos planos e comece a vender hoje mesmo
+                </span>
+                <Icon
+                  name="arrow_right"
+                  className="size-4 ml-1 transition-transform text-main duration-300 ease-in-out group-hover:translate-x-0.5"
+                ></Icon>
+              </AnimatedShinyText>
+            </div>
           </div>
 
-          <p className="mt-10 text-5xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl">
-            <AuroraText className="font-light font-hankenGrotesk text-6xl">
-              Venda mais. venda melhor.
-            </AuroraText>
-            <AuroraText className="font-light font-hankenGrotesk text-6xl">
-              Seja um GOAT.
-            </AuroraText>
-          </p>
+          <TextAnimationDegrade
+            title={['Venda mais. Venda melhor.', 'Seja um GOAT.']}
+            className="mt-8"
+          ></TextAnimationDegrade>
 
           <TextAnimate
             animation="blurInUp"
             by="word"
-            className="text-white text-center mt-8 text-xl font-sourceSans3 font-normal"
+            className="text-white text-center mt-2 text-xl font-sourceSans3 font-light"
           >
             Simples, rápido e sem complicação. Tudo o que você precisa para
             escalar.
           </TextAnimate>
 
-          <div className="mt-14 flex gap-14 items-center">
-            <ShimmerButton className="shadow-2xl" background="#FF5500">
-              <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+          <div className="mt-10 flex gap-14 items-center">
+            <ShimmerButton className="shimmerButton" background="#FF5500">
+              <span>
                 Criar sua conta{' '}
                 <Icon name="arrow_right" className="size-4"></Icon>
               </span>
