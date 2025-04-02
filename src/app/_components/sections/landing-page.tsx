@@ -2,7 +2,37 @@
 
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import TextAnimationDegrade from '../title-animation';
-import Icon from '@/shared/icon/icon';
+import Icon, { icons } from '@/shared/icon/icon';
+import { cn } from '@/lib/utils';
+
+function GridInfo({
+  icon,
+  title,
+  description,
+  classGrid,
+}: {
+  icon: keyof typeof icons;
+  title: string;
+  description: string;
+  classGrid: string;
+}) {
+  return (
+    <div
+      className={cn(
+        'p-6 rounded-lg bg-[#1d1d1d] my-4 col-span-3 flex flex-col justify-center items-start',
+        classGrid,
+      )}
+    >
+      <div className="size-max aspect-square rounded-lg bg-[#6a42eb] p-3">
+        <Icon name={icon} className="text-white size-7" />
+      </div>
+      <p className="text-xl text-white font-light mt-1">{title}</p>
+      <p className="text-lg text-white opacity-60 font-light mt-2">
+        {description}
+      </p>
+    </div>
+  );
+}
 
 export default function LandingPage() {
   return (
@@ -43,6 +73,46 @@ export default function LandingPage() {
               Veja como funciona
             </span>
           </ShimmerButton>
+        </div>
+
+        <div className="w-full grid grid-cols-10 grid-rows-2 gap-x-8 mt-10">
+          <GridInfo
+            icon="toggle_off"
+            title="Construa sem precisar de código"
+            description="Interface arrasta e solta para páginas estratégicas prontas em
+              minutos."
+            classGrid="col-span-3"
+          ></GridInfo>
+
+          <div className="rounded-xl bg-[#7c5cd2] row-span-2 col-span-4 overflow-hidden">
+            <img
+              src="aba-navegador.png"
+              className="size-full"
+              alt="Image Aba Navegador"
+            />
+          </div>
+
+          <GridInfo
+            icon="chart_pie_simple"
+            title="Personalize do seu jeito e venda seu produto"
+            description="Descubra o que realmente funciona para escalar suas campanhas."
+            classGrid="col-span-3"
+          ></GridInfo>
+
+          <GridInfo
+            icon="loader"
+            title="Carregamento instantâneo"
+            description="Páginas otimizadas para velocidade máxima e conversão absurda."
+            classGrid="col-span-3"
+          ></GridInfo>
+
+          <GridInfo
+            icon="table_pivot_edit"
+            title="Design responsivo e imbatível"
+            description="Experiência impecável no mobile e desktop, porque cada clique
+              conta."
+            classGrid="col-span-3"
+          ></GridInfo>
         </div>
       </div>
     </div>
