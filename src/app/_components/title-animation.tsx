@@ -15,7 +15,7 @@ export default function TextAnimationDegrade({
   return (
     <p
       className={cn(
-        'text-4xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl',
+        'font-bold tracking-tighter flex flex-col items-center justify-center text-4xl md:text-6xl lg:text-7xl',
         className,
       )}
     >
