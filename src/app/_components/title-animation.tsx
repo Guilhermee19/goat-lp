@@ -15,7 +15,7 @@ export default function TextAnimationDegrade({
   return (
     <p
       className={cn(
-        'text-5xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl',
+        'text-4xl font-bold tracking-tighter flex flex-col items-center justify-center md:text-5xl lg:text-7xl',
         className,
       )}
     >
@@ -23,7 +23,7 @@ export default function TextAnimationDegrade({
         <AuroraText
           key={idx}
           className={cn(
-            `font-light font-hankenGrotesk text-6xl ${idx > 0 ? '-mt-3' : ''}`,
+            `font-light font-hankenGrotesk text-4xl md:text-6xl lg:text-7xl ${idx > 0 ? '-mt-3' : ''}`,
             classText,
           )}
         >

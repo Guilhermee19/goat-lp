@@ -14,7 +14,7 @@ const VideoScrool = () => {
               <Header></Header>
             </>
           }
-          className="!p-0"
+          className="!p-0 h-max lg:h-[60rem]"
         >
           <Image
             src={`/a73face01a4d63fc1f894eb3808172ef.png`}

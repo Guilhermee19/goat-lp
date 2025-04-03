@@ -51,7 +51,7 @@ const Header = () => {
   return (
     <>
       <div className="bg-background shadow-lg rounded-lg p-5 mt-2 w-full">
-        <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
+        <div className="z-10 lg:min-h-[600px] flex flex-col gap-4 items-center justify-center">
           <div className="degradeBorder">
             <div
               className={cn(
@@ -60,10 +60,14 @@ const Header = () => {
             >
               <AnimatedShinyText className="animatedShiny">
                 <span className="flex items-center text-sm font-extralight font-sourceSans3 text-main">
-                  <Icon name="zap" className="size-5"></Icon> Goatcom
+                  <Icon name="zap" className="size-5"></Icon>{' '}
+                  <span className="hidden lg:block">Goatcom</span>
                 </span>
-                <span className="flex items-center text-white font-extralight font-sourceSans3 text-sm w-max mx-2">
+                <span className="hidden lg:flex items-center text-white font-extralight font-sourceSans3 text-xs lg:text-sm w-max mx-2">
                   Explore os nossos planos e comece a vender hoje mesmo
+                </span>
+                <span className="flex lg:hidden items-center text-white font-extralight font-sourceSans3 text-xs lg:text-sm w-max mx-2">
+                  Explore e comece a vender hoje mesmo
                 </span>
                 <Icon
                   name="arrow_right"
@@ -75,20 +79,28 @@ const Header = () => {
 
           <TextAnimationDegrade
             title={['Venda mais. Venda melhor.', 'Seja um GOAT.']}
-            className="mt-8"
+            className="mt-8 hidden lg:block"
+          ></TextAnimationDegrade>
+
+          <TextAnimationDegrade
+            title={['Venda mais.', 'Venda melhor.', 'Seja um GOAT.']}
+            className="mt-8 flex lg:hidden"
           ></TextAnimationDegrade>
 
           <TextAnimate
             animation="blurInUp"
             by="word"
-            className="text-white text-center mt-2 text-xl font-sourceSans3 font-light"
+            className="text-white text-center mt-2 text-base lg:text-xl font-sourceSans3 font-light"
           >
             Simples, rápido e sem complicação. Tudo o que você precisa para
             escalar.
           </TextAnimate>
 
-          <div className="mt-10 flex gap-14 items-center">
-            <ShimmerButton className="shimmerButton" background="#FF5500">
+          <div className="mt-4 lg:mt-10 flex gap-4 lg:gap-14 items-center flex-col lg:flex-row">
+            <ShimmerButton
+              className="shimmerButton w-full lg:w-max"
+              background="#FF5500"
+            >
               <span>
                 Criar sua conta{' '}
                 <Icon name="arrow_right" className="size-4"></Icon>
