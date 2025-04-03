@@ -3,7 +3,7 @@
 import { VelocityScroll } from '@/components/magicui/scroll-based-velocity';
 import { AuroraText } from '@/components/magicui/aurora-text';
 
-const ScrollVelocity = () => {
+export function ScrollVelocity() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-10 overflow-hidden h-[200px] lg:h-[500px]">
       <div className="-rotate-3 py-2 lg:py-8 bg-degrade-green-dark border border-solid border-[#393939]">
@@ -37,6 +37,4 @@ const ScrollVelocity = () => {
       </div>
     </div>
   );
-};
-
-export default ScrollVelocity;
+}

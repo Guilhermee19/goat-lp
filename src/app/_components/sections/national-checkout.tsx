@@ -161,7 +161,7 @@ const WobbleCardDemo = ({
   );
 };
 
-export default function NationalCheckout() {
+export function NationalCheckout() {
   const arrayCard: {
     title_1?: string;
     title_2?: string;
@@ -289,7 +289,7 @@ export default function NationalCheckout() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }} // Permite reativação ao rolar e define quão visível precisa estar
-          className="w-full h-full flex flex-col lg:grid lg:grid-cols-4 gap-4 mt-7 lg:mt-14 lg:h-[82vh]"
+          className="w-full h-full flex flex-col lg:grid lg:grid-cols-4 gap-4 mt-7 lg:mt-14"
         >
           {arrayCard.map((el, index) => (
             <motion.div

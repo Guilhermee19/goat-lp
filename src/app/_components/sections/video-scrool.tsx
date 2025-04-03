@@ -4,10 +4,10 @@ import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import Image from 'next/image';
 import Header from './header';
 
-const VideoScrool = () => {
+export function VideoScrool() {
   return (
     <>
-      <div className="flex flex-col overflow-hidden mb-6 lg:mb-16">
+      <div className="flex flex-col overflow-hidden mb-6 lg:mb-16 lg:pt-12 2xl:pt-36">
         <ContainerScroll
           titleComponent={
             <>
@@ -28,6 +28,4 @@ const VideoScrool = () => {
       </div>
     </>
   );
-};
-
-export default VideoScrool;
+}

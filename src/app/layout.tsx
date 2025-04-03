@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children }: Props) {
   return (
     <html lang={locale}>
       <head>
-        <title>Boilerplate NextJs</title>
+        <title>Goatcom</title>
       </head>
       <body
         className={`${geistSans.className} ${geistMono.className} ${sourceSans3.className} ${hankenGrotesk.className} antialiased`}

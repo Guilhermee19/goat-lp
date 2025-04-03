@@ -35,7 +35,7 @@ function GridInfo({
   );
 }
 
-export default function LandingPage() {
+export function LandingPage() {
   return (
     <div className="w-11/12 max-w-7xl mx-auto rounded-lg p-5 overflow-hidden">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">

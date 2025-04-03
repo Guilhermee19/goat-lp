@@ -32,7 +32,7 @@ interface ExpandableProps {
   className?: string;
 }
 
-export default function SlideRevolutionizing({
+export function SlideRevolutionizing({
   autoPlay = true,
   className,
 }: ExpandableProps) {
