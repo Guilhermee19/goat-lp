@@ -7,7 +7,7 @@ import Header from './header';
 const VideoScrool = () => {
   return (
     <>
-      <div className="flex flex-col overflow-hidden mb-16">
+      <div className="flex flex-col overflow-hidden mb-6 lg:mb-16">
         <ContainerScroll
           titleComponent={
             <>

@@ -54,7 +54,7 @@ const ReviewCard = ({
       href={link}
       target="_blank"
       className={cn(
-        'relative h-full w-44 flex justify-center items-center cursor-pointer overflow-hidden',
+        'relative h-full w-52 lg:w-44 flex justify-center items-center cursor-pointer overflow-hidden',
         // light styles
         'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
         // dark styles
@@ -62,7 +62,7 @@ const ReviewCard = ({
       )}
     >
       <Image
-        className="object-contain w-32 h-7 m-auto"
+        className="object-contain w-32 h-10 lg:h-7 m-auto"
         width="120"
         height="27"
         alt={name}
@@ -75,7 +75,7 @@ const ReviewCard = ({
 export function MarqueeTools() {
   return (
     <>
-      <p className="text-base text-[#7D7D7D] w-full text-center my-6">
+      <p className="text-base text-[#7D7D7D] w-full text-center my-3 lg:my-6">
         Integrações e ferramentas de empresas líderes em todo o mundo
       </p>
 
