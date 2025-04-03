@@ -7,3 +7,4 @@ export * from './global-checkout';
 export * from './scroll-velocity';
 export * from './landing-page';
 export * from './website-themes';
+export * from './online-shop';
