@@ -4,6 +4,7 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import TextAnimationDegrade from '../title-animation';
 import Icon, { icons } from '@/shared/icon/icon';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 function GridInfo({
   icon,
@@ -75,19 +76,21 @@ export default function LandingPage() {
           </ShimmerButton>
         </div>
 
-        <div className="w-full grid grid-cols-10 grid-rows-2 gap-x-8 mt-10">
+        <div className="w-full flex flex-col lg:grid lg:grid-cols-10 lg:grid-rows-2 gap-x-8 mt-10">
           <GridInfo
             icon="toggle_off"
             title="Construa sem precisar de código"
             description="Interface arrasta e solta para páginas estratégicas prontas em
               minutos."
-            classGrid="col-span-3"
+            classGrid="lg:col-span-3 order-4 lg:order-1"
           ></GridInfo>
 
-          <div className="rounded-xl bg-[#7c5cd2] row-span-2 col-span-4 overflow-hidden">
-            <img
+          <div className="w-full rounded-xl bg-[#7c5cd2] lg:ow-span-2 lg:col-span-4 overflow-hidden order-3 lg:order-2">
+            <Image
+              width={512}
+              height={512}
               src="aba-navegador.png"
-              className="size-full"
+              className="size-full object-contain object-bottom"
               alt="Image Aba Navegador"
             />
           </div>
@@ -96,14 +99,14 @@ export default function LandingPage() {
             icon="chart_pie_simple"
             title="Personalize do seu jeito e venda seu produto"
             description="Descubra o que realmente funciona para escalar suas campanhas."
-            classGrid="col-span-3"
+            classGrid="lg:col-span-3 order-1 lg:order-3"
           ></GridInfo>
 
           <GridInfo
             icon="loader"
             title="Carregamento instantâneo"
             description="Páginas otimizadas para velocidade máxima e conversão absurda."
-            classGrid="col-span-3"
+            classGrid="lg:col-span-3 order-5 lg:order-4"
           ></GridInfo>
 
           <GridInfo
@@ -111,7 +114,7 @@ export default function LandingPage() {
             title="Design responsivo e imbatível"
             description="Experiência impecável no mobile e desktop, porque cada clique
               conta."
-            classGrid="col-span-3"
+            classGrid="lg:col-span-3 order-2 lg:order-5"
           ></GridInfo>
         </div>
       </div>
