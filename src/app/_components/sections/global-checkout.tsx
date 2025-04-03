@@ -401,7 +401,7 @@ export default function GlobalCheckout() {
   );
 
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg p-5 mt-20 overflow-hidden">
+    <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
         <div className="rounded-full border max-w-max border-[#0a2633] bg-[#0a1920]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#D0F0FD] to-[#109DE3] opacity-60 text-transparent bg-clip-text">
@@ -411,13 +411,17 @@ export default function GlobalCheckout() {
 
         <TextAnimationDegrade
           title={['Venda para qualquer', 'lugar do mundo']}
-          className="mt-5"
+          className="mt-5 hidden lg:flex"
+        ></TextAnimationDegrade>
+        <TextAnimationDegrade
+          title={['Venda para', 'qualquer lugar do', 'mundo']}
+          className="mt-5 flex lg:hidden"
         ></TextAnimationDegrade>
 
         <TextAnimate
           animation="slideUp"
           by="word"
-          className="max-w-2xl w-11/12 text-white text-center mt-8 text-lg font-sourceSans3 font-normal"
+          className="lg:max-w-2xl lg:w-11/12 text-white text-center mt-8 text-lg font-sourceSans3 font-normal"
         >
           Seu negócio sem fronteiras. Alcance clientes internacionais sem dor de
           cabeça.
