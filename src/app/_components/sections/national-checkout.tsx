@@ -59,17 +59,18 @@ const WobbleCardDemo = ({
   return (
     <div
       className={cn(
-        'relative overflow-hidden h-full min-h-[500px] lg:min-h-[300px] transition-all bg-degrade-green-dark flex justify-center items-center !rounded-3xl border border-solid border-[#393939]',
+        'relative overflow-hidden aspect-square lg:aspect-auto h-full min-h-[200px] lg:min-h-[300px] transition-all bg-degrade-green-dark flex justify-center items-center !rounded-3xl border border-solid border-[#393939]',
         classNameCard,
       )}
     >
       <div
         className={cn(
-          'w-full max-w-xs flex flex-col justify-center items-center',
+          'w-full lg:max-w-xs flex flex-col justify-center items-center',
           classNameFlex,
           {
             'flex-col-reverse': position === 'bottom',
-            'flex-row justify-between items-end': position === 'right',
+            'flex-col-reverse lg:flex-row justify-between lg:items-end':
+              position === 'right',
           },
         )}
       >
@@ -90,6 +91,9 @@ const WobbleCardDemo = ({
           className={cn(
             'font-bold tracking-tighter flex flex-col items-center justify-center',
             { 'items-start gap-4': tag },
+            {
+              '!items-start lg:!items-center': description,
+            },
           )}
         >
           {tag && (
@@ -114,7 +118,11 @@ const WobbleCardDemo = ({
           )} */}
 
           {title_1 && (
-            <AuroraText className="font-light font-hankenGrotesk text-3xl">
+            <AuroraText
+              className={cn('font-light font-hankenGrotesk text-3xl', {
+                'mb-8 lg:mb-0': tag,
+              })}
+            >
               {title_1}
             </AuroraText>
           )}
@@ -188,11 +196,11 @@ export default function NationalCheckout() {
       position: 'right',
       image: '/foguete.png',
       image_bg: '/background-card.png',
-      classNameCard: '!col-span-2',
+      classNameCard: 'lg:!col-span-2 !aspect-auto',
       classNameFlex: '!max-w-full w-10/12',
-      classNameImage: 'w-5/12 !aspect-square',
+      classNameImage: 'lg:w-5/12 mx-auto lg:mx-0 !aspect-square',
       classNameImageBg: 'opacity-10',
-      classNameText: 'absolute max-w-60 bottom-8 right-4',
+      classNameText: 'mb-4 lg:mb-0 lg:absolute max-w-60 bottom-8 right-4',
       description:
         'Aceite Pix, boleto, cartão de crédito e mais, sem burocracia.',
     },
@@ -208,9 +216,9 @@ export default function NationalCheckout() {
       position: 'right',
       image: '/58befad4a8235fe3fd1864ac8f171ba2.png',
       image_bg: '/background-card-2.png',
-      classNameCard: 'col-span-2',
-      classNameFlex: '!max-w-full w-10/12',
-      classNameImage: 'w-5/12 !aspect-square',
+      classNameCard: 'lg:col-span-2 !aspect-auto',
+      classNameFlex: '!max-w-full w-11/12 lg:w-10/12',
+      classNameImage: 'lg:w-5/12 mx-auto lg:mx-0 !aspect-square',
       classNameImageBg: 'opacity-10',
       tag: 'Integramos com os melhores meios de pagamentos',
     },
@@ -229,7 +237,7 @@ export default function NationalCheckout() {
 
   return (
     <div className="w-11/12 max-w-7xl mx-auto rounded-lg p-5 mt-20">
-      <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
+      <div className="z-10 lg:min-h-[600px] flex flex-col gap-4 items-center justify-center">
         <div className="rounded-full border max-w-max border-[#013820] bg-[#0A201D]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#00FFC2] to-[#28CAE0] opacity-60 text-transparent bg-clip-text">
             Checkout Nacional
@@ -238,21 +246,26 @@ export default function NationalCheckout() {
 
         <TextAnimationDegrade
           title={['Converta sem limites', 'no Brasil']}
-          className="mt-10"
+          className="mt-10 hidden lg:flex"
+        ></TextAnimationDegrade>
+
+        <TextAnimationDegrade
+          title={['Converta sem', 'limites no Brasil']}
+          className="mt-10 flex lg:hidden"
         ></TextAnimationDegrade>
 
         <TextAnimate
           animation="slideUp"
           by="word"
-          className="max-w-2xl w-11/12 text-white text-center mt-8 text-xl font-sourceSans3 font-normal"
+          className="max-w-2xl w-11/12 text-white text-center mt-4 lg:mt-8 text-lg lg:text-xl font-sourceSans3 font-normal"
         >
           Venda mais, sem barreiras. Nosso checkout foi projetado para eliminar
           fricções e garantir conversões absurdas.
         </TextAnimate>
 
-        <div className="flex items-center gap-4 mt-10">
+        <div className="w-full lg:w-max flex items-center flex-col lg:flex-row gap-4 mt-10">
           <ShimmerButton
-            className="shadow-2xl min-w-max py-2"
+            className="shadow-2xl min-w-max py-2 w-full lg:w-max"
             background="#FF5500"
           >
             <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
@@ -262,7 +275,7 @@ export default function NationalCheckout() {
           </ShimmerButton>
 
           <ShimmerButton
-            className="shadow-2xl min-w-max py-2"
+            className="shadow-2xl min-w-max py-2 w-full lg:w-max"
             background="#191919"
           >
             <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
@@ -276,7 +289,7 @@ export default function NationalCheckout() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }} // Permite reativação ao rolar e define quão visível precisa estar
-          className="w-full grid grid-cols-4 gap-4 mt-14 h-[82vh]"
+          className="w-full h-full flex flex-col lg:grid lg:grid-cols-4 gap-4 mt-7 lg:mt-14 lg:h-[82vh]"
         >
           {arrayCard.map((el, index) => (
             <motion.div
