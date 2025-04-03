@@ -42,10 +42,10 @@ export default function SwiperCoverflow({
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         effect={'coverflow'}
         grabCursor={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         centeredSlides={true}
         slidesPerView={2}
         spaceBetween={10}
@@ -55,6 +55,16 @@ export default function SwiperCoverflow({
           depth: 100,
           modifier: 1,
           slideShadows: true,
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1, // Em telas pequenas (como celulares), exibe 1 slide
+            spaceBetween: 10, // Espaço entre os slides
+          },
+          1024: {
+            slidesPerView: 2, // Em telas maiores, exibe 2 slides
+            spaceBetween: 20, // Espaço entre os slides
+          },
         }}
         pagination={false}
         onSlideChange={handleSlideChange}
