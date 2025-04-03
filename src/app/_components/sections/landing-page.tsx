@@ -85,7 +85,7 @@ export default function LandingPage() {
             classGrid="lg:col-span-3 order-4 lg:order-1"
           ></GridInfo>
 
-          <div className="w-full rounded-xl bg-[#7c5cd2] lg:ow-span-2 lg:col-span-4 overflow-hidden order-3 lg:order-2">
+          <div className="w-full rounded-xl bg-[#7c5cd2] lg:row-span-2 lg:col-span-4 overflow-hidden order-3 lg:order-2">
             <Image
               width={512}
               height={512}
