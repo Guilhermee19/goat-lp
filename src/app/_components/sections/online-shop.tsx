@@ -1,4 +1,4 @@
-'use cliente';
+'use client';
 
 import { TextAnimate } from '@/components/magicui/text-animate';
 import TextAnimationDegrade from '../title-animation';

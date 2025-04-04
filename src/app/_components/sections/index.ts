@@ -8,3 +8,4 @@ export * from './scroll-velocity';
 export * from './landing-page';
 export * from './website-themes';
 export * from './online-shop';
+export * from './card-create-account';
