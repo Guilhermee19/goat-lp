@@ -14,8 +14,9 @@ export function StayInTouch() {
   ];
   return (
     <div
-      className="w-full bg-gradient-to-r 
+      className="w-full 
       py-10 px-4 mt-20
+      bg-gradient-to-r 
       from-[#000000] from-0% 
       via-[#181818] via-50% 
       to-[#000000] to-100%  
