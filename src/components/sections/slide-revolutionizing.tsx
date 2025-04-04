@@ -4,7 +4,7 @@ import { HTMLAttributes, useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: {

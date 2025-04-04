@@ -3,7 +3,7 @@
 import { Meteors } from '@/components/magicui/meteors';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import dynamic from 'next/dynamic';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 
 export function GlobalCheckout() {
   const globeConfig = {
@@ -393,12 +393,9 @@ export function GlobalCheckout() {
     },
   ];
 
-  const World = dynamic(
-    () => import('../../../components/ui/globe').then((m) => m.World),
-    {
-      ssr: false,
-    },
-  );
+  const World = dynamic(() => import('../ui/globe').then((m) => m.World), {
+    ssr: false,
+  });
 
   return (
     <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">

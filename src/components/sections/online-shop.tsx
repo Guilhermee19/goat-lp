@@ -1,7 +1,7 @@
 'use client';
 
 import { TextAnimate } from '@/components/magicui/text-animate';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
 import { cn } from '@/lib/utils';

@@ -1,7 +1,7 @@
 'use client';
 
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 import Icon, { icons } from '@/shared/icon/icon';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';

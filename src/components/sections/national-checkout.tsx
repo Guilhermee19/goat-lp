@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 
 const fadeInScaleContainer = {
   hidden: { opacity: 0 },

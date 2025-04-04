@@ -6,7 +6,7 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 
 const Header = () => {
   const people = [

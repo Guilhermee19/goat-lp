@@ -16,7 +16,8 @@ import {
   WebsiteThemes,
   CardOurPlans,
   StayInTouch,
-} from './_components/sections';
+} from '../components/sections';
+import { Footer } from '@/components';
 
 const Home = () => {
   return (
@@ -35,6 +36,7 @@ const Home = () => {
       <Testimonials></Testimonials>
       <CardOurPlans></CardOurPlans>
       <StayInTouch></StayInTouch>
+      <Footer></Footer>
     </>
   );
 };

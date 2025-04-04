@@ -1,6 +1,6 @@
-import { useState, ChangeEvent } from 'react';
-import { PAGE_SIZE } from '@/utils';
 import { useDebounce } from '@uidotdev/usehooks';
+import { useState, ChangeEvent } from 'react';
+import { PAGE_SIZE } from '@/utils/page-size';
 
 type SortState = {
   id: string;

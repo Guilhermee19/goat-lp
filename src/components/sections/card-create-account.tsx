@@ -1,7 +1,7 @@
 'use client';
 
 import { TextAnimate } from '@/components/magicui/text-animate';
-import GoatAnimation from '../goat-animation';
+import GoatAnimation from '../../app/_components/goat-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 
 export function CardCreateAccount() {

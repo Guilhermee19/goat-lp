@@ -4,9 +4,9 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { Tabs } from '@/components/ui/tabs';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
-import SwiperCoverflow from '../swiper-react-effect-coverflow';
+import SwiperCoverflow from '../../app/_components/swiper-react-effect-coverflow';
 import { useState } from 'react';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 
 export function Functionalities() {
   const tabs = [

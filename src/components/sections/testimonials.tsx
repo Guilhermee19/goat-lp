@@ -1,7 +1,7 @@
 'use client';
 
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
-import TextAnimationDegrade from '../title-animation';
+import TextAnimationDegrade from '../../app/_components/title-animation';
 
 export function Testimonials() {
   const TESTIMONIALS = [
