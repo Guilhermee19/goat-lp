@@ -55,12 +55,12 @@ export function LandingPage() {
           converter.
         </p>
 
-        <div className="flex items-center flex-col lg:flex-row gap-4 mt-10">
+        <div className="flex items-center flex-col lg:flex-row gap-4 mt-4">
           <ShimmerButton
             className="shadow-2xl min-w-max py-2"
             background="#FF5500"
           >
-            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-black font-hankenGrotesk lg:text-lg">
+            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Criar sua conta
               <Icon name="arrow_right" className="size-4"></Icon>
             </span>
@@ -70,7 +70,7 @@ export function LandingPage() {
             className="shadow-2xl min-w-max py-2"
             background="#1c2225"
           >
-            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-black font-hankenGrotesk lg:text-lg">
+            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona
             </span>
           </ShimmerButton>

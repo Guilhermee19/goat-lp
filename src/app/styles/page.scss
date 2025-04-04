@@ -18,3 +18,7 @@
   background-color: #f0f0f0; /* Cor do fundo do conteúdo */
   border-radius: 9999px; /* Garante que o conteúdo tenha bordas arredondadas */
 }
+
+.contanierPage {
+  @apply max-w-6xl w-11/12 mx-auto;
+}

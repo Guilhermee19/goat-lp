@@ -50,7 +50,8 @@ export function SlideRevolutionizing({
               'Sonhe grande. Inove rápido.',
               'Chegue longe com a Goatcom',
             ]}
-            className="mt-8 items-start lg:items-center hidden lg:flex"
+            className="mt-8 items-start hidden lg:flex"
+            classText="text-2xl md:text-4xl lg:text-6xl"
           ></TextAnimationDegrade>
           <TextAnimationDegrade
             title={[
@@ -59,7 +60,7 @@ export function SlideRevolutionizing({
               'Chegue longe com',
               'a Goatcom',
             ]}
-            className="mt-2 items-start lg:items-center flex lg:hidden"
+            className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
           ></TextAnimationDegrade>
         </>
@@ -77,12 +78,12 @@ export function SlideRevolutionizing({
         <>
           <TextAnimationDegrade
             title={['Inovação que transforma', 'o E-commerce']}
-            className="mt-8 items-start lg:items-center hidden lg:flex"
-            classText="text-3xl md:text-5xl lg:text-7xl"
+            className="mt-8 items-start hidden lg:flex"
+            classText="text-2xl md:text-4xl lg:text-6xl"
           ></TextAnimationDegrade>
           <TextAnimationDegrade
             title={['Inovação que', 'transforma', 'o E-commerce']}
-            className="mt-2 items-start lg:items-center flex lg:hidden"
+            className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
           ></TextAnimationDegrade>
         </>
@@ -100,12 +101,12 @@ export function SlideRevolutionizing({
         <>
           <TextAnimationDegrade
             title={['Simplicidade que impulsiona', 'os seus resultados']}
-            className="mt-8 items-start lg:items-center hidden lg:flex"
-            classText="text-3xl md:text-5xl lg:text-7xl"
+            className="mt-8 items-start hidden lg:flex"
+            classText="text-2xl md:text-4xl lg:text-6xl"
           ></TextAnimationDegrade>
           <TextAnimationDegrade
             title={['Simplicidade que', 'impulsiona os seus', 'resultados']}
-            className="mt-2 items-start lg:items-center flex lg:hidden"
+            className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
           ></TextAnimationDegrade>
         </>
@@ -124,12 +125,12 @@ export function SlideRevolutionizing({
         <>
           <TextAnimationDegrade
             title={['Compromisso direto com', 'o seu sucesso']}
-            className="mt-8 items-start lg:items-center"
-            classText="text-3xl md:text-5xl lg:text-7xl hidden lg:flex"
+            className="mt-8 items-start hidden lg:flex"
+            classText="text-2xl md:text-4xl lg:text-6xl"
           ></TextAnimationDegrade>
           <TextAnimationDegrade
             title={['Compromisso', 'direto com', 'o seu sucesso']}
-            className="mt-2 items-start lg:items-center flex lg:hidden"
+            className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
           ></TextAnimationDegrade>
         </>
@@ -157,7 +158,7 @@ export function SlideRevolutionizing({
   }, [autoPlay, list.length, isHovering]);
 
   return (
-    <div className="mt-10 max-w-6xl px-4 lg:mx-auto w-full">
+    <div className="contanierPage mt-10 px-4 w-full">
       <h2 className="font-hankenGrotesk font-extralight text-white w-full text-start text-4xl lg:text-5xl">
         Revolucionando o jeito de vender online
       </h2>

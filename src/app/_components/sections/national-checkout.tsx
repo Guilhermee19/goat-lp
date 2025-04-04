@@ -268,7 +268,7 @@ export function NationalCheckout() {
             className="shadow-2xl min-w-max py-2 w-full lg:w-max"
             background="#FF5500"
           >
-            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-black font-hankenGrotesk lg:text-lg">
+            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Criar sua conta
               <Icon name="arrow_right" className="size-4"></Icon>
             </span>
@@ -278,7 +278,7 @@ export function NationalCheckout() {
             className="shadow-2xl min-w-max py-2 w-full lg:w-max"
             background="#191919"
           >
-            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-black font-hankenGrotesk lg:text-lg">
+            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona
             </span>
           </ShimmerButton>
