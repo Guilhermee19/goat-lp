@@ -29,7 +29,7 @@ export function CardCreateAccount() {
             className="shadow-2xl min-w-max py-2 w-full lg:w-max"
             background="#191919"
           >
-            <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+            <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-black font-hankenGrotesk lg:text-lg">
               Criar uma conta
             </span>
           </ShimmerButton>

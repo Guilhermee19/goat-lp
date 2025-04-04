@@ -11,3 +11,4 @@ export * from './online-shop';
 export * from './card-create-account';
 export * from './testimonials';
 export * from './card-our-plans';
+export * from './stay-in-touch';

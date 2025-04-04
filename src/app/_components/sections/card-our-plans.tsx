@@ -42,7 +42,7 @@ export function CardOurPlans() {
               className="shadow-2xl min-w-max py-2 w-full lg:w-max"
               background="#fff"
             >
-              <span className="whitespace-pre-wrap text-center flex font-hankenGrotesk gap-2 items-center text-sm font-medium leading-none tracking-tight text-black dark:from-white dark:to-slate-900/10 lg:text-lg">
+              <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-black font-hankenGrotesk lg:text-lg">
                 Conheça nossos planos
                 <Icon name="arrow_right" className="size-4"></Icon>
               </span>
