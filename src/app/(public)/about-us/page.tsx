@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import { Footer } from '@/components';
 import { CardOurPlans, StayInTouch } from '@/components/sections';
 
 const AboutUs = () => {
@@ -8,7 +8,9 @@ const AboutUs = () => {
     <>
       <CardOurPlans></CardOurPlans>
       <StayInTouch></StayInTouch>
+      <Footer></Footer>
     </>
   );
 };
+
 export default AboutUs;
