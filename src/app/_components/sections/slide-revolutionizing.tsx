@@ -115,7 +115,7 @@ export function SlideRevolutionizing({
 
       subDescription:
         'Tecnologia avançada, sem complexidade – porque resultados vêm quando a experiência é fácil.',
-      bgColor: 'bg-[#393939]',
+      bgColor: 'bg-gray',
     },
     {
       number: '04',
@@ -162,7 +162,7 @@ export function SlideRevolutionizing({
         Revolucionando o jeito de vender online
       </h2>
 
-      <div className="w-full h-px bg-[#393939] mt-16 mb-12"></div>
+      <div className="w-full h-px bg-gray mt-16 mb-12"></div>
 
       <div
         className={cn(
@@ -214,9 +214,9 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
       className={cn(
         'relative flex h-full w-20 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out',
         {
-          'bg-[#1d1d1d]': index === 0,
+          'bg-grayDark': index === 0,
           'bg-[#2c2c2c]': index === 1,
-          'bg-[#393939]': index === 2,
+          'bg-gray': index === 2,
           'bg-[#626262]': index === 3,
           'flex-grow bg-degrade-gray': index === activeItem,
         },
@@ -229,7 +229,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
           className={cn(
             'size-full rounded-lg p-6 flex items-start justify-start gap-10 overflow-hidden',
             {
-              'border border-solid border-[#393939]': index === activeItem,
+              'border border-solid border-gray': index === activeItem,
             },
           )}
         >
@@ -305,9 +305,9 @@ const CardItem = ({
       className={cn(
         'sticky top-2 flex lg:min-h-dvh  h-full w-full mx-auto cursor-pointer rounded-md',
         {
-          'bg-[#1d1d1d]': index === 0,
+          'bg-grayDark': index === 0,
           'bg-[#2c2c2c]': index === 1,
-          'bg-[#393939]': index === 2,
+          'bg-gray': index === 2,
           'bg-[#626262]': index === 3,
         },
         className,

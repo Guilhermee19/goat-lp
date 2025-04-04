@@ -47,7 +47,7 @@ export function Functionalities() {
           tabIndex={tabIndex}
           setTabIndex={setTabIndex} // Passa a função setTabIndex para o Tabs
           tabClassName="text-white"
-          containerClassName="!w-max !mx-auto !py-2 !px-3 !justify-center !border !border-solid !border-[#393939] !rounded-full"
+          containerClassName="!w-max !mx-auto !py-2 !px-3 !justify-center !border !border-solid !border-gray !rounded-full"
         />
       </div>
 
@@ -62,7 +62,7 @@ export function Functionalities() {
 
 const NacionalContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-green rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-[#393939]">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-green rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextAnimationDegrade
           title={['Converta sem', 'limites no Brasil']}
@@ -110,7 +110,7 @@ const NacionalContent = () => {
 
 const GlobalContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-blue rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-[#393939]">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-blue rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextAnimationDegrade
           title={['Venda para o', 'mundo, sem', 'barreiras']}
@@ -164,7 +164,7 @@ const GlobalContent = () => {
 
 const LandingContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-purple rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-[#393939]">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-purple rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextAnimationDegrade
           title={['Páginas de alta', 'conversão']}
@@ -211,7 +211,7 @@ const LandingContent = () => {
 
 const EcommercesContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-red rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-[#393939]">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-red rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextAnimationDegrade
           title={['Lojas virtuais', 'escaláveis']}

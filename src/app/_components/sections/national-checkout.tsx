@@ -59,7 +59,7 @@ const WobbleCardDemo = ({
   return (
     <div
       className={cn(
-        'relative overflow-hidden aspect-square lg:aspect-auto h-full min-h-[200px] lg:min-h-[300px] transition-all bg-degrade-green-dark flex justify-center items-center !rounded-3xl border border-solid border-[#393939]',
+        'relative overflow-hidden aspect-square lg:aspect-auto h-full min-h-[200px] lg:min-h-[300px] transition-all bg-degrade-green-dark flex justify-center items-center !rounded-3xl border border-solid border-gray',
         classNameCard,
       )}
     >

@@ -23,7 +23,7 @@ function CardGrid({
   return (
     <div
       className={cn(
-        'size-full border border-solid border-[#393939] bg-[#1d1d1d] rounded-2xl p-6 flex flex-col justify-center items-start',
+        'size-full border border-solid border-gray bg-grayDark rounded-2xl p-6 flex flex-col justify-center items-start',
         className,
       )}
     >

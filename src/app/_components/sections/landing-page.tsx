@@ -20,7 +20,7 @@ function GridInfo({
   return (
     <div
       className={cn(
-        'p-6 rounded-lg bg-[#1d1d1d] my-4 col-span-3 flex flex-col justify-center items-start',
+        'p-6 rounded-lg bg-grayDark my-4 col-span-3 flex flex-col justify-center items-start',
         classGrid,
       )}
     >

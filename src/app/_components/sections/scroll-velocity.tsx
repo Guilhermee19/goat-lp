@@ -6,7 +6,7 @@ import { AuroraText } from '@/components/magicui/aurora-text';
 export function ScrollVelocity() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-10 overflow-hidden h-[200px] lg:h-[500px]">
-      <div className="-rotate-3 py-2 lg:py-8 bg-degrade-green-dark border border-solid border-[#393939]">
+      <div className="-rotate-3 py-2 lg:py-8 bg-degrade-green-dark border border-solid border-gray">
         <VelocityScroll
           className="text-white"
           defaultVelocity={2}
@@ -21,7 +21,7 @@ export function ScrollVelocity() {
         </VelocityScroll>
       </div>
 
-      <div className="rotate-3 py-2 lg:py-8 bg-degrade-green-dark border border-solid border-[#393939]">
+      <div className="rotate-3 py-2 lg:py-8 bg-degrade-green-dark border border-solid border-gray">
         <VelocityScroll
           className="text-white"
           defaultVelocity={1}

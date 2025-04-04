@@ -9,3 +9,4 @@ export * from './landing-page';
 export * from './website-themes';
 export * from './online-shop';
 export * from './card-create-account';
+export * from './testimonials';
