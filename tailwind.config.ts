@@ -60,6 +60,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
+        ourPlansCard: 'url("/card-our-plans.png")',
         'degrade-green':
           'linear-gradient(180deg, rgba(10,32,29,1) 0%, rgba(26,32,31,1) 100%)',
         'degrade-blue':
