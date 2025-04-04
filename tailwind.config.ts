@@ -1,4 +1,3 @@
-import { lightfair } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
 
@@ -202,7 +201,8 @@ const config: Config = {
           'shimmer-slide var(--speed) ease-in-out infinite alternate',
         'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
         meteor: 'meteor 5s linear infinite',
-        scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+        scroll:
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
       fontFamily: {
         hankenGrotesk: ['var(--font-hankenGrotesk)'],

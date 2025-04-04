@@ -2,6 +2,7 @@
 
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
+import Image from 'next/image';
 
 export function StayInTouch() {
   const SOCIAL = [
@@ -42,9 +43,11 @@ export function StayInTouch() {
                 rel="noopener noreferrer"
                 className="flex items-center size-9 lg:size-12 justify-center rounded-full bg-[rgba(255,255,255,0.05)]"
               >
-                <img
+                <Image
                   src={`social/${item.url}`}
                   alt={item.link}
+                  width={40}
+                  height={40}
                   className="size-full p-3 lg:p-[17px] object-contain"
                 />
               </a>

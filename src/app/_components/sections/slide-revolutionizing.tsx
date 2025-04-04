@@ -294,13 +294,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   );
 };
 
-const CardItem = ({
-  item,
-  className,
-  index,
-  activeItem,
-  ...props
-}: ImageProps) => {
+const CardItem = ({ item, className, index, ...props }: ImageProps) => {
   return (
     <div
       className={cn(

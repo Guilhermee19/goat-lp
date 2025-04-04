@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 export const InfiniteMovingCards = ({
@@ -25,7 +26,8 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
-  }, []);
+  });
+
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -85,7 +87,7 @@ export const InfiniteMovingCards = ({
           pauseOnHover && 'hover:[animation-play-state:paused]',
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="relative w-[355px] max-w-full shrink-0 rounded-2xl bg-grayDark px-8 py-6"
             key={item.name}
@@ -93,12 +95,14 @@ export const InfiniteMovingCards = ({
             <blockquote>
               <div
                 aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 w-[calc(100%_+_4px)]"
+                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 w-[calc(48%_+_4px)]"
               ></div>
 
               <div className="relative z-20 flex flex-col items-start justify-center py-4 gap-4">
                 <div className="flex flex-row items-start justify-center gap-4">
-                  <img
+                  <Image
+                    width={50}
+                    height={50}
                     src="https://avatars.githubusercontent.com/u/16860528"
                     alt=""
                     className="size-12 rounded-full object-cover"

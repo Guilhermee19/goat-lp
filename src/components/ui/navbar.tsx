@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/sheet';
 import LocaleSwitcher from '../locale-switcher';
 import Icon from '@/shared/icon/icon';
+import Image from 'next/image';
 
 interface MenuItem {
   title: string;
@@ -59,7 +60,7 @@ interface Navbar1Props {
 
 const Navbar = ({
   logo = {
-    url: 'https://www.shadcnblocks.com',
+    url: '/',
     src: 'logo.svg',
     alt: 'logo',
     title: 'Shadcnblocks.com',
@@ -95,7 +96,7 @@ const Navbar = ({
           <nav className="hidden max-w-6xl mx-auto justify-between lg:flex">
             <div className="flex items-center gap-6">
               <a href={logo.url} className="flex items-center gap-2">
-                <img src={logo.src} alt={logo.alt} />
+                <Image width={100} height={50} src={logo.src} alt={logo.alt} />
               </a>
               <div className="flex items-center">
                 <NavigationMenu>
@@ -129,7 +130,7 @@ const Navbar = ({
           <div className="block lg:hidden">
             <div className="flex items-center justify-between">
               <a href={logo.url} className="flex items-center gap-2">
-                <img src={logo.src} alt={logo.alt} />
+                <Image width={100} height={50} src={logo.src} alt={logo.alt} />
               </a>
               <Sheet>
                 <SheetTrigger asChild>
@@ -141,7 +142,12 @@ const Navbar = ({
                   <SheetHeader>
                     <SheetTitle>
                       <a href={logo.url} className="flex items-center gap-2">
-                        <img src={logo.src} alt={logo.alt} />
+                        <Image
+                          width={100}
+                          height={50}
+                          src={logo.src}
+                          alt={logo.alt}
+                        />
                       </a>
                     </SheetTitle>
                   </SheetHeader>

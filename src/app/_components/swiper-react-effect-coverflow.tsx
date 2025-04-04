@@ -1,11 +1,10 @@
-'use client';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { useRef, useEffect } from 'react';
+import type { Swiper as SwiperType } from 'swiper/types';
 
 type Tab = {
   title: string;
@@ -22,7 +21,7 @@ export default function SwiperCoverflow({
   tabIndex: number;
   setTabIndex: (tabIndex: number) => void;
 }) {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   // Atualiza o slide quando o tabIndex for alterado
   useEffect(() => {
