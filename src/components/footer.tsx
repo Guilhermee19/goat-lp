@@ -16,7 +16,7 @@ export function Footer() {
     },
     {
       label: 'Política de Privacidade',
-      href: '/privacy-policy',
+      href: '/privacy-policies',
     },
     {
       label: 'Políticas',
