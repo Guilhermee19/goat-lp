@@ -79,7 +79,7 @@ const Header = () => {
 
           <TextAnimationDegrade
             title={['Venda mais. Venda melhor.', 'Seja um GOAT.']}
-            className="mt-8 hidden lg:block"
+            className="mt-8 hidden lg:flex"
           ></TextAnimationDegrade>
 
           <TextAnimationDegrade
