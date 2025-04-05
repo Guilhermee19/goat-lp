@@ -39,7 +39,7 @@ export function Footer() {
     },
     {
       label: 'Contato',
-      href: '/blog',
+      href: '/contact',
     },
     {
       label: 'Termos e Compliance',
@@ -54,11 +54,11 @@ export function Footer() {
   const PRODUTOS = [
     {
       label: 'Checkout Nacional',
-      href: '/google-ads',
+      href: '/checkout-national',
     },
     {
       label: 'Checkout Global',
-      href: '/facebook-ads',
+      href: '/checkout-global',
     },
     {
       label: 'Loja Virtual ',
@@ -66,11 +66,11 @@ export function Footer() {
     },
     {
       label: 'Landing Pages',
-      href: '/linkedin-ads',
+      href: '/landing-page',
     },
     {
       label: 'Temas',
-      href: '/linkedin-ads',
+      href: '/themes',
     },
     {
       label: 'Personalização',

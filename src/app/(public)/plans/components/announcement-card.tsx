@@ -8,7 +8,7 @@ export function AnnouncementCard() {
   return (
     <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row bg-[#0a201d] border border-solid border-[#085035] justify-between my-10 lg:my-20 items-center p-8">
       <div className="w-full">
-        <p className="lg:max-w-lg text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light">
+        <p className="lg:max-w-96 text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light">
           Pagamentos simples, experiência impecável
         </p>
 
