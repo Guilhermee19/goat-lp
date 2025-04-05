@@ -1,10 +1,16 @@
 'use client';
 
+import { StayInTouch } from '@/components/sections';
+import { Footer } from '@/components';
+import { FormContact } from './components/form-contact';
+
 const Contact = () => {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4">
-      <div className="w-full flex flex-col items-center gap-4 mt-20"></div>
-    </div>
+    <>
+      <FormContact></FormContact>
+      <StayInTouch></StayInTouch>
+      <Footer></Footer>
+    </>
   );
 };
 
