@@ -5,11 +5,13 @@ import { CardCreateAccount, StayInTouch } from '@/components/sections';
 // import { VideoHeader } from './components/video-header';
 import { WhyGoatcom } from './components/why-goatcom';
 import { WhatDrivesUs } from './components/what-drives-us';
+import { CardCounters } from './components/card-counters';
 
 const AboutUs = () => {
   return (
     <>
       {/* <VideoHeader></VideoHeader> */}
+      <CardCounters></CardCounters>
       <WhatDrivesUs></WhatDrivesUs>
       <WhyGoatcom></WhyGoatcom>
       <CardCreateAccount
