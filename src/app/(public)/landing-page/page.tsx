@@ -6,6 +6,7 @@ import { LandingPageHero } from './components/landing-page-hero';
 import { Diferenciais } from './components/differentials';
 import { ThemeCollection } from './components/theme-collection';
 import { AnnouncementCard } from '../plans/components/announcement-card';
+import { MapPoints } from './components/map-points';
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,12 @@ const LandingPage = () => {
       <Diferenciais></Diferenciais>
       <ThemeCollection></ThemeCollection>
 
+      <MapPoints
+        title="Velocidade. Segurança. Confiabilidade."
+        description="Então, não importa se você está fazendo uma grande entrega ou
+            lançando em um novo país, você sabe que sua loja é segura, confiável
+            e está funcionando rápido."
+      ></MapPoints>
       <AnnouncementCard
         title="Utilize landing pages para potencializar suas vendas"
         description="Lançamentos de produtos, campanhas de tráfego pago, captura de leads e vendas diretas."
