@@ -4,7 +4,13 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import GoatAnimation from '../../app/_components/goat-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 
-export function CardCreateAccount() {
+export function CardCreateAccount({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
     <div className="relative w-11/12 max-w-7xl pt-28 mx-auto lg:px-4 overflow-x-hidden">
       <div className="flex justify-between items-center flex-col-reverse lg:flex-row rounded-3xl border border-solid border-[#525252]">
@@ -14,7 +20,7 @@ export function CardCreateAccount() {
             by="word"
             className="text-white text-left text-xl lg:text-3xl font-hankenGrotesk font-light"
           >
-            Venda mais. Venda melhor. Venda como um GOAT!
+            {title}
           </TextAnimate>
 
           <TextAnimate
@@ -22,7 +28,7 @@ export function CardCreateAccount() {
             by="word"
             className="text-white text-left text-sm lg:text-xl font-sourceSans3 font-normal"
           >
-            O sucesso deixa pistas. Siga o caminho dos que mais faturam.
+            {description}
           </TextAnimate>
 
           <ShimmerButton
