@@ -34,7 +34,7 @@ export function WhyGoatcom() {
   ];
   return (
     <>
-      <div className="w-11/12 max-w-7xl mx-auto rounded-lg p-5 overflow-hidden">
+      <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-6">
           <div className="w-full lg:w-max flex flex-col gap-4 items-start justify-start">
             <TextAnimationDegrade

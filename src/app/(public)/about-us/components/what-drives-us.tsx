@@ -9,7 +9,13 @@ import {
 } from '@/components/ui';
 import Image from 'next/image';
 
-export function WhatDrivesUs() {
+export function WhatDrivesUs({
+  title,
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) {
   const EXPAND = [
     {
       title: 'Inovação que gera resultados',
@@ -31,20 +37,21 @@ export function WhatDrivesUs() {
   return (
     <>
       <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center my-10 lg:my-20 items-center p-5">
-        <p className="font-hankenGrotesk text-5xl text-white text-center font-light">
-          O que nos move
-        </p>
+        {title && (
+          <p className="font-hankenGrotesk text-5xl text-white text-center font-light">
+            {title}
+          </p>
+        )}
 
-        <TextAnimate
-          animation="slideUp"
-          by="word"
-          className="max-w-4xl w-full text-label text-center mt-4 !text-xl font-sourceSans3 font-normal"
-        >
-          Acreditamos que empreendedores precisam de ferramentas que realmente
-          funcionam. Nossa missão é eliminar barreiras, otimizar processos e
-          garantir que cada venda seja uma experiência impecável para vendedores
-          e compradores.
-        </TextAnimate>
+        {description && (
+          <TextAnimate
+            animation="slideUp"
+            by="word"
+            className="max-w-4xl w-full text-label text-center mt-4 !text-xl font-sourceSans3 font-normal"
+          >
+            {description}
+          </TextAnimate>
+        )}
 
         <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-8 mt-10 lg:mt-20">
           <Accordion type="single" collapsible className="w-full max-w-lg">

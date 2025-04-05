@@ -35,7 +35,7 @@ export function Footer() {
     },
     {
       label: 'Planos e Preços',
-      href: '/work-with-us',
+      href: '/plans',
     },
     {
       label: 'Contato',

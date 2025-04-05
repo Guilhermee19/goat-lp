@@ -12,7 +12,13 @@ const AboutUs = () => {
     <>
       <VideoHeader></VideoHeader>
       <CardCounters></CardCounters>
-      <WhatDrivesUs></WhatDrivesUs>
+      <WhatDrivesUs
+        title="O que nos move"
+        description="Acreditamos que empreendedores precisam de ferramentas que realmente
+                  funcionam. Nossa missão é eliminar barreiras, otimizar processos e
+                  garantir que cada venda seja uma experiência impecável para
+                  vendedores e compradores."
+      ></WhatDrivesUs>
       <WhyGoatcom></WhyGoatcom>
       <CardCreateAccount
         title="Estamos aqui para transformar seu negócio."
