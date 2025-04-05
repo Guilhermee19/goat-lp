@@ -4,20 +4,20 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-export const InfiniteMovingCards = ({
-  items,
+export const InfiniteMovingPages = ({
+  pages,
   direction = 'left',
   speed = 'fast',
   pauseOnHover = true,
   className,
 }: {
-  items: {
-    quote: string;
-    name: string;
+  pages: {
     title: string;
+    link: string;
+    thumbnail: string;
   }[];
   direction?: 'left' | 'right';
-  speed?: 'fast' | 'normal' | 'slow';
+  speed?: 'fast' | 'normal' | 'slow' | 'very_slow';
   widthCard?: number;
   pauseOnHover?: boolean;
   className?: string;
@@ -67,8 +67,10 @@ export const InfiniteMovingCards = ({
         containerRef.current.style.setProperty('--animation-duration', '20s');
       } else if (speed === 'normal') {
         containerRef.current.style.setProperty('--animation-duration', '40s');
-      } else {
+      } else if (speed === 'slow') {
         containerRef.current.style.setProperty('--animation-duration', '80s');
+      } else {
+        containerRef.current.style.setProperty('--animation-duration', '160s');
       }
     }
   };
@@ -88,10 +90,10 @@ export const InfiniteMovingCards = ({
           pauseOnHover && 'hover:[animation-play-state:paused]',
         )}
       >
-        {items.map((item) => (
+        {pages.map((item) => (
           <li
-            className="relative w-[355px] max-w-full shrink-0 rounded-2xl bg-grayDark px-8 py-6"
-            key={item.name}
+            className="relative w-[280px] lg:w-[400px] max-w-full shrink-0"
+            key={item.title}
           >
             <blockquote>
               <div
@@ -100,29 +102,13 @@ export const InfiniteMovingCards = ({
               ></div>
 
               <div className="relative z-20 flex flex-col items-start justify-center py-4 gap-4">
-                <div className="flex flex-row items-start justify-center gap-4">
-                  <Image
-                    width={50}
-                    height={50}
-                    src="https://avatars.githubusercontent.com/u/16860528"
-                    alt=""
-                    className="size-12 rounded-full object-cover"
-                  />
-
-                  <span className="flex flex-col gap-1">
-                    <span className="text-lg leading-[1.6] font-medium font-inter  text-white">
-                      {item.name}
-                    </span>
-
-                    <span className="text-xs leading-none font-normal font-inter text-white">
-                      {item.title}
-                    </span>
-                  </span>
-                </div>
-
-                <span className="relative z-20 text-base leading-[1.6] font-normal font-inter text-white">
-                  {item.quote}
-                </span>
+                <Image
+                  width={50}
+                  height={50}
+                  src={item.thumbnail}
+                  alt=""
+                  className="size-full object-cover"
+                />
               </div>
             </blockquote>
           </li>

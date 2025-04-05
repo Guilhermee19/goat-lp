@@ -26,8 +26,10 @@ export function Diferenciais() {
       subtitle:
         'Customize o CSS do seu jeito. Funcionalidade avançada para você estilizar usas páginas.',
       url: '/build_screen.png',
-      classHeader: 'flex justify-between items-center gap-8',
-      className: 'col-span-2',
+      url_mobile: '/build-screen-mobile.png',
+      classHeader:
+        'flex flex-col lg:flex-rows justify-between items-center gap-8',
+      className: 'lg:col-span-2',
     },
     {
       title: 'Máxima conversão e resultados supersônicos',
@@ -49,8 +51,10 @@ export function Diferenciais() {
       subtitle:
         'Páginas que oferecem uma experiência impecável em qualquer dispositivo.',
       url: '/dispositivos-mobile.png',
-      classHeader: 'flex justify-between items-center gap-8',
-      className: 'col-span-2',
+      url_mobile: '/dispositivos-mobile-responsive.png',
+      classHeader:
+        'flex flex-col lg:flex-rows justify-between items-center gap-8',
+      className: 'lg:col-span-2',
     },
   ];
 
@@ -63,15 +67,20 @@ export function Diferenciais() {
             className="hidden lg:flex justify-start items-start"
             classText="!text-3xl md:!text-5xl lg:!text-7xl"
           ></TextAnimationDegrade>
+          <TextAnimationDegrade
+            title={['O que torna nossas ', 'Landing Pages', 'diferentes']}
+            className="flex lg:hidden justify-start items-start"
+            classText="!text-3xl md:!text-5xl lg:!text-7xl"
+          ></TextAnimationDegrade>
 
-          <div className="w-full grid grid-cols-2 gap-y-20 gap-x-12 mt-6">
+          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">
             {DIFFERENTIALS.map((el, idx) => (
               <div key={idx} className={(cn('w-full'), el.className)}>
                 <div className={(cn('w-full'), el.classHeader)}>
-                  <p className="max-w-xl text-white font-hankenGrotesk text-5xl font-light">
+                  <p className="max-w-xl text-white font-hankenGrotesk text-3xl lg:text-5xl font-light">
                     {el.title}
                   </p>
-                  <p className="text-label font-sourceSans3 text-xl font-light my-6">
+                  <p className="text-label font-sourceSans3 text-base lg:text-xl font-light my-6">
                     {el.subtitle}
                   </p>
                 </div>
@@ -81,8 +90,20 @@ export function Diferenciais() {
                   width={590}
                   height={600}
                   alt={el.title}
-                  className="w-full object-contain mt-10"
+                  className={cn('w-full object-contain mt-10', {
+                    'hidden lg:flex': el.url_mobile,
+                  })}
                 ></Image>
+
+                {el.url_mobile && (
+                  <Image
+                    src={el.url_mobile}
+                    width={590}
+                    height={600}
+                    alt={el.title}
+                    className="w-full object-contain mt-10 flex lg:hidden"
+                  ></Image>
+                )}
               </div>
             ))}
           </div>

@@ -1,7 +1,5 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
-import { TextAnimate } from '@/components/magicui/text-animate';
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 
 export function InfiniteTestimonials() {
