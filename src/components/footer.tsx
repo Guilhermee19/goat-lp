@@ -100,7 +100,7 @@ export function Footer() {
     },
     {
       label: 'Depoimentos',
-      href: '/partners',
+      href: '/testimonials',
     },
     {
       label: 'Parceiros',

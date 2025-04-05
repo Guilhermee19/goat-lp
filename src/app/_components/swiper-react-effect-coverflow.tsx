@@ -15,23 +15,26 @@ type Tab = {
 export default function SwiperCoverflow({
   tabs,
   tabIndex,
+  isLoop,
   setTabIndex,
 }: {
   tabs: Tab[];
-  tabIndex: number;
-  setTabIndex: (tabIndex: number) => void;
+  tabIndex?: number;
+  isLoop?: boolean;
+  setTabIndex?: (tabIndex: number) => void;
 }) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   // Atualiza o slide quando o tabIndex for alterado
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.slideTo) {
-      swiperRef.current.slideTo(tabIndex);
+      swiperRef.current.slideTo(tabIndex || 0);
     }
   }, [tabIndex]);
 
   // Atualiza o tabIndex quando o slide mudar
   const handleSlideChange = (swiper: { activeIndex: number }) => {
+    if (!setTabIndex) return;
     setTabIndex(swiper.activeIndex);
   };
 
@@ -45,6 +48,7 @@ export default function SwiperCoverflow({
           delay: 5000,
           disableOnInteraction: false,
         }}
+        loop={isLoop ?? false}
         centeredSlides={true}
         slidesPerView={2}
         spaceBetween={10}
