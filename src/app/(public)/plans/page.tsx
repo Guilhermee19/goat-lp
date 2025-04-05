@@ -13,7 +13,12 @@ const Plans = () => {
       <SimplePrice></SimplePrice>
       <WhyGoatcom></WhyGoatcom>
       <WhatDrivesUs></WhatDrivesUs>
-      <AnnouncementCard></AnnouncementCard>
+      <AnnouncementCard
+        title="Pagamentos simples, experiência impecável"
+        description="Com suporte para os métodos mais utilizados no Brasil, seu cliente
+          compra com facilidade e sem complicação."
+        className="bg-[#0a201d] border-[#085035]"
+      ></AnnouncementCard>
       <StayInTouch></StayInTouch>
       <Footer></Footer>
     </>

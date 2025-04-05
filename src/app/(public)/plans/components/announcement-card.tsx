@@ -1,20 +1,33 @@
 'use client';
 
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
+import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
-export function AnnouncementCard() {
+export function AnnouncementCard({
+  title,
+  description,
+  className,
+}: {
+  title: string;
+  description: string;
+  className: string;
+}) {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row bg-[#0a201d] border border-solid border-[#085035] justify-between my-10 lg:my-20 items-center p-8">
+    <div
+      className={cn(
+        'w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row border border-solid justify-between my-10 lg:my-20 items-center p-8',
+        className,
+      )}
+    >
       <div className="w-full">
         <p className="lg:max-w-96 text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light">
-          Pagamentos simples, experiência impecável
+          {title}
         </p>
 
         <p className="lg:max-w-md text-label text-sm lg:text-base font-sourceSans3 font-light mt-4">
-          Com suporte para os métodos mais utilizados no Brasil, seu cliente
-          compra com facilidade e sem complicação.
+          {description}
         </p>
       </div>
 
