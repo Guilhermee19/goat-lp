@@ -6,11 +6,13 @@ import { MapPoints } from '../landing-page/components/map-points';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import { AnimationStickyCard } from '../landing-page/components/animation-sticky-card';
 import { OnlineShopHero } from './components/online-shop-hero';
+import { PlatformFeatures } from './components/platform-features';
 
 const OnlineShop = () => {
   return (
     <>
       <OnlineShopHero></OnlineShopHero>
+      <PlatformFeatures></PlatformFeatures>
       <AnimationStickyCard></AnimationStickyCard>
       <MapPoints
         title="Velocidade. Segurança. Confiabilidade."
