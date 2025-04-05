@@ -7,6 +7,7 @@ import { Diferenciais } from './components/differentials';
 import { ThemeCollection } from './components/theme-collection';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import { MapPoints } from './components/map-points';
+import { AnimationStickyCard } from './components/animation-sticky-card';
 
 const LandingPage = () => {
   return (
@@ -15,6 +16,7 @@ const LandingPage = () => {
       <Diferenciais></Diferenciais>
       <ThemeCollection></ThemeCollection>
 
+      <AnimationStickyCard></AnimationStickyCard>
       <MapPoints
         title="Velocidade. Segurança. Confiabilidade."
         description="Então, não importa se você está fazendo uma grande entrega ou

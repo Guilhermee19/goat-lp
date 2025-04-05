@@ -28,7 +28,7 @@ export function Diferenciais() {
       url: '/build_screen.png',
       url_mobile: '/build-screen-mobile.png',
       classHeader:
-        'flex flex-col lg:flex-rows justify-between items-center gap-8',
+        'flex flex-col lg:flex-rows justify-between items-center lg:gap-8',
       className: 'lg:col-span-2',
     },
     {
@@ -53,7 +53,7 @@ export function Diferenciais() {
       url: '/dispositivos-mobile.png',
       url_mobile: '/dispositivos-mobile-responsive.png',
       classHeader:
-        'flex flex-col lg:flex-rows justify-between items-center gap-8',
+        'flex flex-col lg:flex-rows justify-between items-center lg:gap-8',
       className: 'lg:col-span-2',
     },
   ];
@@ -70,7 +70,7 @@ export function Diferenciais() {
           <TextAnimationDegrade
             title={['O que torna nossas ', 'Landing Pages', 'diferentes']}
             className="flex lg:hidden justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl"
+            classText="!text-3xl md:!text-5xl lg:!text-7xl !m-0"
           ></TextAnimationDegrade>
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">

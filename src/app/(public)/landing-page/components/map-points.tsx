@@ -13,7 +13,7 @@ export function MapPoints({
     <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
       <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
         {title && description && (
-          <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:gap-8">
             <p className="max-w-xl text-white font-hankenGrotesk text-3xl lg:text-5xl font-light">
               {title}
             </p>

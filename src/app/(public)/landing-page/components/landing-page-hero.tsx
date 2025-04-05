@@ -33,7 +33,7 @@ export function LandingPageHero() {
             'a GOAT.',
           ]}
           className="flex lg:hidden justify-start items-start"
-          classText="!text-3xl lg:!text-5xl"
+          classText="!text-4xl lg:!text-5xl"
         ></TextAnimationDegrade>
 
         <TextAnimate
