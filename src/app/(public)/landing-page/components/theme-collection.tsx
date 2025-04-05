@@ -5,7 +5,7 @@ import { InfiniteMovingPages } from './infinite-moving-pages';
 export function ThemeCollection() {
   const PRODUCTS = [
     { title: 'Pet', link: '', thumbnail: 'themes/animal-themes.png' },
-    { title: 'Kids co.', link: '', thumbnail: 'themes/childrens-themes.png' },
+    { title: 'Kids co.', link: '', thumbnail: 'themes/kids-themes.png' },
     { title: 'Cosmetics', link: '', thumbnail: 'themes/cosmetics-topics.png' },
     { title: 'Decor', link: '', thumbnail: 'themes/decoration-themes.png' },
     {
@@ -21,7 +21,7 @@ export function ThemeCollection() {
       thumbnail: 'themes/topics-of-natural-remedies.png',
     },
     { title: 'Pet', link: '', thumbnail: 'themes/animal-themes.png' },
-    { title: 'Kids co.', link: '', thumbnail: 'themes/childrens-themes.png' },
+    { title: 'Kids co.', link: '', thumbnail: 'themes/kids-themes.png' },
     { title: 'Cosmetics', link: '', thumbnail: 'themes/cosmetics-topics.png' },
     { title: 'Decor', link: '', thumbnail: 'themes/decoration-themes.png' },
     {

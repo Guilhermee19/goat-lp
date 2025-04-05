@@ -5,12 +5,13 @@ import { Footer } from '@/components';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import { AnimationStickyCard } from '../landing-page/components/animation-sticky-card';
 import { ThemesHero } from './components/themes-hero';
+import { PersonalisedThemes } from './components/personalised-themes';
 
 const Themes = () => {
   return (
     <>
       <ThemesHero></ThemesHero>
-
+      <PersonalisedThemes></PersonalisedThemes>
       <AnimationStickyCard></AnimationStickyCard>
       <AnnouncementCard
         title="Uma plataforma construída para crescimento"
