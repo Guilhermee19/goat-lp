@@ -62,7 +62,7 @@ export function Footer() {
     },
     {
       label: 'Loja Virtual ',
-      href: '/instagram-ads',
+      href: '/online-shop',
     },
     {
       label: 'Landing Pages',
