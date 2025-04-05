@@ -96,7 +96,7 @@ export function Footer() {
   const OUTROS = [
     {
       label: 'Denúncias',
-      href: '/work-with-us',
+      href: '/denounces',
     },
     {
       label: 'Depoimentos',
