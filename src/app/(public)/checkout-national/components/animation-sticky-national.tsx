@@ -3,7 +3,7 @@
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
-export function AnimationStickyCard() {
+export function AnimationStickyNational() {
   const GRID = [
     {
       title: 'Pagamentos instantâneos',
@@ -15,7 +15,7 @@ export function AnimationStickyCard() {
       title: 'Conversão otimizada',
       description:
         'Processo de compra rápido e fluido para garantir que o cliente finalize o pedido sem obstáculos.',
-      url: '/smart-funnels.png',
+      url: '/buy-custom-product.png',
     },
     {
       title: 'Segurança avançada',
@@ -35,11 +35,11 @@ export function AnimationStickyCard() {
       <div className="relative w-full flex flex-col lg:flex-row justify-between gap-4 lg:gap-6">
         <div className="w-full lg:w-8/12 h-max lg:sticky lg:top-4" id="sticky">
           <p className="max-w-2xl text-white text-4xl text-start mb-10 !font-light font-hankenGrotesk">
-            Conecte a{' '}
+            O que faz do Checkout Nacional da
             <span className="whitespace-pre-wrap tracking-tighter bg-gradient-to-br from-[#FF7F00] from-40% to-[#508FF4] to-80% text-transparent bg-clip-text">
-              Goat Checkout
+              GOATCOM
             </span>{' '}
-            e venda para todo o mundo
+            imbatível
           </p>
 
           <Image

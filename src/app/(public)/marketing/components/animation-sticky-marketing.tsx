@@ -63,9 +63,9 @@ export function AnimationStickyMarketing() {
               <div className="flex items-center justify-start gap-2">
                 <Icon
                   name="circle_chevron_right"
-                  className="size-5 text-base text-main"
+                  className="min-size-5 size-5 text-base text-main"
                 ></Icon>
-                <p className="text-white text-xl lg:text-3xl font-hankenGrotesk font-light">
+                <p className="w-10/12 text-white text-xl lg:text-3xl font-hankenGrotesk font-light">
                   {el.title}
                 </p>
               </div>

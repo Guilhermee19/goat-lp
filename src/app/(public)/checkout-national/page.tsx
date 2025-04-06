@@ -4,10 +4,12 @@ import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import Footer from '@/components/footer';
 import { ClientCarousel } from './components/client-carousel';
+import { AnimationStickyNational } from './components/animation-sticky-national';
 
 const CheckoutNational = () => {
   return (
     <>
+      <AnimationStickyNational></AnimationStickyNational>
       <ClientCarousel></ClientCarousel>
       <AnnouncementCard
         title="Pagamentos simples, experiência impecável"
