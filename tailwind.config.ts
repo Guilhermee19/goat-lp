@@ -78,6 +78,8 @@ const config: Config = {
       borderColor: {
         'degrade-green-dark':
           'linear-gradient(180deg, rgba(10, 32, 29,1) 0%, rgba(10, 32, 29,.3) 100%)',
+        'degrade-gray-light':
+          'linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(57,57,57,1) 51%, rgba(255,255,255,0.6) 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',
