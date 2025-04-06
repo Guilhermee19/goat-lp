@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 type Tab = {
-  title: string;
+  title: React.ReactNode;
   value: string;
   content?: string | React.ReactNode;
 };
@@ -35,7 +35,7 @@ export const Tabs = ({
       >
         {propTabs.map((tab, idx) => (
           <button
-            key={tab.title}
+            key={tab.value}
             onClick={() => setTabIndex(idx)} // Atualiza o tabIndex ao clicar na aba
             className={cn('relative px-4 py-1 rounded-full', tabClassName)}
             style={{

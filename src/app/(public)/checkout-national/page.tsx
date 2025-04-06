@@ -6,11 +6,13 @@ import Footer from '@/components/footer';
 import { ClientCarousel } from './components/client-carousel';
 import { AnimationStickyNational } from './components/animation-sticky-national';
 import { CheckoutNationalHero } from './components/checkout-national-hero';
+import { PreviewWebMobile } from './components/preview-web-mobile';
 
 const CheckoutNational = () => {
   return (
     <>
       <CheckoutNationalHero></CheckoutNationalHero>
+      <PreviewWebMobile></PreviewWebMobile>
 
       <AnimationStickyNational></AnimationStickyNational>
       <ClientCarousel></ClientCarousel>
