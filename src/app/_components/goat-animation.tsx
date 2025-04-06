@@ -4,7 +4,13 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-export default function GoatAnimation({ className }: { className?: string }) {
+export default function GoatAnimation({
+  className,
+  classBallon,
+}: {
+  className?: string;
+  classBallon?: string;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -32,7 +38,7 @@ export default function GoatAnimation({ className }: { className?: string }) {
       <motion.img
         src="balloon-chat.png"
         alt="Balão de conversa"
-        className="absolute top-5 right-5 w-36 md:w-52"
+        className={cn('absolute top-3 right-3 w-36 md:w-40', classBallon)}
         initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
         animate={
           isHovered

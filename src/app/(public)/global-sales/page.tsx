@@ -1,10 +1,23 @@
 'use client';
 
+import { Footer } from '@/components';
+import { CardCreateAccount, StayInTouch } from '@/components/sections';
+import { AnimationStickyMarketing } from '../marketing/components/animation-sticky-marketing';
+import { GlobalSalesHero } from './components/global-sales-hero';
+
 const GlobalSales = () => {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4">
-      <div className="w-full flex flex-col items-center gap-4 mt-20"></div>
-    </div>
+    <>
+      <GlobalSalesHero></GlobalSalesHero>
+      <AnimationStickyMarketing></AnimationStickyMarketing>
+
+      <CardCreateAccount
+        title="Venda mais. Venda melhor. Venda como um GOAT!"
+        description="O sucesso deixa pistas. Siga o caminho dos que mais faturam."
+      ></CardCreateAccount>
+      <StayInTouch></StayInTouch>
+      <Footer></Footer>
+    </>
   );
 };
 

@@ -61,7 +61,7 @@ export function Footer() {
       href: '/checkout-global',
     },
     {
-      label: 'Loja Virtual ',
+      label: 'Loja Virtual',
       href: '/online-shop',
     },
     {
@@ -81,7 +81,7 @@ export function Footer() {
   const RECURSOS = [
     {
       label: 'Venda Global',
-      href: '/blog',
+      href: '/global-sales',
     },
     {
       label: 'Relatórios',

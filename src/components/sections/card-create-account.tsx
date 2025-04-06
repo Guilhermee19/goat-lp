@@ -41,8 +41,8 @@ export function CardCreateAccount({
           </ShimmerButton>
         </div>
 
-        <div className="relative lg:absolute bottom-10 right-0 ml-6 md:ml-0 size-60 md:size-80">
-          <GoatAnimation className="size-60 md:size-80" />
+        <div className="relative lg:absolute bottom-0 right-0 ml-6 md:ml-0 size-60 md:size-80">
+          <GoatAnimation className="size-60 md:size-72" />
         </div>
       </div>
     </div>
