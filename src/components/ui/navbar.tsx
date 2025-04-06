@@ -27,6 +27,7 @@ import {
 import LocaleSwitcher from '../locale-switcher';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface MenuItem {
   title: string;
@@ -68,8 +69,80 @@ const Navbar = ({
     title: 'Shadcnblocks.com',
   },
   menu = [
-    { title: 'Soluções', url: '/home' },
-    { title: 'Recursos', url: '/home' },
+    {
+      title: 'Soluções',
+      url: '/home',
+      items: [
+        {
+          title: 'Checkout Nacional',
+          description:
+            'Venda sem limites no Brasil com um checkout otimizado para conversão',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Checkout Global',
+          description:
+            'Seu negócio pronto para atender clientes em qualquer país',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Landing Pages',
+          description:
+            'Páginas otimizadas para transformar visitantes em clientes',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Loja Virtual',
+          description:
+            'Venda sem limites com um e-commerce otimizado para faturamento máximo',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+      ],
+    },
+    {
+      title: 'Recursos',
+      url: '/home',
+      items: [
+        {
+          title: 'Temas',
+          description:
+            'Venda qualquer coisa online com nossos temas personalizáveis.',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Venda Global',
+          description: 'Venda globalmente sem complicação com a GOATCOM.',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Marketing',
+          description:
+            'Mais tráfego, mais conversão, mais vendas. Marketing inteligente para resultados reais.',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Relatórios',
+          description:
+            'Venda mais e melhor com relatórios que entregam o que realmente importa.',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+        {
+          title: 'Apps e Integrações',
+          description:
+            'A GOATCOM se conecta ao que há de melhor no mercado para você vender sem limites.',
+          url: '',
+          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+        },
+      ],
+    },
     { title: 'Temas', url: '/home' },
     { title: 'Preços', url: '/home' },
   ],
@@ -97,7 +170,7 @@ const Navbar = ({
           {/* Desktop Menu */}
           <nav className="hidden max-w-6xl mx-auto justify-between lg:flex">
             <div className="flex items-center gap-6">
-              <a href={logo.url} className="flex items-center gap-2">
+              <a href={logo.url} className=" flex items-center gap-2">
                 <Image width={100} height={50} src={logo.src} alt={logo.alt} />
               </a>
               <div className="flex items-center">
@@ -128,6 +201,7 @@ const Navbar = ({
               <LocaleSwitcher />
             </div>
           </nav>
+
           {/* Mobile Menu */}
           <div className="block lg:hidden">
             <div className="flex items-center justify-between">
@@ -136,14 +210,21 @@ const Navbar = ({
               </a>
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <Menu className="size-4" />
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="hover:bg-transparent border-transparent"
+                  >
+                    <Menu className="!size-6 text-white bg-transparent" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent className="overflow-y-auto">
+                <SheetContent className="overflow-y-auto flex flex-col items-center justify-center">
                   <SheetHeader>
                     <SheetTitle>
-                      <a href={logo.url} className="flex items-center gap-2">
+                      <a
+                        href={logo.url}
+                        className="w-full flex justify-start items-center gap-2"
+                      >
                         <Image
                           width={100}
                           height={50}
@@ -153,7 +234,7 @@ const Navbar = ({
                       </a>
                     </SheetTitle>
                   </SheetHeader>
-                  <div className="flex flex-col gap-6 p-4">
+                  <div className="w-full h-full flex flex-col gap-6 p-4">
                     <Accordion
                       type="single"
                       collapsible
@@ -162,13 +243,23 @@ const Navbar = ({
                       {menu.map((item) => renderMobileMenuItem(item))}
                     </Accordion>
 
-                    <div className="flex flex-col gap-3">
-                      <Button asChild variant="outline">
-                        <a href={auth.login.url}>{auth.login.text}</a>
+                    <div className="flex flex-col gap-3 mt-auto">
+                      <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className="border-transparent hover:bg-transparent hover:text-white"
+                      >
+                        <a
+                          href={auth.login.url}
+                          className="text-white font-sourceSans3"
+                        >
+                          Fazer login
+                        </a>
                       </Button>
-                      <Button asChild>
-                        <a href={auth.signup.url}>{auth.signup.text}</a>
-                      </Button>
+                      <div className="bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark">
+                        Teste grátis por 7 dias
+                      </div>
                     </div>
                   </div>
                 </SheetContent>
@@ -185,8 +276,14 @@ const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title} className="text-muted-foreground">
-        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-        <NavigationMenuContent>
+        <NavigationMenuTrigger className="text-label hover:!bg-transparent hover:!text-white">
+          {item.title}
+        </NavigationMenuTrigger>
+        <NavigationMenuContent
+          className={cn('!w-max !grid !grid-cols-2 md:!w-max-content', {
+            '!grid-cols-3': item.items.length > 4,
+          })}
+        >
           {item.items.map((subItem) => (
             <NavigationMenuLink asChild key={subItem.title} className="w-80">
               <SubMenuLink item={subItem} />
@@ -211,8 +308,12 @@ const renderMenuItem = (item: MenuItem) => {
 const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
-      <AccordionItem key={item.title} value={item.title} className="border-b-0">
-        <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline">
+      <AccordionItem
+        key={item.title}
+        value={item.title}
+        className="border-b-0 text-white"
+      >
+        <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline text-white">
           {item.title}
         </AccordionTrigger>
         <AccordionContent className="mt-2">
@@ -225,7 +326,11 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <a key={item.title} href={item.url} className="text-md font-semibold">
+    <a
+      key={item.title}
+      href={item.url}
+      className="text-md font-semibold text-white"
+    >
       {item.title}
     </a>
   );
@@ -234,14 +339,14 @@ const renderMobileMenuItem = (item: MenuItem) => {
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
     <a
-      className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
+      className="max-w-[350px] flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-[rgba(255,255,255,0.3)] hover:text-accent-foreground"
       href={item.url}
     >
-      <div>{item.icon}</div>
+      <div className="text-white">{item.icon}</div>
       <div>
-        <div className="text-sm font-semibold">{item.title}</div>
+        <div className="text-sm font-semibold text-white">{item.title}</div>
         {item.description && (
-          <p className="text-sm leading-snug text-muted-foreground">
+          <p className="text-sm leading-snug text-muted-foreground text-white">
             {item.description}
           </p>
         )}
