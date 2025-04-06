@@ -18,7 +18,7 @@ export function CardCreateAccount({
           <TextAnimate
             animation="blurInUp"
             by="word"
-            className="text-white text-left text-xl lg:text-3xl font-hankenGrotesk font-light"
+            className="text-white text-left text-2xl lg:text-3xl font-hankenGrotesk font-light"
           >
             {title}
           </TextAnimate>
@@ -26,7 +26,7 @@ export function CardCreateAccount({
           <TextAnimate
             animation="blurInUp"
             by="word"
-            className="text-white text-left text-sm lg:text-xl font-sourceSans3 font-normal"
+            className="text-white text-left text-lg lg:text-xl font-sourceSans3 font-normal"
           >
             {description}
           </TextAnimate>

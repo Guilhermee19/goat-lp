@@ -11,7 +11,7 @@ import Icon from '@/shared/icon/icon';
 export function GlobalSalesHero() {
   return (
     <>
-      <div className="relative w-11/12 max-w-7xl mx-auto lg:min-h-[700px] bg-background shadow-lg rounded-lg p-5 mt-2">
+      <div className="relative w-11/12 max-w-7xl mx-auto lg:min-h-[700px] bg-background shadow-lg rounded-lg py-5 lg:p-5 mt-2">
         <div className="z-10 lg:min-h-[600px] flex flex-col gap-4 items-center justify-center">
           <div className="degradeBorder">
             <div

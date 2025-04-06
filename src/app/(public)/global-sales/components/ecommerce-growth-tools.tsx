@@ -1,13 +1,13 @@
-'use clinet';
+'use client';
 
 import TextAnimationDegrade from '@/app/_components/title-animation';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-export function PlatformFeatures() {
+export function EcommerceGrowthTools() {
   const DIFFERENTIALS = [
     {
-      title: 'Layouts otimizados',
+      title: 'Uma loja. Vários países.',
       subtitle:
         'Experiência de compra fluida e intuitiva para maior conversão.',
       url: '/layouts-otimizados.png',
@@ -15,7 +15,7 @@ export function PlatformFeatures() {
       className: '',
     },
     {
-      title: 'Loja pronta para faturar',
+      title: 'Receba com facilidade',
       subtitle:
         'Monte sua estrutura rapidamente e comece a vender sem complicação.',
       url: '/loja-pronta-para-fatura.png',
@@ -23,7 +23,7 @@ export function PlatformFeatures() {
       className: '',
     },
     {
-      title: 'Automação de vendas',
+      title: 'Oportunidade Única',
       subtitle:
         'Remarketing, e-mails automáticos e estratégias de retenção integradas.',
       url: '/automacao-de-vendas.png',
@@ -41,16 +41,16 @@ export function PlatformFeatures() {
   ];
 
   return (
-    <div className="w-full rounded-t-3xl mt-20 bg-gradient-to-b from-[#1D1D1D] to-[#000000]">
+    <div className="w-full rounded-t-3xl mt-20 bg-[#1D1D1D]">
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-10 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
           <TextAnimationDegrade
             title={[
-              'O que faz da GOATCOM a escolha',
-              'ideal para seu e-commerce',
+              'Venda e receba pagamentos de qualquer',
+              'moeda diretamente na sua conta brasileira.',
             ]}
             className="hidden lg:flex justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl"
+            classText="!text-2xl md:!text-4xl lg:!text-6xl"
           ></TextAnimationDegrade>
           <TextAnimationDegrade
             title={[
@@ -59,7 +59,7 @@ export function PlatformFeatures() {
               'e-commerce',
             ]}
             className="flex lg:hidden justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl !m-0"
+            classText="!text-2xl md:!text-4xl lg:!text-6xl !m-0"
           ></TextAnimationDegrade>
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">

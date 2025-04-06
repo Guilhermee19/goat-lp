@@ -52,7 +52,7 @@ export function PersonalisedThemes() {
   ];
 
   return (
-    <div className="w-full rounded-3xl mt-20 bg-[#1D1D1D]">
+    <div className="w-full rounded-t-3xl mt-20 bg-[#1D1D1D]">
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg px-2 py-5 pb-10 lg:px-5 lg:py-10 lg:pb-20 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
           <TextAnimationDegrade
