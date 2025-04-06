@@ -6,7 +6,8 @@ import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 import SwiperCoverflow from '../../app/_components/swiper-react-effect-coverflow';
 import { useState } from 'react';
-import TextAnimationDegrade from '../../app/_components/title-animation';
+// import TextAnimationDegrade from '../../app/_components/title-animation';
+import { TextDegrade } from '../text-degrade';
 
 export function Functionalities() {
   const tabs = [
@@ -62,13 +63,18 @@ export function Functionalities() {
 
 const NacionalContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-green rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-green rounded-[40px] px-4 lg:px-10 py-6 lg:py-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Converta sem limites no Brasil"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Converta sem', 'limites no Brasil']}
           className="items-start"
           classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Processamento rápido e seguro para vendas no Brasil, aceitando Pix,
@@ -111,9 +117,14 @@ const NacionalContent = () => {
 
 const GlobalContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-blue rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-blue rounded-[40px] px-4 lg:px-10 py-6 lg:py-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Venda para o mundo, sem barreiras"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Venda para o', 'mundo, sem', 'barreiras']}
           className="items-start hidden lg:flex"
           classText="text-3xl md:text-5xl lg:text-7xl"
@@ -123,7 +134,7 @@ const GlobalContent = () => {
           title={['Venda para o mundo,', 'sem barreiras']}
           className="items-start flex lg:hidden"
           classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Venda para qualquer lugar do mundo com suporte a múltiplas moedas e
@@ -165,13 +176,18 @@ const GlobalContent = () => {
 
 const LandingContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-purple rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-purple rounded-[40px] px-4 lg:px-10 py-10 lg:py-20 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Páginas de alta conversão"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Páginas de alta', 'conversão']}
           className="items-start"
           classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Páginas rápidas, responsivas e criadas para maximizar conversões.
@@ -212,13 +228,18 @@ const LandingContent = () => {
 
 const EcommercesContent = () => {
   return (
-    <div className="w-11/12 mx-auto lg:w-full bg-degrade-red rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
+    <div className="w-11/12 mx-auto lg:w-full bg-degrade-red rounded-[40px] px-4 lg:px-10 py-6 lg:py-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-gray">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Lojas virtuais escaláveis"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Lojas virtuais', 'escaláveis']}
           className="items-start"
           classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Configure sua loja online em minutos e venda produtos físicos ou

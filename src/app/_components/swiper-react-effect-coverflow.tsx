@@ -46,10 +46,10 @@ export default function SwiperCoverflow({
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         effect={'coverflow'}
         grabCursor={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         loop={isLoop ?? false}
         centeredSlides={true}
         slidesPerView={2}
