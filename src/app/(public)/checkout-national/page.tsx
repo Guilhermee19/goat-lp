@@ -5,10 +5,13 @@ import { AnnouncementCard } from '../plans/components/announcement-card';
 import Footer from '@/components/footer';
 import { ClientCarousel } from './components/client-carousel';
 import { AnimationStickyNational } from './components/animation-sticky-national';
+import { CheckoutNationalHero } from './components/checkout-national-hero';
 
 const CheckoutNational = () => {
   return (
     <>
+      <CheckoutNationalHero></CheckoutNationalHero>
+
       <AnimationStickyNational></AnimationStickyNational>
       <ClientCarousel></ClientCarousel>
       <AnnouncementCard
