@@ -1,5 +1,6 @@
 'use client';
-import { Input } from '@/components/ui';
+
+import { Input } from '@/components/ui/input';
 import {
   FormControl,
   FormField,

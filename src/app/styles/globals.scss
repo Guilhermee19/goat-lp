@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'button.scss';
+@import 'page.scss';
+@import 'swiper.scss';
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -75,4 +79,14 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
 }

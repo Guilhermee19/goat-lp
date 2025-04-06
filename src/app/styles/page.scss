@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.degradeBorder {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 32, 29, 1) 0%,
+    rgba(10, 32, 29, 0.3) 100%
+  ); /* Aplica o fundo degradê */
+  border-radius: 9999px; /* Garante bordas arredondadas */
+  padding: 1px; /* Espaçamento para criar a borda */
+}
+
+.animatedShiny {
+  @apply w-full max-w-max inline-flex items-center rounded-full justify-center px-4 py-1 transition ease-out;
+  background-color: #f0f0f0; /* Cor do fundo do conteúdo */
+  border-radius: 9999px; /* Garante que o conteúdo tenha bordas arredondadas */
+}
+
+.contanierPage {
+  @apply max-w-6xl w-11/12 mx-auto;
+}

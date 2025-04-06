@@ -2,17 +2,17 @@
 
 import {
   PaginationContent,
-  PaginationItem,
   Pagination as PaginationUI,
 } from '@/components/ui/pagination';
-import { Button } from './ui';
+import { Button } from './ui/button';
+import { Table } from '@tanstack/react-table'; // Importando a tipagem correta
 
-interface PaginationProps {
-  table: any;
+interface PaginationProps<TData> {
+  table: Table<TData>; // Tipagem do TanStack Table
   page: number;
 }
 
-export const Pagination = ({ page, table }: PaginationProps) => {
+export const Pagination = <TData,>({ page, table }: PaginationProps<TData>) => {
   return (
     <PaginationUI>
       <PaginationContent>

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper {
+  @apply w-full !py-12;
+}
+
+.swiper-slide {
+  @apply w-full;
+  transform: translateY(1.8rem) scale(0.95) !important;
+  background-position: center;
+  background-size: cover;
+
+  &.swiper-slide-active {
+    transform: translateY(-1.8rem) scale(1) !important;
+  }
+}
