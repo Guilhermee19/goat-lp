@@ -3,10 +3,12 @@
 import Icon from '@/shared/icon/icon';
 
 export function ExploreTheItems({
+  title,
   info,
 }: {
+  title: string | React.ReactNode;
   info: {
-    title: string;
+    title: string | React.ReactNode;
     content: string | React.ReactNode;
   }[];
 }) {
@@ -14,12 +16,7 @@ export function ExploreTheItems({
     <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10 lg:my-20">
       <div className="z-10 flex flex-col gap-4 items-center justify-center">
         <div className="w-full">
-          <p className="text-white text-4xl lg:text-6xl text-left !font-light font-hankenGrotesk mb-6">
-            <span className="whitespace-pre-wrap tracking-tighter bg-gradient-to-br from-[#FF7F00] from-40% to-[#508FF4] to-80% text-transparent bg-clip-text">
-              Explore os itens{' '}
-            </span>
-            que ajudam a aumentar seu ticket médio
-          </p>
+          {title}
 
           <div className="w-full flex flex-col mt-10">
             {info.map((el, idx) => (

@@ -21,7 +21,17 @@ const CheckoutNational = () => {
     <>
       <CheckoutNationalHero></CheckoutNationalHero>
       <PreviewWebMobile></PreviewWebMobile>
-      <ExploreTheItems info={INFOS}></ExploreTheItems>
+      <ExploreTheItems
+        title={
+          <p className="text-white text-4xl lg:text-6xl text-left !font-light font-hankenGrotesk mb-6">
+            <span className="whitespace-pre-wrap tracking-tighter bg-gradient-to-br from-[#FF7F00] from-40% to-[#508FF4] to-80% text-transparent bg-clip-text">
+              Aumente seus resultados
+            </span>
+            com recursos que irão turbinar suas vendas!
+          </p>
+        }
+        info={INFOS}
+      ></ExploreTheItems>
 
       <AnimationStickyNational></AnimationStickyNational>
       <ClientCarousel></ClientCarousel>
