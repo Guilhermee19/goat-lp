@@ -60,8 +60,8 @@ export function GridMarketing() {
               <p className="text-white text-2xl lg:text-5xl"> {el.title} </p>
 
               <div className="w-full flex flex-col gap-1 my-4">
-                {el.options.map((text) => (
-                  <div key={text} className="w-full flex items-center gap-2">
+                {el.options.map((text, idx2) => (
+                  <div key={idx2} className="w-full flex items-center gap-2">
                     <Icon name="check" className="size-4 text-main"></Icon>
                     <p className="text-label text-base lg:text-xl">{text}</p>
                   </div>

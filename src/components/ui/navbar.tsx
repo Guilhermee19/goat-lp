@@ -77,28 +77,28 @@ const Navbar = ({
           title: 'Checkout Nacional',
           description:
             'Venda sem limites no Brasil com um checkout otimizado para conversão',
-          url: '',
+          url: '/checkout-national',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Checkout Global',
           description:
             'Seu negócio pronto para atender clientes em qualquer país',
-          url: '',
+          url: '/checkout-global',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Landing Pages',
           description:
             'Páginas otimizadas para transformar visitantes em clientes',
-          url: '',
+          url: '/landing-page',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Loja Virtual',
           description:
             'Venda sem limites com um e-commerce otimizado para faturamento máximo',
-          url: '',
+          url: '/online-shop',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
       ],
@@ -111,40 +111,40 @@ const Navbar = ({
           title: 'Temas',
           description:
             'Venda qualquer coisa online com nossos temas personalizáveis.',
-          url: '',
+          url: '/themes',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Venda Global',
           description: 'Venda globalmente sem complicação com a GOATCOM.',
-          url: '',
+          url: '/global-sales',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Marketing',
           description:
             'Mais tráfego, mais conversão, mais vendas. Marketing inteligente para resultados reais.',
-          url: '',
+          url: '/marketing',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Relatórios',
           description:
             'Venda mais e melhor com relatórios que entregam o que realmente importa.',
-          url: '',
+          url: '/reports',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
         {
           title: 'Apps e Integrações',
           description:
             'A GOATCOM se conecta ao que há de melhor no mercado para você vender sem limites.',
-          url: '',
+          url: '/apps-and-integrations',
           icon: <Icon name="cart_shopping" className="size-6"></Icon>,
         },
       ],
     },
-    { title: 'Temas', url: '/home' },
-    { title: 'Preços', url: '/home' },
+    { title: 'Temas', url: '/themes' },
+    { title: 'Preços', url: '/plans' },
   ],
   auth = {
     login: { text: 'Fazer login', url: '/login' },

@@ -48,9 +48,9 @@ export default function LocaleSwitcherSelect({
             position="popper"
           >
             <Select.Viewport>
-              {items.map((item) => (
+              {items.map((item, idx) => (
                 <Select.Item
-                  key={item.value}
+                  key={idx}
                   className="flex cursor-default items-center px-3 py-2 text-base data-[highlighted]:bg-slate-100"
                   value={item.value}
                 >

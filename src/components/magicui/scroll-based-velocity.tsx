@@ -17,7 +17,6 @@ interface VelocityScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   defaultVelocity?: number;
   className?: string;
   numRows?: number;
-  reverse?: boolean;
 }
 
 interface ParallaxProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -67,16 +67,16 @@ export function ClientCarousel() {
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-10">
         <div className="w-full">
           <Marquee pauseOnHover className="[--duration:20s]">
-            {reviews.map((review) => (
-              <ReviewCard key={review.link} {...review} />
+            {reviews.map((review, idx) => (
+              <ReviewCard key={idx} {...review} />
             ))}
           </Marquee>
         </div>
 
         <div className="w-full mt-10">
           <Marquee pauseOnHover reverse={true} className="[--duration:20s]">
-            {reviews.map((review) => (
-              <ReviewCard key={review.link} {...review} />
+            {reviews.map((review, idx) => (
+              <ReviewCard key={idx} {...review} />
             ))}
           </Marquee>
         </div>

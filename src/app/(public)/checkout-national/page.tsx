@@ -7,12 +7,21 @@ import { ClientCarousel } from './components/client-carousel';
 import { AnimationStickyNational } from './components/animation-sticky-national';
 import { CheckoutNationalHero } from './components/checkout-national-hero';
 import { PreviewWebMobile } from './components/preview-web-mobile';
+import { ExploreTheItems } from '../checkout-global/components/explore-the-items';
 
 const CheckoutNational = () => {
+  const INFOS = [
+    { title: 'Escassez', content: <></> },
+    { title: 'Order Bump', content: <></> },
+    { title: 'Cupom', content: <></> },
+    { title: 'Prova social', content: <></> },
+  ];
+
   return (
     <>
       <CheckoutNationalHero></CheckoutNationalHero>
       <PreviewWebMobile></PreviewWebMobile>
+      <ExploreTheItems info={INFOS}></ExploreTheItems>
 
       <AnimationStickyNational></AnimationStickyNational>
       <ClientCarousel></ClientCarousel>

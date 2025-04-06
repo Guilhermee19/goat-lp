@@ -24,9 +24,10 @@ const Home = () => {
       <CardScrollAnimation imageSrc="/a73face01a4d63fc1f894eb3808172ef.png">
         <Header></Header>
       </CardScrollAnimation>
+
       <MarqueeTools></MarqueeTools>
       <Functionalities></Functionalities>
-      <SlideRevolutionizing></SlideRevolutionizing>
+      <SlideRevolutionizing key={0}></SlideRevolutionizing>
       <NationalCheckout></NationalCheckout>
       <GlobalCheckout></GlobalCheckout>
       <ScrollVelocity></ScrollVelocity>

@@ -110,9 +110,9 @@ export function PaymentApis() {
           ></TextAnimationDegrade>
 
           <div className="min-w-max overflow-x-auto flex mb-6 ">
-            {TABS.map((tab) => (
+            {TABS.map((tab, idx) => (
               <div
-                key={tab.filter}
+                key={idx}
                 onClick={() => handleTabChange(tab.filter)}
                 className={`${activeTab === tab.filter ? 'border-main text-label' : 'border-[#393939] text-label'} border-b min-w-max py-2 px-6 text-center w-full cursor-pointer`}
               >

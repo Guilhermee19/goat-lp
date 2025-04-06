@@ -90,10 +90,10 @@ export const InfiniteMovingPages = ({
           pauseOnHover && 'hover:[animation-play-state:paused]',
         )}
       >
-        {pages.map((item) => (
+        {pages.map((item, idx) => (
           <li
             className="relative w-[280px] lg:w-[400px] max-w-full shrink-0"
-            key={item.title}
+            key={idx}
           >
             <blockquote>
               <div

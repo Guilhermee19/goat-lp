@@ -175,7 +175,7 @@ export function SlideRevolutionizing({
           <>
             <CardItem
               className="flex lg:hidden"
-              key={item.label}
+              key={index}
               item={item}
               index={index}
               activeItem={activeItem}
@@ -190,7 +190,7 @@ export function SlideRevolutionizing({
 
             <List
               className="hidden lg:flex"
-              key={item.label}
+              key={index}
               item={item}
               index={index}
               activeItem={activeItem}

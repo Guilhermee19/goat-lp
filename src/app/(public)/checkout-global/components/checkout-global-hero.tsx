@@ -6,33 +6,32 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
-export function CheckoutNationalHero() {
+export function CheckoutGlobalHero() {
   return (
     <>
       <div className="w-full flex flex-col justify-center items-center my-20">
         <div className="w-11/12 mx-auto flex flex-col justify-center items-center">
-          <div className="rounded-full border max-w-max border-[rgba(0,255,195,0.3)] bg-[#0A201D]">
-            <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#00FFC2] to-[#28CAE0] opacity-60 text-transparent bg-clip-text">
-              Checkot Nacional
+          <div className="rounded-full border max-w-max border-[rgba(16,157,227,0.3)] bg-[#0A1920]">
+            <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#D0F0FD] to-[rgb(16,157,227)] opacity-60 text-transparent bg-clip-text">
+              Checkot Global
             </p>
           </div>
 
           <TextAnimationDegrade
             title={[
-              'Venda sem limites no Brasil com um',
-              'checkout otimizado para conversão',
+              'Seu negócio pronto para atender ',
+              'clientes em qualquer país',
             ]}
             className="mt-8 hidden lg:flex"
           ></TextAnimationDegrade>
 
           <TextAnimationDegrade
             title={[
-              'Venda sem',
-              'limites no Brasil',
-              'com um',
-              'checkout',
-              'otimizado para',
-              'conversão',
+              'Seu negócio',
+              'pronto para',
+              'atender clientes',
+              'em qualquer',
+              'país',
             ]}
             className="mt-8 flex lg:hidden"
           ></TextAnimationDegrade>

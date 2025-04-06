@@ -35,7 +35,7 @@ export const Tabs = ({
       >
         {propTabs.map((tab, idx) => (
           <button
-            key={tab.value}
+            key={idx}
             onClick={() => setTabIndex(idx)} // Atualiza o tabIndex ao clicar na aba
             className={cn('relative px-4 py-1 rounded-full', tabClassName)}
             style={{
