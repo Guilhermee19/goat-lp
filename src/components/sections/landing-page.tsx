@@ -1,10 +1,11 @@
 'use client';
 
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
-import TextAnimationDegrade from '../../app/_components/title-animation';
+// import TextAnimationDegrade from '../../app/_components/title-animation';
 import Icon, { icons } from '@/shared/icon/icon';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { TextDegrade } from '../text-degrade';
 
 function GridInfo({
   icon,
@@ -45,10 +46,15 @@ export function LandingPage() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Landing Pages de alta conversão"
+          className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Landing Pages de', 'alta conversão']}
           className="mt-5"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <p className="text-base lg:text-lg text-white ">
           Páginas que vendem por você. Criadas para capturar, engajar e

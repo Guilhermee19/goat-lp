@@ -8,6 +8,7 @@ import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import TextAnimationDegrade from '../../app/_components/title-animation';
+import { TextDegrade } from '../text-degrade';
 
 const fadeInScaleContainer = {
   hidden: { opacity: 0 },
@@ -244,7 +245,12 @@ export function NationalCheckout() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Converta sem limites no Brasil"
+          className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Converta sem limites', 'no Brasil']}
           className="mt-10 hidden lg:flex"
         ></TextAnimationDegrade>
@@ -252,7 +258,7 @@ export function NationalCheckout() {
         <TextAnimationDegrade
           title={['Converta sem', 'limites no Brasil']}
           className="mt-10 flex lg:hidden"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

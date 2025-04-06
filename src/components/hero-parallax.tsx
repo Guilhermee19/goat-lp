@@ -10,10 +10,11 @@ import {
 } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from './magicui/text-animate';
 import { ShimmerButton } from './magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
+import { TextDegrade } from './text-degrade';
 
 export const HeroParallax = ({
   products,
@@ -105,7 +106,12 @@ export const Header = () => {
   return (
     <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center rounded-lg p-5 mt-20 relative py-12 lg:py-40 px-4 w-fullleft-0 top-0 z-50">
       <div className="lg:w-max">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Temas de alta conversão"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-4xl lg:text-5xl"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Temas de alta conversão']}
           className="mt-0 !items-start hidden lg:flex"
           classText="!text-5xl"
@@ -115,7 +121,7 @@ export const Header = () => {
           title={['Temas de alta', 'conversão']}
           className="mt-0 !items-start flex lg:hidden"
           classText="!text-4xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

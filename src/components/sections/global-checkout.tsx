@@ -3,7 +3,8 @@
 import { Meteors } from '@/components/magicui/meteors';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import dynamic from 'next/dynamic';
-import TextAnimationDegrade from '../../app/_components/title-animation';
+// import TextAnimationDegrade from '../../app/_components/title-animation';
+import { TextDegrade } from '../text-degrade';
 
 export function GlobalCheckout() {
   const globeConfig = {
@@ -406,14 +407,19 @@ export function GlobalCheckout() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Venda para qualquer lugar do mundo"
+          className="max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Venda para qualquer', 'lugar do mundo']}
           className="mt-5 hidden lg:flex"
         ></TextAnimationDegrade>
         <TextAnimationDegrade
           title={['Venda para', 'qualquer lugar do', 'mundo']}
           className="mt-5 flex lg:hidden"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

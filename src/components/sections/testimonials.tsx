@@ -1,7 +1,8 @@
 'use client';
 
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
-import TextAnimationDegrade from '../../app/_components/title-animation';
+import { TextDegrade } from '../text-degrade';
+// import TextAnimationDegrade from '../../app/_components/title-animation';
 
 export function Testimonials() {
   const TESTIMONIALS = [
@@ -53,10 +54,14 @@ export function Testimonials() {
             </p>
           </div>
 
-          <TextAnimationDegrade
+          <TextDegrade
+            text="O que os Goats tem a dizer?"
+            className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          ></TextDegrade>
+          {/* <TextAnimationDegrade
             title={['O que os Goats', 'tem a dizer?']}
             className="mt-5"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
         </div>
       </div>
 

@@ -1,11 +1,12 @@
 'use client';
 
 import { TextAnimate } from '@/components/magicui/text-animate';
-import TextAnimationDegrade from '../../app/_components/title-animation';
+// import TextAnimationDegrade from '../../app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { TextDegrade } from '../text-degrade';
 
 function CardGrid({
   title,
@@ -51,10 +52,15 @@ export function OnlineShop() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="E-commerce pronto para escalar"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['E-commerce pronto para escalar']}
           className="mt-5 hidden lg:flex"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
