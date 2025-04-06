@@ -89,7 +89,7 @@ export default function Footer() {
     },
     {
       label: 'Apps e integrações',
-      href: '/api',
+      href: '/apps-and-integrations',
     },
   ];
 
