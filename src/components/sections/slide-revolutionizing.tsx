@@ -4,7 +4,8 @@ import { HTMLAttributes, useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
-import TextAnimationDegrade from '../../app/_components/title-animation';
+// import TextAnimationDegrade from '../../app/_components/title-animation';
+import { TextDegrade } from '../text-degrade';
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: {
@@ -45,7 +46,12 @@ export function SlideRevolutionizing({
       label: 'Por que a Goatcom?',
       title: (
         <>
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Sonhe grande. Inove rápido. Chegue longe com a Goatcom"
+            className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={[
               'Sonhe grande. Inove rápido.',
               'Chegue longe com a Goatcom',
@@ -62,7 +68,7 @@ export function SlideRevolutionizing({
             ]}
             className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
         </>
       ),
       description:
@@ -76,7 +82,12 @@ export function SlideRevolutionizing({
       label: 'Inovação',
       title: (
         <>
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Inovação que transforma o E-commerce"
+            className="lg:max-w-[570px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Inovação que transforma', 'o E-commerce']}
             className="mt-8 items-start hidden lg:flex"
             classText="text-2xl md:text-4xl lg:text-6xl"
@@ -85,7 +96,7 @@ export function SlideRevolutionizing({
             title={['Inovação que', 'transforma', 'o E-commerce']}
             className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
         </>
       ),
       description:
@@ -99,7 +110,12 @@ export function SlideRevolutionizing({
       label: 'Simplicaide',
       title: (
         <>
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Simplicidade que impulsiona os seus resultados"
+            className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Simplicidade que impulsiona', 'os seus resultados']}
             className="mt-8 items-start hidden lg:flex"
             classText="text-2xl md:text-4xl lg:text-6xl"
@@ -108,7 +124,7 @@ export function SlideRevolutionizing({
             title={['Simplicidade que', 'impulsiona os seus', 'resultados']}
             className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
         </>
       ),
       description:
@@ -123,7 +139,12 @@ export function SlideRevolutionizing({
       label: 'Compromisso',
       title: (
         <>
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Compromisso direto com o seu sucesso"
+            className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Compromisso direto com', 'o seu sucesso']}
             className="mt-8 items-start hidden lg:flex"
             classText="text-2xl md:text-4xl lg:text-6xl"
@@ -132,7 +153,7 @@ export function SlideRevolutionizing({
             title={['Compromisso', 'direto com', 'o seu sucesso']}
             className="mt-2 items-start flex lg:hidden"
             classText="text-3xl md:text-4xl lg:text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
         </>
       ),
       description:
