@@ -7,6 +7,8 @@ import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 import TextAnimationDegrade from '../../app/_components/title-animation';
+import GoatAnimation from '@/app/_components/goat-animation';
+import { TextDegrade } from '../text-degrade';
 
 const Header = () => {
   const people = [
@@ -51,7 +53,7 @@ const Header = () => {
   return (
     <>
       <div className="bg-background shadow-lg rounded-lg p-5 mt-2 w-full">
-        <div className="z-10 lg:min-h-[600px] flex flex-col gap-4 items-center justify-center">
+        <div className="relative z-10 lg:min-h-[500px] flex flex-col gap-4 items-center justify-start">
           <div className="degradeBorder">
             <div
               className={cn(
@@ -77,7 +79,12 @@ const Header = () => {
             </div>
           </div>
 
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Venda mais. Venda melhor. Seja um GOAT."
+            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Venda mais. Venda melhor.', 'Seja um GOAT.']}
             className="mt-8 hidden lg:flex"
           ></TextAnimationDegrade>
@@ -85,7 +92,7 @@ const Header = () => {
           <TextAnimationDegrade
             title={['Venda mais.', 'Venda melhor.', 'Seja um GOAT.']}
             className="mt-8 flex lg:hidden"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="blurInUp"
@@ -96,7 +103,7 @@ const Header = () => {
             escalar.
           </TextAnimate>
 
-          <div className="mt-4 lg:mt-10 flex gap-4 lg:gap-14 items-center flex-col lg:flex-row">
+          <div className="mt-4 lg:mt-10 flex gap-4 lg:gap-8 items-center flex-col lg:flex-row">
             <ShimmerButton
               className="shimmerButton w-full lg:w-max"
               background="#FF5500"
@@ -107,21 +114,28 @@ const Header = () => {
               </span>
             </ShimmerButton>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-col lg:flex-row">
               <div className="flex flex-row items-center justify-center w-full">
                 <AnimatedTooltip items={people} />
               </div>
 
-              {/* <div className="w-max">
+              <div className="w-max lg:ml-4 flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-1">
                   <Icon name="star" className="size-4 text-yellow-400"></Icon>
                   <Icon name="star" className="size-4 text-yellow-400"></Icon>
                   <Icon name="star" className="size-4 text-yellow-400"></Icon>
                   <Icon name="star" className="size-4 text-yellow-400"></Icon>
+                  <Icon name="star" className="size-4 text-yellow-400"></Icon>
                 </div>
-                <span> São +2000 clientes </span>
-              </div> */}
+                <p className="text-label w-max font-sourceSans3 text-base">
+                  São +2000 clientes
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div className="lg:absolute lg:-bottom-10 lg:right-0">
+            <GoatAnimation className="size-52 lg:size-72"></GoatAnimation>
           </div>
         </div>
       </div>

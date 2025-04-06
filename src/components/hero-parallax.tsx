@@ -62,7 +62,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-12 lg:py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-max py-12 lg:py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       {/* Gradiente superior */}
       <div className="pointer-events-none absolute inset-y-0 top-0 w-full h-2/6 bg-gradient-to-b from-black to-transparent z-50"></div>
@@ -77,12 +77,12 @@ export const HeroParallax = ({
         }}
         className=""
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-10 lg:mb-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4 mb-4">
           {firstRow.map((product, idx) => (
             <ProductCard product={product} translate={translateX} key={idx} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-10 lg:mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-10 lg:mb-20 space-x-4 ">
           {secondRow.map((product, idx) => (
             <ProductCard
               product={product}
@@ -91,7 +91,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4">
           {thirdRow.map((product, idx) => (
             <ProductCard product={product} translate={translateX} key={idx} />
           ))}
@@ -171,7 +171,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-32 lg:h-96 w-[10rem] lg:w-[30rem] relative shrink-0"
+      className="group/product aspect-thumbnail w-[24rem] lg:w-[38rem] relative shrink-0"
     >
       <Link
         href={product.link}

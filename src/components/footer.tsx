@@ -19,12 +19,8 @@ export default function Footer() {
       href: '/privacy-policies',
     },
     {
-      label: 'Políticas',
-      href: '/policies',
-    },
-    {
-      label: 'Termo de uso',
-      href: '/terms-of-use',
+      label: 'Termo de Compliance',
+      href: '/compliance-agreement',
     },
   ];
 
@@ -42,12 +38,12 @@ export default function Footer() {
       href: '/contact',
     },
     {
-      label: 'Termos e Compliance',
-      href: '/contact',
+      label: 'Termo de Compliance',
+      href: '/compliance-agreement',
     },
     {
-      label: 'Página de Status',
-      href: '/contact',
+      label: 'Política de Privacidade',
+      href: '/privacy-policies',
     },
   ];
 
@@ -125,7 +121,7 @@ export default function Footer() {
             ></Image>
 
             <p className="text-[#949494] text-xs font-sourceSans3 font-light my-3">
-              Copyright © Goatcon.
+              Copyright © Goatcom.
             </p>
 
             <Image

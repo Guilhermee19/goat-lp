@@ -214,6 +214,9 @@ const config: Config = {
       transitionTimingFunction: {
         'minor-spring': 'cubic-bezier(0.18,0.89,0.82,1.04)',
       },
+      aspectRatio: {
+        thumbnail: '632/361',
+      },
     },
   },
 

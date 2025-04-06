@@ -6,9 +6,9 @@ import Icon from '@/shared/icon/icon';
 
 export function CardOurPlans() {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
-      <div className="bg-ourPlansCard bg-left bg-no-repeat bg-cover rounded-lg">
-        <div className="w-full flex flex-col justify-center items-end bg-gradient-to-r from-[rgba(10,10,10,0.4)] to-[rgba(38,38,38,0.4)] p-8">
+    <div className="w-11/12 max-w-7xl mx-auto lg:p-5 rounded-[43px] mt-20 overflow-hidden">
+      <div className="bg-ourPlansCard bg-left rounded-[43px] bg-no-repeat bg-cover">
+        <div className="w-full flex flex-col justify-center items-end bg-gradient-to-r from-[rgba(10,10,10,0.4)] to-[rgba(38,38,38,0.4)] py-9 px-8">
           <div className="w-full lg:w-1/2 flex flex-col gap-6">
             <div className="rounded-full border max-w-max border-[#5d824f] bg-[#0A201D]">
               <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#00FFC2] to-[#28CAE0] opacity-60 text-transparent bg-clip-text">
@@ -16,7 +16,7 @@ export function CardOurPlans() {
               </p>
             </div>
 
-            <p className="font-light font-hankenGrotesk text-3xl md:text-5xl text-white">
+            <p className="!font-light font-hankenGrotesk text-3xl md:text-5xl text-white">
               O segredo dos que mais vendem está aqui
             </p>
 
