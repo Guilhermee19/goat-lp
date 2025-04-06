@@ -1,8 +1,9 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
@@ -16,8 +17,12 @@ export function CheckoutNationalHero() {
               Checkot Nacional
             </p>
           </div>
-
-          <TextAnimationDegrade
+          ,
+          <TextDegrade
+            text="Venda sem limites no Brasil com um checkout otimizado para conversão"
+            className="lg:max-w-5xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          ></TextDegrade>
+          {/* <TextAnimationDegrade
             title={[
               'Venda sem limites no Brasil com um',
               'checkout otimizado para conversão',
@@ -35,8 +40,7 @@ export function CheckoutNationalHero() {
               'conversão',
             ]}
             className="mt-8 flex lg:hidden"
-          ></TextAnimationDegrade>
-
+          ></TextAnimationDegrade> */}
           <div className="w-full max-w-3xl">
             <TextAnimate
               animation="blurInUp"
@@ -47,7 +51,6 @@ export function CheckoutNationalHero() {
               transforma visitantes em clientes. Venda mais todos os dias!
             </TextAnimate>
           </div>
-
           <div className="mt-6 mx-auto flex justify-center items-center">
             <ShimmerButton
               className="w-max shadow-2xl min-w-max py-2"

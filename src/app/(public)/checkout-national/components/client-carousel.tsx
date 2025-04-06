@@ -1,7 +1,8 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { Marquee } from '@/components/magicui/marquee';
+import { TextDegrade } from '@/components/text-degrade';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -52,7 +53,12 @@ export function ClientCarousel() {
         </p>
       </div>
 
-      <TextAnimationDegrade
+      <TextDegrade
+        text="Mais de 2.000 empresas estão vendendo sem limites"
+        className="lg:max-w-4xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+      ></TextDegrade>
+
+      {/* <TextAnimationDegrade
         title={['Mais de 2.000 empresas estão', 'vendendo sem limites']}
         className="mt-5 items-center hidden lg:flex"
         classText="!text-4xl lg:!text-6xl"
@@ -62,7 +68,7 @@ export function ClientCarousel() {
         title={['Mais de 2.000', 'empresas estão', 'vendendo sem', 'limites']}
         className="mt-5 items-center flex lg:hidden"
         classText="!text-4xl lg:!text-6xl"
-      ></TextAnimationDegrade>
+      ></TextAnimationDegrade> */}
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-10">
         <div className="w-full">

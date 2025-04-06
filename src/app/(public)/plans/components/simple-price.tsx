@@ -2,6 +2,7 @@
 
 import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -69,7 +70,12 @@ export function SimplePrice() {
   return (
     <div className="w-11/12 max-w-7xl mx-auto flex lg:p-4 flex-col lg:flex-row justify-between items-center my-10 gap-4">
       <div className="w-full flex flex-col items-center gap-4 mt-20">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Preços simples e transparentes"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Preços simples e transparentes']}
           className="items-center hidden lg:flex"
           classText="!text-3xl md:!text-5xl !text-7xl"
@@ -78,7 +84,7 @@ export function SimplePrice() {
           title={['Preços simples e', 'transparentes']}
           className="items-center flex lg:hidden"
           classText="!text-xl md:!text-3xl !text-5xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

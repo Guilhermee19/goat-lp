@@ -2,6 +2,7 @@
 
 import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon, { icons } from '@/shared/icon/icon';
 
 export function WhyGoatcom() {
@@ -37,11 +38,16 @@ export function WhyGoatcom() {
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-6">
           <div className="w-full lg:w-max flex flex-col gap-4 items-start justify-start">
-            <TextAnimationDegrade
+            <TextDegrade
+              text="Por que a GOATCOM?"
+              className="lg:max-w-md from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            ></TextDegrade>
+
+            {/* <TextAnimationDegrade
               title={['Por que a', 'GOATCOM?']}
               className="mt-5 items-start"
               classText="!text-4xl lg:!text-6xl"
-            ></TextAnimationDegrade>
+            ></TextAnimationDegrade> */}
 
             <TextAnimate
               animation="slideUp"

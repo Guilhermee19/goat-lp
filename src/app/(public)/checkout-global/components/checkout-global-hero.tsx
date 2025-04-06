@@ -1,8 +1,9 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
@@ -17,7 +18,12 @@ export function CheckoutGlobalHero() {
             </p>
           </div>
 
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Seu negócio pronto para atender clientes em qualquer país"
+            className="lg:max-w-4xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={[
               'Seu negócio pronto para atender ',
               'clientes em qualquer país',
@@ -34,7 +40,7 @@ export function CheckoutGlobalHero() {
               'país',
             ]}
             className="mt-8 flex lg:hidden"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <div className="w-full max-w-3xl">
             <TextAnimate
