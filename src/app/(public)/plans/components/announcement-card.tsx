@@ -31,7 +31,7 @@ export function AnnouncementCard({
         )}
       >
         <div className="w-full">
-          <p className="lg:max-w-96 text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light">
+          <p className="lg:max-w-[600px] text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light">
             {title}
           </p>
 

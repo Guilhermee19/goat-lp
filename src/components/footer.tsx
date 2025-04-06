@@ -85,7 +85,7 @@ export function Footer() {
     },
     {
       label: 'Relatórios',
-      href: '/help',
+      href: '/reports',
     },
     {
       label: 'Apps e integrações',

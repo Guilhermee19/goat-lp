@@ -70,7 +70,7 @@ const Header = ({
       style={{
         translateY: translate,
       }}
-      className="div max-w-5xl mx-auto text-center"
+      className="div w-full mx-auto text-center"
     >
       {titleComponent}
     </motion.div>
@@ -93,7 +93,7 @@ const Card = ({
         rotateX: rotate,
         scale,
       }}
-      className="max-w-5xl -mt-12 mx-auto w-full p-2 md:p-6 rounded-[30px]"
+      className="w-full -mt-12 mx-auto p-2 md:p-6 rounded-[30px]"
     >
       <div className="size-full overflow-hidden rounded-2xl bg-primary md:rounded-2xl md:p-1 ">
         {children}
