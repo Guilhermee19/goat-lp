@@ -4,7 +4,7 @@ import GoatAnimation from '@/app/_components/goat-animation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export function Footer() {
+export default function Footer() {
   const LINKS = [
     {
       label: 'Legal',

@@ -1,11 +1,11 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { SimplePrice } from './components/simple-price';
-import { Footer } from '@/components';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { WhatDrivesUs } from '../about-us/components/what-drives-us';
 import { WhyGoatcom } from '../about-us/components/why-goatcom';
 import { AnnouncementCard } from './components/announcement-card';
+import { SimplePrice } from './components/simple-price';
+import Footer from '@/components/footer';
 
 const Plans = () => {
   return (

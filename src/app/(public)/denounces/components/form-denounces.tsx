@@ -2,15 +2,17 @@
 
 import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
-import { Form, Input, Textarea } from '@/components/ui';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import Button from '@/components/button';
 import {
   DenouncesFormDataType,
   denouncesSchema,
 } from '@/schemas/denounces-schema';
+import { Form } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
 export function FormDenounces() {
   const form = useForm<DenouncesFormDataType>({

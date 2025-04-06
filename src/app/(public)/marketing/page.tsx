@@ -1,11 +1,11 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
-import { MarketingHero } from './components/marketing-hero';
-import { Footer } from '@/components';
 import { AnimationStickyMarketing } from './components/animation-sticky-marketing';
 import { GridMarketing } from './components/grid-marketing';
+import { MarketingHero } from './components/marketing-hero';
+import Footer from '@/components/footer';
 
 const Marketing = () => {
   return (

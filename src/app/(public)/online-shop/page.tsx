@@ -1,12 +1,12 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { Footer } from '@/components';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
+import { AnimationStickyCard } from '../landing-page/components/animation-sticky-card';
 import { MapPoints } from '../landing-page/components/map-points';
 import { AnnouncementCard } from '../plans/components/announcement-card';
-import { AnimationStickyCard } from '../landing-page/components/animation-sticky-card';
 import { OnlineShopHero } from './components/online-shop-hero';
 import { PlatformFeatures } from './components/platform-features';
+import Footer from '@/components/footer';
 
 const OnlineShop = () => {
   return (

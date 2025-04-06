@@ -1,3 +1,5 @@
+'use client';
+
 import { Marquee } from '@/components/magicui/marquee';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';

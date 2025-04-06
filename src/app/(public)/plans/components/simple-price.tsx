@@ -1,6 +1,8 @@
+'use client';
+
 import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
-import { Button } from '@/components/ui';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export function SimplePrice() {

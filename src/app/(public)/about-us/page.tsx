@@ -1,11 +1,12 @@
 'use client';
 
-import { Footer } from '@/components';
-import { CardCreateAccount, StayInTouch } from '@/components/sections';
-import { VideoHeader } from './components/video-header';
-import { WhyGoatcom } from './components/why-goatcom';
-import { WhatDrivesUs } from './components/what-drives-us';
+import { CardCreateAccount } from '@/components/sections/card-create-account';
 import { CardCounters } from './components/card-counters';
+import { VideoHeader } from './components/video-header';
+import { WhatDrivesUs } from './components/what-drives-us';
+import { WhyGoatcom } from './components/why-goatcom';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
+import Footer from '@/components/footer';
 
 const AboutUs = () => {
   return (

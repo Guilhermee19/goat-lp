@@ -1,7 +1,7 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { Footer } from '@/components';
+import Footer from '@/components/footer';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
 
 const AppsAndIntegrations = () => {
   return (

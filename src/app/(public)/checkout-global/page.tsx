@@ -1,8 +1,8 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { Footer } from '@/components';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
+import Footer from '@/components/footer';
 
 const CheckoutGlobal = () => {
   return (

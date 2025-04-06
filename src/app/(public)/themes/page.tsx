@@ -1,11 +1,11 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { Footer } from '@/components';
-import { AnnouncementCard } from '../plans/components/announcement-card';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnimationStickyCard } from '../landing-page/components/animation-sticky-card';
-import { ThemesHero } from './components/themes-hero';
+import { AnnouncementCard } from '../plans/components/announcement-card';
 import { PersonalisedThemes } from './components/personalised-themes';
+import { ThemesHero } from './components/themes-hero';
+import Footer from '@/components/footer';
 
 const Themes = () => {
   return (

@@ -1,7 +1,7 @@
 'use client';
 
 import TextAnimationDegrade from '@/app/_components/title-animation';
-import { Footer } from '@/components';
+import Footer from '@/components/footer';
 
 const ComplianceAgreement = () => {
   return (

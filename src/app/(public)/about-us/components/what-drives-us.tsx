@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui';
+} from '@/components/ui/accordion';
 import Image from 'next/image';
 
 export function WhatDrivesUs({

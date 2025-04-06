@@ -4,7 +4,7 @@ import {
   PaginationContent,
   Pagination as PaginationUI,
 } from '@/components/ui/pagination';
-import { Button } from './ui';
+import { Button } from './ui/button';
 import { Table } from '@tanstack/react-table'; // Importando a tipagem correta
 
 interface PaginationProps<TData> {

@@ -1,12 +1,12 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { AnnouncementCard } from '../plans/components/announcement-card';
-import { Footer } from '@/components';
-import { AnimationStickyMarketing } from '../marketing/components/animation-sticky-marketing';
-import { ReportsHero } from './components/reports-hero';
 import { CardScrollAnimation } from '@/components/card-scroll-animation';
+import { ReportsHero } from './components/reports-hero';
 import { GridReports } from './components/grid-reports';
+import { AnimationStickyMarketing } from '../marketing/components/animation-sticky-marketing';
+import { AnnouncementCard } from '../plans/components/announcement-card';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
+import Footer from '@/components/footer';
 
 const Reports = () => {
   return (

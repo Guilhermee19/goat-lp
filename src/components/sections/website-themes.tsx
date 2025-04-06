@@ -1,6 +1,6 @@
 'use client';
 
-import { HeroParallax } from '@/components';
+import { HeroParallax } from '../hero-parallax';
 
 export function WebsiteThemes() {
   const PRODUCTS = [

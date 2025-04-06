@@ -27,19 +27,16 @@ export const Meteors = ({
   );
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const styles = [...new Array(number)].map(() => ({
-        '--angle': angle + 'deg',
-        top: -5,
-        left: `calc(-50% + ${Math.floor(Math.random() * window.innerWidth)}px)`,
-        animationDelay: Math.random() * (maxDelay - minDelay) + minDelay + 's',
-        animationDuration:
-          Math.floor(
-            Math.random() * (maxDuration - minDuration) + minDuration,
-          ) + 's',
-      }));
-      setMeteorStyles(styles);
-    }
+    const styles = [...new Array(number)].map(() => ({
+      '--angle': angle + 'deg',
+      top: -5,
+      left: `calc(-50% + ${Math.floor(Math.random() * window.innerWidth)}px)`,
+      animationDelay: Math.random() * (maxDelay - minDelay) + minDelay + 's',
+      animationDuration:
+        Math.floor(Math.random() * (maxDuration - minDuration) + minDuration) +
+        's',
+    }));
+    setMeteorStyles(styles);
   }, [number, minDelay, maxDelay, minDuration, maxDuration, angle]);
 
   return (

@@ -29,70 +29,64 @@ export function AuroraText({
 
   // Updated effect to compute all text styles from parent
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      if (containerRef.current) {
-        const computedStyle = window.getComputedStyle(containerRef.current);
+    if (containerRef.current) {
+      const computedStyle = window.getComputedStyle(containerRef.current);
 
-        // Extract text-related styles
-        const relevantStyles = {
-          fontSize: computedStyle.fontSize,
-          fontFamily: computedStyle.fontFamily,
-          fontWeight: computedStyle.fontWeight,
-          fontStyle: computedStyle.fontStyle,
-          letterSpacing: computedStyle.letterSpacing,
-          lineHeight: computedStyle.lineHeight,
-          textTransform: computedStyle.textTransform,
-          fontVariant: computedStyle.fontVariant,
-          fontStretch: computedStyle.fontStretch,
-          fontFeatureSettings: computedStyle.fontFeatureSettings,
-        };
+      // Extract text-related styles
+      const relevantStyles = {
+        fontSize: computedStyle.fontSize,
+        fontFamily: computedStyle.fontFamily,
+        fontWeight: computedStyle.fontWeight,
+        fontStyle: computedStyle.fontStyle,
+        letterSpacing: computedStyle.letterSpacing,
+        lineHeight: computedStyle.lineHeight,
+        textTransform: computedStyle.textTransform,
+        fontVariant: computedStyle.fontVariant,
+        fontStretch: computedStyle.fontStretch,
+        fontFeatureSettings: computedStyle.fontFeatureSettings,
+      };
 
-        requestAnimationFrame(() => {
-          setTextStyle(relevantStyles);
-        });
-      }
+      requestAnimationFrame(() => {
+        setTextStyle(relevantStyles);
+      });
     }
   }, [className]);
 
   // Updated effect to compute font size from both inline and class styles
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const updateFontSize = () => {
-        if (containerRef.current) {
-          const computedStyle = window.getComputedStyle(containerRef.current);
-          const computedFontSize = parseFloat(computedStyle.fontSize);
+    const updateFontSize = () => {
+      if (containerRef.current) {
+        const computedStyle = window.getComputedStyle(containerRef.current);
+        const computedFontSize = parseFloat(computedStyle.fontSize);
 
-          requestAnimationFrame(() => {
-            setFontSize(computedFontSize);
-          });
-        }
-      };
+        requestAnimationFrame(() => {
+          setFontSize(computedFontSize);
+        });
+      }
+    };
 
-      updateFontSize();
-      window.addEventListener('resize', updateFontSize);
-      return () => window.removeEventListener('resize', updateFontSize);
-    }
+    updateFontSize();
+    window.addEventListener('resize', updateFontSize);
+    return () => window.removeEventListener('resize', updateFontSize);
   }, [className]);
 
   // Update effect to set ready state after dimensions are computed
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const updateDimensions = () => {
-        if (textRef.current) {
-          const bbox = textRef.current.getBBox();
-          setDimensions({
-            width: bbox.width,
-            height: bbox.height,
-          });
-          setIsReady(true);
-        }
-      };
+    const updateDimensions = () => {
+      if (textRef.current) {
+        const bbox = textRef.current.getBBox();
+        setDimensions({
+          width: bbox.width,
+          height: bbox.height,
+        });
+        setIsReady(true);
+      }
+    };
 
-      updateDimensions();
-      window.addEventListener('resize', updateDimensions);
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
 
-      return () => window.removeEventListener('resize', updateDimensions);
-    }
+    return () => window.removeEventListener('resize', updateDimensions);
   }, [children, fontSize]);
 
   useEffect(() => {

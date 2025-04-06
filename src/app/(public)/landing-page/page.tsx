@@ -1,13 +1,13 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections';
-import { Footer } from '@/components';
-import { LandingPageHero } from './components/landing-page-hero';
-import { Diferenciais } from './components/differentials';
-import { ThemeCollection } from './components/theme-collection';
+import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
-import { MapPoints } from './components/map-points';
 import { AnimationStickyCard } from './components/animation-sticky-card';
+import { Diferenciais } from './components/differentials';
+import { LandingPageHero } from './components/landing-page-hero';
+import { MapPoints } from './components/map-points';
+import { ThemeCollection } from './components/theme-collection';
+import Footer from '@/components/footer';
 
 const LandingPage = () => {
   return (
