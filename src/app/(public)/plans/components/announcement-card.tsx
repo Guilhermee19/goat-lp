@@ -9,11 +9,13 @@ export function AnnouncementCard({
   title,
   description,
   classBorder,
+  classTitle,
   className,
 }: {
   title: string;
   description: string;
   classBorder?: string;
+  classTitle?: string;
   className: string;
 }) {
   return (
@@ -31,7 +33,12 @@ export function AnnouncementCard({
         )}
       >
         <div className="w-full">
-          <p className="lg:max-w-[600px] text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light">
+          <p
+            className={cn(
+              'lg:max-w-[600px] text-white text-2xl lg:text-3xl md:text-4xl font-hankenGrotesk font-light',
+              classTitle,
+            )}
+          >
             {title}
           </p>
 
