@@ -1,6 +1,7 @@
 'use clinet';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
+import { TextDegrade } from '@/components/text-degrade';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -44,7 +45,12 @@ export function PlatformFeatures() {
     <div className="w-full rounded-t-3xl mt-20 bg-gradient-to-b from-[#1D1D1D] to-[#000000]">
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-10 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
-          <TextAnimationDegrade
+          <TextDegrade
+            text="O que faz da GOATCOM a escolha ideal para seu e-commerce"
+            className="lg:max-w-5xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={[
               'O que faz da GOATCOM a escolha',
               'ideal para seu e-commerce',
@@ -60,7 +66,7 @@ export function PlatformFeatures() {
             ]}
             className="flex lg:hidden justify-start items-start"
             classText="!text-3xl md:!text-5xl lg:!text-7xl !m-0"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">
             {DIFFERENTIALS.map((el, idx) => (

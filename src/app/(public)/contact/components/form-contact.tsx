@@ -10,6 +10,7 @@ import { Form } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { TextDegrade } from '@/components/text-degrade';
 
 export function FormContact() {
   const form = useForm<ContactFormDataType>({
@@ -48,7 +49,11 @@ export function FormContact() {
   return (
     <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center items-center my-10 lg:my-20 lg:p-8">
       <div className="max-w-3xl w-full flex flex-col justify-center items-center mb-6">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Fale com um especialista"
+          className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center text-3xl lg:text-5xl"
+        ></TextDegrade>
+        {/* <TextAnimationDegrade
           title={['Fale com um especialista']}
           className="mt-5 items-start hidden lg:flex"
           classText="!text-4xl lg:!text-6xl"
@@ -58,7 +63,7 @@ export function FormContact() {
           title={['Fale com um', 'especialista']}
           className="mt-5 flex lg:hidden items-center"
           classText="!text-4xl lg:!text-6xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

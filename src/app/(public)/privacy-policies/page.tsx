@@ -1,14 +1,20 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import Footer from '@/components/footer';
+import { TextDegrade } from '@/components/text-degrade';
 
 const PrivacyPolicy = () => {
   return (
     <>
       <div className="w-11/12 max-w-7xl mx-auto flex lg:p-4 flex-col lg:flex-row justify-between items-center my-10 gap-4">
         <div className="w-full flex flex-col items-center gap-4 mt-20">
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Políticas de Privacidade"
+            className="  from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Políticas de Privacidade']}
             className="items-center hidden lg:flex"
             classText="!text-3xl md:!text-5xl !text-7xl"
@@ -17,7 +23,7 @@ const PrivacyPolicy = () => {
             title={['Políticas de', 'Privacidade']}
             className="items-start flex lg:hidden"
             classText="!text-xl md:!text-3xl !text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <div className="w-full max-w-3xl mx-auto flex flex-col gap-6 my-10 text-white text-base lg:text-xl font-sourceSans3 font-light">
             <p>1. INTRODUÇÃO</p>

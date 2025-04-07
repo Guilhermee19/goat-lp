@@ -1,6 +1,7 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+import { TextDegrade } from '@/components/text-degrade';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -89,7 +90,12 @@ export function PaymentApis() {
     <div className="w-full rounded-t-3xl mt-20 bg-gradient-to-b from-[#1D1D1D] to-[#000000]">
       <div className="w-11/12 max-w-7xl min-h-dvh mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-10 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
-          <TextAnimationDegrade
+          <TextDegrade
+            text="A GOATCOM se conecta ao que há de melhor no mercado para você vender sem limites."
+            className="lg:max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={[
               'A GOATCOM se conecta ao que há de melhor no ',
               'mercado para você vender sem limites.',
@@ -107,7 +113,7 @@ export function PaymentApis() {
             ]}
             className="flex lg:hidden justify-start items-start"
             classText="!text-2xl md:!text-4xl lg:!text-6xl !m-0"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <div className="min-w-max overflow-x-auto flex mb-6 ">
             {TABS.map((tab, idx) => (

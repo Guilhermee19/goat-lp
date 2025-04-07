@@ -74,7 +74,7 @@ export function AnnouncementCard({
             </div>
 
             <div className="w-full flex justify-center items-center gap-4">
-              <div className="flex flex-col justify-start items-start lg:items-center">
+              <div className="flex flex-col justify-start items-start">
                 <p className="text-3xl text-white font-light font-hankenGrotesk">
                   2.000+
                 </p>
@@ -83,7 +83,7 @@ export function AnnouncementCard({
 
               <div className="w-px h-6 bg-[#666666]"></div>
 
-              <div className="flex flex-col justify-start items-start lg:items-center">
+              <div className="flex flex-col justify-start items-start">
                 <p className="text-3xl text-white font-light font-hankenGrotesk">
                   15%+
                 </p>

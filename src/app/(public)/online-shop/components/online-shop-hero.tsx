@@ -1,10 +1,11 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import Icon from '@/shared/icon/icon';
 import { InfiniteMovingPages } from '../../landing-page/components/infinite-moving-pages';
+import { TextDegrade } from '@/components/text-degrade';
 
 export function OnlineShopHero() {
   const PRODUCTS = [
@@ -52,7 +53,12 @@ export function OnlineShopHero() {
             </p>
           </div>
 
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Venda sem limites com um e-commerce otimizado para faturamento máximo"
+            className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={[
               'Venda sem limites com um e-commerce',
               'otimizado para faturamento máximo',
@@ -71,7 +77,7 @@ export function OnlineShopHero() {
             ]}
             className="flex lg:hidden justify-start items-start"
             classText="!text-4xl lg:!text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="slideUp"

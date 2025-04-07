@@ -1,10 +1,11 @@
 'use client';
 
 import GoatAnimation from '@/app/_components/goat-animation';
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { AnimatedShinyText } from '@/components/magicui/animated-shiny-text';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 
@@ -38,7 +39,12 @@ export function GlobalSalesHero() {
             </div>
           </div>
 
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Venda para o mundo inteiro sem complicações"
+            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Venda para o mundo inteiro,', 'sem complicações']}
             className="mt-8 hidden lg:flex"
           ></TextAnimationDegrade>
@@ -46,7 +52,7 @@ export function GlobalSalesHero() {
           <TextAnimationDegrade
             title={['Venda para o', 'mundo inteiro,', 'sem', 'complicações']}
             className="mt-8 flex lg:hidden justify-start items-start mr-auto"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="blurInUp"

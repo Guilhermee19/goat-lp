@@ -1,8 +1,9 @@
 'use client';
 
 import SwiperCoverflow from '@/app/_components/swiper-react-effect-coverflow';
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Image from 'next/image';
 
 export function CarouselPresentation() {
@@ -12,7 +13,7 @@ export function CarouselPresentation() {
       value: 'nacional',
       content: (
         <UserTestimonials
-          name={['Roberta Ramalho']}
+          name={'Roberta Ramalho'}
           subtitle="Fundadora e-commerce vendas"
           description={[
             'Meu nome é Roberta Ramalho e trabalho com e-commerce, mais especificamente, com dropshipping',
@@ -28,7 +29,7 @@ export function CarouselPresentation() {
       value: 'global',
       content: (
         <UserTestimonials
-          name={['Roberta Ramalho']}
+          name={'Roberta Ramalho'}
           subtitle="Fundadora e-commerce vendas"
           description={[
             'Meu nome é Roberta Ramalho e trabalho com e-commerce, mais especificamente, com dropshipping',
@@ -44,7 +45,7 @@ export function CarouselPresentation() {
       value: 'landing-page',
       content: (
         <UserTestimonials
-          name={['Roberta Ramalho']}
+          name={'Roberta Ramalho'}
           subtitle="Fundadora e-commerce vendas"
           description={[
             'Meu nome é Roberta Ramalho e trabalho com e-commerce, mais especificamente, com dropshipping',
@@ -60,7 +61,7 @@ export function CarouselPresentation() {
       value: 'ecommerces',
       content: (
         <UserTestimonials
-          name={['Roberta Ramalho']}
+          name={'Roberta Ramalho'}
           subtitle="Fundadora e-commerce vendas"
           description={[
             'Meu nome é Roberta Ramalho e trabalho com e-commerce, mais especificamente, com dropshipping',
@@ -76,7 +77,12 @@ export function CarouselPresentation() {
   return (
     <>
       <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center items-center gap-2 rounded-lg p-5 overflow-hidden">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Histórias inspiradoras de pessoas e experiências"
+          className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Histórias inspiradoras de', 'pessoas e experiências']}
           className="mt-5 hidden lg:flex"
         ></TextAnimationDegrade>
@@ -84,7 +90,7 @@ export function CarouselPresentation() {
         <TextAnimationDegrade
           title={['Histórias', 'inspiradoras de', 'pessoas e', 'experiências']}
           className="mt-5 flex lg:hidden"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
@@ -109,7 +115,7 @@ const UserTestimonials = ({
   description,
   profile_user,
 }: {
-  name: string[];
+  name: string;
   subtitle: string;
   description: string[];
   profile_user: string;
@@ -117,11 +123,16 @@ const UserTestimonials = ({
   return (
     <div className="w-11/12 mx-auto lg:w-full bg-gradient-to-b from-[rgb(10,32,29)] to-[rgba(10,32,29,0.3)] rounded-[40px] p-6 lg:p-16 flex flex-col-reverse lg:flex-row items-center justify-between border border-solid border-[#393939]">
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
-        <TextAnimationDegrade
+        <TextDegrade
+          text={name}
+          className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={name}
           className="items-start"
           classText="text-lg md:text-2xl lg:text-4xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-white mt-2 lg:mt-0">
           {subtitle}

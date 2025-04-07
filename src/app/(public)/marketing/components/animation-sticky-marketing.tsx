@@ -1,6 +1,7 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
+import { TextDegrade } from '@/components/text-degrade';
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
@@ -33,7 +34,12 @@ export function AnimationStickyMarketing() {
     <div className="relative w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20">
       <div className="relative w-full flex flex-col lg:flex-row justify-between gap-4 lg:gap-6">
         <div className="w-full lg:w-8/12 h-max lg:sticky lg:top-4" id="sticky">
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Utilize todo o ecossistema de produtos da Goatcom!"
+            className="from-[#ffffff] from-30% via-[#FF7F00] via-70% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Utilize todo o ecossistema de', 'produtos da Goatcom!']}
             className="hidden lg:flex justify-start items-start mb-10"
             classText="!text-5xl"
@@ -47,7 +53,7 @@ export function AnimationStickyMarketing() {
             ]}
             className="flex lg:hidden justify-start items-start mb-10"
             classText="!text-3xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <Image
             src={'/user-cafeteria.png'}

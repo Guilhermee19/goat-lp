@@ -1,8 +1,9 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon from '@/shared/icon/icon';
 
 export function ReportsHero() {
@@ -15,7 +16,12 @@ export function ReportsHero() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Dados que geram decisões estratégicas"
+          className="lg:max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Dados que geram decisões estratégicas']}
           className="hidden lg:flex justify-start items-start"
           classText="!text-3xl md:!text-5xl lg:!text-7xl"
@@ -24,7 +30,7 @@ export function ReportsHero() {
           title={['Dados que', 'geram decisões', 'estratégicas']}
           className="flex lg:hidden justify-start items-start"
           classText="!text-4xl lg:!text-5xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

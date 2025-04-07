@@ -1,8 +1,9 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
@@ -38,7 +39,12 @@ export function ThemesHero() {
         </div>
 
         <div>
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Escolha o tema ideal para sua empresa"
+            className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={['Escolha o tema ideal para sua empresa']}
             className="hidden lg:flex justify-start items-start"
             classText="!text-3xl md:!text-5xl lg:!text-7xl leading-none"
@@ -47,7 +53,7 @@ export function ThemesHero() {
             title={['Escolha o tema', 'ideal para sua', 'empresa']}
             className="flex lg:hidden justify-start items-start"
             classText="!text-4xl lg:!text-5xl"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="slideUp"

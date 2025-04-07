@@ -1,6 +1,6 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
@@ -13,6 +13,7 @@ import { Form } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { TextDegrade } from '@/components/text-degrade';
 
 export function FormDenounces() {
   const form = useForm<DenouncesFormDataType>({
@@ -37,7 +38,12 @@ export function FormDenounces() {
   return (
     <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center items-center my-10 lg:my-20 lg:p-8">
       <div className="max-w-3xl w-full flex flex-col justify-center items-center mb-6">
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Denuncie pra gente!"
+          className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center text-3xl lg:text-5xl"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Denuncie pra gente!']}
           className="mt-5 items-start hidden lg:flex"
           classText="!text-4xl lg:!text-6xl"
@@ -47,7 +53,7 @@ export function FormDenounces() {
           title={['Denuncie pra', ' gente!']}
           className="mt-5 flex lg:hidden items-center"
           classText="!text-4xl lg:!text-6xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

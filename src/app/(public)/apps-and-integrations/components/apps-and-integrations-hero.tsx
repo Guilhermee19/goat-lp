@@ -1,8 +1,9 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
@@ -36,7 +37,12 @@ export function AppsAndIntegrationsHero() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Conecte seu negócio às melhores ferramentas do mercado"
+          className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={['Conecte seu negócio às melhores', 'ferramentas do mercado']}
           className="hidden lg:flex justify-start items-start"
           classText="!text-3xl md:!text-5xl lg:!text-7xl"
@@ -45,7 +51,7 @@ export function AppsAndIntegrationsHero() {
           title={['Ferramentas', 'inteligentes para', 'vender mais']}
           className="flex lg:hidden justify-start items-start"
           classText="!text-4xl lg:!text-5xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

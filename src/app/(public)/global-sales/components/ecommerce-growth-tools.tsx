@@ -1,6 +1,7 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
+import { TextDegrade } from '@/components/text-degrade';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -44,7 +45,12 @@ export function EcommerceGrowthTools() {
     <div className="w-full rounded-t-3xl mt-20 bg-[#1D1D1D]">
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-10 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
-          <TextAnimationDegrade
+          <TextDegrade
+            text="Venda e receba pagamentos de qualquer moeda diretamente na sua conta brasileira."
+            className="max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          ></TextDegrade>
+
+          {/* <TextAnimationDegrade
             title={[
               'Venda e receba pagamentos de qualquer',
               'moeda diretamente na sua conta brasileira.',
@@ -60,9 +66,9 @@ export function EcommerceGrowthTools() {
             ]}
             className="flex lg:hidden justify-start items-start"
             classText="!text-2xl md:!text-4xl lg:!text-6xl !m-0"
-          ></TextAnimationDegrade>
+          ></TextAnimationDegrade> */}
 
-          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">
+          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6 lg:mt-10">
             {DIFFERENTIALS.map((el, idx) => (
               <div key={idx} className={(cn('w-full'), el.className)}>
                 <div className={(cn('w-full'), el.classHeader)}>
