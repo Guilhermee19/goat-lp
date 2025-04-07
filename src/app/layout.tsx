@@ -46,7 +46,7 @@ export default async function LocaleLayout({ children }: Props) {
         <title>Goatcom</title>
       </head>
       <body
-        className={`${geistSans.className} ${geistMono.className} ${sourceSans3.className} ${hankenGrotesk.className} antialiased`}
+        className={`${geistSans.className} ${geistMono.className} ${sourceSans3.className} ${hankenGrotesk.className} antialiased transform-gpu`}
       >
         <QueryProvider>
           <NextIntlClientProvider>

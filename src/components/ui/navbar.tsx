@@ -32,7 +32,7 @@ import { cn } from '@/lib/utils';
 interface MenuItem {
   title: string;
   url: string;
-  description?: string;
+  description?: React.ReactNode;
   icon?: React.ReactNode;
   items?: MenuItem[];
 }
@@ -102,6 +102,20 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+        },
+        {
+          title: '',
+          description: (
+            <Image
+              width={476}
+              height={292}
+              alt="shop"
+              src={'/teste-gratis.png'}
+              className="max-w-lg size-full object-contain hidden lg:flex"
+            ></Image>
+          ),
+          url: '',
+          icon: '',
         },
         {
           title: 'Landing Pages',
@@ -226,12 +240,12 @@ const Navbar = ({
   return (
     <>
       <div className="w-full flex justify-between items-centerk">
-        <div className="w-full p-4 text-xs lg:text-sm font-normal font-sourceSans3 bg-gradient-to-r from-[#6a6a6a] to-[#181818] flex justify-center items-center text-white gap-2">
+        <div className="w-full p-4 text-base font-normal font-sourceSans3 bg-gradient-to-r from-[#6a6a6a] to-[#181818] flex justify-center items-center text-white gap-2">
           Quem joga para ganhar precisa das melhores ferramentas. Chegou sua vez
           de liderar.
           <Icon name="arrow_right" className="size-4 flex lg:hidden"></Icon>
         </div>
-        <div className="min-w-96 hidden lg:flex w-max p-3 text-sm font-semibold font-hankenGrotesk bg-gradient-to-r from-[#2e2e2e] to-[#525252] border-l border-solid border-[#737373] justify-center items-center gap-2 text-white">
+        <div className="min-w-96 hidden lg:flex w-max p-3 text-base font-semibold font-hankenGrotesk bg-gradient-to-r from-[#2e2e2e] to-[#525252] border-l border-solid border-[#737373] justify-center items-center gap-2 text-white">
           Explorar preços
           <Icon name="arrow_right" className="size-3"></Icon>
         </div>
@@ -243,7 +257,13 @@ const Navbar = ({
           <nav className="hidden max-w-6xl mx-auto justify-between lg:flex">
             <div className="flex items-center gap-6">
               <a href={logo.url} className=" flex items-center gap-2">
-                <Image width={100} height={50} src={logo.src} alt={logo.alt} />
+                <Image
+                  width={108}
+                  height={48}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="size-full"
+                />
               </a>
               <div className="flex items-center">
                 <NavigationMenu>
@@ -352,7 +372,7 @@ const renderMenuItem = (item: MenuItem) => {
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent
-          className={cn('!w-max !grid !grid-cols-2 md:!w-max-content', {
+          className={cn('max-w-7xl mx-auto w-full !grid !grid-cols-2', {
             '!grid-cols-3': item.items.length > 4,
           })}
         >
@@ -411,18 +431,29 @@ const renderMobileMenuItem = (item: MenuItem) => {
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
     <a
-      className="max-w-[350px] flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-[rgba(255,255,255,0.3)] hover:text-accent-foreground"
+      className={cn(
+        'max-w-[350px] flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-[rgba(255,255,255,0.3)] hover:text-accent-foreground',
+        { 'row-span-2': !item.title && !item.icon },
+      )}
       href={item.url}
     >
-      <div className="text-white">{item.icon}</div>
-      <div>
-        <div className="text-sm font-semibold text-white">{item.title}</div>
-        {item.description && (
-          <p className="text-sm leading-snug text-muted-foreground text-white">
-            {item.description}
-          </p>
-        )}
-      </div>
+      {item.title && item.icon && (
+        <>
+          <div className="text-white">{item.icon}</div>
+          <div>
+            <div className="text-sm font-semibold text-white">{item.title}</div>
+            {item.description && (
+              <p className="text-sm leading-snug text-muted-foreground text-white">
+                {item.description}
+              </p>
+            )}
+          </div>
+        </>
+      )}
+
+      {!item.title && !item.icon && item.description && (
+        <> {item.description} </>
+      )}
     </a>
   );
 };
