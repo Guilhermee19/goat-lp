@@ -86,7 +86,6 @@ const NacionalContent = () => {
             className="w-full lg:w-max shadow-2xl min-w-max py-2"
             background="#FF5500"
           >
-            white
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Criar sua conta
               <Icon name="arrow_right" className="size-4"></Icon>
