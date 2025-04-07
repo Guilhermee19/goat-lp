@@ -52,8 +52,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-background shadow-lg rounded-lg p-5 mt-2 w-full">
-        <div className="relative z-10 lg:min-h-[500px] flex flex-col gap-4 items-center justify-start">
+      <div className="bg-background shadow-lg rounded-lg p-5 my-20 w-full">
+        <div className="relative z-10 flex flex-col gap-4 items-center justify-start">
           <div className="degradeBorder">
             <div
               className={cn(
@@ -134,7 +134,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="lg:absolute lg:-bottom-10 lg:right-0">
+          <div className="lg:absolute lg:-bottom-40 lg:-right-8">
             <GoatAnimation className="size-52 lg:size-72"></GoatAnimation>
           </div>
         </div>

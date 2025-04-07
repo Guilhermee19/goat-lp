@@ -78,28 +78,60 @@ const Navbar = ({
           description:
             'Venda sem limites no Brasil com um checkout otimizado para conversão',
           url: '/checkout-national',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="shopping cart"
+              src={'/shopping-cart.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Checkout Global',
           description:
             'Seu negócio pronto para atender clientes em qualquer país',
           url: '/checkout-global',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="global"
+              src={'/global.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Landing Pages',
           description:
             'Páginas otimizadas para transformar visitantes em clientes',
           url: '/landing-page',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="Monochrome"
+              src={'/Monochrome.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Loja Virtual',
           description:
             'Venda sem limites com um e-commerce otimizado para faturamento máximo',
           url: '/online-shop',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="shop"
+              src={'/shop.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
       ],
     },
@@ -112,34 +144,74 @@ const Navbar = ({
           description:
             'Venda qualquer coisa online com nossos temas personalizáveis.',
           url: '/themes',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="Grid tablet"
+              src={'/Grid-tablet.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Venda Global',
           description: 'Venda globalmente sem complicação com a GOATCOM.',
           url: '/global-sales',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="global"
+              src={'/global.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Marketing',
           description:
             'Mais tráfego, mais conversão, mais vendas. Marketing inteligente para resultados reais.',
           url: '/marketing',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="Marketing"
+              src={'/Marketing.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Relatórios',
           description:
             'Venda mais e melhor com relatórios que entregam o que realmente importa.',
           url: '/reports',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="Chat"
+              src={'/Chat-icon.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
         {
           title: 'Apps e Integrações',
           description:
             'A GOATCOM se conecta ao que há de melhor no mercado para você vender sem limites.',
           url: '/apps-and-integrations',
-          icon: <Icon name="cart_shopping" className="size-6"></Icon>,
+          icon: (
+            <Image
+              width={28}
+              height={28}
+              alt="scan barcode"
+              src={'/scan-barcode.png'}
+              className="min-w-7 size-7 object-cover"
+            ></Image>
+          ),
         },
       ],
     },
@@ -215,7 +287,7 @@ const Navbar = ({
                     size="icon"
                     className="hover:bg-transparent border-transparent"
                   >
-                    <Menu className="!size-6 text-white bg-transparent" />
+                    <Menu className="!min-size-8 text-white bg-transparent" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent className="overflow-y-auto flex flex-col items-center justify-center">

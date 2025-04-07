@@ -87,7 +87,7 @@ const NavigationMenuViewport = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      'w-dvw lg:w-max border-b lg:border-none border-solid border-gray lg:border-transparent fixed lg:hidden left-0 top-[135px] lg:top-0 flex justify-center',
+      'w-full border-bborder-solid data-[state=open]:bg-black lg:pb-8 border-gray lg:border-transparent fixed left-0 top-[135px] flex justify-center',
     )}
   >
     <NavigationMenuPrimitive.Viewport
