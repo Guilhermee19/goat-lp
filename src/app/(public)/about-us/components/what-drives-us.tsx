@@ -54,7 +54,12 @@ export function WhatDrivesUs({
         )}
 
         <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-8 mt-10 lg:mt-20">
-          <Accordion type="single" collapsible className="w-full max-w-lg">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full max-w-lg"
+            defaultValue="item-0"
+          >
             {EXPAND.map((item, index) => (
               <AccordionItem
                 key={index}

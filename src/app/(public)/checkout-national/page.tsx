@@ -9,12 +9,61 @@ import { CheckoutNationalHero } from './components/checkout-national-hero';
 import { PreviewWebMobile } from './components/preview-web-mobile';
 import { ExploreTheItems } from '../checkout-global/components/explore-the-items';
 
+const EscassesCard = () => {
+  return (
+    <div className="bg-[#1d1d1d] p-4 rounded-2xl">
+      <p className="font-hankenGrotesk font-light text-4xl text-white">
+        Escassez
+      </p>
+
+      <div className="bg-[#393939] p-2 rounded-xl mt-4 flex items-end gap-2">
+        <div>
+          <p className="text-white font-sourceSans3 font-semibold text-lg">
+            Produto com alta produra!
+          </p>
+          <p className="text-white font-sourceSans3 font-light text-base">
+            Você deve finalizar seu pedido em:
+          </p>
+        </div>
+        <div className="flex items-center gap-1">
+          <p className="bg-white px-2 text-sm rounded-3xl text-[#393939]">00</p>
+          <p>:</p>
+          <p className="bg-white px-2 text-sm rounded-3xl text-[#393939]">19</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const OrderBumpCard = () => {
+  return (
+    <div className="bg-[#1d1d1d] p-4 rounded-2xl">
+      <p className="font-hankenGrotesk font-light text-4xl text-white">
+        Order Bump
+      </p>
+
+      <div className="bg-[#393939] p-2 border-2 border-dotted border-[#FFFFFF33] rounded-xl mt-4 flex items-end gap-2">
+        <p>Olha só isso!</p>
+      </div>
+    </div>
+  );
+};
+
 const CheckoutNational = () => {
   const INFOS = [
-    { title: 'Escassez', content: <></> },
-    { title: 'Order Bump', content: <></> },
-    { title: 'Cupom', content: <></> },
-    { title: 'Prova social', content: <></> },
+    {
+      title: 'Escassez',
+      content: <EscassesCard></EscassesCard>,
+    },
+    {
+      title: 'Order Bump',
+      content: <OrderBumpCard></OrderBumpCard>,
+    },
+    { title: 'Cupom', content: <div className="p-5 rounded-2xl"> TESTE</div> },
+    {
+      title: 'Prova social',
+      content: <div className="p-5 rounded-2xl"> TESTE</div>,
+    },
   ];
 
   return (

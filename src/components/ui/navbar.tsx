@@ -348,7 +348,7 @@ const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title} className="text-muted-foreground">
-        <NavigationMenuTrigger className="text-label hover:!bg-transparent hover:!text-white">
+        <NavigationMenuTrigger className="text-label hover:!bg-transparent focus:!bg-transparent hover:!text-white">
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent
