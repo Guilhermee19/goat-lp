@@ -1,6 +1,6 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import { TextDegrade } from '@/components/text-degrade';
 import Icon, { icons } from '@/shared/icon/icon';

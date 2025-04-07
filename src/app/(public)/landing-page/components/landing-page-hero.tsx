@@ -1,8 +1,9 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import { TextDegrade } from '@/components/text-degrade';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
@@ -16,7 +17,12 @@ export function LandingPageHero() {
           </p>
         </div>
 
-        <TextAnimationDegrade
+        <TextDegrade
+          text="Crie páginas em tempo recorde e aumente suas conversões com a GOAT."
+          className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+        ></TextDegrade>
+
+        {/* <TextAnimationDegrade
           title={[
             'Crie páginas em tempo recorde e',
             'aumente suas conversões com a GOAT.',
@@ -34,7 +40,7 @@ export function LandingPageHero() {
           ]}
           className="flex lg:hidden justify-start items-start"
           classText="!text-4xl lg:!text-5xl"
-        ></TextAnimationDegrade>
+        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

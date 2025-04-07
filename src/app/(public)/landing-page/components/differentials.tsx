@@ -1,6 +1,7 @@
 'use client';
 
-import TextAnimationDegrade from '@/app/_components/title-animation';
+import { TextDegrade } from '@/components/text-degrade';
+// import TextAnimationDegrade from '@/app/_components/title-animation';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -28,7 +29,7 @@ export function Diferenciais() {
       url: '/build_screen.png',
       url_mobile: '/build-screen-mobile.png',
       classHeader:
-        'flex flex-col lg:flex-rows justify-between items-center lg:gap-8',
+        'flex flex-col lg:flex-row justify-between items-center lg:gap-8',
       className: 'lg:col-span-2',
     },
     {
@@ -53,7 +54,7 @@ export function Diferenciais() {
       url: '/dispositivos-mobile.png',
       url_mobile: '/dispositivos-mobile-responsive.png',
       classHeader:
-        'flex flex-col lg:flex-rows justify-between items-center lg:gap-8',
+        'flex flex-col lg:flex-row justify-between items-center lg:gap-8',
       className: 'lg:col-span-2',
     },
   ];
@@ -62,18 +63,21 @@ export function Diferenciais() {
     <div className="w-full rounded-t-3xl mt-20 bg-gradient-to-b from-[#1D1D1D] to-[#000000]">
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-10 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
-          <TextAnimationDegrade
-            title={['O que torna nossas ', 'Landing Pages diferentes']}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={['O que torna nossas ', 'Landing Pages', 'diferentes']}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl !m-0"
-          ></TextAnimationDegrade>
+          <div className="w-full flex justify-between items-center">
+            <TextDegrade
+              text="O que torna nossas Landing Pages diferentes"
+              className="lg:max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-90% text-start"
+            ></TextDegrade>
 
-          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">
+            <Image
+              src={'/arrow-down.png'}
+              width={70}
+              height={70}
+              alt="Arrow down"
+            ></Image>
+          </div>
+
+          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6 lg:mt-12">
             {DIFFERENTIALS.map((el, idx) => (
               <div key={idx} className={(cn('w-full'), el.className)}>
                 <div className={(cn('w-full'), el.classHeader)}>
