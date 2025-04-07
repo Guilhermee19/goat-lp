@@ -9,30 +9,27 @@ import { PreviewWebMobile } from '../checkout-national/components/preview-web-mo
 import { AnimationStickyGlobal } from './components/animation-sticky-global';
 import { GlobalCheckout } from '@/components/sections/global-checkout';
 import { ExploreTheItems } from './components/explore-the-items';
+import Image from 'next/image';
 
-const EscassesCard = () => {
+const MultiplosIdiomasCard = () => {
   return (
-    <div className="relative bg-[#1d1d1d] p-4 rounded-2xl z-50">
-      <p className="font-hankenGrotesk font-light text-4xl text-white">
-        Escassez
-      </p>
+    <Image
+      src={'/MultiplosIdiomasCard.png'}
+      width={440}
+      height={197}
+      alt="OrderBumpCard"
+    ></Image>
+  );
+};
 
-      <div className="bg-[#393939] p-2 rounded-xl mt-4 flex items-end gap-2">
-        <div>
-          <p className="text-white font-sourceSans3 font-semibold text-lg">
-            Produto com alta produra!
-          </p>
-          <p className="text-white font-sourceSans3 font-light text-base">
-            Você deve finalizar seu pedido em:
-          </p>
-        </div>
-        <div className="flex items-center gap-1">
-          <p className="bg-white px-2 text-sm rounded-3xl text-[#393939]">00</p>
-          <p>:</p>
-          <p className="bg-white px-2 text-sm rounded-3xl text-[#393939]">19</p>
-        </div>
-      </div>
-    </div>
+const MultiplosMoedasCard = () => {
+  return (
+    <Image
+      src={'/MultiplosMoedasCard.png'}
+      width={440}
+      height={197}
+      alt="OrderBumpCard"
+    ></Image>
   );
 };
 
@@ -41,12 +38,12 @@ const CheckoutGlobal = () => {
     {
       title: 'Múltiplos idiomas',
       value: '0',
-      content: <EscassesCard></EscassesCard>,
+      content: <MultiplosIdiomasCard></MultiplosIdiomasCard>,
     },
     {
       title: 'Múltiplas moedas',
       value: '1',
-      content: <EscassesCard></EscassesCard>,
+      content: <MultiplosMoedasCard></MultiplosMoedasCard>,
     },
   ];
 
