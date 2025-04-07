@@ -66,7 +66,7 @@ export function Diferenciais() {
           <div className="w-full flex justify-between items-center">
             <TextDegrade
               text="O que torna nossas Landing Pages diferentes"
-              className="lg:max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-90% text-start"
+              className="lg:max-w-xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-90% text-start text-3xl lg:text-5xl"
             ></TextDegrade>
 
             <Image
@@ -81,10 +81,10 @@ export function Diferenciais() {
             {DIFFERENTIALS.map((el, idx) => (
               <div key={idx} className={(cn('w-full'), el.className)}>
                 <div className={(cn('w-full'), el.classHeader)}>
-                  <p className="max-w-xl text-white font-hankenGrotesk text-3xl lg:text-5xl font-light">
+                  <p className="max-w-xl text-white font-hankenGrotesk text-2xl lg:text-5xl font-light">
                     {el.title}
                   </p>
-                  <p className="text-label font-sourceSans3 text-base lg:text-xl font-light my-6">
+                  <p className="min-h-14 lg:max-w-xl text-label font-sourceSans3 text-base lg:text-xl font-light my-6">
                     {el.subtitle}
                   </p>
                 </div>

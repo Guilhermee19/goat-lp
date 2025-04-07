@@ -41,7 +41,7 @@ export function ThemesHero() {
         <div>
           <TextDegrade
             text="Escolha o tema ideal para sua empresa"
-            className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
           ></TextDegrade>
 
           {/* <TextAnimationDegrade
@@ -58,7 +58,7 @@ export function ThemesHero() {
           <TextAnimate
             animation="slideUp"
             by="word"
-            className=" text-white text-left text-lg font-sourceSans3 font-normal"
+            className="max-w-4xl text-white text-left text-lg font-sourceSans3 font-normal"
           >
             Procure um design com as características de que você mais precisa e
             personalize-o para ficar com a cara da sua empresa.
@@ -79,12 +79,12 @@ export function ThemesHero() {
           {GRID.map((el, idx) => (
             <div
               key={idx}
-              className="w-full h-max bg-[#1d1d1d] border border-solid border-[#393939] p-4 pb-0 rounded-xl"
+              className="w-full h-max bg-[#1d1d1d] border border-solid border-[#393939] p-6 pb-0 rounded-2xl"
             >
-              <p className="text-white text-2xl lg:text-3xl font-hankenGrotesk">
+              <p className="text-white text-xl lg:text-2xl font-hankenGrotesk font-light">
                 {el.title}
               </p>
-              <p className="text-label text-base lg:text-xl font-sourceSans3">
+              <p className="text-label text-base lg:text-lg font-sourceSans3 !leading-[1.1] mt-4">
                 {el.description}
               </p>
 

@@ -56,10 +56,19 @@ export function PersonalisedThemes() {
     <div className="w-full rounded-t-3xl mt-20 bg-[#1D1D1D]">
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg px-2 py-5 pb-10 lg:px-5 lg:py-10 lg:pb-20 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
-          <TextDegrade
-            text="Venda qualquer coisa online com nossos temas personalizáveis"
-            className="lg:max-w-[1000px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
-          ></TextDegrade>
+          <div className="w-full flex justify-between items-center">
+            <TextDegrade
+              text="Venda qualquer coisa online com nossos temas personalizáveis"
+              className="lg:max-w-[800px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+            ></TextDegrade>
+
+            <Image
+              src={'/arrow-down.png'}
+              width={70}
+              height={70}
+              alt="Arrow down"
+            ></Image>
+          </div>
 
           {/* <TextAnimationDegrade
             title={[
@@ -78,7 +87,7 @@ export function PersonalisedThemes() {
             className="flex lg:hidden justify-start items-start"
             classText="!text-2xl md:!text-4xl !m-0"
           ></TextAnimationDegrade> */}
-          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">
+          <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-16">
             {PRODUCTS.map((el, idx) => (
               <div key={idx} className="w-full">
                 <div className="w-full">
