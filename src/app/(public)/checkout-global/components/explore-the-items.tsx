@@ -23,7 +23,7 @@ export function ExploreTheItems({
         <div className="w-full">
           {title}
 
-          <div className="[perspective:1000px] relative b hidden lg:flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-14">
+          <div className="[perspective:1000px] relative b flex lg:hidden flex-col max-w-6xl mx-auto w-full items-start justify-start my-14">
             <Tabs
               tabs={info}
               tabIndex={tabIndex}
@@ -31,6 +31,10 @@ export function ExploreTheItems({
               tabClassName="text-white"
               containerClassName="!w-max !mx-auto !py-2 !px-3 !justify-center !border !border-solid !border-gray !rounded-full"
             />
+          </div>
+
+          <div className="flex lg:hidden justify-center items-center">
+            {info[tabIndex].content}
           </div>
 
           {/* {info.map((el, idx) => (

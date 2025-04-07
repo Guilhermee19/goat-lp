@@ -9,7 +9,7 @@ import Image from 'next/image';
 export function CarouselPresentation() {
   const list_testimonials = [
     {
-      title: 'Chechout Nacional',
+      title: 'Checkout Nacional',
       value: 'nacional',
       content: (
         <UserTestimonials
@@ -25,7 +25,7 @@ export function CarouselPresentation() {
       ),
     },
     {
-      title: 'Chechout Global',
+      title: 'Checkout Global',
       value: 'global',
       content: (
         <UserTestimonials

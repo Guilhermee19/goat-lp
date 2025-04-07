@@ -12,12 +12,12 @@ import { TextDegrade } from '../text-degrade';
 export function Functionalities() {
   const tabs = [
     {
-      title: 'Chechout Nacional',
+      title: 'Checkout Nacional',
       value: 'nacional',
       content: <NacionalContent />,
     },
     {
-      title: 'Chechout Global',
+      title: 'Checkout Global',
       value: 'global',
       content: <GlobalContent />,
     },

@@ -19,7 +19,7 @@ export default function Footer() {
       href: '/privacy-policies',
     },
     {
-      label: 'Termo de Compliance',
+      label: 'Termo de uso',
       href: '/compliance-agreement',
     },
   ];
@@ -30,7 +30,7 @@ export default function Footer() {
       href: '/about-us',
     },
     {
-      label: 'Planos e Preços',
+      label: 'Preços',
       href: '/plans',
     },
     {
@@ -98,14 +98,14 @@ export default function Footer() {
       label: 'Depoimentos',
       href: '/testimonials',
     },
-    {
-      label: 'Parceiros',
-      href: '/support',
-    },
-    {
-      label: 'Recompensas',
-      href: '/contact',
-    },
+    // {
+    //   label: 'Parceiros',
+    //   href: '/support',
+    // },
+    // {
+    //   label: 'Recompensas',
+    //   href: '/contact',
+    // },
   ];
 
   return (
@@ -206,7 +206,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="w-max font-sourceSans3 text-base text-[#737373]">
+        <p className="w-max font-sourceSans3 text-sm text-[#737373]">
           © 2025 Goatcom. All rights reserved
         </p>
 

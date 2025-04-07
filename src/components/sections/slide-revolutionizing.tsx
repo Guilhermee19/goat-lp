@@ -107,7 +107,7 @@ export function SlideRevolutionizing({
     },
     {
       number: '03',
-      label: 'Simplicaide',
+      label: 'Simplicidade',
       title: (
         <>
           <TextDegrade
