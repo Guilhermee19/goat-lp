@@ -22,6 +22,8 @@ const LandingPage = () => {
         description="Então, não importa se você está fazendo uma grande entrega ou
             lançando em um novo país, você sabe que sua loja é segura, confiável
             e está funcionando rápido."
+        url="/points-map.png"
+        url_mobile="/points-map-mobile.png"
       ></MapPoints>
       <AnnouncementCard
         title="Utilize landing pages para potencializar suas vendas"

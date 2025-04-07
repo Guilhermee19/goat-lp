@@ -64,7 +64,7 @@ export function WhyGoatcom() {
             {GRID.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-start lg:aspect-square justify-start gap-2 p-4 rounded-lg bg-[#1d1d1d] shadow-sm"
+                className="flex flex-col items-start lg:aspect-grid justify-start gap-2 p-4 rounded-lg bg-[#1d1d1d] shadow-sm"
               >
                 <div className="size-10 bg-[#0D2B27] rounded-md p-2 mb-4">
                   <Icon name={item.icon} className="text-4xl text-white" />

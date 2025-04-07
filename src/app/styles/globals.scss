@@ -90,3 +90,7 @@ body {
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.gradient-border {
+  background-image: linear-gradient(to right, #f70dc866, #ff550066);
+}

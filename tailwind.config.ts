@@ -216,6 +216,7 @@ const config: Config = {
       },
       aspectRatio: {
         thumbnail: '632/361',
+        grid: '32/30',
       },
     },
   },

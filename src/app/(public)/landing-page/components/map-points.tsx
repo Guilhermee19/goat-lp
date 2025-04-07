@@ -5,9 +5,13 @@ import Image from 'next/image';
 export function MapPoints({
   title,
   description,
+  url,
+  url_mobile,
 }: {
   title?: string;
   description?: string;
+  url: string;
+  url_mobile: string;
 }) {
   return (
     <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
@@ -28,7 +32,7 @@ export function MapPoints({
             width={1240}
             height={540}
             alt="map"
-            src={'/points-map.png'}
+            src={url}
             className="hidden lg:flex"
           ></Image>
 
@@ -36,7 +40,7 @@ export function MapPoints({
             width={360}
             height={500}
             alt="map"
-            src={'/points-map-mobile.png'}
+            src={url_mobile}
             className="flex lg:hidden mx-auto"
           ></Image>
         </div>

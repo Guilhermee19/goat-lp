@@ -1,5 +1,7 @@
 'use client';
 
+import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
+
 export function VideoHeader() {
   return (
     <>
@@ -13,8 +15,27 @@ export function VideoHeader() {
           </p>
 
           <div className="w-full lg:max-w-5xl flex flex-col gap-4 ">
-            <div className="w-full aspect-video rounded-3xl mt-8 bg-gradient-to-r from-[#F70DC866] to-[#FF550066] p-1">
+            {/* <div className="w-full aspect-video rounded-3xl mt-8 bg-gradient-to-r from-[#F70DC866] to-[#FF550066] p-1">
               <div className="w-full aspect-video rounded-3xl bg-gradient-to-b from-[#262626] to-[#000000] p-2"></div>
+            </div> */}
+
+            <div className="relative rounded-3xl gradient-border p-1 overflow-hidden bg-gradient-to-b from-[#00000000] from-30% to-[#000000] to-100%">
+              <HeroVideoDialog
+                className="block dark:hidden rounded-3xl z-20"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                thumbnailAlt="Hero Video"
+              />
+              <HeroVideoDialog
+                className="hidden dark:block rounded-3xl z-20"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                thumbnailAlt="Hero Video"
+              />
+              <div className="absolute top-0 left-0 size-full gradient-border"></div>
+              <div className="absolute top-0 left-0 size-full bg-gradient-to-b from-[#00000000] from-3% to-[#000000] to-100%"></div>
             </div>
 
             <p className="w-full text-[#F3F3F3] text-base lg:text-xl text-left !font-light font-sourceSans3 mt-6">
