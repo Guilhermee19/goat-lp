@@ -10,17 +10,19 @@ const AppsAndIntegrations = () => {
   return (
     <>
       <AppsAndIntegrationsHero></AppsAndIntegrationsHero>
-      <PaymentApis></PaymentApis>
-      <AnnouncementCard
-        title="Uma plataforma construída para crescimento"
-        description="Checkout de alta conversão, integrações com ferramentas de marketing, métricas detalhadas e suporte especializado para 
+      <div className="relative z-20 bg-black">
+        <PaymentApis></PaymentApis>
+        <AnnouncementCard
+          title="Uma plataforma construída para crescimento"
+          description="Checkout de alta conversão, integrações com ferramentas de marketing, métricas detalhadas e suporte especializado para 
 que você escale de forma consistente."
-        className="bg-[#1D0E18] border-transparent"
-        classBorder="p-px bg-gradient-to-r from-[#F987D9] via-[#EA5DC4] to-[#CF13A0]"
-      ></AnnouncementCard>
+          className="bg-[#1D0E18] border-transparent"
+          classBorder="p-px bg-gradient-to-r from-[#F987D9] via-[#EA5DC4] to-[#CF13A0]"
+        ></AnnouncementCard>
 
-      <StayInTouch></StayInTouch>
-      <Footer></Footer>
+        <StayInTouch></StayInTouch>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

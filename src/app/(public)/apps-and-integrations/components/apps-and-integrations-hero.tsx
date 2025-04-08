@@ -30,7 +30,7 @@ export function AppsAndIntegrationsHero() {
   ];
 
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
+    <div className="lg:sticky lg:-top-[100px] z-10 w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
       <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
         <div className="rounded-full border max-w-max border-[rgba(255,119,0,0.1)] bg-[#1D110E]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#FF7700] to-[#FF7700] opacity-60 text-transparent bg-clip-text">
@@ -42,6 +42,7 @@ export function AppsAndIntegrationsHero() {
           <TextDegrade
             text="Conecte seu negócio às melhores ferramentas do mercado"
             className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            position="left"
           ></TextDegrade>
 
           <TextAnimate
@@ -72,7 +73,7 @@ export function AppsAndIntegrationsHero() {
           {GRID.map((el, idx) => (
             <div
               key={idx}
-              className="w-full h-max bg-[#1d1d1d] border border-solid border-[#393939] p-4 rounded-xl"
+              className="w-full h-full bg-[#1d1d1d] border border-solid border-[#393939] p-4 rounded-xl"
             >
               <p className="text-white text-2xl lg:text-3xl font-hankenGrotesk">
                 {el.title}
@@ -86,7 +87,7 @@ export function AppsAndIntegrationsHero() {
                 width={413}
                 height={370}
                 alt="screen landing page"
-                className="size-full mt-4 aspect-video object-bottom object-contain"
+                className="w-full mt-4 aspect-video object-bottom object-contain"
               ></Image>
             </div>
           ))}

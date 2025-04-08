@@ -72,19 +72,9 @@ export function SimplePrice() {
       <div className="w-full flex flex-col items-center gap-4 mt-20">
         <TextDegrade
           text="Preços simples e transparentes"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Preços simples e transparentes']}
-          className="items-center hidden lg:flex"
-          classText="!text-3xl md:!text-5xl !text-7xl"
-        ></TextAnimationDegrade>
-        <TextAnimationDegrade
-          title={['Preços simples e', 'transparentes']}
-          className="items-center flex lg:hidden"
-          classText="!text-xl md:!text-3xl !text-5xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

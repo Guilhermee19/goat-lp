@@ -7,7 +7,7 @@ export function VideoHeader() {
     <>
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10 lg:my-20">
         <div className="z-10 flex flex-col gap-4 items-center justify-center">
-          <p className="max-w-2xl text-white text-4xl lg:text-6xl text-center !font-light font-hankenGrotesk">
+          <p className="max-w-2xl text-white text-4xl lg:text-8xl text-center !font-light font-hankenGrotesk">
             Revolucionando o jeito de{' '}
             <span className="whitespace-pre-wrap tracking-tighter bg-gradient-to-br from-[#FF7F00] from-40% to-[#508FF4] to-80% text-transparent bg-clip-text">
               vender online

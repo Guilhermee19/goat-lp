@@ -11,15 +11,17 @@ const GlobalSales = () => {
   return (
     <>
       <GlobalSalesHero></GlobalSalesHero>
-      <EcommerceGrowthTools></EcommerceGrowthTools>
-      <AnimationStickyMarketing></AnimationStickyMarketing>
+      <div className="relative z-20 bg-black">
+        <EcommerceGrowthTools></EcommerceGrowthTools>
+        <AnimationStickyMarketing></AnimationStickyMarketing>
 
-      <CardCreateAccount
-        title="Venda mais. Venda melhor. Venda como um GOAT!"
-        description="O sucesso deixa pistas. Siga o caminho dos que mais faturam."
-      ></CardCreateAccount>
-      <StayInTouch></StayInTouch>
-      <Footer></Footer>
+        <CardCreateAccount
+          title="Venda mais. Venda melhor. Venda como um GOAT!"
+          description="O sucesso deixa pistas. Siga o caminho dos que mais faturam."
+        ></CardCreateAccount>
+        <StayInTouch></StayInTouch>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

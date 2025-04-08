@@ -37,12 +37,12 @@ export function Functionalities() {
 
   return (
     <div className="w-full mt-20">
-      <h2 className="font-hankenGrotesk font-light text-white w-11/12 lg:w-full text-center text-3xl lg:text-4xl xl:text-5xl mb-8 lg:mb-0">
+      <h2 className="font-hankenGrotesk mx-auto font-light text-white w-11/12 lg:w-full text-center text-3xl lg:text-4xl xl:text-5xl mb-8 lg:mb-0">
         <span className="underline"> Tudo que você precisa</span>, em um só
         lugar.
       </h2>
 
-      <div className="[perspective:1000px] relative b hidden lg:flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-14">
+      <div className="[perspective:1000px] relative b hidden lg:flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-13">
         <Tabs
           tabs={tabs}
           tabIndex={tabIndex}
@@ -67,14 +67,10 @@ const NacionalContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Converta sem limites no Brasil"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Converta sem', 'limites no Brasil']}
-          className="items-start"
-          classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Processamento rápido e seguro para vendas no Brasil, aceitando Pix,
@@ -93,8 +89,9 @@ const NacionalContent = () => {
           </ShimmerButton>
 
           <ShimmerButton
-            className="w-full lg:w-max shadow-2xl min-w-max py-2"
+            className="w-full lg:w-max !shadow-none min-w-max py-2"
             background="#1c2225"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona
@@ -120,20 +117,10 @@ const GlobalContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Venda para o mundo, sem barreiras"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Venda para o', 'mundo, sem', 'barreiras']}
-          className="items-start hidden lg:flex"
-          classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Venda para o mundo,', 'sem barreiras']}
-          className="items-start flex lg:hidden"
-          classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Venda para qualquer lugar do mundo com suporte a múltiplas moedas e
@@ -152,8 +139,9 @@ const GlobalContent = () => {
           </ShimmerButton>
 
           <ShimmerButton
-            className="w-full lg:w-max shadow-2xl min-w-max py-2"
+            className="w-full lg:w-max !shadow-none min-w-max py-2"
             background="#1c2225"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona
@@ -179,14 +167,10 @@ const LandingContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Páginas de alta conversão"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Páginas de alta', 'conversão']}
-          className="items-start"
-          classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Páginas rápidas, responsivas e criadas para maximizar conversões.
@@ -204,8 +188,9 @@ const LandingContent = () => {
           </ShimmerButton>
 
           <ShimmerButton
-            className="w-full lg:w-max shadow-2xl min-w-max py-2"
+            className="w-full lg:w-max !shadow-none min-w-max py-2"
             background="#1c2225"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona
@@ -231,14 +216,10 @@ const EcommercesContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Lojas virtuais escaláveis"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-3xl lg:text-5xl"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Lojas virtuais', 'escaláveis']}
-          className="items-start"
-          classText="text-3xl md:text-5xl lg:text-7xl"
-        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
           Configure sua loja online em minutos e venda produtos físicos ou
@@ -257,8 +238,9 @@ const EcommercesContent = () => {
           </ShimmerButton>
 
           <ShimmerButton
-            className="w-full lg:w-max shadow-2xl min-w-max py-2"
+            className="w-full lg:w-max !shadow-none min-w-max py-2"
             background="#1c2225"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona

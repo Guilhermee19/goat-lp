@@ -47,26 +47,9 @@ export function PlatformFeatures() {
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
           <TextDegrade
             text="O que faz da GOATCOM a escolha ideal para seu e-commerce"
-            className="lg:max-w-5xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            className="lg:max-w-5xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="left"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={[
-              'O que faz da GOATCOM a escolha',
-              'ideal para seu e-commerce',
-            ]}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={[
-              'O que faz da GOATCOM',
-              'a escolha ideal para seu',
-              'e-commerce',
-            ]}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl !m-0"
-          ></TextAnimationDegrade> */}
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">
             {DIFFERENTIALS.map((el, idx) => (

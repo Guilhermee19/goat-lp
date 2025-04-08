@@ -110,7 +110,7 @@ export default function Footer() {
 
   return (
     <div className="bg-black">
-      <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center items-center pb-8 gap-4">
+      <div className="contanierPage flex flex-col justify-center items-center pb-8 gap-4">
         <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-4 mt-20 mb-10">
           <div id="Logo" className="w-full lg:w-max">
             <Image

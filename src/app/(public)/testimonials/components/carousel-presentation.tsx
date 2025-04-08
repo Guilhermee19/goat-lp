@@ -79,18 +79,9 @@ export function CarouselPresentation() {
       <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center items-center gap-2 rounded-lg p-5 overflow-hidden">
         <TextDegrade
           text="Histórias inspiradoras de pessoas e experiências"
-          className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Histórias inspiradoras de', 'pessoas e experiências']}
-          className="mt-5 hidden lg:flex"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Histórias', 'inspiradoras de', 'pessoas e', 'experiências']}
-          className="mt-5 flex lg:hidden"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
@@ -125,14 +116,9 @@ const UserTestimonials = ({
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text={name}
-          className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={name}
-          className="items-start"
-          classText="text-lg md:text-2xl lg:text-4xl"
-        ></TextAnimationDegrade> */}
 
         <p className="max-w-96 text-base lg:text-lg text-white mt-2 lg:mt-0">
           {subtitle}

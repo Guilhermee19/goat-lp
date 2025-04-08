@@ -12,7 +12,7 @@ import Icon from '@/shared/icon/icon';
 export function GlobalSalesHero() {
   return (
     <>
-      <div className="relative w-11/12 max-w-7xl mx-auto lg:min-h-[700px] bg-background shadow-lg rounded-lg py-5 lg:p-5 mt-2">
+      <div className="lg:sticky lg:top-[50px] z-10 relative w-11/12 max-w-7xl mx-auto lg:min-h-[700px] bg-background shadow-lg rounded-lg py-5 lg:p-5 mt-2">
         <div className="z-10 lg:min-h-[600px] flex flex-col gap-4 items-center justify-center">
           <div className="degradeBorder">
             <div
@@ -41,18 +41,9 @@ export function GlobalSalesHero() {
 
           <TextDegrade
             text="Venda para o mundo inteiro sem complicações"
-            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={['Venda para o mundo inteiro,', 'sem complicações']}
-            className="mt-8 hidden lg:flex"
-          ></TextAnimationDegrade>
-
-          <TextAnimationDegrade
-            title={['Venda para o', 'mundo inteiro,', 'sem', 'complicações']}
-            className="mt-8 flex lg:hidden justify-start items-start mr-auto"
-          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="blurInUp"

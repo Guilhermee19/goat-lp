@@ -11,19 +11,9 @@ const PrivacyPolicy = () => {
         <div className="w-full flex flex-col items-center gap-4 mt-20">
           <TextDegrade
             text="Políticas de Privacidade"
-            className="  from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            className="  from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="left"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={['Políticas de Privacidade']}
-            className="items-center hidden lg:flex"
-            classText="!text-3xl md:!text-5xl !text-7xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={['Políticas de', 'Privacidade']}
-            className="items-start flex lg:hidden"
-            classText="!text-xl md:!text-3xl !text-5xl"
-          ></TextAnimationDegrade> */}
 
           <div className="w-full max-w-3xl mx-auto flex flex-col gap-6 my-10 text-white text-base lg:text-xl font-sourceSans3 font-light">
             <p>1. INTRODUÇÃO</p>

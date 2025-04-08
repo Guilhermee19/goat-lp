@@ -57,7 +57,7 @@ export const HeroParallax = ({
     springConfig,
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 200]),
+    useTransform(scrollYProgress, [0, 0.2], [-500, 200]),
     springConfig,
   );
   return (
@@ -104,24 +104,14 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center rounded-lg p-5 mt-20 relative py-12 lg:py-40 px-4 w-fullleft-0 top-0 z-50">
+    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center rounded-lg p-5 mt-20 relative pt-12 lg:pt-40 px-4 w-fullleft-0 top-0 z-50">
       <div className="lg:w-max">
         <TextDegrade
           text="Temas de alta conversão"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-4xl lg:text-5xl"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Temas de alta conversão']}
-          className="mt-0 !items-start hidden lg:flex"
-          classText="!text-5xl"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Temas de alta', 'conversão']}
-          className="mt-0 !items-start flex lg:hidden"
-          classText="!text-4xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
@@ -145,7 +135,7 @@ export const Header = () => {
         </ShimmerButton>
 
         <ShimmerButton
-          className="w-full lg:w-max shadow-2xl min-w-max py-2"
+          className="w-full lg:w-max shadow-none min-w-max py-2"
           background="#1c2225"
         >
           <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">

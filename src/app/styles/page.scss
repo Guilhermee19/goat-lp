@@ -14,11 +14,11 @@
 }
 
 .animatedShiny {
-  @apply w-full max-w-max inline-flex items-center rounded-full justify-center px-4 py-1 transition ease-out;
+  @apply w-full max-w-max inline-flex items-center rounded-full justify-center py-1 transition ease-out;
   background-color: #f0f0f0; /* Cor do fundo do conteúdo */
   border-radius: 9999px; /* Garante que o conteúdo tenha bordas arredondadas */
 }
 
 .contanierPage {
-  @apply max-w-6xl w-11/12 mx-auto;
+  @apply max-w-7xl w-11/12 md:w-figFull mx-auto py-5;
 }

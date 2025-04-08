@@ -52,8 +52,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-background shadow-lg rounded-lg p-5 my-20 w-full">
-        <div className="relative z-10 flex flex-col gap-4 items-center justify-start">
+      <div className="w-full mt-20">
+        <div className="relative z-10 flex flex-col gap-12 items-center justify-start">
           <div className="degradeBorder">
             <div
               className={cn(
@@ -79,31 +79,24 @@ const Header = () => {
             </div>
           </div>
 
-          <TextDegrade
-            text="Venda mais. Venda melhor. Seja um GOAT."
-            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
-          ></TextDegrade>
+          <div className="w-full flex flex-col items-center gap-8">
+            <TextDegrade
+              text="Venda mais. Venda melhor. Seja um GOAT."
+              className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+              position="center"
+            ></TextDegrade>
 
-          {/* <TextAnimationDegrade
-            title={['Venda mais. Venda melhor.', 'Seja um GOAT.']}
-            className="mt-8 hidden lg:flex"
-          ></TextAnimationDegrade>
+            <TextAnimate
+              animation="blurInUp"
+              by="word"
+              className="text-white text-center mt-2 text-base lg:text-xl font-sourceSans3 font-light"
+            >
+              Simples, rápido e sem complicação. Tudo o que você precisa para
+              escalar.
+            </TextAnimate>
+          </div>
 
-          <TextAnimationDegrade
-            title={['Venda mais.', 'Venda melhor.', 'Seja um GOAT.']}
-            className="mt-8 flex lg:hidden"
-          ></TextAnimationDegrade> */}
-
-          <TextAnimate
-            animation="blurInUp"
-            by="word"
-            className="text-white text-center mt-2 text-base lg:text-xl font-sourceSans3 font-light"
-          >
-            Simples, rápido e sem complicação. Tudo o que você precisa para
-            escalar.
-          </TextAnimate>
-
-          <div className="mt-4 lg:mt-10 flex gap-4 lg:gap-8 items-center flex-col lg:flex-row">
+          <div className="flex gap-6 lg:gap-8 items-center flex-col lg:flex-row">
             <ShimmerButton
               className="shimmerButton w-full lg:w-max"
               background="#FF5500"
@@ -134,7 +127,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="lg:absolute lg:-bottom-40 lg:-right-8">
+          <div className="lg:absolute lg:-bottom-40 lg:-right-32">
             <GoatAnimation className="size-52 lg:size-72"></GoatAnimation>
           </div>
         </div>

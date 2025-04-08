@@ -88,34 +88,16 @@ export function PaymentApis() {
 
   return (
     <div className="w-full rounded-t-3xl mt-20 bg-gradient-to-b from-[#1D1D1D] to-[#000000]">
-      <div className="w-11/12 max-w-7xl min-h-dvh mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-10 overflow-hidden">
+      <div className="w-11/12 max-w-7xl min-h-dvh mx-auto rounded-lg px-2 py-5 lg:px-5 lg:py-20 overflow-hidden">
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
           <TextDegrade
             text="A GOATCOM se conecta ao que há de melhor no mercado para você vender sem limites."
-            className="lg:max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+            className="lg:max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            size="small"
+            position="left"
           ></TextDegrade>
 
-          {/* <TextAnimationDegrade
-            title={[
-              'A GOATCOM se conecta ao que há de melhor no ',
-              'mercado para você vender sem limites.',
-            ]}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-2xl md:!text-4xl lg:!text-6xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={[
-              'A GOATCOM se',
-              'conecta ao que há',
-              'de melhor no',
-              'mercado para você',
-              'vender sem limites.',
-            ]}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-2xl md:!text-4xl lg:!text-6xl !m-0"
-          ></TextAnimationDegrade> */}
-
-          <div className="min-w-max overflow-x-auto flex mb-6 ">
+          <div className="min-w-max overflow-x-auto flex my-10 ">
             {TABS.map((tab, idx) => (
               <div
                 key={idx}
@@ -127,7 +109,7 @@ export function PaymentApis() {
             ))}
           </div>
 
-          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-8 gap-y-12 mt-2">
+          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-8 gap-y-12">
             {APIS.filter(
               (item) => item.type.includes(activeTab) || filter === '',
             ).map((el, idx) => (

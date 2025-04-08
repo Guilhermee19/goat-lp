@@ -38,7 +38,7 @@ function GridInfo({
 
 export function LandingPage() {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg p-5 overflow-hidden">
+    <div className="contanierPage">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
         <div className="rounded-full border max-w-max border-[#250e64] bg-[#170921]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#B69BFA] to-[#6A29EA] opacity-60 text-transparent bg-clip-text">
@@ -48,13 +48,9 @@ export function LandingPage() {
 
         <TextDegrade
           text="Landing Pages de alta conversão"
-          className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Landing Pages de', 'alta conversão']}
-          className="mt-5"
-        ></TextAnimationDegrade> */}
 
         <p className="text-base lg:text-lg text-white ">
           Páginas que vendem por você. Criadas para capturar, engajar e
@@ -73,8 +69,9 @@ export function LandingPage() {
           </ShimmerButton>
 
           <ShimmerButton
-            className="shadow-2xl min-w-max py-2"
+            className="!shadow-none min-w-max py-2"
             background="#1c2225"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona

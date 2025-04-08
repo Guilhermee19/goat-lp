@@ -40,20 +40,10 @@ export function FormDenounces() {
       <div className="max-w-3xl w-full flex flex-col justify-center items-center mb-6">
         <TextDegrade
           text="Denuncie pra gente!"
-          className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center text-3xl lg:text-5xl"
+          className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Denuncie pra gente!']}
-          className="mt-5 items-start hidden lg:flex"
-          classText="!text-4xl lg:!text-6xl"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Denuncie pra', ' gente!']}
-          className="mt-5 flex lg:hidden items-center"
-          classText="!text-4xl lg:!text-6xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

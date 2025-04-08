@@ -18,7 +18,9 @@ export function ReportsHero() {
 
         <TextDegrade
           text="Dados que geram decisões estratégicas"
-          className="lg:max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-60% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+          className="lg:max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-60% to-[#508FF4] to-100%"
+          position="left"
+          size="small"
         ></TextDegrade>
 
         <TextAnimate

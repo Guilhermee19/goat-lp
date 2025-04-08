@@ -44,7 +44,7 @@ function CardGrid({
 
 export function OnlineShop() {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden mt-20">
+    <div className="contanierPage my-10 lg:my-20">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
         <div className="rounded-full border max-w-max border-[#3c132e] bg-[#1d0e18]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#F187DC] to-[#C615A3] opacity-60 text-transparent bg-clip-text">
@@ -54,13 +54,9 @@ export function OnlineShop() {
 
         <TextDegrade
           text="E-commerce pronto para escalar"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['E-commerce pronto para escalar']}
-          className="mt-5 hidden lg:flex"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
@@ -82,8 +78,9 @@ export function OnlineShop() {
           </ShimmerButton>
 
           <ShimmerButton
-            className="shadow-2xl min-w-max py-2 w-full lg:w-max"
+            className="!shadow-none min-w-max py-2 w-full lg:w-max"
             background="#191919"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona

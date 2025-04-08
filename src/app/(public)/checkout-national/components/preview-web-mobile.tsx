@@ -27,7 +27,7 @@ export function PreviewWebMobile() {
       <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10 lg:my-20">
         <div className="z-10 flex flex-col gap-4 items-center justify-center">
           <div className="w-full">
-            <p className="text-white text-4xl lg:text-6xl text-left !font-light font-hankenGrotesk mb-6">
+            <p className="text-white text-4xl lg:text-8xl text-left !font-light font-hankenGrotesk mb-6">
               <span className="whitespace-pre-wrap tracking-tighter bg-gradient-to-br from-[#FF7F00] from-40% to-[#508FF4] to-80% text-transparent bg-clip-text">
                 Maximize suas vendas{' '}
               </span>
