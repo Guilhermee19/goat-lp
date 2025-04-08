@@ -55,29 +55,9 @@ export function OnlineShopHero() {
 
           <TextDegrade
             text="Venda sem limites com um e-commerce otimizado para faturamento máximo"
-            className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="left"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={[
-              'Venda sem limites com um e-commerce',
-              'otimizado para faturamento máximo',
-            ]}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={[
-              'Venda sem',
-              'limites com um',
-              'e-commerce',
-              'otimizado para',
-              'faturamento',
-              'máximo',
-            ]}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-4xl lg:!text-5xl"
-          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="slideUp"
@@ -102,8 +82,9 @@ export function OnlineShopHero() {
             </ShimmerButton>
 
             <ShimmerButton
-              className="w-full lg:w-max shadow-2xl min-w-max py-2"
+              className="w-full lg:w-max !shadow-none min-w-max py-2"
               background="#1c2225"
+              shadow={false}
             >
               <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
                 Veja como funciona

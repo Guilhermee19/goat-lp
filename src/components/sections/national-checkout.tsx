@@ -247,18 +247,8 @@ export function NationalCheckout() {
 
         <TextDegrade
           text="Converta sem limites no Brasil"
-          className="lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className="lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Converta sem limites', 'no Brasil']}
-          className="mt-10 hidden lg:flex"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Converta sem', 'limites no Brasil']}
-          className="mt-10 flex lg:hidden"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
@@ -281,8 +271,9 @@ export function NationalCheckout() {
           </ShimmerButton>
 
           <ShimmerButton
-            className="shadow-2xl min-w-max py-2 w-full lg:w-max"
+            className="!shadow-none min-w-max py-2 w-full lg:w-max"
             background="#191919"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona

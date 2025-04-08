@@ -211,6 +211,16 @@ const config: Config = {
         sourceSans3: ['var(--font-sourceSans3)'],
         inter: ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        fig16: '16px',
+        fig22: '22px',
+        fig24: '24px',
+        fig32: '32px',
+        fig43: '43px',
+        fig56: '56px',
+        fig60: '60px',
+        fig64: '64px'
+      },
       transitionTimingFunction: {
         'minor-spring': 'cubic-bezier(0.18,0.89,0.82,1.04)',
       },

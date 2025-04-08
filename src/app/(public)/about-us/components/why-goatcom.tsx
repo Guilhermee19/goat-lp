@@ -43,12 +43,6 @@ export function WhyGoatcom() {
               className="lg:max-w-md from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
             ></TextDegrade>
 
-            {/* <TextAnimationDegrade
-              title={['Por que a', 'GOATCOM?']}
-              className="mt-5 items-start"
-              classText="!text-4xl lg:!text-6xl"
-            ></TextAnimationDegrade> */}
-
             <TextAnimate
               animation="slideUp"
               by="word"

@@ -66,7 +66,9 @@ export function Diferenciais() {
           <div className="w-full flex justify-between items-center">
             <TextDegrade
               text="O que torna nossas Landing Pages diferentes"
-              className="lg:max-w-xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-90% text-start text-3xl lg:text-5xl"
+              className="lg:max-w-xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-90%"
+              size="small"
+              position="left"
             ></TextDegrade>
 
             <Image

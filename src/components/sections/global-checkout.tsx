@@ -409,17 +409,8 @@ export function GlobalCheckout() {
 
         <TextDegrade
           text="Venda para qualquer lugar do mundo"
-          className="max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className="max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Venda para qualquer', 'lugar do mundo']}
-          className="mt-5 hidden lg:flex"
-        ></TextAnimationDegrade>
-        <TextAnimationDegrade
-          title={['Venda para', 'qualquer lugar do', 'mundo']}
-          className="mt-5 flex lg:hidden"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

@@ -41,19 +41,10 @@ export function ThemesHero() {
         <div>
           <TextDegrade
             text="Escolha o tema ideal para sua empresa"
-            className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+            className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="left"
+            size="small"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={['Escolha o tema ideal para sua empresa']}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl leading-none"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={['Escolha o tema', 'ideal para sua', 'empresa']}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-4xl lg:!text-5xl"
-          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="slideUp"

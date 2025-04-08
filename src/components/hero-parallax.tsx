@@ -108,20 +108,9 @@ export const Header = () => {
       <div className="lg:w-max">
         <TextDegrade
           text="Temas de alta conversão"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-4xl lg:text-5xl"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          size="small"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Temas de alta conversão']}
-          className="mt-0 !items-start hidden lg:flex"
-          classText="!text-5xl"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Temas de alta', 'conversão']}
-          className="mt-0 !items-start flex lg:hidden"
-          classText="!text-4xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
@@ -145,7 +134,7 @@ export const Header = () => {
         </ShimmerButton>
 
         <ShimmerButton
-          className="w-full lg:w-max shadow-2xl min-w-max py-2"
+          className="w-full lg:w-max shadow-none min-w-max py-2"
           background="#1c2225"
         >
           <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">

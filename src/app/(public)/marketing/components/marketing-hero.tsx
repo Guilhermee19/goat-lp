@@ -18,19 +18,9 @@ export function MarketingHero() {
 
         <TextDegrade
           text="Ferramentas inteligentes para vender mais"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="left"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Ferramentas inteligentes para vender mais']}
-          className="hidden lg:flex justify-start items-start"
-          classText="!text-3xl md:!text-5xl lg:!text-7xl"
-        ></TextAnimationDegrade>
-        <TextAnimationDegrade
-          title={['Ferramentas', 'inteligentes para', 'vender mais']}
-          className="flex lg:hidden justify-start items-start"
-          classText="!text-4xl lg:!text-5xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

@@ -59,7 +59,9 @@ export function PersonalisedThemes() {
           <div className="w-full flex justify-between items-center">
             <TextDegrade
               text="Venda qualquer coisa online com nossos temas personalizáveis"
-              className="lg:max-w-[800px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+              className="lg:max-w-[800px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+              position="left"
+              size="small"
             ></TextDegrade>
 
             <Image
@@ -70,23 +72,6 @@ export function PersonalisedThemes() {
             ></Image>
           </div>
 
-          {/* <TextAnimationDegrade
-            title={[
-              'Venda qualquer coisa online com',
-              'nossos temas personalizáveis',
-            ]}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-3xl md:!text-5xl lg:!text-7xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={[
-              'Venda qualquer coisa',
-              'online com nossos temas',
-              'personalizáveis',
-            ]}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-2xl md:!text-4xl !m-0"
-          ></TextAnimationDegrade> */}
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-16">
             {PRODUCTS.map((el, idx) => (
               <div key={idx} className="w-full">

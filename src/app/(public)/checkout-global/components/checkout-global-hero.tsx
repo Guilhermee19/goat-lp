@@ -20,27 +20,8 @@ export function CheckoutGlobalHero() {
 
           <TextDegrade
             text="Seu negócio pronto para atender clientes em qualquer país"
-            className="lg:max-w-4xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+            className="lg:max-w-4xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={[
-              'Seu negócio pronto para atender ',
-              'clientes em qualquer país',
-            ]}
-            className="mt-8 hidden lg:flex"
-          ></TextAnimationDegrade>
-
-          <TextAnimationDegrade
-            title={[
-              'Seu negócio',
-              'pronto para',
-              'atender clientes',
-              'em qualquer',
-              'país',
-            ]}
-            className="mt-8 flex lg:hidden"
-          ></TextAnimationDegrade> */}
 
           <div className="w-full max-w-3xl">
             <TextAnimate

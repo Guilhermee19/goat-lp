@@ -41,18 +41,8 @@ export function GlobalSalesHero() {
 
           <TextDegrade
             text="Venda para o mundo inteiro sem complicações"
-            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+            className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={['Venda para o mundo inteiro,', 'sem complicações']}
-            className="mt-8 hidden lg:flex"
-          ></TextAnimationDegrade>
-
-          <TextAnimationDegrade
-            title={['Venda para o', 'mundo inteiro,', 'sem', 'complicações']}
-            className="mt-8 flex lg:hidden justify-start items-start mr-auto"
-          ></TextAnimationDegrade> */}
 
           <TextAnimate
             animation="blurInUp"

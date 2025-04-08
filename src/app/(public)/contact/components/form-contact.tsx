@@ -51,19 +51,9 @@ export function FormContact() {
       <div className="max-w-3xl w-full flex flex-col justify-center items-center mb-6">
         <TextDegrade
           text="Fale com um especialista"
-          className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center text-3xl lg:text-5xl"
+          className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          size="small"
         ></TextDegrade>
-        {/* <TextAnimationDegrade
-          title={['Fale com um especialista']}
-          className="mt-5 items-start hidden lg:flex"
-          classText="!text-4xl lg:!text-6xl"
-        ></TextAnimationDegrade>
-
-        <TextAnimationDegrade
-          title={['Fale com um', 'especialista']}
-          className="mt-5 flex lg:hidden items-center"
-          classText="!text-4xl lg:!text-6xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"

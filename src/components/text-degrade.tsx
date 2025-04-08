@@ -5,17 +5,27 @@ import { cn } from '@/lib/utils';
 export function TextDegrade({
   text,
   className,
+  size = 'medium',
+  position = 'center',
 }: {
   text: string;
   className?: string;
+  size?: 'small' | 'medium' | 'large';
+  position?: 'left' | 'center' | 'right';
 }) {
   return (
     <span
       className={cn(
         `whitespace-pre-wrap !leading-[1.1] tracking-normal space text-transparent bg-clip-text 
         bg-gradient-to-br from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% 
-        text-4xl lg:text-6xl font-hankenGrotesk font-light`,
+        font-hankenGrotesk font-light`,
         className,
+        { 'text-3xl lg:text-5xl': size === 'small' },
+        { 'text-4xl lg:text-6xl': size === 'medium' },
+        { 'text-4xl lg:text-6xl': size === 'large' },
+        { 'text-start': position === 'left' },
+        { 'text-center': position === 'center' },
+        { 'text-end': position === 'right' },
       )}
     >
       {text}

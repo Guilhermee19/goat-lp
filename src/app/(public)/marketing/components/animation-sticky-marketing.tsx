@@ -36,24 +36,10 @@ export function AnimationStickyMarketing() {
         <div className="w-full lg:w-8/12 h-max lg:sticky lg:top-4" id="sticky">
           <TextDegrade
             text="Utilize todo o ecossistema de produtos da Goatcom!"
-            className="from-[#ffffff] from-30% via-[#FF7F00] via-70% to-[#508FF4] to-100% text-start text-3xl lg:text-5xl"
+            className="from-[#ffffff] from-30% via-[#FF7F00] via-70% to-[#508FF4] to-100%"
+            position="left"
+            size="small"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={['Utilize todo o ecossistema de', 'produtos da Goatcom!']}
-            className="hidden lg:flex justify-start items-start mb-10"
-            classText="!text-5xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={[
-              'Utilize todo o',
-              'ecossistema de',
-              'produtos da',
-              'Goatcom!',
-            ]}
-            className="flex lg:hidden justify-start items-start mb-10"
-            classText="!text-3xl"
-          ></TextAnimationDegrade> */}
 
           <Image
             src={'/user-cafeteria.png'}

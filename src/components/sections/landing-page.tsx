@@ -48,13 +48,8 @@ export function LandingPage() {
 
         <TextDegrade
           text="Landing Pages de alta conversão"
-          className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-center"
+          className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={['Landing Pages de', 'alta conversão']}
-          className="mt-5"
-        ></TextAnimationDegrade> */}
 
         <p className="text-base lg:text-lg text-white ">
           Páginas que vendem por você. Criadas para capturar, engajar e
@@ -73,8 +68,9 @@ export function LandingPage() {
           </ShimmerButton>
 
           <ShimmerButton
-            className="shadow-2xl min-w-max py-2"
+            className="!shadow-none min-w-max py-2"
             background="#1c2225"
+            shadow={false}
           >
             <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
               Veja como funciona

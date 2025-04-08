@@ -47,26 +47,9 @@ export function EcommerceGrowthTools() {
         <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
           <TextDegrade
             text="Venda e receba pagamentos de qualquer moeda diretamente na sua conta brasileira."
-            className="max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+            className="max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="left"
           ></TextDegrade>
-
-          {/* <TextAnimationDegrade
-            title={[
-              'Venda e receba pagamentos de qualquer',
-              'moeda diretamente na sua conta brasileira.',
-            ]}
-            className="hidden lg:flex justify-start items-start"
-            classText="!text-2xl md:!text-4xl lg:!text-6xl"
-          ></TextAnimationDegrade>
-          <TextAnimationDegrade
-            title={[
-              'O que faz da GOATCOM',
-              'a escolha ideal para seu',
-              'e-commerce',
-            ]}
-            className="flex lg:hidden justify-start items-start"
-            classText="!text-2xl md:!text-4xl lg:!text-6xl !m-0"
-          ></TextAnimationDegrade> */}
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6 lg:mt-10">
             {DIFFERENTIALS.map((el, idx) => (

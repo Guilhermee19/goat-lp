@@ -84,16 +84,6 @@ const Header = () => {
             className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           ></TextDegrade>
 
-          {/* <TextAnimationDegrade
-            title={['Venda mais. Venda melhor.', 'Seja um GOAT.']}
-            className="mt-8 hidden lg:flex"
-          ></TextAnimationDegrade>
-
-          <TextAnimationDegrade
-            title={['Venda mais.', 'Venda melhor.', 'Seja um GOAT.']}
-            className="mt-8 flex lg:hidden"
-          ></TextAnimationDegrade> */}
-
           <TextAnimate
             animation="blurInUp"
             by="word"

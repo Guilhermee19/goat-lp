@@ -19,28 +19,8 @@ export function LandingPageHero() {
 
         <TextDegrade
           text="Crie páginas em tempo recorde e aumente suas conversões com a GOAT."
-          className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+          className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
         ></TextDegrade>
-
-        {/* <TextAnimationDegrade
-          title={[
-            'Crie páginas em tempo recorde e',
-            'aumente suas conversões com a GOAT.',
-          ]}
-          className="hidden lg:flex justify-start items-start"
-          classText="!text-3xl md:!text-5xl lg:!text-7xl"
-        ></TextAnimationDegrade>
-        <TextAnimationDegrade
-          title={[
-            'Crie páginas em',
-            'tempo recorde e',
-            'aumente suas',
-            'conversões com',
-            'a GOAT.',
-          ]}
-          className="flex lg:hidden justify-start items-start"
-          classText="!text-4xl lg:!text-5xl"
-        ></TextAnimationDegrade> */}
 
         <TextAnimate
           animation="slideUp"
