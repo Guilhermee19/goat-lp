@@ -12,7 +12,7 @@ export function CardCreateAccount({
   description: string;
 }) {
   return (
-    <div className="contanierPage relative pt-28 mx-auto overflow-x-hidden">
+    <div className="contanierPage relative pt-12 lg:pt-28 mx-auto overflow-x-hidden">
       <div className="flex justify-between items-center flex-col-reverse lg:flex-row rounded-3xl border border-solid border-[#525252]">
         <div className="w-full lg:w-9/12 p-4 md:p-10 flex fle flex-col gap-6 items-start">
           <TextAnimate

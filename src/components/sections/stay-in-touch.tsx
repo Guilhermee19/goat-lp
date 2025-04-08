@@ -16,7 +16,7 @@ export function StayInTouch() {
   return (
     <div
       className="w-full 
-      py-20
+      py-6 lg:py-20
       bg-gradient-to-r 
       from-[#000000] from-0% 
       via-[#181818] via-50% 

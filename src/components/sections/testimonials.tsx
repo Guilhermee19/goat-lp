@@ -46,7 +46,7 @@ export function Testimonials() {
 
   return (
     <div className="min-h-[600px]">
-      <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
+      <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-10 lg:mt-20 overflow-hidden">
         <div className="z-10 flex flex-col gap-4 items-center justify-center">
           <div className="rounded-full border max-w-max border-[#01381d] bg-[#0A201D]">
             <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#00FFC2] to-[#28CAE0] opacity-60 text-transparent bg-clip-text">
