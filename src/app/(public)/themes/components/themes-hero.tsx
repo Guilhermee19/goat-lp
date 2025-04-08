@@ -30,7 +30,7 @@ export function ThemesHero() {
   ];
 
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
+    <div className="lg:sticky lg:top-[50px] z-10 w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
       <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
         <div className="rounded-full border max-w-max border-[#361428] bg-[#1D0E18]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#F187DC] to-[#C615A3] opacity-60 text-transparent bg-clip-text">
@@ -70,21 +70,23 @@ export function ThemesHero() {
           {GRID.map((el, idx) => (
             <div
               key={idx}
-              className="w-full h-max bg-[#1d1d1d] border border-solid border-[#393939] p-6 pb-0 rounded-2xl"
+              className="w-full h-full bg-[#1d1d1d] border flex flex-col justify-between border-solid border-[#393939] p-6 pb-0 rounded-2xl"
             >
-              <p className="text-white text-xl lg:text-2xl font-hankenGrotesk font-light">
-                {el.title}
-              </p>
-              <p className="text-label text-base lg:text-lg font-sourceSans3 !leading-[1.1] mt-4">
-                {el.description}
-              </p>
+              <div>
+                <p className="text-white text-xl lg:text-2xl font-hankenGrotesk font-light">
+                  {el.title}
+                </p>
+                <p className="text-label text-base lg:text-lg font-sourceSans3 !leading-[1.1] mt-4">
+                  {el.description}
+                </p>
+              </div>
 
               <Image
                 src={el.url}
                 width={413}
                 height={370}
                 alt="screen landing page"
-                className="size-full mt-4 aspect-video object-bottom object-contain"
+                className="w-full mt-4 aspect-video object-bottom object-contain"
               ></Image>
             </div>
           ))}

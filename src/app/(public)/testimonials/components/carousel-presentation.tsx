@@ -80,6 +80,7 @@ export function CarouselPresentation() {
         <TextDegrade
           text="Histórias inspiradoras de pessoas e experiências"
           className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
 
         <TextAnimate
@@ -116,6 +117,7 @@ const UserTestimonials = ({
         <TextDegrade
           text={name}
           className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
 
         <p className="max-w-96 text-base lg:text-lg text-white mt-2 lg:mt-0">

@@ -6,12 +6,12 @@ export function TextDegrade({
   text,
   className,
   size = 'medium',
-  position = 'center',
+  position,
 }: {
   text: string;
   className?: string;
-  size?: 'small' | 'medium' | 'large';
-  position?: 'left' | 'center' | 'right';
+  size?: 'very_small' | 'small' | 'medium' | 'large';
+  position: 'left' | 'center' | 'right';
 }) {
   return (
     <span
@@ -20,12 +20,13 @@ export function TextDegrade({
         bg-gradient-to-br from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% 
         font-hankenGrotesk font-light`,
         className,
+        { 'text-xl lg:text-3xl': size === 'very_small' },
         { 'text-3xl lg:text-5xl': size === 'small' },
-        { 'text-4xl lg:text-6xl': size === 'medium' },
-        { 'text-4xl lg:text-6xl': size === 'large' },
-        { 'text-start': position === 'left' },
-        { 'text-center': position === 'center' },
-        { 'text-end': position === 'right' },
+        { 'text-4xl lg:text-8xl': size === 'medium' },
+        { 'text-4xl lg:text-8xl': size === 'large' },
+        { '!text-start': position === 'left' },
+        { '!text-center': position === 'center' },
+        { '!text-end': position === 'right' },
       )}
     >
       {text}

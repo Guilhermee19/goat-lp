@@ -16,14 +16,14 @@ export function StayInTouch() {
   return (
     <div
       className="w-full 
-      py-10 px-4 mt-20
+      py-20
       bg-gradient-to-r 
       from-[#000000] from-0% 
       via-[#181818] via-50% 
       to-[#000000] to-100%  
       "
     >
-      <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-4">
+      <div className="contanierPage flex flex-col lg:flex-row justify-between items-start gap-4">
         <div className="w-full lg:w-max flex flex-col items-start gap-4">
           <p className="text-white text-3xl md:text-4xl font-hankenGrotesk font-light">
             Fique em contato

@@ -38,7 +38,7 @@ export function WhatDrivesUs({
     <>
       <div className="w-11/12 max-w-7xl mx-auto flex flex-col justify-center my-10 lg:my-20 items-center p-5">
         {title && (
-          <p className="font-hankenGrotesk text-5xl text-white text-center font-light">
+          <p className="font-hankenGrotesk text-8xl text-white text-center font-light">
             {title}
           </p>
         )}

@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 export function LandingPageHero() {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
+    <div className="lg:sticky lg:-top-[250px] z-10 w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
       <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
         <div className="rounded-full border max-w-max border-[#250e64] bg-[#170921]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#B69BFA] to-[#6A29EA] opacity-60 text-transparent bg-clip-text">
@@ -20,6 +20,7 @@ export function LandingPageHero() {
         <TextDegrade
           text="Crie páginas em tempo recorde e aumente suas conversões com a GOAT."
           className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="left"
         ></TextDegrade>
 
         <TextAnimate

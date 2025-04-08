@@ -6,7 +6,7 @@ import Icon from '@/shared/icon/icon';
 
 export function CardOurPlans() {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto lg:p-5 rounded-[43px] mt-20 overflow-hidden">
+    <div className="contanierPage w-full rounded-[43px] my-20">
       <div className="bg-ourPlansCard bg-left rounded-[43px] bg-no-repeat bg-cover">
         <div className="w-full flex flex-col justify-center items-end bg-gradient-to-r from-[rgba(10,10,10,0.4)] to-[rgba(38,38,38,0.4)] py-9 px-8">
           <div className="w-full lg:w-1/2 flex flex-col gap-6">

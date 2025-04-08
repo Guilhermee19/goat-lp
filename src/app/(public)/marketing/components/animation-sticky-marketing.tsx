@@ -46,13 +46,14 @@ export function AnimationStickyMarketing() {
             width={740}
             height={510}
             alt="user cafeteria"
+            className="mt-6"
           ></Image>
         </div>
 
         <div className="w-full lg:w-[440px] col-span-3 mt-8 lg:mt-0">
           {GRID.map((el, idx) => (
-            <div key={idx} className="mb-8">
-              <div className="flex items-center justify-start gap-2">
+            <div key={idx} className={cn('', { 'mt-18': idx > 0 })}>
+              <div className="flex items-center justify-start gap-3">
                 <Icon
                   name="circle_chevron_right"
                   className="min-size-5 size-5 text-base text-main"
@@ -61,13 +62,13 @@ export function AnimationStickyMarketing() {
                   {el.title}
                 </p>
               </div>
-              <p className="text-label text-lg lg:text-xl font-sourceSans3 font-light my-4">
+              <p className="text-label text-lg lg:text-xl font-sourceSans3 font-light mt-3">
                 {el.description}{' '}
               </p>
 
               <div
                 className={cn(
-                  'w-full aspect-square flex justify-center items-center',
+                  'w-full aspect-square flex justify-center items-center mt-6',
                   el.backgroundColor,
                 )}
               >

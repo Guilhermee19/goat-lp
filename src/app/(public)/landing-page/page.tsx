@@ -13,25 +13,27 @@ const LandingPage = () => {
   return (
     <>
       <LandingPageHero></LandingPageHero>
-      <Diferenciais></Diferenciais>
-      <ThemeCollection></ThemeCollection>
+      <div className="relative z-20 bg-black">
+        <Diferenciais></Diferenciais>
+        <ThemeCollection></ThemeCollection>
 
-      <AnimationStickyCard></AnimationStickyCard>
-      <MapPoints
-        title="Velocidade. Segurança. Confiabilidade."
-        description="Então, não importa se você está fazendo uma grande entrega ou
+        <AnimationStickyCard></AnimationStickyCard>
+        <MapPoints
+          title="Velocidade. Segurança. Confiabilidade."
+          description="Então, não importa se você está fazendo uma grande entrega ou
             lançando em um novo país, você sabe que sua loja é segura, confiável
             e está funcionando rápido."
-        url="/points-map.png"
-        url_mobile="/points-map-mobile.png"
-      ></MapPoints>
-      <AnnouncementCard
-        title="Utilize landing pages para potencializar suas vendas"
-        description="Lançamentos de produtos, campanhas de tráfego pago, captura de leads e vendas diretas."
-        className="bg-[#170921] border-[rgba(141,93,245,0.2)]"
-      ></AnnouncementCard>
-      <StayInTouch></StayInTouch>
-      <Footer></Footer>
+          url="/points-map.png"
+          url_mobile="/points-map-mobile.png"
+        ></MapPoints>
+        <AnnouncementCard
+          title="Utilize landing pages para potencializar suas vendas"
+          description="Lançamentos de produtos, campanhas de tráfego pago, captura de leads e vendas diretas."
+          className="bg-[#170921] border-[rgba(141,93,245,0.2)]"
+        ></AnnouncementCard>
+        <StayInTouch></StayInTouch>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

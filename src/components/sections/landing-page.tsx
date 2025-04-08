@@ -38,7 +38,7 @@ function GridInfo({
 
 export function LandingPage() {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto rounded-lg p-5 overflow-hidden">
+    <div className="contanierPage">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
         <div className="rounded-full border max-w-max border-[#250e64] bg-[#170921]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#B69BFA] to-[#6A29EA] opacity-60 text-transparent bg-clip-text">
@@ -49,6 +49,7 @@ export function LandingPage() {
         <TextDegrade
           text="Landing Pages de alta conversão"
           className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
 
         <p className="text-base lg:text-lg text-white ">

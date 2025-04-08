@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
 // import TextAnimationDegrade from '../../app/_components/title-animation';
 import { TextDegrade } from '../text-degrade';
+import Image from 'next/image';
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: {
@@ -49,6 +50,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Sonhe grande. Inove rápido. Chegue longe com a Goatcom"
             className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
             size="small"
           ></TextDegrade>
         </>
@@ -67,6 +69,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Inovação que transforma o E-commerce"
             className="lg:max-w-[570px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
             size="small"
           ></TextDegrade>
         </>
@@ -85,6 +88,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Simplicidade que impulsiona os seus resultados"
             className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
             size="small"
           ></TextDegrade>
         </>
@@ -104,6 +108,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Compromisso direto com o seu sucesso"
             className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
             size="small"
           ></TextDegrade>
         </>
@@ -131,16 +136,21 @@ export function SlideRevolutionizing({
   }, [autoPlay, list.length, isHovering]);
 
   return (
-    <div className="contanierPage mt-10 px-4 w-full">
+    <div className="contanierPage mt-10">
       <div className="w-full flex justify-between items-center gap-4">
-        <h2 className="font-hankenGrotesk font-extralight text-white w-full text-start text-4xl lg:text-5xl">
+        <h2 className="font-hankenGrotesk font-light text-white w-full text-start text-4xl lg:text-5xl">
           Revolucionando o jeito de vender online
         </h2>
 
-        <Icon name="arrow_up_right" className="size-xl text-main"></Icon>
+        <Image
+          src={'/arrow-up-right.png'}
+          width={83}
+          height={82}
+          alt="Arrow down"
+        ></Image>
       </div>
 
-      <div className="w-full h-px bg-gray mt-16 mb-12"></div>
+      <div className="w-full h-px bg-[#393939] mt-10 mb-12"></div>
 
       <div
         className={cn(

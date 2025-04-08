@@ -76,7 +76,7 @@ const ReviewCard = ({
 
 export function MarqueeTools() {
   return (
-    <>
+    <div className="w-full">
       <p className="text-base text-[#7D7D7D] w-full text-center my-3 lg:my-6">
         Integrações e ferramentas de empresas líderes em todo o mundo
       </p>
@@ -90,6 +90,6 @@ export function MarqueeTools() {
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
       </div>
-    </>
+    </div>
   );
 }

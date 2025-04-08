@@ -251,10 +251,10 @@ const Navbar = ({
         </div>
       </div>
 
-      <section className="py-5 border-b border-[rgba(255,255,255,0.2)]">
-        <div className="container mx-auto">
+      <section className="py-624 border-b border-[rgba(255,255,255,0.2)]">
+        <div className="w-full mx-auto">
           {/* Desktop Menu */}
-          <nav className="hidden max-w-6xl mx-auto justify-between lg:flex">
+          <nav className="hidden max-w-7xl mx-auto justify-between lg:flex">
             <div className="flex items-center gap-6">
               <a href={logo.url} className=" flex items-center gap-2">
                 <Image

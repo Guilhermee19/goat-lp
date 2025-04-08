@@ -42,7 +42,7 @@ export function Functionalities() {
         lugar.
       </h2>
 
-      <div className="[perspective:1000px] relative b hidden lg:flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-14">
+      <div className="[perspective:1000px] relative b hidden lg:flex flex-col max-w-6xl mx-auto w-full items-start justify-start my-13">
         <Tabs
           tabs={tabs}
           tabIndex={tabIndex}
@@ -68,6 +68,7 @@ const NacionalContent = () => {
         <TextDegrade
           text="Converta sem limites no Brasil"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
           size="small"
         ></TextDegrade>
 
@@ -117,6 +118,7 @@ const GlobalContent = () => {
         <TextDegrade
           text="Venda para o mundo, sem barreiras"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
           size="small"
         ></TextDegrade>
 
@@ -166,6 +168,7 @@ const LandingContent = () => {
         <TextDegrade
           text="Páginas de alta conversão"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
           size="small"
         ></TextDegrade>
 
@@ -214,6 +217,7 @@ const EcommercesContent = () => {
         <TextDegrade
           text="Lojas virtuais escaláveis"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
           size="small"
         ></TextDegrade>
 

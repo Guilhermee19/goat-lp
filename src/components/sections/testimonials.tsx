@@ -57,6 +57,7 @@ export function Testimonials() {
           <TextDegrade
             text="O que os Goats tem a dizer?"
             className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
           ></TextDegrade>
         </div>
       </div>

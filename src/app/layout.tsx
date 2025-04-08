@@ -30,7 +30,7 @@ const hankenGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-hankenGrotesk',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['200', '300', '400', '500', '600', '700'],
 });
 
 type Props = {

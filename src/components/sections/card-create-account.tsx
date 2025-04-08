@@ -12,9 +12,9 @@ export function CardCreateAccount({
   description: string;
 }) {
   return (
-    <div className="relative w-11/12 max-w-7xl pt-28 mx-auto lg:px-4 overflow-x-hidden">
+    <div className="contanierPage relative pt-28 mx-auto overflow-x-hidden">
       <div className="flex justify-between items-center flex-col-reverse lg:flex-row rounded-3xl border border-solid border-[#525252]">
-        <div className="w-full lg:w-9/12 p-4 md:p-10 flex fle flex-col gap-4 items-start">
+        <div className="w-full lg:w-9/12 p-4 md:p-10 flex fle flex-col gap-6 items-start">
           <TextAnimate
             animation="blurInUp"
             by="word"

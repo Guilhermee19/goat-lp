@@ -41,6 +41,7 @@ export function FormDenounces() {
         <TextDegrade
           text="Denuncie pra gente!"
           className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
           size="small"
         ></TextDegrade>
 

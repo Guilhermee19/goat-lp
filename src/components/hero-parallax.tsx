@@ -57,7 +57,7 @@ export const HeroParallax = ({
     springConfig,
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 200]),
+    useTransform(scrollYProgress, [0, 0.2], [-500, 200]),
     springConfig,
   );
   return (
@@ -104,11 +104,12 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center rounded-lg p-5 mt-20 relative py-12 lg:py-40 px-4 w-fullleft-0 top-0 z-50">
+    <div className="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center rounded-lg p-5 mt-20 relative pt-12 lg:pt-40 px-4 w-fullleft-0 top-0 z-50">
       <div className="lg:w-max">
         <TextDegrade
           text="Temas de alta conversão"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
           size="small"
         ></TextDegrade>
 

@@ -41,6 +41,7 @@ export function WhyGoatcom() {
             <TextDegrade
               text="Por que a GOATCOM?"
               className="lg:max-w-md from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
+              position="center"
             ></TextDegrade>
 
             <TextAnimate

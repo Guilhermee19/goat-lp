@@ -21,6 +21,7 @@ export function CheckoutGlobalHero() {
           <TextDegrade
             text="Seu negócio pronto para atender clientes em qualquer país"
             className="lg:max-w-4xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            position="center"
           ></TextDegrade>
 
           <div className="w-full max-w-3xl">

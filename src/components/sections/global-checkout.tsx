@@ -410,6 +410,7 @@ export function GlobalCheckout() {
         <TextDegrade
           text="Venda para qualquer lugar do mundo"
           className="max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
 
         <TextAnimate

@@ -73,6 +73,7 @@ export function SimplePrice() {
         <TextDegrade
           text="Preços simples e transparentes"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          position="center"
         ></TextDegrade>
 
         <TextAnimate
