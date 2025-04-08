@@ -37,7 +37,7 @@ export function Functionalities() {
 
   return (
     <div className="w-full mt-20">
-      <h2 className="font-hankenGrotesk font-light text-white w-11/12 lg:w-full text-center text-3xl lg:text-4xl xl:text-5xl mb-8 lg:mb-0">
+      <h2 className="font-hankenGrotesk mx-auto font-light text-white w-11/12 lg:w-full text-center text-3xl lg:text-4xl xl:text-5xl mb-8 lg:mb-0">
         <span className="underline"> Tudo que você precisa</span>, em um só
         lugar.
       </h2>

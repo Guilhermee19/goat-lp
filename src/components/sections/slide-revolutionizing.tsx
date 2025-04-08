@@ -138,7 +138,7 @@ export function SlideRevolutionizing({
   return (
     <div className="contanierPage mt-10">
       <div className="w-full flex justify-between items-center gap-4">
-        <h2 className="font-hankenGrotesk font-light text-white w-full text-start text-4xl lg:text-5xl">
+        <h2 className="font-hankenGrotesk font-light text-white w-full text-start text-3xl lg:text-5xl">
           Revolucionando o jeito de vender online
         </h2>
 
@@ -147,6 +147,7 @@ export function SlideRevolutionizing({
           width={83}
           height={82}
           alt="Arrow down"
+          className="hidden lg:flex"
         ></Image>
       </div>
 

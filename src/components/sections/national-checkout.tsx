@@ -113,11 +113,18 @@ const Pagamentos = () => {
           alt=""
         />
 
-        <div className="w-full flex justify-between items-end">
+        <div className="w-full flex justify-between flex-col lg:flex-row items-start lg:items-end">
           <TextDegrade
             text="Pagamentos instantâneos"
-            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% hidden lg:flex"
             position="center"
+            size="very_small"
+          ></TextDegrade>
+
+          <TextDegrade
+            text="Pagamentos instantâneos"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% flex lg:hidden"
+            position="left"
             size="very_small"
           ></TextDegrade>
 
@@ -166,14 +173,14 @@ const Integrações = () => {
         alt=""
       />
 
-      <div className="size-full flex justify-between items-end p-12">
+      <div className="size-full flex flex-col-reverse lg:flex-row justify-between items-end p-12">
         <div
           className={cn(
             'font-bold tracking-tighter flex flex-col gap-4 items-start justify-start mt-auto',
           )}
         >
-          <div className="min-w-max rounded-full border max-w-max border-[#013820] bg-[#0A201D]">
-            <p className="max-w-max text-xs py-1 px-3 font-bold bg-gradient-to-r from-[#00FFC2] to-[#28CAE0] opacity-60 text-transparent bg-clip-text">
+          <div className="md:min-w-max rounded-full border max-w-max border-[#013820] bg-[#0A201D]">
+            <p className="md:max-w-max text-xs py-1 px-3 font-bold bg-gradient-to-r from-[#00FFC2] to-[#28CAE0] opacity-60 text-transparent bg-clip-text">
               Integramos com os melhores meios de pagamentos
             </p>
           </div>
