@@ -32,12 +32,12 @@ export type Position = {
   order: number;
   from: string;
   to: string;
-  startLat: number;
-  startLng: number;
-  endLat: number;
-  endLng: number;
+  startLat: number | string;
+  startLng: number | string;
+  endLat: number | string;
+  endLng: number | string;
   arcAlt: number;
-  color: string;
+  color?: string;
 };
 
 export type GlobeConfig = {
@@ -162,7 +162,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
   useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
 
-    const createFloatingCard = (lat: number, lng: number, text: string) => {
+    const createFloatingCard = (
+      lat: number | string,
+      lng: number | string,
+      text: string,
+    ) => {
       const cardDiv = document.createElement('span');
       cardDiv.className = 'floating-card'; // Adicione um estilo para o card no CSS
       cardDiv.innerHTML = `
@@ -191,7 +195,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       if (groupRef !== null && groupRef.current !== null) {
         if (globeRef.current && groupRef.current) {
           // Converte a latitude e longitude para a posição 3D no globo
-          const position = latLngToVector3(lat, lng, 10); // 10 é o raio do globo
+          const position = latLngToVector3(Number(lat), Number(lng), 10); // 10 é o raio do globo
           card.position.set(position.x, position.y, position.z);
 
           // const position = globeRef.current.getCoords(lat, lng);
@@ -222,9 +226,9 @@ export function Globe({ globeConfig, data }: WorldProps) {
     const testDiv = document.createElement('div');
     testDiv.className = 'floating-card';
     testDiv.innerHTML = `
-      <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px;">
+      <h1 style="padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px;">
         TESTE
-      </div>
+      </h1>
     `;
 
     // Criar o CSS2DObject com a div de teste
@@ -242,7 +246,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
     };
 
     // Calcular a posição para o card (pode ser qualquer coordenada no globo)
-    const testPosition = latLngToVector3(40.7128, -74.006, 10); // Exemplo: Coordenadas de Nova York (latitude e longitude)
+    const testPosition = latLngToVector3(
+      -15.797145415807751,
+      -47.892200612268226,
+      1,
+    ); // Exemplo: Coordenadas de Nova York (latitude e longitude)
 
     // Adiciona o card na posição calculada
     testCard.position.set(testPosition.x, testPosition.y, testPosition.z);
@@ -291,72 +299,69 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     console.log(filteredPoints);
 
-    // Apply to globe
+    // Aplicar configurações ao globo
     globeRef.current
-      .hexPolygonsData(GLOBE_JSON.features)
-      .hexPolygonResolution(4) // quantidade de pontos no globo
-      .hexPolygonMargin(0.1) // espaço entre os pontos do globo
-      .hexPolygonUseDots(true)
-      .showAtmosphere(defaultProps.showAtmosphere)
-      .atmosphereColor(defaultProps.atmosphereColor)
-      .atmosphereAltitude(defaultProps.atmosphereAltitude)
-      .hexPolygonColor(() => defaultProps.polygonColor);
+      // Hexágonos (polígonos no globo)
+      .hexPolygonsData(GLOBE_JSON.features) // Dados dos hexágonos
+      .hexPolygonResolution(4) // Resolução dos hexágonos (quantidade de pontos no globo)
+      .hexPolygonMargin(0.1) // Espaço entre os pontos do globo
+      .hexPolygonUseDots(true) // Usar pontos nos hexágonos
+      .showAtmosphere(defaultProps.showAtmosphere) // Exibir atmosfera
+      .atmosphereColor(defaultProps.atmosphereColor) // Cor da atmosfera
+      .atmosphereAltitude(defaultProps.atmosphereAltitude) // Altitude da atmosfera
+      .hexPolygonColor(() => defaultProps.polygonColor); // Cor dos hexágonos
 
+    // Arcos (linhas de conexão entre pontos)
     globeRef.current
-      .arcsData(data)
-      .arcStartLat((d) => (d as { startLat: number }).startLat * 1)
-      .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
-      .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
-      .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
-      .arcColor((e: unknown) => (e as { color: string }).color)
-      .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
-      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
-      .arcDashLength(defaultProps.arcLength)
-      .arcDashInitialGap((e) => (e as { order: number }).order * 1)
-      .arcDashGap(15)
-      .arcDashAnimateTime(() => defaultProps.arcTime);
+      .arcsData(data) // Dados dos arcos
+      .arcStartLat((d) => (d as { startLat: number }).startLat) // Latitude de início dos arcos
+      .arcStartLng((d) => (d as { startLng: number }).startLng) // Longitude de início dos arcos
+      .arcEndLat((d) => (d as { endLat: number }).endLat) // Latitude de fim dos arcos
+      .arcEndLng((d) => (d as { endLng: number }).endLng) // Longitude de fim dos arcos
+      .arcColor((e) => (e as { color: string }).color) // Cor do arco
+      .arcAltitude((e) => (e as { arcAlt: number }).arcAlt) // Altitude dos arcos
+      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)]) // Cor da linha do arco
+      .arcDashLength(defaultProps.arcLength) // Tamanho do dash (pontilhado) do arco
+      .arcDashInitialGap((e) => (e as { order: number }).order) // Espaço inicial do dash
+      .arcDashGap(15) // Espaçamento entre os "dashes"
+      .arcDashAnimateTime(() => defaultProps.arcTime); // Tempo de animação do arco
 
+    // Pontos no globo
     globeRef.current
-      .pointsData(filteredPoints)
-      .pointColor((e) => (e as { color: string }).color)
-      .pointsMerge(true)
-      .pointAltitude(0.0)
-      .pointRadius(2);
+      .pointsData(filteredPoints) // Dados dos pontos no globo
+      .pointColor((e) => (e as { color: string }).color) // Cor dos pontos
+      .pointsMerge(true) // Mesclar pontos
+      .pointAltitude(0.0) // Altitude dos pontos
+      .pointRadius(2); // Raio dos pontos
 
+    // Animação de anéis e arcos
     globeRef.current
-      .ringsData([])
-      .arcsData(LINES.pulls)
-      .ringColor(() => defaultProps.polygonColor)
-      .ringMaxRadius(defaultProps.maxRings)
-      .ringPropagationSpeed(RING_PROPAGATION_SPEED)
-      .ringRepeatPeriod(
-        (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
-      )
-      .labelsData(MAP.maps)
-      .labelColor(() => colors.white)
-      .pointColor(() => colors.yellow)
-      .labelDotRadius(0.5)
-      .labelSize(1)
-      .labelText('city')
-      .labelResolution(6)
-      .labelAltitude(0.01)
-      .pointsData(MAP.maps)
-      .pointsMerge(true)
-      .pointAltitude(0.09)
-      .pointRadius(0.09)
-      .arcsData(LINES.pulls)
-      .arcColor((e: any) => {
-        return e.status ? colors.white : colors.white;
-      })
-      .arcAltitude(0.2)
-      .arcStroke(() => {
-        return 0.7;
-      })
-      .arcDashLength(0.5)
-      .arcDashGap(4)
-      .arcDashAnimateTime(1000)
-      .arcsTransitionDuration(500)
-      .arcDashInitialGap((e: any) => e.order * 1);
+      .ringsData([]) // Dados dos anéis (não está sendo utilizado, pode ser removido ou preenchido)
+      .arcsData(LINES.pulls) // Dados dos arcos
+
+      // Configurações dos arcos (relacionadas aos dados dos arcos)
+      // .arcColor((e) => (e.status ? colors.white : colors.white)) // Cor dos arcos, dependendo do status
+      // .arcAltitude(0.2) // Altitude dos arcos
+
+      // Configurações específicas da linha do arco (separadas)
+      .arcStroke(() => 0.7) // Espessura da linha do arco
+      .arcDashLength(0.5) // Tamanho do "dash" do arco
+      .arcDashGap(4) // Espaçamento entre os "dashes"
+      .arcDashAnimateTime(1000) // Tempo de animação do "dash"
+      .arcsTransitionDuration(500) // Duração da transição dos arcos
+      .arcDashInitialGap((e: any) => e.order * 1) // Espaço inicial do "dash" com base na ordem do arco
+
+      // Configurações das labels (separadas da linha do arco)
+      .labelsData(MAP.maps) // Dados das labels (mapas)
+      .labelColor(() => colors.white) // Cor das labels
+      .pointColor(() => colors.yellow) // Cor dos pontos nos anéis
+      .labelDotRadius(0.5) // Raio dos pontos das labels
+      .labelSize(1) // Tamanho das labels
+      .labelText('city') // Texto das labels
+      .labelResolution(6) // Resolução das labels
+      .labelAltitude(0.01) // Altitude das labels
+      .pointAltitude(0.09) // Altitude dos pontos nas labels
+      .pointRadius(0.09); // Raio dos pontos nas labels
   }, [isInitialized, data]);
 
   // Handle rings animation with cleanup

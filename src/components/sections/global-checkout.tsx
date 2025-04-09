@@ -9,6 +9,7 @@ import { GlobeConfig, Position } from '../ui/globe';
 import { IconCloud } from '../magicui/icon-cloud';
 import { ShimmerButton } from '../magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
+import { LINES } from '../../../public/mocks/lines';
 
 export function GlobalCheckout() {
   const globeConfig: GlobeConfig = {
@@ -40,14 +41,27 @@ export function GlobalCheckout() {
       type: 'arc',
       status: true,
       order: 1,
-      from: 'Brasilia',
-      to: 'New York',
+      from: 'Sialkot',
+      to: 'Istanbul',
       startLat: -15.797145415807751,
       startLng: -47.892200612268226,
       endLat: 25.0,
       endLng: -60.0,
       arcAlt: 0.5,
       color: '#ff0000',
+    },
+    {
+      type: 'arc',
+      status: true,
+      order: 2,
+      from: 'Sialkot',
+      to: 'Tokyo',
+      startLat: 40.713318,
+      startLng: -73.998978,
+      endLat: 15.0,
+      endLng: -40.0,
+      arcAlt: 0.6,
+      color: '#00ff00',
     },
   ];
 
@@ -115,7 +129,7 @@ export function GlobalCheckout() {
             <Meteors number={13} minDelay={0.3} angle={220} />
           </div>
 
-          <World data={sampleArcs} globeConfig={globeConfig} />
+          <World data={LINES.pulls} globeConfig={globeConfig} />
         </div>
       </div>
     </div>

@@ -97,14 +97,7 @@ body {
 
 .floating-card {
   position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 14px;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-  z-index: 900;
+  pointer-events: none; /* Para que o clique não interfira no globo */
+  transform: translate(-50%, -50%); /* Para centralizar o card */
+  z-index: 999;
 }
