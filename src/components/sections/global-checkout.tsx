@@ -7,6 +7,8 @@ import dynamic from 'next/dynamic';
 import { TextDegrade } from '../text-degrade';
 import { GlobeConfig } from '../ui/globe';
 import { LINES } from '../../../public/mocks/lines';
+import { ShimmerButton } from '../magicui/shimmer-button';
+import Icon from '@/shared/icon/icon';
 
 export function GlobalCheckout() {
   const globeConfig: GlobeConfig = {
@@ -61,7 +63,7 @@ export function GlobalCheckout() {
         </TextAnimate>
 
         <div className="relative w-[80vw] max-w-5xl aspect-square flex justify-center items-center">
-          {/* <div className="absolute z-30 flex flex-col justify-center items-center gap-[26px]">
+          <div className="absolute z-30 flex flex-col justify-center items-center gap-[26px]">
             <p className="max-w-lg text-center font-hankenGrotesk leading-none text-[72px] font-light text-white">
               Seu negócio sem fronteiras
             </p>
@@ -79,7 +81,7 @@ export function GlobalCheckout() {
                 <Icon name="arrow_right" className="size-4"></Icon>
               </span>
             </ShimmerButton>
-          </div> */}
+          </div>
 
           <div className="absolute w-11/12 aspect-square animate-spin-slow flex items-center bg-transparent justify-center rounded-full opacity-90 bg-gradient-to-r from-[#d0f0fd00] from-60% to-[#109DE3] to-100%">
             <div className="w-full h-full m-px bg-black rounded-full flex items-center justify-center"></div>

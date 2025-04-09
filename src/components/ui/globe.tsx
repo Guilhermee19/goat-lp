@@ -3,13 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from 'three';
 import ThreeGlobe from 'three-globe';
-import { useThree, Canvas, extend, useFrame } from '@react-three/fiber';
+import { useThree, Canvas, extend } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLOBE_JSON } from '../../../public/mocks/globe';
-// import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 import * as THREE from 'three';
-
-// import countries from '';
 declare module '@react-three/fiber' {
   interface ThreeElements {
     threeGlobe: ThreeElements['mesh'] & {
@@ -21,7 +18,7 @@ declare module '@react-three/fiber' {
 extend({ ThreeGlobe: ThreeGlobe });
 
 const aspect = 3;
-const cameraZ = 300;
+const cameraZ = 400;
 
 export type Position = {
   type: string;
@@ -71,8 +68,6 @@ interface WorldProps {
   data: Position[];
 }
 
-// let numbersOfRings = [0];
-
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
   const groupRef = useRef<THREE.Group | null>(null);
@@ -95,15 +90,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     maxRings: 3,
     ...globeConfig,
   };
-
-  // Initialize globe only once
-  useEffect(() => {
-    if (!globeRef.current && groupRef.current) {
-      globeRef.current = new ThreeGlobe();
-      groupRef.current.add(globeRef.current);
-      setIsInitialized(true);
-    }
-  }, []);
 
   // Build material when globe is initialized or when relevant props change
   useEffect(() => {
@@ -152,31 +138,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return new Vector3(x, y, z);
   };
 
-  // ? Função para criar o HTML (ex: um card) na posição do globo
-  // const createHTMLCardAtLocation = (lat: number, lng: number, text: string) => {
-  //   const cardDiv = document.createElement('div');
-  //   cardDiv.className = 'floating-card'; // Estilo para o card (CSS)
-  //   cardDiv.innerHTML = `
-  //   <div style="padding: 10px; background-color: rgba(255, 255, 255, 0.7); c#ff0000 white; border-radius: 5px;">
-  //     ${text}
-  //   </div>
-  // `;
-
-  //   // Cria o CSS2DObject com o conteúdo HTML
-  //   const card = new CSS2DObject(cardDiv);
-
-  //   // Converte latitude e longitude para posição 3D no globo
-  //   const position = latLngToVector3(lat, lng, 110); // Ajuste o raio conforme necessário
-  //   card.position.set(position.x, position.y, position.z);
-
-  //   // Faz o card "olhar" para a câmera
-  //   card.lookAt(camera.position);
-
-  //   if (groupRef.current) {
-  //     groupRef.current.add(card); // Adiciona o card ao grupo de objetos na cena
-  //   }
-  // };
-
   // ? Função para criar uma imagem (usando textura) na posição do globo
   const createImageAtLocation = (
     lat: number,
@@ -197,28 +158,28 @@ export function Globe({ globeConfig, data }: WorldProps) {
     const plane = new THREE.Mesh(geometry, material);
 
     // Converte latitude e longitude para posição 3D no globo
-    const position = latLngToVector3(lat, lng, 90 + width); // Ajuste o raio conforme necessário
+    const position = latLngToVector3(lat, lng, 88 + width); // Ajuste o raio conforme necessário
     plane.position.set(position.x, position.y, position.z);
 
-    // Faz o plano "olhar" para a câmera
-    plane.lookAt(camera.position);
-
-    // Usar o hook `useFrame` para rotacionar a imagem no sentido contrário ao globo
     setInterval(() => {
-      plane.rotation.y -= 0.014; // Gira a imagem lentamente no sentido oposto ao do globo
+      // Rotacionar a imagem no sentido oposto ao globo
+      plane.rotation.y -= 0.0104; // Gira a imagem lentamente no sentido oposto ao do globo
     }, 100);
-
-    // useFrame(() => {
-    // });
-
-    // Usar o hook `useFrame` para rotacionar a imagem no sentido contrário ao globo
-    // plane.rotation.y -= 2; // Gira a imagem lentamente no sentido oposto ao do globo
 
     // Adiciona o plano (imagem) ao grupo de objetos na cena
     if (groupRef.current) {
       groupRef.current.add(plane);
     }
   };
+
+  // Initialize globe only once
+  useEffect(() => {
+    if (!globeRef.current && groupRef.current) {
+      globeRef.current = new ThreeGlobe();
+      groupRef.current.add(globeRef.current);
+      setIsInitialized(true);
+    }
+  }, []);
 
   useEffect(() => {
     // ! Adicionando o Card Flutuante
@@ -232,8 +193,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
         item.startLat,
         item.startLng,
         item.url,
-        item.width / 10,
-        item.heigth / 10,
+        item.width / 7,
+        item.heigth / 7,
       );
     });
 
@@ -270,69 +231,21 @@ export function Globe({ globeConfig, data }: WorldProps) {
       });
     }
 
-    // Remove duplicates for same lat and lng
-    const filteredPoints = points.filter(
-      (v, i, a) =>
-        a.findIndex((v2) =>
-          ['lat', 'lng'].every(
-            (k) => v2[k as 'lat' | 'lng'] === v[k as 'lat' | 'lng'],
-          ),
-        ) === i,
-    );
-
     // Aplicar configurações ao globo
     globeRef.current
-      // Hexágonos (polígonos no globo)
-      .hexPolygonsData(GLOBE_JSON.features) // Dados dos hexágonos
-      .hexPolygonResolution(4) // Resolução dos hexágonos (quantidade de pontos no globo)
-      .hexPolygonMargin(0.1) // Espaço entre os pontos do globo
-      .hexPolygonUseDots(true) // Usar pontos nos hexágonos
-      .showAtmosphere(defaultProps.showAtmosphere) // Exibir atmosfera
-      .atmosphereColor(defaultProps.atmosphereColor) // Cor da atmosfera
-      .atmosphereAltitude(defaultProps.atmosphereAltitude) // Altitude da atmosfera
-      .hexPolygonColor(() => defaultProps.polygonColor); // Cor dos hexágonos
+      .hexPolygonsData(GLOBE_JSON.features)
+      .hexPolygonResolution(4)
+      .hexPolygonMargin(0.1)
+      .hexPolygonUseDots(true)
+      .showAtmosphere(defaultProps.showAtmosphere)
+      .atmosphereColor(defaultProps.atmosphereColor)
+      .atmosphereAltitude(defaultProps.atmosphereAltitude)
+      .hexPolygonColor(() => defaultProps.polygonColor);
 
-    // Pontos no globo
-    globeRef.current
-      .pointsData(filteredPoints) // Dados dos pontos no globo
-      .pointColor((e) => (e as { color: string }).color); // Cor dos pontos
-    // .pointsMerge(true) // Mesclar pontos
-    // .pointAltitude(0.05) // Altitude dos pontos
-    // .pointRadius(0.2) // Raio dos pontos
-
-    // Label
-    // .labelsData(filteredPoints)
-    // .labelSize(1.2) // Tamanho das labels
-    // .labelText('to') // Texto das labels
-    // .labelResolution(6) // Resolução das labels
-    // .labelAltitude(0.01); // Altitude das labels
-
-    // ! Handle rings animation with cleanup
-    if (!globeRef.current || !isInitialized || !data) return;
-
-    const interval = setInterval(() => {
-      if (!globeRef.current) return;
-
-      const newNumbersOfRings = genRandomNumbers(
-        0,
-        data.length,
-        Math.floor((data.length * 4) / 5),
-      );
-
-      const ringsData = data
-        .filter((d, i) => newNumbersOfRings.includes(i))
-        .map((d) => ({
-          lat: d.startLat,
-          lng: d.startLng,
-          color: d.color,
-        }));
-
-      globeRef.current.ringsData(ringsData);
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    // ? Pontos no Globo
+    // globeRef.current
+    //   .pointsData(points)
+    //   .pointColor((e) => (e as { color: string }).color);
   }, [isInitialized, data]);
 
   return <group ref={groupRef} />;
@@ -375,8 +288,15 @@ export function World(props: WorldProps) {
       <directionalLight
         color={0xeeeeee}
         position={new Vector3(-1, -1, -1)}
-        intensity={0.2}
+        intensity={0.9}
       />
+
+      {/* <directionalLight
+        color={0xeeeeee}
+        position={new Vector3(-80, 80, 0)}
+        intensity={14}
+        castShadow
+      /> */}
 
       {/* Glóbulo */}
       <Globe {...props} />
@@ -385,6 +305,7 @@ export function World(props: WorldProps) {
       <OrbitControls
         enablePan={false}
         enableZoom={false}
+        enableRotate={false} // Permite rotação no eixo Y
         minDistance={cameraZ}
         maxDistance={cameraZ}
         autoRotateSpeed={1}
@@ -392,7 +313,6 @@ export function World(props: WorldProps) {
         minPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
         maxPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
         // maxPolarAngle={Math.PI - Math.PI / 3} // Limita a rotação vertical (pode ajustar)
-        // enableRotate={true} // Permite rotação no eixo Y
         enableDamping={true} // Permite suavização no movimento da câmera
         dampingFactor={0.25} // Suaviza o movimento
       />
