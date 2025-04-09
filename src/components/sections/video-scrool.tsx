@@ -17,7 +17,7 @@ export function VideoScrool() {
           className="!p-0 h-max lg:h-[60rem]"
         >
           <Image
-            src={`/a73face01a4d63fc1f894eb3808172ef.png`}
+            src={`/dashboard.png`}
             alt="hero"
             height={1920}
             width={1080}

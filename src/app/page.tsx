@@ -21,7 +21,7 @@ import React from 'react';
 const Home = () => {
   return (
     <>
-      <CardScrollAnimation imageSrc="/a73face01a4d63fc1f894eb3808172ef.png">
+      <CardScrollAnimation imageSrc="/dashboard.png">
         <Header></Header>
       </CardScrollAnimation>
 

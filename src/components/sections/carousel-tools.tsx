@@ -64,7 +64,7 @@ const ReviewCard = ({
       )}
     >
       <Image
-        className="object-contain w-32 h-10 lg:h-7 m-auto"
+        className="object-contain w-32 h-10 lg:h-7 "
         width="120"
         height="27"
         alt={name}
