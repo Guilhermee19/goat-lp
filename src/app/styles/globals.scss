@@ -94,3 +94,10 @@ body {
 .gradient-border {
   background-image: linear-gradient(to right, #f70dc866, #ff550066);
 }
+
+.floating-card {
+  // position: absolute;
+  // pointer-events: none; /* Para que o clique não interfira no globo */
+  // transform: translate(-50%, -50%); /* Para centralizar o card */
+  // z-index: 999;
+}
