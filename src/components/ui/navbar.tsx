@@ -28,6 +28,7 @@ import LocaleSwitcher from '../locale-switcher';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 interface MenuItem {
   title: string;
@@ -35,6 +36,7 @@ interface MenuItem {
   description?: React.ReactNode;
   icon?: React.ReactNode;
   items?: MenuItem[];
+  with_border?: boolean;
 }
 
 interface Navbar1Props {
@@ -87,6 +89,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          with_border: true,
         },
         {
           title: 'Checkout Global',
@@ -102,6 +105,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          with_border: true,
         },
         {
           title: '',
@@ -167,6 +171,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          with_border: true,
         },
         {
           title: 'Venda Global',
@@ -181,6 +186,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          with_border: true,
         },
         {
           title: 'Marketing',
@@ -196,6 +202,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          with_border: true,
         },
         {
           title: 'Relatórios',
@@ -237,21 +244,25 @@ const Navbar = ({
     signup: { text: 'Sign up', url: '/signup' },
   },
 }: Navbar1Props) => {
+  const pathname = usePathname();
+
   return (
     <>
-      <div className="w-full flex justify-between items-centerk">
-        <div className="w-full p-4 text-base font-normal font-sourceSans3 bg-gradient-to-r from-[#6a6a6a] to-[#181818] flex justify-center items-center text-white gap-2">
-          Quem joga para ganhar precisa das melhores ferramentas. Chegou sua vez
-          de liderar.
-          <Icon name="arrow_right" className="size-4 flex lg:hidden"></Icon>
+      {pathname === '/' && (
+        <div className="w-full flex justify-between items-centerk">
+          <div className="w-full p-4 text-base font-normal font-sourceSans3 bg-gradient-to-r from-[#6a6a6a] to-[#181818] flex justify-center items-center text-white gap-2">
+            Quem joga para ganhar precisa das melhores ferramentas. Chegou sua
+            vez de liderar.
+            <Icon name="arrow_right" className="size-4 flex lg:hidden"></Icon>
+          </div>
+          <div className="min-w-96 hidden lg:flex w-max p-3 text-base font-semibold font-hankenGrotesk bg-gradient-to-r from-[#2e2e2e] to-[#525252] border-l border-solid border-[#737373] justify-center items-center gap-2 text-white">
+            Explorar preços
+            <Icon name="arrow_right" className="size-3"></Icon>
+          </div>
         </div>
-        <div className="min-w-96 hidden lg:flex w-max p-3 text-base font-semibold font-hankenGrotesk bg-gradient-to-r from-[#2e2e2e] to-[#525252] border-l border-solid border-[#737373] justify-center items-center gap-2 text-white">
-          Explorar preços
-          <Icon name="arrow_right" className="size-3"></Icon>
-        </div>
-      </div>
+      )}
 
-      <section className="py-624 border-b border-[rgba(255,255,255,0.2)]">
+      <section className="py-6 px-3 border-b border-[rgba(255,255,255,0.2)]">
         <div className="w-full mx-auto">
           {/* Desktop Menu */}
           <nav className="hidden max-w-7xl mx-auto justify-between lg:flex">
@@ -300,62 +311,43 @@ const Navbar = ({
               <a href={logo.url} className="flex items-center gap-2">
                 <Image width={100} height={50} src={logo.src} alt={logo.alt} />
               </a>
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="hover:bg-transparent border-transparent"
-                  >
-                    <Menu className="!min-size-8 text-white bg-transparent" />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent className="overflow-y-auto flex flex-col items-center justify-center">
-                  <SheetHeader>
-                    <SheetTitle>
-                      <a
-                        href={logo.url}
-                        className="w-full flex justify-start items-center gap-2"
-                      >
-                        <Image
-                          width={100}
-                          height={50}
-                          src={logo.src}
-                          alt={logo.alt}
-                        />
-                      </a>
-                    </SheetTitle>
-                  </SheetHeader>
-                  <div className="w-full h-full flex flex-col gap-6 p-4">
-                    <Accordion
-                      type="single"
-                      collapsible
-                      className="flex w-full flex-col gap-4"
+              <div className="flex items-center gap-6">
+                <LocaleSwitcher />
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="hover:bg-transparent border-transparent"
                     >
-                      {menu.map((item) => renderMobileMenuItem(item))}
-                    </Accordion>
-
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="border-transparent hover:bg-transparent hover:text-white"
-                      >
-                        <a
-                          href={auth.login.url}
-                          className="text-white font-sourceSans3"
-                        >
-                          Fazer login
+                      <Menu className="!size-8  text-white bg-transparent" />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent className="overflow-y-auto  flex  flex-col items-center justify-center">
+                    <SheetHeader>
+                      <SheetTitle>
+                        <a title="Logo" href={logo.url}>
+                          <Image
+                            width={100}
+                            height={50}
+                            src={logo.src}
+                            alt={logo.alt}
+                          />
                         </a>
-                      </Button>
-                      <div className="bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark">
-                        Teste grátis por 7 dias
-                      </div>
+                      </SheetTitle>
+                    </SheetHeader>
+                    <div className="size-full flex flex-col relative ">
+                      <Accordion
+                        type="single"
+                        collapsible
+                        className="flex w-full flex-col gap-4 px-4 pb-4 h-fit"
+                      >
+                        {menu.map((item) => renderMobileMenuItem(item))}
+                      </Accordion>
                     </div>
-                  </div>
-                </SheetContent>
-              </Sheet>
+                  </SheetContent>
+                </Sheet>
+              </div>
             </div>
           </div>
         </div>
@@ -377,9 +369,11 @@ const renderMenuItem = (item: MenuItem) => {
           })}
         >
           {item.items.map((subItem) => (
-            <NavigationMenuLink asChild key={subItem.title} className="w-80">
-              <SubMenuLink item={subItem} />
-            </NavigationMenuLink>
+            <>
+              <NavigationMenuLink asChild key={subItem.title} className="w-80">
+                <SubMenuLink item={subItem} />
+              </NavigationMenuLink>
+            </>
           ))}
         </NavigationMenuContent>
       </NavigationMenuItem>
@@ -432,8 +426,12 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
     <a
       className={cn(
-        'max-w-[350px] flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-[rgba(255,255,255,0.3)] hover:text-accent-foreground',
+        'lg:max-w-[350px] lg:border-none border-b-[1px]  border-[#7D7D7D4D]  border-solid flex flex-row w-full gap-4 p-3 leading-none no-underline transition-colors outline-none select-none  hover:text-accent-foreground',
         { 'row-span-2': !item.title && !item.icon },
+        {
+          'lg:border-b-[1px]  lg:border-[#7D7D7D4D]  lg:border-solid !pb-8':
+            item.with_border,
+        },
       )}
       href={item.url}
     >
@@ -452,7 +450,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
       )}
 
       {!item.title && !item.icon && item.description && (
-        <> {item.description} </>
+        <figure> {item.description} </figure>
       )}
     </a>
   );

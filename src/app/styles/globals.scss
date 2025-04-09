@@ -76,8 +76,13 @@ body {
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+  html {
+    body {
+      @apply bg-background text-foreground;
+      &[data-scroll-locked] {
+        @apply mr-0 #{!important};
+      }
+    }
   }
 }
 
