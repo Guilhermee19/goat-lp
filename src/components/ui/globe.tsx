@@ -6,6 +6,9 @@ import ThreeGlobe from 'three-globe';
 import { useThree, Canvas, extend } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLOBE_JSON } from '../../../public/mocks/globe';
+import { LINES } from '../../../public/mocks/lines';
+import { MAP } from '../../../public/mocks/map';
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 import * as THREE from 'three';
 
 // import countries from '';
@@ -23,8 +26,12 @@ const RING_PROPAGATION_SPEED = 5;
 const aspect = 3;
 const cameraZ = 300;
 
-type Position = {
+export type Position = {
+  type: string;
+  status: boolean;
   order: number;
+  from: string;
+  to: string;
   startLat: number;
   startLng: number;
   endLat: number;
@@ -88,6 +95,18 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
+  const colors = {
+    skyblue: '#0054ad',
+    green: '#038510',
+    blue: '#09d9c4',
+    yellow: '#fff700',
+    parrotcolor: '#9cff00',
+    red: '#ff0000',
+    white: '#ffffff',
+    black: '#000000',
+    pink: '#a10078',
+  };
+
   // Initialize globe only once
   useEffect(() => {
     if (!globeRef.current && groupRef.current) {
@@ -100,6 +119,26 @@ export function Globe({ globeConfig, data }: WorldProps) {
   // Build material when globe is initialized or when relevant props change
   useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
+
+    const arcs = data;
+    const points = [];
+    for (let i = 0; i < arcs.length; i++) {
+      const arc = arcs[i];
+      points.push({
+        size: defaultProps.pointSize,
+        order: arc.order,
+        color: arc.color,
+        lat: arc.startLat,
+        lng: arc.startLng,
+      });
+      points.push({
+        size: defaultProps.pointSize,
+        order: arc.order,
+        color: arc.color,
+        lat: arc.endLat,
+        lng: arc.endLng,
+      });
+    }
 
     const globeMaterial = globeRef.current.globeMaterial() as unknown as {
       color: Color;
@@ -119,32 +158,128 @@ export function Globe({ globeConfig, data }: WorldProps) {
     globeConfig.shininess,
   ]);
 
+  // Adicionando o Card Flutuante
+  useEffect(() => {
+    if (!globeRef.current || !isInitialized) return;
+
+    const createFloatingCard = (lat: number, lng: number, text: string) => {
+      const cardDiv = document.createElement('span');
+      cardDiv.className = 'floating-card'; // Adicione um estilo para o card no CSS
+      cardDiv.innerHTML = `
+        <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px;">
+          ${text}
+        </div>
+      `;
+
+      console.log(cardDiv);
+
+      // Cria o CSS2DObject
+      const card = new CSS2DObject(cardDiv);
+
+      const latLngToVector3 = (lat: number, lng: number, radius: number) => {
+        const phi = (90 - lat) * (Math.PI / 180); // Convertendo para radianos
+        const theta = (lng + 180) * (Math.PI / 180); // Convertendo para radianos
+
+        const x = -radius * Math.sin(phi) * Math.cos(theta);
+        const y = radius * Math.cos(phi);
+        const z = radius * Math.sin(phi) * Math.sin(theta);
+
+        return new THREE.Vector3(x, y, z);
+      };
+
+      // Verificação para garantir que groupRef.current não seja null
+      if (groupRef !== null && groupRef.current !== null) {
+        if (globeRef.current && groupRef.current) {
+          // Converte a latitude e longitude para a posição 3D no globo
+          const position = latLngToVector3(lat, lng, 10); // 10 é o raio do globo
+          card.position.set(position.x, position.y, position.z);
+
+          // const position = globeRef.current.getCoords(lat, lng);
+          console.log(position);
+
+          card.position.set(position.x, position.y, position.z);
+
+          // Adiciona o card à cena
+          console.log('========== ADD AO MAPA ==========');
+          console.log(card);
+          groupRef.current.add(card);
+        }
+      }
+    };
+
+    console.log('Dados recebidos:', data);
+
+    // Adicionando card flutuante ao clicar (exemplo)
+    data.forEach((item) => {
+      createFloatingCard(
+        item.startLat,
+        item.startLng,
+        `Venda de ${item.from} para ${item.to}`,
+      );
+    });
+
+    // Criar a div de teste com o texto "TESTE"
+    const testDiv = document.createElement('div');
+    testDiv.className = 'floating-card';
+    testDiv.innerHTML = `
+      <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px;">
+        TESTE
+      </div>
+    `;
+
+    // Criar o CSS2DObject com a div de teste
+    const testCard = new CSS2DObject(testDiv);
+
+    const latLngToVector3 = (lat: number, lng: number, radius: number) => {
+      const phi = (90 - lat) * (Math.PI / 180); // Convertendo para radianos
+      const theta = (lng + 180) * (Math.PI / 180); // Convertendo para radianos
+
+      const x = -radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.cos(phi);
+      const z = radius * Math.sin(phi) * Math.sin(theta);
+
+      return new THREE.Vector3(x, y, z);
+    };
+
+    // Calcular a posição para o card (pode ser qualquer coordenada no globo)
+    const testPosition = latLngToVector3(40.7128, -74.006, 10); // Exemplo: Coordenadas de Nova York (latitude e longitude)
+
+    // Adiciona o card na posição calculada
+    testCard.position.set(testPosition.x, testPosition.y, testPosition.z);
+    globeRef.current.add(testCard);
+  }, [isInitialized, data]);
+
   // Build data when globe is initialized or when data changes
   useEffect(() => {
-    if (!globeRef.current || !isInitialized || !data) return;
+    if (!globeRef.current || !isInitialized) return;
 
     const arcs = data;
     const points = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
-      // const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
       points.push({
+        type: arc.type,
         size: defaultProps.pointSize,
         order: arc.order,
         color: arc.color,
         lat: arc.startLat,
         lng: arc.startLng,
+        from: arc.from,
+        to: arc.to,
       });
       points.push({
+        type: arc.type,
         size: defaultProps.pointSize,
         order: arc.order,
         color: arc.color,
         lat: arc.endLat,
         lng: arc.endLng,
+        from: arc.from,
+        to: arc.to,
       });
     }
 
-    // remove duplicates for same lat and lng
+    // Remove duplicates for same lat and lng
     const filteredPoints = points.filter(
       (v, i, a) =>
         a.findIndex((v2) =>
@@ -154,6 +289,9 @@ export function Globe({ globeConfig, data }: WorldProps) {
         ) === i,
     );
 
+    console.log(filteredPoints);
+
+    // Apply to globe
     globeRef.current
       .hexPolygonsData(GLOBE_JSON.features)
       .hexPolygonResolution(4) // quantidade de pontos no globo
@@ -187,25 +325,39 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .ringsData([])
+      .arcsData(LINES.pulls)
       .ringColor(() => defaultProps.polygonColor)
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
         (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
-      );
-  }, [
-    isInitialized,
-    data,
-    defaultProps.pointSize,
-    defaultProps.showAtmosphere,
-    defaultProps.atmosphereColor,
-    defaultProps.atmosphereAltitude,
-    defaultProps.polygonColor,
-    defaultProps.arcLength,
-    defaultProps.arcTime,
-    defaultProps.rings,
-    defaultProps.maxRings,
-  ]);
+      )
+      .labelsData(MAP.maps)
+      .labelColor(() => colors.white)
+      .pointColor(() => colors.yellow)
+      .labelDotRadius(0.5)
+      .labelSize(1)
+      .labelText('city')
+      .labelResolution(6)
+      .labelAltitude(0.01)
+      .pointsData(MAP.maps)
+      .pointsMerge(true)
+      .pointAltitude(0.09)
+      .pointRadius(0.09)
+      .arcsData(LINES.pulls)
+      .arcColor((e: any) => {
+        return e.status ? colors.white : colors.white;
+      })
+      .arcAltitude(0.2)
+      .arcStroke(() => {
+        return 0.7;
+      })
+      .arcDashLength(0.5)
+      .arcDashGap(4)
+      .arcDashAnimateTime(1000)
+      .arcsTransitionDuration(500)
+      .arcDashInitialGap((e: any) => e.order * 1);
+  }, [isInitialized, data]);
 
   // Handle rings animation with cleanup
   useEffect(() => {

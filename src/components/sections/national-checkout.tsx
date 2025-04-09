@@ -36,7 +36,7 @@ const RecuperacaoVenda = () => {
       <div className="w-full lg:max-w-xs flex flex-col justify-center items-center gap-4">
         <Image
           src={'/chat.png'}
-          className="w-10/12 h-2/4 object-cover aspect-video transition-transform group-hover:-translate-y-2"
+          className="w-10/12 h-2/4 object-cover aspect-video transition !transition-duration-3000 group-hover:-translate-y-2"
           width={150}
           height={150}
           alt=""
@@ -49,7 +49,7 @@ const RecuperacaoVenda = () => {
         >
           <TextDegrade
             text="Recuperação de venda"
-            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition-transform group-hover:scale-105 group-hover:!font-bold"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition !transition-duration-3000 group-hover:scale-105 group-hover:!font-bold"
             position="center"
             size="very_small"
           ></TextDegrade>
@@ -74,7 +74,7 @@ const SegurancaPonta = () => {
         >
           <TextDegrade
             text="Segurança de ponta"
-            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition-transform group-hover:translate-y-2 group-hover:font-bold"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition !transition-duration-3000 group-hover:translate-y-2 group-hover:font-bold"
             position="center"
             size="very_small"
           ></TextDegrade>
@@ -83,7 +83,7 @@ const SegurancaPonta = () => {
         <Image
           src={'/block.png'}
           className={cn(
-            'w-10/12 h-2/4 object-cover aspect-video transition-transform group-hover:translate-y-2',
+            'w-10/12 h-2/4 object-cover aspect-video transition !transition-duration-3000 group-hover:translate-y-2',
           )}
           width={150}
           height={150}
@@ -109,7 +109,7 @@ const Pagamentos = () => {
       <div className="relative z-20 p-12 flex flex-col justify-between lg:items-end">
         <Image
           src={'/foguete.png'}
-          className="w-10/12 max-w-80 h-2/4 object-cover g:w-5/12 ml-auto aspect-video mb-8 transition-transform group-hover:-translate-y-4 group-hover:translate-x-8"
+          className="w-10/12 max-w-80 h-2/4 object-cover g:w-5/12 ml-auto aspect-video mb-8 transition !transition-duration-3000 group-hover:-translate-y-4 group-hover:translate-x-8"
           width={295}
           height={297}
           alt=""
@@ -118,14 +118,14 @@ const Pagamentos = () => {
         <div className="w-full flex justify-between flex-col lg:flex-row items-start lg:items-end">
           <TextDegrade
             text="Pagamentos instantâneos"
-            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition-transform group-hover:scale-105 hidden lg:flex"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition !transition-duration-3000 group-hover:scale-105 hidden lg:flex"
             position="left"
             size="very_small"
           ></TextDegrade>
 
           <TextDegrade
             text="Pagamentos instantâneos"
-            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition-transform group-hover:scale-105 flex lg:hidden"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition !transition-duration-3000 group-hover:scale-105 flex lg:hidden"
             position="left"
             size="very_small"
           ></TextDegrade>
@@ -146,14 +146,14 @@ const Processamento = () => {
       <div className="w-full lg:max-w-xs flex flex-col justify-center items-center gap-6 p-12">
         <TextDegrade
           text="Processamento Ultra Rápido"
-          className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% !text-2xl !font-bold transition-transform group-hover:scale-105"
+          className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% !text-2xl !font-bold transition !transition-duration-3000 group-hover:scale-105"
           position="center"
           size="very_small"
         ></TextDegrade>
 
         <Image
           src={'/time.png'}
-          className="w-full aspect-[5/4] object-cover transition-transform group-hover:translate-y-2 group-hover:scale-105"
+          className="w-full aspect-[5/4] object-cover transition !transition-duration-3000 group-hover:translate-y-2 group-hover:scale-105"
           width={211}
           height={198}
           alt=""
@@ -163,7 +163,7 @@ const Processamento = () => {
   );
 };
 
-const Integrações = () => {
+const Integracoes = () => {
   return (
     // <div className="relative overflow-hidden lg:aspect-auto h-full min-h-[200px] lg:min-h-[300px] transition-all bg-degrade-green-dark flex justify-center items-center !rounded-3xl border border-solid border-gray lg:col-span-2 !aspect-auto">
     <div className="relative h-full flex flex-col justify-between overflow-hidden lg:aspect-auto bg-degrade-green-dark hover:bg-degrade-green-dark-hover group !rounded-3xl border border-solid border-[#393939] lg:col-span-2 !aspect-auto">
@@ -188,8 +188,8 @@ const Integrações = () => {
           </div>
 
           <TextDegrade
-            text="Integrações"
-            className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition-transform group-hover:scale-110 group-hover:translate-x-2"
+            text="Integracoes"
+            className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition !transition-duration-3000 group-hover:scale-110 group-hover:translate-x-2"
             position="left"
             size="small"
           ></TextDegrade>
@@ -197,7 +197,7 @@ const Integrações = () => {
 
         <Image
           src={'/58befad4a8235fe3fd1864ac8f171ba2.png'}
-          className="w-10/12 h-2/4 object-cover lg:w-6/12 mx-auto lg:mx-0 !aspect-square mb-auto transition-transform group-hover:rotate-2 group-hover:translate-x-2 group-hover:scale-105"
+          className="w-10/12 h-2/4 object-cover lg:w-6/12 mx-auto lg:mx-0 !aspect-square mb-auto transition !transition-duration-3000 group-hover:rotate-2 group-hover:translate-x-2 group-hover:scale-105"
           width={150}
           height={150}
           alt=""
@@ -226,7 +226,7 @@ const VendaMundo = () => {
         >
           <TextDegrade
             text="Venda no mundo todo"
-            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition-transform group-hover:font-bold group-hover:scale-105"
+            className="max-w-48 from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% transition !transition-duration-3000 group-hover:font-bold group-hover:scale-105"
             position="center"
             size="very_small"
           ></TextDegrade>
@@ -238,7 +238,7 @@ const VendaMundo = () => {
 
         <Image
           src={'/local.png'}
-          className="w-10/12 h-2/4 object-cover aspect-video transition-transform group-hover:translate-x-1 group-hover:translate-y-1"
+          className="w-10/12 h-2/4 object-cover aspect-video transition !transition-duration-3000 group-hover:translate-x-1 group-hover:translate-y-1"
           width={150}
           height={150}
           alt=""
@@ -308,7 +308,7 @@ export function NationalCheckout() {
           <SegurancaPonta></SegurancaPonta>
           <Pagamentos></Pagamentos>
           <Processamento></Processamento>
-          <Integrações></Integrações>
+          <Integracoes></Integracoes>
           <VendaMundo></VendaMundo>
         </motion.div>
       </div>

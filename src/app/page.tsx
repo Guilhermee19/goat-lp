@@ -1,36 +1,36 @@
 'use client';
 
-import { CardScrollAnimation } from '@/components/card-scroll-animation';
-import Footer from '@/components/footer';
-import { CardCreateAccount } from '@/components/sections/card-create-account';
-import { CardOurPlans } from '@/components/sections/card-our-plans';
-import { MarqueeTools } from '@/components/sections/carousel-tools';
-import { Functionalities } from '@/components/sections/functionalities';
+// import { CardScrollAnimation } from '@/components/card-scroll-animation';
+// import Footer from '@/components/footer';
+// import { CardCreateAccount } from '@/components/sections/card-create-account';
+// import { CardOurPlans } from '@/components/sections/card-our-plans';
+// import { MarqueeTools } from '@/components/sections/carousel-tools';
+// import { Functionalities } from '@/components/sections/functionalities';
 import { GlobalCheckout } from '@/components/sections/global-checkout';
-import Header from '@/components/sections/header';
-import { LandingPage } from '@/components/sections/landing-page';
-import { NationalCheckout } from '@/components/sections/national-checkout';
-import { OnlineShop } from '@/components/sections/online-shop';
-import { ScrollVelocity } from '@/components/sections/scroll-velocity';
-import { SlideRevolutionizing } from '@/components/sections/slide-revolutionizing';
-import { StayInTouch } from '@/components/sections/stay-in-touch';
-import { Testimonials } from '@/components/sections/testimonials';
-import { WebsiteThemes } from '@/components/sections/website-themes';
+// import Header from '@/components/sections/header';
+// import { LandingPage } from '@/components/sections/landing-page';
+// import { NationalCheckout } from '@/components/sections/national-checkout';
+// import { OnlineShop } from '@/components/sections/online-shop';
+// import { ScrollVelocity } from '@/components/sections/scroll-velocity';
+// import { SlideRevolutionizing } from '@/components/sections/slide-revolutionizing';
+// import { StayInTouch } from '@/components/sections/stay-in-touch';
+// import { Testimonials } from '@/components/sections/testimonials';
+// import { WebsiteThemes } from '@/components/sections/website-themes';
 import React from 'react';
 
 const Home = () => {
   return (
     <>
-      <CardScrollAnimation imageSrc="/a73face01a4d63fc1f894eb3808172ef.png">
+      {/* <CardScrollAnimation imageSrc="/a73face01a4d63fc1f894eb3808172ef.png">
         <Header></Header>
       </CardScrollAnimation>
 
       <MarqueeTools></MarqueeTools>
       <Functionalities></Functionalities>
       <SlideRevolutionizing key={0}></SlideRevolutionizing>
-      <NationalCheckout></NationalCheckout>
+      <NationalCheckout></NationalCheckout> */}
       <GlobalCheckout></GlobalCheckout>
-      <ScrollVelocity></ScrollVelocity>
+      {/* <ScrollVelocity></ScrollVelocity>
       <LandingPage></LandingPage>
       <WebsiteThemes></WebsiteThemes>
       <OnlineShop></OnlineShop>
@@ -41,7 +41,7 @@ const Home = () => {
       <Testimonials></Testimonials>
       <CardOurPlans></CardOurPlans>
       <StayInTouch></StayInTouch>
-      <Footer></Footer>
+      <Footer></Footer> */}
     </>
   );
 };
