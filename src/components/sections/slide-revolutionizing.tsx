@@ -50,7 +50,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Sonhe grande. Inove rápido. Chegue longe com a Goatcom"
             className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
-            position="center"
+            position="left"
             size="small"
           ></TextDegrade>
         </>
@@ -69,7 +69,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Inovação que transforma o E-commerce"
             className="lg:max-w-[570px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
-            position="center"
+            position="left"
             size="small"
           ></TextDegrade>
         </>
@@ -88,7 +88,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Simplicidade que impulsiona os seus resultados"
             className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
-            position="center"
+            position="left"
             size="small"
           ></TextDegrade>
         </>
@@ -108,7 +108,7 @@ export function SlideRevolutionizing({
           <TextDegrade
             text="Compromisso direto com o seu sucesso"
             className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
-            position="center"
+            position="left"
             size="small"
           ></TextDegrade>
         </>
