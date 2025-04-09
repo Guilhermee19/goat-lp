@@ -312,7 +312,6 @@ export function World(props: WorldProps) {
         autoRotate={true}
         minPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
         maxPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
-        // maxPolarAngle={Math.PI - Math.PI / 3} // Limita a rotação vertical (pode ajustar)
         enableDamping={true} // Permite suavização no movimento da câmera
         dampingFactor={0.25} // Suaviza o movimento
       />
