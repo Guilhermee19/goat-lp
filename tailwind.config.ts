@@ -194,6 +194,7 @@ const config: Config = {
         },
       },
       animation: {
+        'spin-slow': 'spin 3s linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         marquee: 'marquee var(--duration) infinite linear',
@@ -212,38 +213,38 @@ const config: Config = {
         inter: ['Inter', 'sans-serif'],
       },
       fontSize: {
-        sm: '16px',     // fig16
-        xl: '22px',     // fig22
-        '2xl': '24px',  // fig24
-        '3xl': '32px',  // fig32
-        '4xl': '43px',  // fig43
-        '5xl': '48px',   // fig48
-        '6xl': '56px',  // fig56
-        '7xl': '60px',  // fig60
-        '8xl': '64px',   // fig64
+        sm: '16px', // fig16
+        xl: '22px', // fig22
+        '2xl': '24px', // fig24
+        '3xl': '32px', // fig32
+        '4xl': '43px', // fig43
+        '5xl': '48px', // fig48
+        '6xl': '56px', // fig56
+        '7xl': '60px', // fig60
+        '8xl': '64px', // fig64
       },
       gap: {
-        '3': '12px',    // fig12
-        '6': '24px',    // fig24
-        '8': '32px',    // fig32
-        '12': '48px',   // fig48
-        '18': '72px',   // fig72
+        '3': '12px', // fig12
+        '6': '24px', // fig24
+        '8': '32px', // fig32
+        '12': '48px', // fig48
+        '18': '72px', // fig72
       },
       margin: {
-        '3': '12px',    // fig12
-        '6': '24px',    // fig24
-        '12': '48px',   // fig48
-        '13': '52px',   // fig52
-        '16': '64px',   // fig64
-        '18': '72px',   // fig72
-        '20': '80px',   // fig80
+        '3': '12px', // fig12
+        '6': '24px', // fig24
+        '12': '48px', // fig48
+        '13': '52px', // fig52
+        '16': '64px', // fig64
+        '18': '72px', // fig72
+        '20': '80px', // fig80
       },
       padding: {
-        '6': '24px',    // fig24
-        '20': '80px'    // fig80
+        '6': '24px', // fig24
+        '20': '80px', // fig80
       },
       width: {
-        figFull: 'calc(100% - 120px)'
+        figFull: 'calc(100% - 120px)',
       },
       transitionTimingFunction: {
         'minor-spring': 'cubic-bezier(0.18,0.89,0.82,1.04)',

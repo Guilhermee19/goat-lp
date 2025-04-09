@@ -19,8 +19,8 @@ declare module '@react-three/fiber' {
 
 extend({ ThreeGlobe: ThreeGlobe });
 
-const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
+const RING_PROPAGATION_SPEED = 5;
+const aspect = 3;
 const cameraZ = 300;
 
 type Position = {
@@ -156,8 +156,9 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .hexPolygonsData(GLOBE_JSON.features)
-      .hexPolygonResolution(3)
-      .hexPolygonMargin(0.7)
+      .hexPolygonResolution(4) // quantidade de pontos no globo
+      .hexPolygonMargin(0.1) // espaço entre os pontos do globo
+      .hexPolygonUseDots(true)
       .showAtmosphere(defaultProps.showAtmosphere)
       .atmosphereColor(defaultProps.atmosphereColor)
       .atmosphereAltitude(defaultProps.atmosphereAltitude)
