@@ -14,17 +14,19 @@ export default function LocaleSwitcher() {
         {
           value: 'en',
           label: t('en'),
+          flagUrl: '/country-flag/en.svg',
         },
         {
           value: 'pt',
           label: t('pt'),
+          flagUrl: '/country-flag/pt.svg',
         },
         {
           value: 'es',
           label: t('es'),
+          flagUrl: '/country-flag/es.svg',
         },
       ]}
-      label={t('label')}
     />
   );
 }

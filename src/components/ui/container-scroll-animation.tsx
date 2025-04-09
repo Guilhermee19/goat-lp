@@ -60,19 +60,13 @@ export const ContainerScroll = ({
 };
 
 const Header = ({
-  translate,
   titleComponent,
 }: {
   translate: MotionValue<number>;
   titleComponent: string | React.ReactNode;
 }) => {
   return (
-    <motion.div
-      style={{
-        translateY: translate,
-      }}
-      className="div w-full mx-auto text-center"
-    >
+    <motion.div className="div w-full mx-auto text-center">
       {titleComponent}
     </motion.div>
   );

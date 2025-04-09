@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full mt-20">
+      <div className="w-full pt-10">
         <div className="relative z-10 flex flex-col gap-12 items-center justify-start">
           <div className="degradeBorder">
             <div
@@ -127,7 +127,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="lg:absolute lg:-bottom-40 lg:-right-32">
+          <div className="lg:absolute hidden lg:block  lg:-bottom-40 lg:-right-32">
             <GoatAnimation className="size-52 lg:size-72"></GoatAnimation>
           </div>
         </div>

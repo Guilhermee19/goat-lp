@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 // import TextAnimationDegrade from '../../app/_components/title-animation';
 import { TextDegrade } from '../text-degrade';
 import { GlobeConfig } from '../ui/globe';
-import { IconCloud } from '../magicui/icon-cloud';
+import { LINES } from '../../../public/mocks/lines';
 import { ShimmerButton } from '../magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
 
@@ -29,38 +29,10 @@ export function GlobalCheckout() {
     arcLength: 0.1, // Menor distância nos arcos
     rings: 1, // Adicionar mais anéis para mais interatividade
     maxRings: 3, // Limite de anéis
-    initialPosition: { lat: -22.9068, lng: -43.1729 }, // Posição inicial alterada
+    initialPosition: { lat: -15.797145415807751, lng: -47.892200612268226 }, // Posição inicial alterada
     autoRotate: true,
-    autoRotateSpeed: 0, // Velocidade de rotação mais lenta
+    autoRotateSpeed: 0.2, // Velocidade de rotação mais lenta
   };
-
-  const colors = ['#fff'];
-  const sampleArcs = [
-    {
-      order: 1,
-      startLat: -19.885592,
-      startLng: -43.951191,
-      endLat: -22.9068,
-      endLng: -43.1729,
-      arcAlt: 0.1,
-      color: colors[Math.floor(Math.random() * (colors.length - 1))],
-    },
-    {
-      order: 14,
-      startLat: -33.936138,
-      startLng: 18.436529,
-      endLat: 21.395643,
-      endLng: 39.883798,
-      arcAlt: 0.3,
-      color: colors[Math.floor(Math.random() * (colors.length - 1))],
-    },
-  ];
-
-  const slugs = ['typescript', 'javascript', 'dart'];
-
-  const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
-  );
 
   const World = dynamic(() => import('../ui/globe').then((m) => m.World), {
     ssr: false,
@@ -126,7 +98,14 @@ export function GlobalCheckout() {
             <Meteors number={13} minDelay={0.3} angle={220} />
           </div>
 
-          <World data={sampleArcs} globeConfig={globeConfig} />
+          {/* <div id="markerLabel" class="hidden">
+            <button id="closeButton">X</button>
+            <div class="text" id="idNum"></div>
+            <div class="text" id="magnitude"></div>
+            <div class="text" id="coordinates"></div>
+          </div> */}
+
+          <World data={LINES.pulls} globeConfig={globeConfig} />
         </div>
       </div>
     </div>
