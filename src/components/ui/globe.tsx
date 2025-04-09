@@ -3,12 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from 'three';
 import ThreeGlobe from 'three-globe';
-import { useThree, Canvas, extend } from '@react-three/fiber';
+import { useThree, Canvas, extend, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLOBE_JSON } from '../../../public/mocks/globe';
-import { LINES } from '../../../public/mocks/lines';
-import { MAP } from '../../../public/mocks/map';
-import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
+// import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 import * as THREE from 'three';
 
 // import countries from '';
@@ -22,7 +20,6 @@ declare module '@react-three/fiber' {
 
 extend({ ThreeGlobe: ThreeGlobe });
 
-const RING_PROPAGATION_SPEED = 5;
 const aspect = 3;
 const cameraZ = 300;
 
@@ -32,12 +29,15 @@ export type Position = {
   order: number;
   from: string;
   to: string;
-  startLat: number | string;
-  startLng: number | string;
-  endLat: number | string;
-  endLng: number | string;
+  startLat: number;
+  startLng: number;
+  endLat: number;
+  endLng: number;
   arcAlt: number;
   color?: string;
+  url: string;
+  width: number;
+  heigth: number;
 };
 
 export type GlobeConfig = {
@@ -76,6 +76,7 @@ interface WorldProps {
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
   const groupRef = useRef<THREE.Group | null>(null);
+  const { camera } = useThree();
   const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
@@ -93,18 +94,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     rings: 1,
     maxRings: 3,
     ...globeConfig,
-  };
-
-  const colors = {
-    skyblue: '#0054ad',
-    green: '#038510',
-    blue: '#09d9c4',
-    yellow: '#fff700',
-    parrotcolor: '#9cff00',
-    red: '#ff0000',
-    white: '#ffffff',
-    black: '#000000',
-    pink: '#a10078',
   };
 
   // Initialize globe only once
@@ -131,13 +120,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
         lat: arc.startLat,
         lng: arc.startLng,
       });
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: arc.color,
-        lat: arc.endLat,
-        lng: arc.endLng,
-      });
     }
 
     const globeMaterial = globeRef.current.globeMaterial() as unknown as {
@@ -158,107 +140,118 @@ export function Globe({ globeConfig, data }: WorldProps) {
     globeConfig.shininess,
   ]);
 
-  // Adicionando o Card Flutuante
+  // Função para converter latitude/longitude para posição 3D no globo
+  const latLngToVector3 = (lat: number, lng: number, radius: number) => {
+    const phi = (90 - lat) * (Math.PI / 180); // Convertendo para radianos
+    const theta = (lng + 180) * (Math.PI / 180); // Convertendo para radianos
+
+    const x = -radius * Math.sin(phi) * Math.cos(theta); // Coordenada X
+    const y = radius * Math.cos(phi); // Coordenada Y (altura)
+    const z = radius * Math.sin(phi) * Math.sin(theta); // Coordenada Z
+
+    return new Vector3(x, y, z);
+  };
+
+  // ? Função para criar o HTML (ex: um card) na posição do globo
+  // const createHTMLCardAtLocation = (lat: number, lng: number, text: string) => {
+  //   const cardDiv = document.createElement('div');
+  //   cardDiv.className = 'floating-card'; // Estilo para o card (CSS)
+  //   cardDiv.innerHTML = `
+  //   <div style="padding: 10px; background-color: rgba(255, 255, 255, 0.7); c#ff0000 white; border-radius: 5px;">
+  //     ${text}
+  //   </div>
+  // `;
+
+  //   // Cria o CSS2DObject com o conteúdo HTML
+  //   const card = new CSS2DObject(cardDiv);
+
+  //   // Converte latitude e longitude para posição 3D no globo
+  //   const position = latLngToVector3(lat, lng, 110); // Ajuste o raio conforme necessário
+  //   card.position.set(position.x, position.y, position.z);
+
+  //   // Faz o card "olhar" para a câmera
+  //   card.lookAt(camera.position);
+
+  //   if (groupRef.current) {
+  //     groupRef.current.add(card); // Adiciona o card ao grupo de objetos na cena
+  //   }
+  // };
+
+  // ? Função para criar uma imagem (usando textura) na posição do globo
+  const createImageAtLocation = (
+    lat: number,
+    lng: number,
+    imageUrl: string,
+    width: number, // Largura da imagem
+    height: number, // Altura da imagem
+  ) => {
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load(imageUrl); // Carrega a textura da imagem
+
+    // Cria uma geometria de plano (superfície) para a imagem
+    const geometry = new THREE.PlaneGeometry(width, height); // Ajusta o tamanho com base nos parâmetros
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      side: THREE.DoubleSide,
+    }); // Aplica a textura da imagem
+    const plane = new THREE.Mesh(geometry, material);
+
+    // Converte latitude e longitude para posição 3D no globo
+    const position = latLngToVector3(lat, lng, 90 + width); // Ajuste o raio conforme necessário
+    plane.position.set(position.x, position.y, position.z);
+
+    // Faz o plano "olhar" para a câmera
+    plane.lookAt(camera.position);
+
+    // Usar o hook `useFrame` para rotacionar a imagem no sentido contrário ao globo
+    setInterval(() => {
+      plane.rotation.y -= 0.014; // Gira a imagem lentamente no sentido oposto ao do globo
+    }, 100);
+
+    // useFrame(() => {
+    // });
+
+    // Usar o hook `useFrame` para rotacionar a imagem no sentido contrário ao globo
+    // plane.rotation.y -= 2; // Gira a imagem lentamente no sentido oposto ao do globo
+
+    // Adiciona o plano (imagem) ao grupo de objetos na cena
+    if (groupRef.current) {
+      groupRef.current.add(plane);
+    }
+  };
+
   useEffect(() => {
+    // ! Adicionando o Card Flutuante
+
     if (!globeRef.current || !isInitialized) return;
-
-    const createFloatingCard = (
-      lat: number | string,
-      lng: number | string,
-      text: string,
-    ) => {
-      const cardDiv = document.createElement('span');
-      cardDiv.className = 'floating-card'; // Adicione um estilo para o card no CSS
-      cardDiv.innerHTML = `
-        <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px;">
-          ${text}
-        </div>
-      `;
-
-      console.log(cardDiv);
-
-      // Cria o CSS2DObject
-      const card = new CSS2DObject(cardDiv);
-
-      const latLngToVector3 = (lat: number, lng: number, radius: number) => {
-        const phi = (90 - lat) * (Math.PI / 180); // Convertendo para radianos
-        const theta = (lng + 180) * (Math.PI / 180); // Convertendo para radianos
-
-        const x = -radius * Math.sin(phi) * Math.cos(theta);
-        const y = radius * Math.cos(phi);
-        const z = radius * Math.sin(phi) * Math.sin(theta);
-
-        return new THREE.Vector3(x, y, z);
-      };
-
-      // Verificação para garantir que groupRef.current não seja null
-      if (groupRef !== null && groupRef.current !== null) {
-        if (globeRef.current && groupRef.current) {
-          // Converte a latitude e longitude para a posição 3D no globo
-          const position = latLngToVector3(Number(lat), Number(lng), 10); // 10 é o raio do globo
-          card.position.set(position.x, position.y, position.z);
-
-          // const position = globeRef.current.getCoords(lat, lng);
-          console.log(position);
-
-          card.position.set(position.x, position.y, position.z);
-
-          // Adiciona o card à cena
-          console.log('========== ADD AO MAPA ==========');
-          console.log(card);
-          groupRef.current.add(card);
-        }
-      }
-    };
 
     console.log('Dados recebidos:', data);
 
-    // Adicionando card flutuante ao clicar (exemplo)
     data.forEach((item) => {
-      createFloatingCard(
+      createImageAtLocation(
         item.startLat,
         item.startLng,
-        `Venda de ${item.from} para ${item.to}`,
+        item.url,
+        item.width / 10,
+        item.heigth / 10,
       );
     });
 
-    // Criar a div de teste com o texto "TESTE"
-    const testDiv = document.createElement('div');
-    testDiv.className = 'floating-card';
-    testDiv.innerHTML = `
-      <h1 style="padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px;">
-        TESTE
-      </h1>
-    `;
+    const backgroundMaterial = new THREE.MeshBasicMaterial({
+      color: new Color(0x000000), // Cor de fundo
+      side: THREE.BackSide,
+    });
 
-    // Criar o CSS2DObject com a div de teste
-    const testCard = new CSS2DObject(testDiv);
+    const backgroundGeometry = new THREE.SphereGeometry(5000, 32, 32); // Raio do fundo
+    const backgroundMesh = new THREE.Mesh(
+      backgroundGeometry,
+      backgroundMaterial,
+    );
 
-    const latLngToVector3 = (lat: number, lng: number, radius: number) => {
-      const phi = (90 - lat) * (Math.PI / 180); // Convertendo para radianos
-      const theta = (lng + 180) * (Math.PI / 180); // Convertendo para radianos
+    groupRef.current?.add(backgroundMesh);
 
-      const x = -radius * Math.sin(phi) * Math.cos(theta);
-      const y = radius * Math.cos(phi);
-      const z = radius * Math.sin(phi) * Math.sin(theta);
+    // ! Build data when globe is initialized or when data changes
 
-      return new THREE.Vector3(x, y, z);
-    };
-
-    // Calcular a posição para o card (pode ser qualquer coordenada no globo)
-    const testPosition = latLngToVector3(
-      -15.797145415807751,
-      -47.892200612268226,
-      1,
-    ); // Exemplo: Coordenadas de Nova York (latitude e longitude)
-
-    // Adiciona o card na posição calculada
-    testCard.position.set(testPosition.x, testPosition.y, testPosition.z);
-    globeRef.current.add(testCard);
-  }, [isInitialized, data]);
-
-  // Build data when globe is initialized or when data changes
-  useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
 
     const arcs = data;
@@ -275,16 +268,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
         from: arc.from,
         to: arc.to,
       });
-      points.push({
-        type: arc.type,
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: arc.color,
-        lat: arc.endLat,
-        lng: arc.endLng,
-        from: arc.from,
-        to: arc.to,
-      });
     }
 
     // Remove duplicates for same lat and lng
@@ -296,8 +279,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
           ),
         ) === i,
     );
-
-    console.log(filteredPoints);
 
     // Aplicar configurações ao globo
     globeRef.current
@@ -311,61 +292,22 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .atmosphereAltitude(defaultProps.atmosphereAltitude) // Altitude da atmosfera
       .hexPolygonColor(() => defaultProps.polygonColor); // Cor dos hexágonos
 
-    // Arcos (linhas de conexão entre pontos)
-    globeRef.current
-      .arcsData(data) // Dados dos arcos
-      .arcStartLat((d) => (d as { startLat: number }).startLat) // Latitude de início dos arcos
-      .arcStartLng((d) => (d as { startLng: number }).startLng) // Longitude de início dos arcos
-      .arcEndLat((d) => (d as { endLat: number }).endLat) // Latitude de fim dos arcos
-      .arcEndLng((d) => (d as { endLng: number }).endLng) // Longitude de fim dos arcos
-      .arcColor((e) => (e as { color: string }).color) // Cor do arco
-      .arcAltitude((e) => (e as { arcAlt: number }).arcAlt) // Altitude dos arcos
-      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)]) // Cor da linha do arco
-      .arcDashLength(defaultProps.arcLength) // Tamanho do dash (pontilhado) do arco
-      .arcDashInitialGap((e) => (e as { order: number }).order) // Espaço inicial do dash
-      .arcDashGap(15) // Espaçamento entre os "dashes"
-      .arcDashAnimateTime(() => defaultProps.arcTime); // Tempo de animação do arco
-
     // Pontos no globo
     globeRef.current
       .pointsData(filteredPoints) // Dados dos pontos no globo
-      .pointColor((e) => (e as { color: string }).color) // Cor dos pontos
-      .pointsMerge(true) // Mesclar pontos
-      .pointAltitude(0.0) // Altitude dos pontos
-      .pointRadius(2); // Raio dos pontos
+      .pointColor((e) => (e as { color: string }).color); // Cor dos pontos
+    // .pointsMerge(true) // Mesclar pontos
+    // .pointAltitude(0.05) // Altitude dos pontos
+    // .pointRadius(0.2) // Raio dos pontos
 
-    // Animação de anéis e arcos
-    globeRef.current
-      .ringsData([]) // Dados dos anéis (não está sendo utilizado, pode ser removido ou preenchido)
-      .arcsData(LINES.pulls) // Dados dos arcos
+    // Label
+    // .labelsData(filteredPoints)
+    // .labelSize(1.2) // Tamanho das labels
+    // .labelText('to') // Texto das labels
+    // .labelResolution(6) // Resolução das labels
+    // .labelAltitude(0.01); // Altitude das labels
 
-      // Configurações dos arcos (relacionadas aos dados dos arcos)
-      // .arcColor((e) => (e.status ? colors.white : colors.white)) // Cor dos arcos, dependendo do status
-      // .arcAltitude(0.2) // Altitude dos arcos
-
-      // Configurações específicas da linha do arco (separadas)
-      .arcStroke(() => 0.7) // Espessura da linha do arco
-      .arcDashLength(0.5) // Tamanho do "dash" do arco
-      .arcDashGap(4) // Espaçamento entre os "dashes"
-      .arcDashAnimateTime(1000) // Tempo de animação do "dash"
-      .arcsTransitionDuration(500) // Duração da transição dos arcos
-      .arcDashInitialGap((e: any) => e.order * 1) // Espaço inicial do "dash" com base na ordem do arco
-
-      // Configurações das labels (separadas da linha do arco)
-      .labelsData(MAP.maps) // Dados das labels (mapas)
-      .labelColor(() => colors.white) // Cor das labels
-      .pointColor(() => colors.yellow) // Cor dos pontos nos anéis
-      .labelDotRadius(0.5) // Raio dos pontos das labels
-      .labelSize(1) // Tamanho das labels
-      .labelText('city') // Texto das labels
-      .labelResolution(6) // Resolução das labels
-      .labelAltitude(0.01) // Altitude das labels
-      .pointAltitude(0.09) // Altitude dos pontos nas labels
-      .pointRadius(0.09); // Raio dos pontos nas labels
-  }, [isInitialized, data]);
-
-  // Handle rings animation with cleanup
-  useEffect(() => {
+    // ! Handle rings animation with cleanup
     if (!globeRef.current || !isInitialized || !data) return;
 
     const interval = setInterval(() => {
@@ -412,24 +354,34 @@ export function World(props: WorldProps) {
   const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
+
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
       <WebGLRendererConfig />
-      <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
+
+      <ambientLight color={globeConfig.ambientLight} intensity={0.5} />
       <directionalLight
-        color={globeConfig.directionalLeftLight}
-        position={new Vector3(-400, 100, 400)}
-      />
-      <directionalLight
-        color={globeConfig.directionalTopLight}
-        position={new Vector3(-200, 500, 200)}
-      />
-      <pointLight
-        color={globeConfig.pointLight}
-        position={new Vector3(-200, 500, 200)}
+        color={0xffffff}
+        position={new Vector3(1, 1, 1)}
         intensity={0.8}
       />
+
+      <directionalLight
+        color={0xffffff}
+        position={new Vector3(2, 2, 2)}
+        intensity={1}
+      />
+
+      <directionalLight
+        color={0xeeeeee}
+        position={new Vector3(-1, -1, -1)}
+        intensity={0.2}
+      />
+
+      {/* Glóbulo */}
       <Globe {...props} />
+
+      {/* Controle de órbita (garante que a câmera se mova, mas a luz não) */}
       <OrbitControls
         enablePan={false}
         enableZoom={false}
@@ -437,27 +389,15 @@ export function World(props: WorldProps) {
         maxDistance={cameraZ}
         autoRotateSpeed={1}
         autoRotate={true}
-        minPolarAngle={Math.PI / 3.5}
-        maxPolarAngle={Math.PI - Math.PI / 3}
+        minPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
+        maxPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
+        // maxPolarAngle={Math.PI - Math.PI / 3} // Limita a rotação vertical (pode ajustar)
+        // enableRotate={true} // Permite rotação no eixo Y
+        enableDamping={true} // Permite suavização no movimento da câmera
+        dampingFactor={0.25} // Suaviza o movimento
       />
     </Canvas>
   );
-}
-
-export function hexToRgb(hex: string) {
-  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-    return r + r + g + g + b + b;
-  });
-
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
 }
 
 export function genRandomNumbers(min: number, max: number, count: number) {

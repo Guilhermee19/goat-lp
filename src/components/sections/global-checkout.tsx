@@ -5,10 +5,7 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import dynamic from 'next/dynamic';
 // import TextAnimationDegrade from '../../app/_components/title-animation';
 import { TextDegrade } from '../text-degrade';
-import { GlobeConfig, Position } from '../ui/globe';
-import { IconCloud } from '../magicui/icon-cloud';
-import { ShimmerButton } from '../magicui/shimmer-button';
-import Icon from '@/shared/icon/icon';
+import { GlobeConfig } from '../ui/globe';
 import { LINES } from '../../../public/mocks/lines';
 
 export function GlobalCheckout() {
@@ -34,36 +31,6 @@ export function GlobalCheckout() {
     autoRotate: true,
     autoRotateSpeed: 0.2, // Velocidade de rotação mais lenta
   };
-
-  const colors = ['#fff'];
-  const sampleArcs: Position[] = [
-    {
-      type: 'arc',
-      status: true,
-      order: 1,
-      from: 'Sialkot',
-      to: 'Istanbul',
-      startLat: -15.797145415807751,
-      startLng: -47.892200612268226,
-      endLat: 25.0,
-      endLng: -60.0,
-      arcAlt: 0.5,
-      color: '#ff0000',
-    },
-    {
-      type: 'arc',
-      status: true,
-      order: 2,
-      from: 'Sialkot',
-      to: 'Tokyo',
-      startLat: 40.713318,
-      startLng: -73.998978,
-      endLat: 15.0,
-      endLng: -40.0,
-      arcAlt: 0.6,
-      color: '#00ff00',
-    },
-  ];
 
   const World = dynamic(() => import('../ui/globe').then((m) => m.World), {
     ssr: false,
@@ -128,6 +95,13 @@ export function GlobalCheckout() {
           <div className="absolute left-10 bottom-0 w-full h-[35vh]">
             <Meteors number={13} minDelay={0.3} angle={220} />
           </div>
+
+          {/* <div id="markerLabel" class="hidden">
+            <button id="closeButton">X</button>
+            <div class="text" id="idNum"></div>
+            <div class="text" id="magnitude"></div>
+            <div class="text" id="coordinates"></div>
+          </div> */}
 
           <World data={LINES.pulls} globeConfig={globeConfig} />
         </div>

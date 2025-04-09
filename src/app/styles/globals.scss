@@ -96,8 +96,8 @@ body {
 }
 
 .floating-card {
-  position: absolute;
-  pointer-events: none; /* Para que o clique não interfira no globo */
-  transform: translate(-50%, -50%); /* Para centralizar o card */
-  z-index: 999;
+  // position: absolute;
+  // pointer-events: none; /* Para que o clique não interfira no globo */
+  // transform: translate(-50%, -50%); /* Para centralizar o card */
+  // z-index: 999;
 }
