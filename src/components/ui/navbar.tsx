@@ -38,6 +38,7 @@ interface MenuItem {
   icon?: React.ReactNode;
   items?: MenuItem[];
   with_border?: boolean;
+  class?: string;
 }
 
 interface Navbar1Props {
@@ -91,6 +92,7 @@ const Navbar = ({
             ></Image>
           ),
           with_border: true,
+          class: 'py-8 lg:py-0',
         },
         {
           title: 'Checkout Global',
@@ -107,6 +109,7 @@ const Navbar = ({
             ></Image>
           ),
           with_border: true,
+          class: 'py-8 lg:py-0',
         },
         {
           title: '',
@@ -136,6 +139,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          class: 'py-8 lg:py-0',
         },
         {
           title: 'Loja Virtual',
@@ -151,6 +155,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          class: 'py-8 lg:py-0',
         },
       ],
     },
@@ -173,6 +178,7 @@ const Navbar = ({
             ></Image>
           ),
           with_border: true,
+          class: 'py-8 lg:py-0',
         },
         {
           title: 'Venda Global',
@@ -188,6 +194,7 @@ const Navbar = ({
             ></Image>
           ),
           with_border: true,
+          class: 'py-8 lg:py-0',
         },
         {
           title: 'Marketing',
@@ -204,6 +211,7 @@ const Navbar = ({
             ></Image>
           ),
           with_border: true,
+          class: 'py-8 lg:py-0',
         },
         {
           title: 'Relatórios',
@@ -219,6 +227,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          class: 'py-8 lg:py-0',
         },
         {
           title: 'Apps e Integrações',
@@ -234,6 +243,7 @@ const Navbar = ({
               className="min-w-7 size-7 object-cover"
             ></Image>
           ),
+          class: 'py-8 lg:py-0',
         },
       ],
     },
@@ -350,9 +360,7 @@ const Navbar = ({
                           renderMobileMenuItem(item, idx),
                         )}
                       </Accordion>
-                    </div>
 
-                    <SheetFooter className="w-full">
                       <div className="relative flex flex-col gap-2 items-center mt-auto">
                         <Button
                           asChild
@@ -372,7 +380,7 @@ const Navbar = ({
                           Teste grátis por 7 dias
                         </div>
                       </div>
-                    </SheetFooter>
+                    </div>
                   </SheetContent>
                 </Sheet>
               </div>
@@ -451,37 +459,56 @@ const renderMobileMenuItem = (item: MenuItem, idx: number) => {
 };
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
-  return (
-    <a
-      className={cn(
-        'lg:max-w-[350px] lg:border-none border-b-[1px]  border-[#7D7D7D4D]  border-solid flex flex-row w-full gap-4 p-3 leading-none no-underline transition-colors outline-none select-none  hover:text-accent-foreground',
-        { 'row-span-2': !item.title && !item.icon },
-        {
-          'lg:border-b-[1px]  lg:border-[#7D7D7D4D]  lg:border-solid !pb-8':
-            item.with_border,
-        },
-      )}
-      href={item.url}
-    >
-      {item.title && item.icon && (
-        <>
-          <div className="text-white">{item.icon}</div>
-          <div>
-            <div className="text-sm font-semibold text-white">{item.title}</div>
-            {item.description && (
-              <p className="text-sm leading-snug text-muted-foreground text-white">
-                {item.description}
-              </p>
-            )}
-          </div>
-        </>
-      )}
-
-      {!item.title && !item.icon && item.description && (
-        <figure> {item.description} </figure>
-      )}
-    </a>
-  );
+  if (item.title && item.icon) {
+    return (
+      <a
+        className={cn(
+          'lg:max-w-[350px] lg:border-none border-b-[1px]  border-[#7D7D7D4D]  border-solid flex flex-row w-full gap-4 p-3 leading-none no-underline transition-colors outline-none select-none  hover:text-accent-foreground',
+          { 'row-span-2': !item.title && !item.icon },
+          {
+            'lg:border-b-[1px]  lg:border-[#7D7D7D4D]  lg:border-solid py-8 lg:py-0 !pb-8':
+              item.with_border,
+          },
+          item?.class,
+        )}
+        href={item.url}
+      >
+        {item.title && item.icon && (
+          <>
+            <div className="text-white">{item.icon}</div>
+            <div>
+              <div className="text-sm font-semibold text-white">
+                {item.title}
+              </div>
+              {item.description && (
+                <p className="text-sm leading-snug text-muted-foreground text-white">
+                  {item.description}
+                </p>
+              )}
+            </div>
+          </>
+        )}
+      </a>
+    );
+  } else {
+    return (
+      <a
+        className={cn(
+          'lg:max-w-[350px] hidden lg:flex lg:border-none border-b-[1px]  border-[#7D7D7D4D] border-solid flex-row w-full gap-4 p-3 leading-none no-underline transition-colors outline-none select-none  hover:text-accent-foreground',
+          { 'row-span-2': !item.title && !item.icon },
+          {
+            'lg:border-b-[1px]  lg:border-[#7D7D7D4D]  lg:border-solid py-8 lg:py-0 !pb-8':
+              item.with_border,
+          },
+        )}
+        href={item.url}
+      >
+        {!item.title && !item.icon && item.description && (
+          <figure> {item.description} </figure>
+        )}
+      </a>
+    );
+  }
 };
 
 export { Navbar };
