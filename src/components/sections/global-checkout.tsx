@@ -62,13 +62,13 @@ export function GlobalCheckout() {
           cabeça.
         </TextAnimate>
 
-        <div className="relative w-[80vw] max-w-5xl aspect-square flex justify-center items-center">
+        <div className="relative w-full aspect-square flex justify-center items-center">
           <div className="absolute z-30 flex flex-col justify-center items-center gap-[26px]">
-            <p className="max-w-lg text-center font-hankenGrotesk leading-none text-[72px] font-light text-white">
+            <p className="max-w-lg text-center font-hankenGrotesk leading-none text-4xl lg:text-[72px] font-light text-white">
               Seu negócio sem fronteiras
             </p>
 
-            <p className="font-inter font-normal text-xl text-white">
+            <p className="font-inter font-normal text-lg lg:text-xl text-white text-center">
               Alcance clientes internacionais sem dor de cabeça.{' '}
             </p>
 
@@ -83,7 +83,7 @@ export function GlobalCheckout() {
             </ShimmerButton>
           </div>
 
-          <div className="absolute w-11/12 aspect-square animate-spin-slow flex items-center bg-transparent justify-center rounded-full opacity-90 bg-gradient-to-r from-[#d0f0fd00] from-60% to-[#109DE3] to-100%">
+          <div className="absolute w-11/12 max-w-4xl aspect-square animate-spin-slow flex items-center bg-transparent justify-center rounded-full opacity-90 bg-gradient-to-r from-[#d0f0fd00] from-60% to-[#109DE3] to-100%">
             <div className="w-full h-full m-px bg-black rounded-full flex items-center justify-center"></div>
           </div>
 

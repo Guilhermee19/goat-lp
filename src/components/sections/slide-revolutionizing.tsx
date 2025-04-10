@@ -167,12 +167,9 @@ export function SlideRevolutionizing({
               item={item}
               index={index}
               activeItem={activeItem}
-              onMouseEnter={() => {
+              onClick={() => {
                 setActiveItem(index);
                 setIsHovering(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovering(false);
               }}
             />
 
@@ -182,12 +179,9 @@ export function SlideRevolutionizing({
               item={item}
               index={index}
               activeItem={activeItem}
-              onMouseEnter={() => {
+              onClick={() => {
                 setActiveItem(index);
                 setIsHovering(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovering(false);
               }}
             />
           </>

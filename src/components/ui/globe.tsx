@@ -7,6 +7,7 @@ import { useThree, Canvas, extend } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLOBE_JSON } from '../../../public/mocks/globe';
 import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber';
 declare module '@react-three/fiber' {
   interface ThreeElements {
     threeGlobe: ThreeElements['mesh'] & {
@@ -18,7 +19,7 @@ declare module '@react-three/fiber' {
 extend({ ThreeGlobe: ThreeGlobe });
 
 const aspect = 3;
-const cameraZ = 400;
+const cameraZ = 330;
 
 export type Position = {
   type: string;
@@ -70,8 +71,9 @@ interface WorldProps {
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
-  const groupRef = useRef<THREE.Group | null>(null);
-  const { camera } = useThree();
+  const groupRef = useRef<THREE.Group>(null); // gira tudo junto
+  const itemsRef = useRef<THREE.Mesh[]>([]); // armazena os 4 itens
+
   const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
@@ -138,6 +140,16 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return new Vector3(x, y, z);
   };
 
+  useFrame(({ camera }) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.002; // gira o grupo no eixo Y
+    }
+
+    itemsRef.current.forEach((item) => {
+      item.lookAt(camera.position); // faz o item encarar a câmera
+    });
+  });
+
   // ? Função para criar uma imagem (usando textura) na posição do globo
   const createImageAtLocation = (
     lat: number,
@@ -155,20 +167,21 @@ export function Globe({ globeConfig, data }: WorldProps) {
       map: texture,
       side: THREE.DoubleSide,
     }); // Aplica a textura da imagem
-    const plane = new THREE.Mesh(geometry, material);
+    const planeImage = new THREE.Mesh(geometry, material);
 
     // Converte latitude e longitude para posição 3D no globo
     const position = latLngToVector3(lat, lng, 88 + width); // Ajuste o raio conforme necessário
-    plane.position.set(position.x, position.y, position.z);
+    planeImage.position.set(position.x, position.y, position.z);
 
-    setInterval(() => {
-      // Rotacionar a imagem no sentido oposto ao globo
-      plane.rotation.y -= 0.0104; // Gira a imagem lentamente no sentido oposto ao do globo
-    }, 100);
+    if (groupRef.current) {
+      const rotationAngle = groupRef.current.children;
+      console.log('-', rotationAngle);
+    }
 
+    itemsRef.current[itemsRef.current.length] = planeImage;
     // Adiciona o plano (imagem) ao grupo de objetos na cena
     if (groupRef.current) {
-      groupRef.current.add(plane);
+      groupRef.current.add(planeImage);
     }
   };
 
@@ -264,39 +277,22 @@ export function WebGLRendererConfig() {
 }
 
 export function World(props: WorldProps) {
-  const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
 
   return (
-    <Canvas camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas
+      style={{ width: '100vw', height: '100vh' }}
+      camera={new PerspectiveCamera(50, aspect, 180, 1800)}
+    >
       <WebGLRendererConfig />
 
-      <ambientLight color={globeConfig.ambientLight} intensity={0.5} />
       <directionalLight
-        color={0xffffff}
-        position={new Vector3(1, 1, 1)}
-        intensity={0.8}
-      />
-
-      <directionalLight
-        color={0xffffff}
-        position={new Vector3(2, 2, 2)}
-        intensity={1}
-      />
-
-      <directionalLight
-        color={0xeeeeee}
-        position={new Vector3(-1, -1, -1)}
-        intensity={0.9}
-      />
-
-      {/* <directionalLight
         color={0xeeeeee}
         position={new Vector3(-80, 80, 0)}
         intensity={14}
         castShadow
-      /> */}
+      />
 
       {/* Glóbulo */}
       <Globe {...props} />
@@ -305,13 +301,14 @@ export function World(props: WorldProps) {
       <OrbitControls
         enablePan={false}
         enableZoom={false}
-        enableRotate={false} // Permite rotação no eixo Y
+        enableRotate={true} // Permite rotação no eixo Y
         minDistance={cameraZ}
         maxDistance={cameraZ}
         autoRotateSpeed={1}
-        autoRotate={true}
+        // autoRotate={true}
         minPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
         maxPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
+        // maxPolarAngle={Math.PI - Math.PI / 3} // Limita a rotação vertical (pode ajustar)
         enableDamping={true} // Permite suavização no movimento da câmera
         dampingFactor={0.25} // Suaviza o movimento
       />
