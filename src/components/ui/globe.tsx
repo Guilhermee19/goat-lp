@@ -102,11 +102,21 @@ export function Globe({ globeConfig, data }: WorldProps) {
     const texture = textureLoader.load(imageUrl); // Carrega a textura da imagem
 
     // Cria uma geometria de plano (superfície) para a imagem
-    const geometry = new THREE.PlaneGeometry(width, height); // Ajusta o tamanho com base nos parâmetros
+    const safeWidth = isFinite(width) && width > 0 ? width : 10;
+    const safeHeight = isFinite(height) && height > 0 ? height : 10;
+
+    if (!isFinite(width) || !isFinite(height)) {
+      console.warn('🔴 width ou height inválido:', { width, height, imageUrl });
+    }
+
+    const geometry = new THREE.PlaneGeometry(safeWidth, safeHeight); // Ajusta o tamanho com base nos parâmetros
     const material = new THREE.MeshBasicMaterial({
       map: texture,
       side: THREE.DoubleSide,
+      transparent: true, // necessário para opacidade funcionar
+      opacity: 1,
     }); // Aplica a textura da imagem
+
     const planeImage = new THREE.Mesh(geometry, material);
 
     // Converte latitude e longitude para posição 3D no globo
@@ -158,12 +168,18 @@ export function Globe({ globeConfig, data }: WorldProps) {
     // A câmera deve olhar para o Brasil
     camera.lookAt(position);
 
+    // globeMaterial.map = texture; // Aplica a textura
+    // globeMaterial.color = new Color(0xffffff); // Mantenha branco se quiser que a textura apareça "pura"
+    // globeMaterial.emissive = new Color(globeConfig.emissive || '#000000');
+
     const globeMaterial = globeRef.current.globeMaterial() as unknown as {
+      map: THREE.Texture;
       color: Color;
       emissive: Color;
       emissiveIntensity: number;
       shininess: number;
     };
+    // globeMaterial.map = new TextureLoader().load('/texture-globe.png'); // Aplica a textura
     globeMaterial.color = new Color(globeConfig.globeColor);
     globeMaterial.emissive = new Color(globeConfig.emissive);
     globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
@@ -269,12 +285,29 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
   // ? Seta os itens flutuantes sempre de frente pra camera
   useFrame(({ camera }) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y -= 0.001; // gira o grupo no eixo Y
-    }
+    if (!groupRef.current) return;
+    groupRef.current.rotation.y -= 0.001;
+
+    const globeWorldPosition = new THREE.Vector3();
+    groupRef.current.getWorldPosition(globeWorldPosition);
+
+    if (!itemsRef?.current || itemsRef.current.length <= 0) return;
 
     itemsRef.current.forEach((item) => {
-      item.lookAt(camera.position); // faz o item encarar a câmera
+      item.lookAt(camera.position);
+
+      const distance = item.position.distanceTo(camera.position);
+      const min = 228;
+      const max = 350;
+
+      let opacity = 0;
+      let t = (distance - min) / (max - min);
+      t = THREE.MathUtils.clamp(1 - t, 0, 1);
+      opacity = t;
+
+      const mat = item.material as THREE.MeshBasicMaterial;
+      mat.transparent = true;
+      mat.opacity = THREE.MathUtils.lerp(mat.opacity, opacity, 0.1);
     });
   });
 

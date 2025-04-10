@@ -342,7 +342,9 @@ const Navbar = ({
                         collapsible
                         className="flex w-full flex-col gap-4 px-4 pb-4 h-fit"
                       >
-                        {menu.map((item) => renderMobileMenuItem(item))}
+                        {menu.map((item, idx) =>
+                          renderMobileMenuItem(item, idx),
+                        )}
                       </Accordion>
                     </div>
                   </SheetContent>
@@ -391,11 +393,11 @@ const renderMenuItem = (item: MenuItem) => {
   );
 };
 
-const renderMobileMenuItem = (item: MenuItem) => {
+const renderMobileMenuItem = (item: MenuItem, idx: number) => {
   if (item.items) {
     return (
       <AccordionItem
-        key={item.title}
+        key={idx}
         value={item.title}
         className="border-b-0 text-white"
       >

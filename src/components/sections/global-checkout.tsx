@@ -17,10 +17,10 @@ export function GlobalCheckout() {
     showAtmosphere: true,
     atmosphereColor: 'rgba(14, 51, 102, 0.5)', // Atmosfera suave e escura
     atmosphereAltitude: 0.5, // Atmosfera mais espessa
-    emissive: 'rgba(14, 51, 102, 0.1)', // Cor luminosa
+    emissive: 'rgba(14, 51, 102, 0.5)', // Cor luminosa
     emissiveIntensity: 0.5, // Intensidade baixa para um brilho suave
     shininess: 0.1, // Um pouco mais de brilho
-    polygonColor: 'rgba(15, 145, 32, 0.5)', // Branco suave
+    polygonColor: '#168359', // Branco suave
     ambientLight: 'rgba(255, 255, 255, 0.5)', // Cor dos pontos dos sampleArcs
     directionalLeftLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional fria
     directionalTopLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional para o topo
