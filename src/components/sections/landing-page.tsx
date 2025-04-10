@@ -50,6 +50,7 @@ export function LandingPage() {
           text="Landing Pages de alta conversão"
           className="lg:max-w-lg from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
+          size="large"
         ></TextDegrade>
 
         <p className="text-base lg:text-lg text-white ">

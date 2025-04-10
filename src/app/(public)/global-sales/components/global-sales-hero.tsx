@@ -43,6 +43,7 @@ export function GlobalSalesHero() {
             text="Venda para o mundo inteiro sem complicações"
             className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="center"
+            size="large"
           ></TextDegrade>
 
           <TextAnimate

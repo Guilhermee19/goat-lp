@@ -57,6 +57,7 @@ export function ClientCarousel() {
         text="Mais de 2.000 empresas estão vendendo sem limites"
         className="lg:max-w-4xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
         position="center"
+        size="large"
       ></TextDegrade>
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mt-10">

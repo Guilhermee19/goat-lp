@@ -84,6 +84,7 @@ const Header = () => {
               text="Venda mais. Venda melhor. Seja um GOAT."
               className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
               position="center"
+              size="large"
             ></TextDegrade>
 
             <TextAnimate

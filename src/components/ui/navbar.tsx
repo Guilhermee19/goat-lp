@@ -20,6 +20,7 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -311,6 +312,7 @@ const Navbar = ({
               <a href={logo.url} className="flex items-center gap-2">
                 <Image width={100} height={50} src={logo.src} alt={logo.alt} />
               </a>
+
               <div className="flex items-center gap-6">
                 <LocaleSwitcher />
                 <Sheet>
@@ -323,6 +325,7 @@ const Navbar = ({
                       <Menu className="!size-8  text-white bg-transparent" />
                     </Button>
                   </SheetTrigger>
+
                   <SheetContent className="overflow-y-auto  flex  flex-col items-center justify-center">
                     <SheetHeader>
                       <SheetTitle>
@@ -336,17 +339,40 @@ const Navbar = ({
                         </a>
                       </SheetTitle>
                     </SheetHeader>
+
                     <div className="size-full flex flex-col relative ">
                       <Accordion
                         type="single"
                         collapsible
-                        className="flex w-full flex-col gap-4 px-4 pb-4 h-fit"
+                        className="flex w-full flex-col gap-4 px-4 pb-4"
                       >
                         {menu.map((item, idx) =>
                           renderMobileMenuItem(item, idx),
                         )}
                       </Accordion>
                     </div>
+
+                    <SheetFooter className="w-full">
+                      <div className="relative flex flex-col gap-2 items-center mt-auto">
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="sm"
+                          className="border-transparent hover:bg-transparent hover:text-white"
+                        >
+                          <a
+                            href={auth.login.url}
+                            className="text-white font-sourceSans3"
+                          >
+                            Fazer login
+                          </a>
+                        </Button>
+
+                        <div className="bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark">
+                          Teste grátis por 7 dias
+                        </div>
+                      </div>
+                    </SheetFooter>
                   </SheetContent>
                 </Sheet>
               </div>

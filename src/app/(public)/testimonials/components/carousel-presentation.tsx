@@ -81,6 +81,7 @@ export function CarouselPresentation() {
           text="Histórias inspiradoras de pessoas e experiências"
           className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
+          size="large"
         ></TextDegrade>
 
         <TextAnimate
@@ -118,6 +119,7 @@ const UserTestimonials = ({
           text={name}
           className=" lg:max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
+          size="large"
         ></TextDegrade>
 
         <p className="max-w-96 text-base lg:text-lg text-white mt-2 lg:mt-0">
