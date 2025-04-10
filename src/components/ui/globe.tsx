@@ -123,10 +123,10 @@ export function Globe({ globeConfig, data }: WorldProps) {
     const position = latLngToVector3(lat, lng, 88 + width); // Ajuste o raio conforme necessário
     planeImage.position.set(position.x, position.y, position.z);
 
-    if (groupRef.current) {
-      const rotationAngle = groupRef.current.children;
-      console.log('-', rotationAngle);
-    }
+    // if (groupRef.current) {
+    //   const rotationAngle = groupRef.current.children;
+    //   console.log('-', rotationAngle);
+    // }
 
     itemsRef.current[itemsRef.current.length] = planeImage;
     // Adiciona o plano (imagem) ao grupo de objetos na cena
@@ -139,18 +139,18 @@ export function Globe({ globeConfig, data }: WorldProps) {
   useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
 
-    const arcs = data;
-    const points = [];
-    for (let i = 0; i < arcs.length; i++) {
-      const arc = arcs[i];
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: arc.color,
-        lat: arc.startLat,
-        lng: arc.startLng,
-      });
-    }
+    // const arcs = data.filter((el) => el.is_floating);
+
+    // const points = arcs.map((el) => {
+    //   return {
+    //     size: defaultProps.pointSize,
+    //     order: el.order,
+    //     color: el.color,
+    //     lat: el.startLat,
+    //     lng: el.startLng,
+    //   };
+    // });
+
     // Aqui você pode ajustar a rotação do globo para alinhar o Brasil na direção da câmera
     const position = latLngToVector3(
       globeConfig.initialPosition?.lat || -15.79,
@@ -221,21 +221,18 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     if (!globeRef.current || !isInitialized) return;
 
-    const arcs = data;
-    const points = [];
-    for (let i = 0; i < arcs.length; i++) {
-      const arc = arcs[i];
-      points.push({
-        type: arc.type,
+    const points = data.map((el) => {
+      return {
+        type: el.type,
         size: defaultProps.pointSize,
-        order: arc.order,
-        color: arc.color,
-        lat: arc.startLat,
-        lng: arc.startLng,
-        from: arc.from,
-        to: arc.to,
-      });
-    }
+        order: el.order,
+        color: el.color,
+        lat: el.startLat,
+        lng: el.startLng,
+        from: el.from,
+        to: el.to,
+      };
+    });
 
     // * Aplicar configurações ao globo
     globeRef.current
@@ -257,7 +254,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
       .arcColor((e: unknown) => (e as { color: string }).color)
       .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
-      .arcStroke(() => [0.62, 0.58, 0.4][Math.round(Math.random() * 4)])
+      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 1)])
       .arcDashLength(defaultProps.arcLength)
       .arcDashInitialGap((e) => (e as { order: number }).order * 1)
       .arcDashGap(1)
@@ -266,21 +263,20 @@ export function Globe({ globeConfig, data }: WorldProps) {
     // * Pontos no Globo
     globeRef.current
       .pointsData(points)
-      .pointColor((e: unknown) => (e as { color: string }).color)
+      .pointColor(() => 'rgba(255, 242, 0, .5)')
       .pointsMerge(true)
-      .pointAltitude(0.0001)
-      .pointRadius(0.2);
-    // Aqui, alteramos o material do ponto para adicionar brilho
+      .pointAltitude(0.0025)
+      .pointRadius(0.15);
 
     // * Ondas no globo
-    globeRef.current
-      .ringsData(points)
-      .ringColor(() => 'rgba(255, 242, 0, 0.3)')
-      .ringMaxRadius(defaultProps.maxRings)
-      .ringPropagationSpeed(10)
-      .ringRepeatPeriod(
-        (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
-      );
+    // globeRef.current;
+    // .ringsData(points)
+    // .ringColor(() => '#fff648')
+    // .ringMaxRadius(defaultProps.maxRings)
+    // .ringPropagationSpeed(10)
+    // .ringRepeatPeriod(
+    //   (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
+    // );
   });
 
   // ? Seta os itens flutuantes sempre de frente pra camera
@@ -288,26 +284,36 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (!groupRef.current) return;
     groupRef.current.rotation.y -= 0.001;
 
-    const globeWorldPosition = new THREE.Vector3();
-    groupRef.current.getWorldPosition(globeWorldPosition);
-
-    if (!itemsRef?.current || itemsRef.current.length <= 0) return;
+    if (!itemsRef.current || itemsRef.current.length === 0) return;
 
     itemsRef.current.forEach((item) => {
-      item.lookAt(camera.position);
-
-      const distance = item.position.distanceTo(camera.position);
-      const min = 228;
-      const max = 350;
-
-      let opacity = 0;
-      let t = (distance - min) / (max - min);
-      t = THREE.MathUtils.clamp(1 - t, 0, 1);
-      opacity = t;
+      if (!item) return;
 
       const mat = item.material as THREE.MeshBasicMaterial;
+      if (!mat) return;
+
+      // Posição real do item no mundo
+      const itemWorldPos = new THREE.Vector3();
+      item.getWorldPosition(itemWorldPos);
+
+      // Distância real do item até a câmera
+      const distance = itemWorldPos.distanceTo(camera.position);
+
+      // 🔧 Ajuste aqui os limites de visibilidade e escala
+      const minDistance = 228; // totalmente visível e tamanho normal
+      const maxDistance = 290; // mais longe, mais transparente e pequeno
+
+      // Normalize entre 0 e 1 (0 = perto, 1 = longe)
+      let t = (distance - minDistance) / (maxDistance - minDistance);
+      t = THREE.MathUtils.clamp(t, 0, 1);
+
+      // 🟠 Opacidade: quanto mais perto, mais opaco
+      const opacity = 1 - t;
+
       mat.transparent = true;
       mat.opacity = THREE.MathUtils.lerp(mat.opacity, opacity, 0.1);
+
+      item.lookAt(camera.position);
     });
   });
 
@@ -346,8 +352,9 @@ export function World(props: WorldProps) {
       camera={new PerspectiveCamera(50, aspect, 180, 1800)}
     >
       <WebGLRendererConfig />
+      <ambientLight color={globeConfig.ambientLight} intensity={0.4} />
 
-      <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
+      {/* <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
         color={globeConfig.directionalLeftLight}
         position={new Vector3(-400, 100, 400)}
@@ -360,14 +367,20 @@ export function World(props: WorldProps) {
         color={globeConfig.pointLight}
         position={new Vector3(-200, 500, 200)}
         intensity={0.8}
-      />
-
-      {/* <directionalLight
-        color={0xeeeeee}
-        position={new Vector3(-80, 80, 0)}
-        intensity={14}
-        castShadow
       /> */}
+
+      {/* <pointLight
+        color={globeConfig.pointLight}
+        position={new Vector3(-200, 500, 200)}
+        intensity={0.8}
+      /> */}
+
+      <directionalLight
+        color={'#ffffff'}
+        position={new Vector3(-90, 90, 45)}
+        intensity={2}
+        castShadow
+      />
 
       {/* Glóbulo */}
       <Globe {...props} />

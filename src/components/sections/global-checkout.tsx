@@ -21,14 +21,14 @@ export function GlobalCheckout() {
     emissiveIntensity: 0.5, // Intensidade baixa para um brilho suave
     shininess: 0.1, // Um pouco mais de brilho
     polygonColor: '#168359', // Branco suave
-    ambientLight: 'rgba(255, 255, 255, 0.5)', // Cor dos pontos dos sampleArcs
-    directionalLeftLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional fria
+    ambientLight: 'rgba(255, 255, 255, 1)', // Cor dos pontos dos sampleArcs
+    directionalLeftLight: 'rgba(14, 138, 209, 0.5)', // Luz direcional fria
     directionalTopLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional para o topo
     pointLight: 'rgba(255, 251, 174, 0.5)', // Luz dos pontos
     arcTime: 3000, // Tempo mais lento para os arcos
-    arcLength: 1, // Menor distância nos arcos
-    rings: 5, // Adicionar mais anéis para mais interatividade
-    maxRings: 0.2, // Limite de anéis
+    arcLength: 0.5, // Menor distância nos arcos
+    rings: 1, // Adicionar mais anéis para mais interatividade
+    maxRings: 0.4, // Limite de anéis
     initialPosition: { lat: 36.0079407, lng: -161.5441817 }, // Posição inicial alterada
     autoRotate: true,
     autoRotateSpeed: 2, // Velocidade de rotação mais lenta
