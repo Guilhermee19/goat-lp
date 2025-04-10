@@ -21,7 +21,7 @@ import React from 'react';
 const Home = () => {
   return (
     <>
-      {/* <CardScrollAnimation imageSrc="/dashboard.png">
+      <CardScrollAnimation imageSrc="/dashboard.png">
         <Header></Header>
       </CardScrollAnimation>
 
@@ -40,7 +40,7 @@ const Home = () => {
       ></CardCreateAccount>
       <Testimonials></Testimonials>
       <CardOurPlans></CardOurPlans>
-      <StayInTouch></StayInTouch> */}
+      <StayInTouch></StayInTouch>
       <Footer></Footer>
     </>
   );
