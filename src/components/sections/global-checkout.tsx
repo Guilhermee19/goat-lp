@@ -13,25 +13,25 @@ import Icon from '@/shared/icon/icon';
 export function GlobalCheckout() {
   const globeConfig: GlobeConfig = {
     pointSize: 1, // Menor ponto para aumentar a quantidade
-    globeColor: '#0a264c', // Cor mais escura para o fundo
+    globeColor: 'rgba(14, 51, 102, 0.5)', // Cor mais escura para o fundo
     showAtmosphere: true,
-    atmosphereColor: '#ffffff', // Atmosfera suave e escura
-    atmosphereAltitude: 0, // Atmosfera mais espessa
-    emissive: '#0a264c', // Cor luminosa
+    atmosphereColor: 'rgba(14, 51, 102, 0.5)', // Atmosfera suave e escura
+    atmosphereAltitude: 0.5, // Atmosfera mais espessa
+    emissive: 'rgba(14, 51, 102, 0.1)', // Cor luminosa
     emissiveIntensity: 0.5, // Intensidade baixa para um brilho suave
     shininess: 0.1, // Um pouco mais de brilho
-    polygonColor: '#1e7767', // Branco suave
-    ambientLight: '#ffff00', // Cor dos pontos dos sampleArcs
-    directionalLeftLight: '#ffffff', // Luz direcional fria
-    directionalTopLight: '#ffffff', // Luz direcional para o topo
-    pointLight: '#fff38a', // Luz dos pontos
-    arcTime: 2000, // Tempo mais lento para os arcos
-    arcLength: 0.1, // Menor distância nos arcos
-    rings: 1, // Adicionar mais anéis para mais interatividade
-    maxRings: 3, // Limite de anéis
-    initialPosition: { lat: -15.797145415807751, lng: -47.892200612268226 }, // Posição inicial alterada
+    polygonColor: 'rgba(15, 145, 32, 0.5)', // Branco suave
+    ambientLight: 'rgba(255, 255, 255, 0.5)', // Cor dos pontos dos sampleArcs
+    directionalLeftLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional fria
+    directionalTopLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional para o topo
+    pointLight: 'rgba(255, 251, 174, 0.5)', // Luz dos pontos
+    arcTime: 3000, // Tempo mais lento para os arcos
+    arcLength: 1, // Menor distância nos arcos
+    rings: 5, // Adicionar mais anéis para mais interatividade
+    maxRings: 0.2, // Limite de anéis
+    initialPosition: { lat: 36.0079407, lng: -161.5441817 }, // Posição inicial alterada
     autoRotate: true,
-    autoRotateSpeed: 0.2, // Velocidade de rotação mais lenta
+    autoRotateSpeed: 2, // Velocidade de rotação mais lenta
   };
 
   const World = dynamic(() => import('../ui/globe').then((m) => m.World), {

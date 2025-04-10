@@ -4,7 +4,7 @@ import { HTMLAttributes, useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import Icon from '@/shared/icon/icon';
-// import TextAnimationDegrade from '../../app/_components/title-animation';
+import { motion } from 'framer-motion';
 import { TextDegrade } from '../text-degrade';
 import Image from 'next/image';
 
@@ -135,6 +135,12 @@ export function SlideRevolutionizing({
     return () => clearInterval(interval);
   }, [autoPlay, list.length, isHovering]);
 
+  function setIndex(index: number) {
+    console.log(index);
+    setActiveItem(index);
+    setIsHovering(true);
+  }
+
   return (
     <div className="contanierPage mt-10">
       <div className="w-full flex justify-between items-center gap-4">
@@ -167,10 +173,7 @@ export function SlideRevolutionizing({
               item={item}
               index={index}
               activeItem={activeItem}
-              onClick={() => {
-                setActiveItem(index);
-                setIsHovering(true);
-              }}
+              onClick={() => setIndex(index)}
             />
 
             <List
@@ -179,10 +182,7 @@ export function SlideRevolutionizing({
               item={item}
               index={index}
               activeItem={activeItem}
-              onClick={() => {
-                setActiveItem(index);
-                setIsHovering(true);
-              }}
+              onClick={() => setIndex(index)}
             />
           </>
         ))}
@@ -193,9 +193,9 @@ export function SlideRevolutionizing({
 
 const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
-    <div
+    <motion.div
       className={cn(
-        'relative flex h-full w-20 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out',
+        'w-max min-h-[80vh] rounded-xl flex overflow-hidden',
         {
           'bg-grayDark': index === 0,
           'bg-[#2c2c2c]': index === 1,
@@ -204,43 +204,50 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
           'flex-grow bg-degrade-gray': index === activeItem,
         },
         className,
+        { ...props },
       )}
-      {...props}
+      initial={{ width: 'min-w-[5em]' }}
+      animate={{
+        width: index === activeItem ? 'calc(100% - 15em)' : '5em',
+        minWidth: index === activeItem ? 'calc(100% - 15em)' : '5em',
+      }}
+      transition={{ duration: 0.5 }}
     >
-      <div className={cn('h-full w-full object-cover')}>
+      <div
+        className={cn(
+          'relative w-[2.5em] min-w-[2.5em] cursor-pointer flex flex-col justify-center items-center p-0 pt-[1em] pb-[1em]',
+        )}
+      >
+        <div className="relative w-[2.5em] min-w-[2.5em] cursor-pointer flex flex-col justify-center items-center p-0 pt-[1em] pb-[1em]">
+          <p
+            className={cn('text-white !font-extralight text-3xl !font-inter', {
+              'text-main': index === activeItem,
+            })}
+          >
+            {item.number}
+          </p>
+          {/* <p
+            className={cn(
+              'w-[2.5em] min-w-[2.5em] text-white -rotate-90 origin-center text-xl',
+              {
+                'text-main': index === activeItem,
+              },
+            )}
+          >
+            {item.label}
+          </p> */}
+        </div>
+
+        {/* 
         <div
           className={cn(
-            'size-full rounded-lg p-6 flex items-start justify-start gap-10 overflow-hidden',
+            'absolute rounded-lg flex items-start justify-start gap-10 overflow-hidden',
             {
-              'border border-solid border-gray': index === activeItem,
+              'relative border border-solid p-6 border-gray':
+                index === activeItem,
             },
           )}
         >
-          <div className="relative h-[60vh] max-h-[700px] flex flex-col justify-between items-center">
-            <p
-              className={cn(
-                'text-white !font-extralight text-3xl !font-inter',
-                {
-                  'text-main': index === activeItem,
-                },
-              )}
-            >
-              {item.number}
-            </p>
-            <div className="flex-1 size-4 flex items-end justify-center">
-              <p
-                className={cn(
-                  'min-w-60 text-white -rotate-90 origin-center mb-32 text-xl',
-                  {
-                    'text-main': index === activeItem,
-                  },
-                )}
-              >
-                {item.label}
-              </p>
-            </div>
-          </div>
-
           {index === activeItem && (
             <div
               className={cn(
@@ -270,9 +277,25 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
               </a>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
-    </div>
+
+      {/* {item.title}
+      <p className="text-white mt-14 text-xl">{item.description}</p>
+      <strong className="text-white mt-3 mb-5 text-xl">
+        {item.subDescription}
+      </strong>
+      <a
+        href=""
+        className="underline text-main flex items-center gap-1 font-semibold"
+      >
+        Saiba mais
+        <Icon
+          name="arrow_right"
+          className="ml-1 transition-transform text-main"
+        />
+      </a> */}
+    </motion.div>
   );
 };
 
