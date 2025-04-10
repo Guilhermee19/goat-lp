@@ -1,6 +1,6 @@
 'use client';
 
-import { AuroraText } from '@/components/magicui/aurora-text';
+// import { AuroraText } from '@/components/magicui/aurora-text';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import { cn } from '@/lib/utils';
@@ -21,14 +21,14 @@ const fadeInScaleContainer = {
   },
 };
 
-const fadeInScaleItem = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, ease: 'easeOut' },
-  },
-};
+// const fadeInScaleItem = {
+//   hidden: { opacity: 0, scale: 0.9 },
+//   visible: {
+//     opacity: 1,
+//     scale: 1,
+//     transition: { duration: 0.6, ease: 'easeOut' },
+//   },
+// };
 
 const RecuperacaoVenda = () => {
   return (
@@ -263,6 +263,7 @@ export function NationalCheckout() {
             text="Converta sem limites no Brasil"
             className="lg:max-w-xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="center"
+            size="large"
           ></TextDegrade>
 
           <TextAnimate

@@ -13,25 +13,25 @@ import Icon from '@/shared/icon/icon';
 export function GlobalCheckout() {
   const globeConfig: GlobeConfig = {
     pointSize: 1, // Menor ponto para aumentar a quantidade
-    globeColor: '#0a264c', // Cor mais escura para o fundo
+    globeColor: 'rgba(14, 51, 102, 0.5)', // Cor mais escura para o fundo
     showAtmosphere: true,
-    atmosphereColor: '#ffffff', // Atmosfera suave e escura
-    atmosphereAltitude: 0, // Atmosfera mais espessa
-    emissive: '#0a264c', // Cor luminosa
+    atmosphereColor: 'rgba(14, 51, 102, 0.5)', // Atmosfera suave e escura
+    atmosphereAltitude: 0.5, // Atmosfera mais espessa
+    emissive: 'rgba(14, 51, 102, 0.5)', // Cor luminosa
     emissiveIntensity: 0.5, // Intensidade baixa para um brilho suave
     shininess: 0.1, // Um pouco mais de brilho
-    polygonColor: '#1e7767', // Branco suave
-    ambientLight: '#ffff00', // Cor dos pontos dos sampleArcs
-    directionalLeftLight: '#ffffff', // Luz direcional fria
-    directionalTopLight: '#ffffff', // Luz direcional para o topo
-    pointLight: '#fff38a', // Luz dos pontos
-    arcTime: 2000, // Tempo mais lento para os arcos
-    arcLength: 0.1, // Menor distância nos arcos
+    polygonColor: '#168359', // Branco suave
+    ambientLight: 'rgba(255, 255, 255, 1)', // Cor dos pontos dos sampleArcs
+    directionalLeftLight: 'rgba(14, 138, 209, 0.5)', // Luz direcional fria
+    directionalTopLight: 'rgba(255, 255, 255, 0.5)', // Luz direcional para o topo
+    pointLight: 'rgba(255, 251, 174, 0.5)', // Luz dos pontos
+    arcTime: 3000, // Tempo mais lento para os arcos
+    arcLength: 0.5, // Menor distância nos arcos
     rings: 1, // Adicionar mais anéis para mais interatividade
-    maxRings: 3, // Limite de anéis
-    initialPosition: { lat: -15.797145415807751, lng: -47.892200612268226 }, // Posição inicial alterada
+    maxRings: 0.4, // Limite de anéis
+    initialPosition: { lat: 36.0079407, lng: -161.5441817 }, // Posição inicial alterada
     autoRotate: true,
-    autoRotateSpeed: 0.2, // Velocidade de rotação mais lenta
+    autoRotateSpeed: 2, // Velocidade de rotação mais lenta
   };
 
   const World = dynamic(() => import('../ui/globe').then((m) => m.World), {
@@ -51,6 +51,7 @@ export function GlobalCheckout() {
           text="Venda para qualquer lugar do mundo"
           className="max-w-2xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
+          size="large"
         ></TextDegrade>
 
         <TextAnimate
@@ -62,13 +63,13 @@ export function GlobalCheckout() {
           cabeça.
         </TextAnimate>
 
-        <div className="relative w-[80vw] max-w-5xl aspect-square flex justify-center items-center">
+        <div className="relative w-full aspect-square flex justify-center items-center">
           <div className="absolute z-30 flex flex-col justify-center items-center gap-[26px]">
-            <p className="max-w-lg text-center font-hankenGrotesk leading-none text-[72px] font-light text-white">
+            <p className="max-w-lg text-center font-hankenGrotesk leading-none text-4xl lg:text-[72px] font-light text-white">
               Seu negócio sem fronteiras
             </p>
 
-            <p className="font-inter font-normal text-xl text-white">
+            <p className="font-inter font-normal text-lg lg:text-xl text-white text-center">
               Alcance clientes internacionais sem dor de cabeça.{' '}
             </p>
 
@@ -83,7 +84,7 @@ export function GlobalCheckout() {
             </ShimmerButton>
           </div>
 
-          <div className="absolute w-11/12 aspect-square animate-spin-slow flex items-center bg-transparent justify-center rounded-full opacity-90 bg-gradient-to-r from-[#d0f0fd00] from-60% to-[#109DE3] to-100%">
+          <div className="absolute w-11/12 max-w-4xl aspect-square animate-spin-slow flex items-center bg-transparent justify-center rounded-full opacity-90 bg-gradient-to-r from-[#d0f0fd00] from-60% to-[#109DE3] to-100%">
             <div className="w-full h-full m-px bg-black rounded-full flex items-center justify-center"></div>
           </div>
 

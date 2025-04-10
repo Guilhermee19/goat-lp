@@ -7,6 +7,8 @@ import { useThree, Canvas, extend } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLOBE_JSON } from '../../../public/mocks/globe';
 import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber';
+import { Position } from '../../../public/mocks/lines';
 declare module '@react-three/fiber' {
   interface ThreeElements {
     threeGlobe: ThreeElements['mesh'] & {
@@ -18,24 +20,7 @@ declare module '@react-three/fiber' {
 extend({ ThreeGlobe: ThreeGlobe });
 
 const aspect = 3;
-const cameraZ = 400;
-
-export type Position = {
-  type: string;
-  status: boolean;
-  order: number;
-  from: string;
-  to: string;
-  startLat: number;
-  startLng: number;
-  endLat: number;
-  endLng: number;
-  arcAlt: number;
-  color?: string;
-  url: string;
-  width: number;
-  heigth: number;
-};
+const cameraZ = 340;
 
 export type GlobeConfig = {
   pointSize?: number;
@@ -70,8 +55,10 @@ interface WorldProps {
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
-  const groupRef = useRef<THREE.Group | null>(null);
+  const groupRef = useRef<THREE.Group>(null); // gira tudo junto
+  const itemsRef = useRef<THREE.Mesh[]>([]); // armazena os 4 itens
   const { camera } = useThree();
+
   const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
@@ -91,42 +78,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
-  // Build material when globe is initialized or when relevant props change
-  useEffect(() => {
-    if (!globeRef.current || !isInitialized) return;
-
-    const arcs = data;
-    const points = [];
-    for (let i = 0; i < arcs.length; i++) {
-      const arc = arcs[i];
-      points.push({
-        size: defaultProps.pointSize,
-        order: arc.order,
-        color: arc.color,
-        lat: arc.startLat,
-        lng: arc.startLng,
-      });
-    }
-
-    const globeMaterial = globeRef.current.globeMaterial() as unknown as {
-      color: Color;
-      emissive: Color;
-      emissiveIntensity: number;
-      shininess: number;
-    };
-    globeMaterial.color = new Color(globeConfig.globeColor);
-    globeMaterial.emissive = new Color(globeConfig.emissive);
-    globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
-    globeMaterial.shininess = globeConfig.shininess || 0.9;
-  }, [
-    isInitialized,
-    globeConfig.globeColor,
-    globeConfig.emissive,
-    globeConfig.emissiveIntensity,
-    globeConfig.shininess,
-  ]);
-
-  // Função para converter latitude/longitude para posição 3D no globo
+  // * Função para converter latitude/longitude para posição 3D no globo
   const latLngToVector3 = (lat: number, lng: number, radius: number) => {
     const phi = (90 - lat) * (Math.PI / 180); // Convertendo para radianos
     const theta = (lng + 180) * (Math.PI / 180); // Convertendo para radianos
@@ -138,7 +90,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return new Vector3(x, y, z);
   };
 
-  // ? Função para criar uma imagem (usando textura) na posição do globo
+  // * Função para criar uma imagem (usando textura) na posição do globo
   const createImageAtLocation = (
     lat: number,
     lng: number,
@@ -150,52 +102,106 @@ export function Globe({ globeConfig, data }: WorldProps) {
     const texture = textureLoader.load(imageUrl); // Carrega a textura da imagem
 
     // Cria uma geometria de plano (superfície) para a imagem
-    const geometry = new THREE.PlaneGeometry(width, height); // Ajusta o tamanho com base nos parâmetros
+    const safeWidth = isFinite(width) && width > 0 ? width : 10;
+    const safeHeight = isFinite(height) && height > 0 ? height : 10;
+
+    if (!isFinite(width) || !isFinite(height)) {
+      console.warn('🔴 width ou height inválido:', { width, height, imageUrl });
+    }
+
+    const geometry = new THREE.PlaneGeometry(safeWidth, safeHeight); // Ajusta o tamanho com base nos parâmetros
     const material = new THREE.MeshBasicMaterial({
       map: texture,
       side: THREE.DoubleSide,
+      transparent: true, // necessário para opacidade funcionar
+      opacity: 1,
     }); // Aplica a textura da imagem
-    const plane = new THREE.Mesh(geometry, material);
+
+    const planeImage = new THREE.Mesh(geometry, material);
 
     // Converte latitude e longitude para posição 3D no globo
     const position = latLngToVector3(lat, lng, 88 + width); // Ajuste o raio conforme necessário
-    plane.position.set(position.x, position.y, position.z);
+    planeImage.position.set(position.x, position.y, position.z);
 
-    setInterval(() => {
-      // Rotacionar a imagem no sentido oposto ao globo
-      plane.rotation.y -= 0.0104; // Gira a imagem lentamente no sentido oposto ao do globo
-    }, 100);
+    // if (groupRef.current) {
+    //   const rotationAngle = groupRef.current.children;
+    //   console.log('-', rotationAngle);
+    // }
 
+    itemsRef.current[itemsRef.current.length] = planeImage;
     // Adiciona o plano (imagem) ao grupo de objetos na cena
     if (groupRef.current) {
-      groupRef.current.add(plane);
+      groupRef.current.add(planeImage);
     }
   };
 
-  // Initialize globe only once
+  // ? Build material when globe is initialized or when relevant props change
   useEffect(() => {
-    if (!globeRef.current && groupRef.current) {
-      globeRef.current = new ThreeGlobe();
-      groupRef.current.add(globeRef.current);
-      setIsInitialized(true);
-    }
-  }, []);
+    if (!globeRef.current || !isInitialized) return;
 
+    // const arcs = data.filter((el) => el.is_floating);
+
+    // const points = arcs.map((el) => {
+    //   return {
+    //     size: defaultProps.pointSize,
+    //     order: el.order,
+    //     color: el.color,
+    //     lat: el.startLat,
+    //     lng: el.startLng,
+    //   };
+    // });
+
+    // Aqui você pode ajustar a rotação do globo para alinhar o Brasil na direção da câmera
+    const position = latLngToVector3(
+      globeConfig.initialPosition?.lat || -15.79,
+      globeConfig.initialPosition?.lng || -47.88,
+      110,
+    ); // Ajusta o raio conforme necessário
+
+    // Ajusta a rotação do globo para o Brasil
+    globeRef.current.rotation.set(0, 0, 0); // Reseta a rotação inicial
+    globeRef.current.rotateY(-Math.PI / 2); // Alinha o Brasil com a câmera
+
+    // Ajusta a posição da câmera
+    camera.position.set(position.x, position.y, 300); // Ajuste da posição da câmera para o Brasil
+
+    // A câmera deve olhar para o Brasil
+    camera.lookAt(position);
+
+    // globeMaterial.map = texture; // Aplica a textura
+    // globeMaterial.color = new Color(0xffffff); // Mantenha branco se quiser que a textura apareça "pura"
+    // globeMaterial.emissive = new Color(globeConfig.emissive || '#000000');
+
+    const globeMaterial = globeRef.current.globeMaterial() as unknown as {
+      map: THREE.Texture;
+      color: Color;
+      emissive: Color;
+      emissiveIntensity: number;
+      shininess: number;
+    };
+    // globeMaterial.map = new TextureLoader().load('/texture-globe.png'); // Aplica a textura
+    globeMaterial.color = new Color(globeConfig.globeColor);
+    globeMaterial.emissive = new Color(globeConfig.emissive);
+    globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
+    globeMaterial.shininess = globeConfig.shininess || 0.9;
+  });
+
+  // ? Add Itens ao globo e configura os pontos no globo
   useEffect(() => {
     // ! Adicionando o Card Flutuante
 
     if (!globeRef.current || !isInitialized) return;
 
-    console.log('Dados recebidos:', data);
-
     data.forEach((item) => {
-      createImageAtLocation(
-        item.startLat,
-        item.startLng,
-        item.url,
-        item.width / 7,
-        item.heigth / 7,
-      );
+      if (item.is_floating) {
+        createImageAtLocation(
+          item.startLat,
+          item.startLng,
+          item.url,
+          item.width / 7,
+          item.heigth / 7,
+        );
+      }
     });
 
     const backgroundMaterial = new THREE.MeshBasicMaterial({
@@ -215,23 +221,20 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     if (!globeRef.current || !isInitialized) return;
 
-    const arcs = data;
-    const points = [];
-    for (let i = 0; i < arcs.length; i++) {
-      const arc = arcs[i];
-      points.push({
-        type: arc.type,
+    const points = data.map((el) => {
+      return {
+        type: el.type,
         size: defaultProps.pointSize,
-        order: arc.order,
-        color: arc.color,
-        lat: arc.startLat,
-        lng: arc.startLng,
-        from: arc.from,
-        to: arc.to,
-      });
-    }
+        order: el.order,
+        color: el.color,
+        lat: el.startLat,
+        lng: el.startLng,
+        from: el.from,
+        to: el.to,
+      };
+    });
 
-    // Aplicar configurações ao globo
+    // * Aplicar configurações ao globo
     globeRef.current
       .hexPolygonsData(GLOBE_JSON.features)
       .hexPolygonResolution(4)
@@ -242,11 +245,86 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .atmosphereAltitude(defaultProps.atmosphereAltitude)
       .hexPolygonColor(() => defaultProps.polygonColor);
 
-    // ? Pontos no Globo
-    // globeRef.current
-    //   .pointsData(points)
-    //   .pointColor((e) => (e as { color: string }).color);
-  }, [isInitialized, data]);
+    // * Aplicar configurações do arco
+    globeRef.current
+      .arcsData(data)
+      .arcStartLat((d) => (d as { startLat: number }).startLat * 1)
+      .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
+      .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
+      .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
+      .arcColor((e: unknown) => (e as { color: string }).color)
+      .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
+      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 1)])
+      .arcDashLength(defaultProps.arcLength)
+      .arcDashInitialGap((e) => (e as { order: number }).order * 1)
+      .arcDashGap(1)
+      .arcDashAnimateTime(() => defaultProps.arcTime);
+
+    // * Pontos no Globo
+    globeRef.current
+      .pointsData(points)
+      .pointColor(() => 'rgba(255, 242, 0, .5)')
+      .pointsMerge(true)
+      .pointAltitude(0.0025)
+      .pointRadius(0.15);
+
+    // * Ondas no globo
+    // globeRef.current;
+    // .ringsData(points)
+    // .ringColor(() => '#fff648')
+    // .ringMaxRadius(defaultProps.maxRings)
+    // .ringPropagationSpeed(10)
+    // .ringRepeatPeriod(
+    //   (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
+    // );
+  });
+
+  // ? Seta os itens flutuantes sempre de frente pra camera
+  useFrame(({ camera }) => {
+    if (!groupRef.current) return;
+    groupRef.current.rotation.y -= 0.001;
+
+    if (!itemsRef.current || itemsRef.current.length === 0) return;
+
+    itemsRef.current.forEach((item) => {
+      if (!item) return;
+
+      const mat = item.material as THREE.MeshBasicMaterial;
+      if (!mat) return;
+
+      // Posição real do item no mundo
+      const itemWorldPos = new THREE.Vector3();
+      item.getWorldPosition(itemWorldPos);
+
+      // Distância real do item até a câmera
+      const distance = itemWorldPos.distanceTo(camera.position);
+
+      // 🔧 Ajuste aqui os limites de visibilidade e escala
+      const minDistance = 228; // totalmente visível e tamanho normal
+      const maxDistance = 290; // mais longe, mais transparente e pequeno
+
+      // Normalize entre 0 e 1 (0 = perto, 1 = longe)
+      let t = (distance - minDistance) / (maxDistance - minDistance);
+      t = THREE.MathUtils.clamp(t, 0, 1);
+
+      // 🟠 Opacidade: quanto mais perto, mais opaco
+      const opacity = 1 - t;
+
+      mat.transparent = true;
+      mat.opacity = THREE.MathUtils.lerp(mat.opacity, opacity, 0.1);
+
+      item.lookAt(camera.position);
+    });
+  });
+
+  // ? Initialize globe only once
+  useEffect(() => {
+    if (!globeRef.current && groupRef.current) {
+      globeRef.current = new ThreeGlobe();
+      groupRef.current.add(globeRef.current);
+      setIsInitialized(true);
+    }
+  }, []);
 
   return <group ref={groupRef} />;
 }
@@ -269,34 +347,40 @@ export function World(props: WorldProps) {
   scene.fog = new Fog(0xffffff, 400, 2000);
 
   return (
-    <Canvas camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas
+      style={{ width: '100vw', height: '100vh' }}
+      camera={new PerspectiveCamera(50, aspect, 180, 1800)}
+    >
       <WebGLRendererConfig />
+      <ambientLight color={globeConfig.ambientLight} intensity={0.4} />
 
-      <ambientLight color={globeConfig.ambientLight} intensity={0.5} />
+      {/* <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
-        color={0xffffff}
-        position={new Vector3(1, 1, 1)}
+        color={globeConfig.directionalLeftLight}
+        position={new Vector3(-400, 100, 400)}
+      />
+      <directionalLight
+        color={globeConfig.directionalTopLight}
+        position={new Vector3(-200, 500, 200)}
+      />
+      <pointLight
+        color={globeConfig.pointLight}
+        position={new Vector3(-200, 500, 200)}
         intensity={0.8}
-      />
-
-      <directionalLight
-        color={0xffffff}
-        position={new Vector3(2, 2, 2)}
-        intensity={1}
-      />
-
-      <directionalLight
-        color={0xeeeeee}
-        position={new Vector3(-1, -1, -1)}
-        intensity={0.9}
-      />
-
-      {/* <directionalLight
-        color={0xeeeeee}
-        position={new Vector3(-80, 80, 0)}
-        intensity={14}
-        castShadow
       /> */}
+
+      {/* <pointLight
+        color={globeConfig.pointLight}
+        position={new Vector3(-200, 500, 200)}
+        intensity={0.8}
+      /> */}
+
+      <directionalLight
+        color={'#ffffff'}
+        position={new Vector3(-90, 90, 45)}
+        intensity={2}
+        castShadow
+      />
 
       {/* Glóbulo */}
       <Globe {...props} />
@@ -305,26 +389,13 @@ export function World(props: WorldProps) {
       <OrbitControls
         enablePan={false}
         enableZoom={false}
-        enableRotate={false} // Permite rotação no eixo Y
+        enableRotate={true} // Permite rotação no eixo Y
         minDistance={cameraZ}
         maxDistance={cameraZ}
-        autoRotateSpeed={1}
-        autoRotate={true}
-        minPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
-        maxPolarAngle={Math.PI / 2} // Limita a rotação vertical (pode ajustar)
+        autoRotateSpeed={globeConfig.autoRotateSpeed}
         enableDamping={true} // Permite suavização no movimento da câmera
-        dampingFactor={0.25} // Suaviza o movimento
+        dampingFactor={0.5} // Suaviza o movimento
       />
     </Canvas>
   );
-}
-
-export function genRandomNumbers(min: number, max: number, count: number) {
-  const arr = [];
-  while (arr.length < count) {
-    const r = Math.floor(Math.random() * (max - min)) + min;
-    if (arr.indexOf(r) === -1) arr.push(r);
-  }
-
-  return arr;
 }

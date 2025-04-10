@@ -57,6 +57,7 @@ export function OnlineShopHero() {
             text="Venda sem limites com um e-commerce otimizado para faturamento máximo"
             className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
+            size="large"
           ></TextDegrade>
 
           <TextAnimate

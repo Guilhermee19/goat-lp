@@ -56,6 +56,7 @@ export function OnlineShop() {
           text="E-commerce pronto para escalar"
           className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
+          size="large"
         ></TextDegrade>
 
         <TextAnimate

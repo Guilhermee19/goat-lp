@@ -7,6 +7,7 @@ import Icon from '@/shared/icon/icon';
 // import TextAnimationDegrade from '../../app/_components/title-animation';
 import { TextDegrade } from '../text-degrade';
 import Image from 'next/image';
+import { motion, Variants } from 'motion/react';
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: {
@@ -34,6 +35,21 @@ interface ExpandableProps {
   className?: string;
 }
 
+const finalVariants: { container: Variants } = {
+  container: {
+    hidden: { width: '0px' }, // Largura inicial
+    visible: {
+      width: 'calc(100% - 100px)', // Largura final
+      transition: {
+        type: 'spring', // Usar a transição de spring para suavizar
+        stiffness: 100, // Controle da rigidez
+        damping: 25, // Controle do amortecimento para suavizar
+        duration: 1.5, // Duração da animação
+      },
+    },
+  },
+};
+
 export function SlideRevolutionizing({
   autoPlay = true,
   className,
@@ -49,9 +65,9 @@ export function SlideRevolutionizing({
         <>
           <TextDegrade
             text="Sonhe grande. Inove rápido. Chegue longe com a Goatcom"
-            className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            className="max-w-[776px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
-            size="small"
+            size="medium"
           ></TextDegrade>
         </>
       ),
@@ -68,9 +84,9 @@ export function SlideRevolutionizing({
         <>
           <TextDegrade
             text="Inovação que transforma o E-commerce"
-            className="lg:max-w-[570px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            className="lg:max-w-[620px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
-            size="small"
+            size="medium"
           ></TextDegrade>
         </>
       ),
@@ -87,9 +103,9 @@ export function SlideRevolutionizing({
         <>
           <TextDegrade
             text="Simplicidade que impulsiona os seus resultados"
-            className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+            className="lg:max-w-[720px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
-            size="small"
+            size="medium"
           ></TextDegrade>
         </>
       ),
@@ -109,7 +125,7 @@ export function SlideRevolutionizing({
             text="Compromisso direto com o seu sucesso"
             className="lg:max-w-[650px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
-            size="small"
+            size="medium"
           ></TextDegrade>
         </>
       ),
@@ -167,12 +183,9 @@ export function SlideRevolutionizing({
               item={item}
               index={index}
               activeItem={activeItem}
-              onMouseEnter={() => {
+              onClick={() => {
                 setActiveItem(index);
                 setIsHovering(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovering(false);
               }}
             />
 
@@ -182,12 +195,9 @@ export function SlideRevolutionizing({
               item={item}
               index={index}
               activeItem={activeItem}
-              onMouseEnter={() => {
+              onClick={() => {
                 setActiveItem(index);
                 setIsHovering(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovering(false);
               }}
             />
           </>
@@ -201,7 +211,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
     <div
       className={cn(
-        'relative flex h-full w-20 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out',
+        'relative flex h-full min-w-10 cursor-pointer overflow-hidden rounded-[12px] transition-all delay-0 duration-300 ease-in-out',
         {
           'bg-grayDark': index === 0,
           'bg-[#2c2c2c]': index === 1,
@@ -216,18 +226,18 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
       <div className={cn('h-full w-full object-cover')}>
         <div
           className={cn(
-            'size-full rounded-lg p-6 flex items-start justify-start gap-10 overflow-hidden',
+            'size-full rounded-[12px] p-6 flex items-center justify-start overflow-hidden',
             {
-              'border border-solid border-gray': index === activeItem,
+              'border border-solid border-gray gap-14': index === activeItem,
             },
           )}
         >
-          <div className="relative h-[60vh] max-h-[700px] flex flex-col justify-between items-center">
+          <div className="relative w-max h-[70vh] max-h-[700px] flex flex-col justify-between items-center">
             <p
               className={cn(
-                'text-white !font-extralight text-3xl !font-inter',
+                'text-white !font-normal text-[40px] font-sourceSans3',
                 {
-                  'text-main': index === activeItem,
+                  'text-main !text-3xl mt-2 !font-inter': index === activeItem,
                 },
               )}
             >
@@ -247,35 +257,49 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
             </div>
           </div>
 
-          {index === activeItem && (
-            <div
-              className={cn(
-                'w-60px overflow-hidden max-w-4xl mt-14 mx-5 flex flex-col',
-                {
-                  'w-max overflow-visible': index === activeItem,
-                },
-              )}
-            >
-              {item.title}
-              <p className="text-white mt-14 max-h-52 overflow-hidden text-xl">
-                {item.description}
-              </p>
-              <strong className="max-w-md text-white mt-3 mb-5 max-h-52 overflow-hidden">
-                {item.subDescription}
-              </strong>
-
-              <a
-                href=""
-                className="underline text-main flex items-center gap-1 font-semibold"
+          <motion.div
+            initial={{ width: 0 }}
+            animate={index !== activeItem ? 'w-px' : 'w-[calc(100%-100px)]'}
+            transition={{
+              type: 'tween', // Usando transição tipo 'tween' para duração controlada
+              duration: 5, // Definindo a duração da animação em 5 segundos
+              ease: 'easeInOut', // Usando um easing suave
+            }}
+            className="transition-all"
+          >
+            {index === activeItem && (
+              <div
+                className={cn(
+                  'w-full h-hull max-w-4xl mx-5 flex flex-col gap-20 pr-14',
+                  {
+                    'w-max overflow-visible': index === activeItem,
+                  },
+                )}
               >
-                Saiba mais
-                <Icon
-                  name="arrow_right"
-                  className="size-4 ml-1 transition-transform text-main duration-300 ease-in-out group-hover:translate-x-0.5"
-                ></Icon>
-              </a>
-            </div>
-          )}
+                {item.title}
+
+                <div className="max-w-[776px] flex flex-col gap-6">
+                  <p className="text-white max-h-52 overflow-hidden text-2xl">
+                    {item.description}
+                  </p>
+                  <strong className="text-xl text-white max-h-52 overflow-hidden">
+                    {item.subDescription}
+                  </strong>
+
+                  <a
+                    href=""
+                    className="underline text-main text-xl flex items-center gap-1 font-bold"
+                  >
+                    Saiba mais
+                    <Icon
+                      name="arrow_right"
+                      className="size-4 ml-1 transition-transform text-main duration-300 ease-in-out group-hover:translate-x-0.5"
+                    ></Icon>
+                  </a>
+                </div>
+              </div>
+            )}
+          </motion.div>
         </div>
       </div>
     </div>

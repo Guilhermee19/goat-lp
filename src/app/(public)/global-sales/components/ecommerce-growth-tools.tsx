@@ -49,6 +49,7 @@ export function EcommerceGrowthTools() {
             text="Venda e receba pagamentos de qualquer moeda diretamente na sua conta brasileira."
             className="max-w-[1200px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
+            size="large"
           ></TextDegrade>
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6 lg:mt-10">

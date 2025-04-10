@@ -67,12 +67,12 @@ const NacionalContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Converta sem limites no Brasil"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          className="from-[#ffffff] !leading-[72px] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
           size="small"
         ></TextDegrade>
 
-        <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
+        <p className="max-w-96 text-base lg:text-xl leading-[30px] text-label mt-6">
           Processamento rápido e seguro para vendas no Brasil, aceitando Pix,
           boleto e cartões de crédito sem complicação.
         </p>
@@ -101,9 +101,9 @@ const NacionalContent = () => {
       </div>
 
       <Image
-        width={450}
-        height={450}
-        className="max-w-60 w-11/12 lg:w-1/2 size-full object-contain"
+        width={475}
+        height={455}
+        className="max-w-60 w-11/12 lg:w-[70%] size-full object-contain"
         alt="Image Card Product Convert"
         src="/card product convert.png"
       ></Image>
@@ -117,12 +117,12 @@ const GlobalContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Venda para o mundo, sem barreiras"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          className="from-[#ffffff] !leading-[72px] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
-          size="small"
+          size="medium"
         ></TextDegrade>
 
-        <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
+        <p className="max-w-96 text-base lg:text-xl leading-[30px] text-label mt-6">
           Venda para qualquer lugar do mundo com suporte a múltiplas moedas e
           formas de pagamento internacionais.
         </p>
@@ -153,7 +153,7 @@ const GlobalContent = () => {
       <Image
         width={450}
         height={450}
-        className="max-w-60 w-11/12 lg:w-1/2 size-full object-contain"
+        className="max-w-60 w-11/12 lg:w-[70%] size-full object-contain"
         alt="Image Credit Card"
         src="/credit card.png"
       ></Image>
@@ -167,12 +167,12 @@ const LandingContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Páginas de alta conversão"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          className="from-[#ffffff] !leading-[72px] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
           size="small"
         ></TextDegrade>
 
-        <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
+        <p className="max-w-96 text-base lg:text-xl leading-[30px] text-label mt-6">
           Páginas rápidas, responsivas e criadas para maximizar conversões.
         </p>
 
@@ -202,7 +202,7 @@ const LandingContent = () => {
       <Image
         width={450}
         height={450}
-        className="max-w-60 w-11/12 lg:w-1/2 size-full object-contain"
+        className="max-w-60 w-11/12 lg:w-[70%] size-full object-contain"
         alt="Image High Conversion Page"
         src="/high conversion page.png"
       ></Image>
@@ -216,12 +216,12 @@ const EcommercesContent = () => {
       <div className="relative z-50 w-full lg:w-1/2 max-w-max">
         <TextDegrade
           text="Lojas virtuais escaláveis"
-          className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
+          className="from-[#ffffff] !leading-[72px] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
           position="center"
           size="small"
         ></TextDegrade>
 
-        <p className="max-w-96 text-base lg:text-lg text-label mt-2 lg:mt-0">
+        <p className="max-w-96 text-base lg:text-xl leading-[30px] text-label mt-6">
           Configure sua loja online em minutos e venda produtos físicos ou
           digitais sem limite.
         </p>
@@ -252,7 +252,7 @@ const EcommercesContent = () => {
       <Image
         width={450}
         height={450}
-        className="max-w-60 w-11/12 lg:w-1/2 size-full object-contain"
+        className="max-w-60 w-11/12 lg:w-[70%] size-full object-contain"
         alt="Image Online Stores"
         src="/online stores.png"
       ></Image>

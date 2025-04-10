@@ -13,6 +13,7 @@ const ComplianceAgreement = () => {
             text="Termo de Compliance"
             className="from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
+            size="large"
           ></TextDegrade>
 
           <div className="w-full max-w-3xl mx-auto flex flex-col gap-6 my-10 text-white text-base lg:text-xl font-sourceSans3 font-light">

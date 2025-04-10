@@ -22,7 +22,7 @@ export function TextDegrade({
         className,
         { 'text-xl lg:text-3xl': size === 'very_small' },
         { 'text-3xl lg:text-5xl': size === 'small' },
-        { 'text-4xl lg:text-8xl': size === 'medium' },
+        { 'text-4xl lg:text-6xl': size === 'medium' },
         { 'text-4xl lg:text-8xl': size === 'large' },
         { '!text-start': position === 'left' },
         { '!text-center': position === 'center' },

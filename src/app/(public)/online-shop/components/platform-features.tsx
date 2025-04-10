@@ -49,6 +49,7 @@ export function PlatformFeatures() {
             text="O que faz da GOATCOM a escolha ideal para seu e-commerce"
             className="lg:max-w-5xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
+            size="large"
           ></TextDegrade>
 
           <div className="w-full grid lg:grid-cols-2 gap-y-20 gap-x-12 mt-6">

@@ -43,6 +43,7 @@ export function AppsAndIntegrationsHero() {
             text="Conecte seu negócio às melhores ferramentas do mercado"
             className="lg:max-w-[1100px] from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100% text-start"
             position="left"
+            size="large"
           ></TextDegrade>
 
           <TextAnimate

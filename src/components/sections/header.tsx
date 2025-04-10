@@ -26,27 +26,27 @@ const Header = () => {
     },
     {
       id: 3,
-      name: 'Jane Smith',
+      name: 'Will Smith',
       designation: 'Data Scientist',
-      image: 'https://avatars.githubusercontent.com/u/106103625',
+      image: 'https://avatars.githubusercontent.com/u/80000268',
     },
     {
       id: 4,
       name: 'Emily Davis',
       designation: 'UX Designer',
-      image: 'https://avatars.githubusercontent.com/u/59228569',
+      image: 'https://avatars.githubusercontent.com/u/59322969',
     },
     {
       id: 5,
       name: 'Tyler Durden',
       designation: 'Soap Developer',
-      image: 'https://avatars.githubusercontent.com/u/59228562',
+      image: 'https://avatars.githubusercontent.com/u/59207568',
     },
     {
       id: 6,
-      name: 'Dora',
+      name: 'Thomas',
       designation: 'The Explorer',
-      image: 'https://avatars.githubusercontent.com/u/59228568',
+      image: 'https://avatars.githubusercontent.com/u/59208568',
     },
   ];
 
@@ -84,6 +84,7 @@ const Header = () => {
               text="Venda mais. Venda melhor. Seja um GOAT."
               className="max-w-3xl from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
               position="center"
+              size="large"
             ></TextDegrade>
 
             <TextAnimate
