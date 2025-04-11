@@ -1,15 +1,15 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import Footer from '@/components/footer';
 import { ClientCarousel } from '../checkout-national/components/client-carousel';
 import { CheckoutGlobalHero } from './components/checkout-global-hero';
 import { PreviewWebMobile } from '../checkout-national/components/preview-web-mobile';
 import { AnimationStickyGlobal } from './components/animation-sticky-global';
-import { GlobalCheckout } from '@/components/sections/global-checkout';
 import { ExploreTheItems } from './components/explore-the-items';
 import Image from 'next/image';
+import GlobalCheckout from '@/components/sections/global-checkout';
+import StayInTouch from '@/components/sections/stay-in-touch';
 
 const MultiplosIdiomasCard = () => {
   return (

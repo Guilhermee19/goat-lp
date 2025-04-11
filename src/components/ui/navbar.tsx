@@ -273,7 +273,7 @@ const Navbar = ({
         </div>
       )}
 
-      <section className="py-6 px-3 border-b border-[rgba(255,255,255,0.2)]">
+      <section className="py-0 px-3 border-b border-[rgba(255,255,255,0.2)]">
         <div className="w-full mx-auto">
           {/* Desktop Menu */}
           <nav className="hidden max-w-7xl mx-auto justify-between lg:flex">
