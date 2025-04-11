@@ -61,6 +61,10 @@ interface Navbar1Props {
       text: string;
       url: string;
     };
+    register: {
+      text: string;
+      url: string;
+    };
   };
 }
 
@@ -250,8 +254,12 @@ const Navbar = ({
     { title: 'Preços', url: '/plans' },
   ],
   auth = {
-    login: { text: 'Fazer login', url: '/login' },
-    signup: { text: 'Sign up', url: '/signup' },
+    login: { text: 'Fazer login', url: 'https://goatdev.noclaftech.com/login' },
+    signup: { text: 'Sign up', url: '/' },
+    register: {
+      text: 'Sign up',
+      url: 'https://goatdev.noclaftech.com/register',
+    },
   },
 }: Navbar1Props) => {
   const pathname = usePathname();
@@ -308,9 +316,12 @@ const Navbar = ({
                   Fazer login
                 </a>
               </Button>
-              <div className="bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark">
+              <a
+                href={auth.register.url}
+                className="bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark"
+              >
                 Teste grátis por 7 dias
-              </div>
+              </a>
               <LocaleSwitcher />
             </div>
           </nav>
@@ -335,7 +346,7 @@ const Navbar = ({
                     </Button>
                   </SheetTrigger>
 
-                  <SheetContent className="overflow-y-auto  flex  flex-col items-center justify-center">
+                  <SheetContent className="overflow-y-auto flex flex-col items-center justify-start">
                     <SheetHeader>
                       <SheetTitle>
                         <a title="Logo" href={logo.url}>
@@ -349,23 +360,23 @@ const Navbar = ({
                       </SheetTitle>
                     </SheetHeader>
 
-                    <div className="size-full flex flex-col relative ">
+                    <div className="size-full !h-navMobile flex flex-col relative ">
                       <Accordion
                         type="single"
                         collapsible
-                        className="flex w-full flex-col gap-4 px-4 pb-4"
+                        className="relative flex w-full flex-col gap-4 px-4 pb-24 z-10 max-h-accordionNav overflow-auto"
                       >
                         {menu.map((item, idx) =>
                           renderMobileMenuItem(item, idx),
                         )}
                       </Accordion>
 
-                      <div className="relative flex flex-col gap-2 items-center mt-auto">
+                      <div className="absolute py-7 bottom-0 border-t border-solid border-[#7D7D7D80] w-full bg-black flex flex-col gap-2 items-center justify-center z-20">
                         <Button
                           asChild
                           variant="outline"
                           size="sm"
-                          className="border-transparent hover:bg-transparent hover:text-white"
+                          className="w-11/12 border-transparent hover:bg-transparent hover:text-white"
                         >
                           <a
                             href={auth.login.url}
@@ -375,9 +386,12 @@ const Navbar = ({
                           </a>
                         </Button>
 
-                        <div className="bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark">
+                        <a
+                          href={auth.register.url}
+                          className="w-11/12 bg-white flex justify-center font-semibold items-center rounded-full px-4 py-2 text-grayDark"
+                        >
                           Teste grátis por 7 dias
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </SheetContent>

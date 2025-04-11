@@ -246,6 +246,12 @@ const config: Config = {
       width: {
         figFull: 'calc(100% - 120px)',
       },
+      height: {
+        navMobile: 'calc(100vh - 16px - 86px)',
+      },
+      maxHeight:{
+        accordionNav: 'calc(100vh - 16px - 176px - 50px)',
+      },
       transitionTimingFunction: {
         'minor-spring': 'cubic-bezier(0.18,0.89,0.82,1.04)',
       },
