@@ -3,8 +3,8 @@
 import Footer from '@/components/footer';
 import { AppsAndIntegrationsHero } from './components/apps-and-integrations-hero';
 import { AnnouncementCard } from '../plans/components/announcement-card';
-import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { PaymentApis } from './components/payment-apis';
+import StayInTouch from '@/components/sections/stay-in-touch';
 
 const AppsAndIntegrations = () => {
   return (

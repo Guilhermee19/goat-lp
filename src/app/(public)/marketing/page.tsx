@@ -1,6 +1,6 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections/stay-in-touch';
+import StayInTouch from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import { AnimationStickyMarketing } from './components/animation-sticky-marketing';
 import { GridMarketing } from './components/grid-marketing';
