@@ -30,8 +30,8 @@ export function ThemesHero() {
   ];
 
   return (
-    <div className="lg:sticky lg:top-[50px] z-10 w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-20 overflow-hidden">
-      <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
+    <div className="lg:sticky lg:top-[50px] z-10 w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 mt-[120px] overflow-hidden">
+      <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-8">
         <div className="rounded-full border max-w-max border-[#361428] bg-[#1D0E18]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#F187DC] to-[#C615A3] opacity-60 text-transparent bg-clip-text">
             Temas
@@ -43,7 +43,7 @@ export function ThemesHero() {
             text="Escolha o tema ideal para sua empresa"
             className=" from-[#ffffff] from-20% via-[#FF7F00] via-50% to-[#508FF4] to-100%"
             position="left"
-            size="small"
+            size="medium"
           ></TextDegrade>
 
           <TextAnimate
@@ -60,7 +60,7 @@ export function ThemesHero() {
           className="w-full lg:w-max shadow-2xl min-w-max py-2"
           background="#FF5500"
         >
-          <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-lg">
+          <span className="whitespace-pre-wrap text-center flex gap-2 items-center !text-base font-bold leading-none tracking-tight text-white font-hankenGrotesk lg:text-base">
             Crie sua conta
             <Icon name="arrow_right" className="size-4"></Icon>
           </span>
