@@ -1,6 +1,5 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections/stay-in-touch';
 import { AnnouncementCard } from '../plans/components/announcement-card';
 import Footer from '@/components/footer';
 import { ClientCarousel } from './components/client-carousel';
@@ -9,8 +8,7 @@ import { CheckoutNationalHero } from './components/checkout-national-hero';
 import { PreviewWebMobile } from './components/preview-web-mobile';
 import { ExploreTheItems } from '../checkout-global/components/explore-the-items';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import Icon from '@/shared/icon/icon';
+import StayInTouch from '@/components/sections/stay-in-touch';
 
 const EscassesCard = () => {
   return (

@@ -68,10 +68,10 @@ export default function Footer() {
       label: 'Temas',
       href: '/themes',
     },
-    {
-      label: 'Personalização',
-      href: '/linkedin-ads',
-    },
+    // {
+    //   label: 'Personalização',
+    //   href: '/linkedin-ads',
+    // },
   ];
 
   const RECURSOS = [
