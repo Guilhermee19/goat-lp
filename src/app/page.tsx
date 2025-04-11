@@ -67,9 +67,12 @@ const StayInTouch = dynamic(
 const Home = () => {
   return (
     <>
-      {/* <Suspense fallback={<div>Loading...</div>}>
-        <GoatAnimation className="size-72"></GoatAnimation>
-      </Suspense> */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <p className="text-white text-xs opacity-40 w-full text-center mt-4">
+          {' '}
+          Lazy Loading{' '}
+        </p>
+      </Suspense>
 
       <CardScrollAnimation imageSrc="/dashboard.png">
         <Header></Header>
