@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function GoatAnimation({
   className,
@@ -12,6 +12,22 @@ export default function GoatAnimation({
   classBallon?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Função para tocar o som
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0; // Recomeça o áudio se já estiver tocando
+      audioRef.current.play();
+    }
+  };
+
+  useEffect(() => {
+    // Verifica se o áudio foi carregado corretamente
+    if (audioRef.current) {
+      audioRef.current.load();
+    }
+  }, []);
 
   return (
     <div
@@ -19,9 +35,13 @@ export default function GoatAnimation({
         'relative size-96 flex justify-center items-center',
         className,
       )}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        playSound(); // Toca o áudio quando o mouse entra
+      }}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Imagem do animal (Goat) */}
       <motion.img
         src="animal-goat.png"
         alt="Goat Animation"
@@ -35,6 +55,7 @@ export default function GoatAnimation({
         transition={{ type: 'spring', stiffness: 400, damping: 22 }}
       />
 
+      {/* Imagem do balão de conversa */}
       <motion.img
         src="balloon-chat.png"
         alt="Balão de conversa"
@@ -47,6 +68,9 @@ export default function GoatAnimation({
         }
         transition={{ type: 'spring', stiffness: 400, damping: 22 }}
       />
+
+      {/* Elemento de áudio */}
+      <audio ref={audioRef} src="/GOAT.mp3" preload="auto" />
     </div>
   );
 }
