@@ -69,7 +69,6 @@ const Home = () => {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <p className="text-white text-xs opacity-40 w-full text-center mt-4">
-          {' '}
           Lazy Loading{' '}
         </p>
       </Suspense>
