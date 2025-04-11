@@ -76,14 +76,12 @@ export function WhatDrivesUs({
             ))}
           </Accordion>
 
-          <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-b from-[#0D2B27] to-[#0D2B274D]">
-            <Image
-              src={'navegador-light.png'}
-              width={520}
-              height={340}
-              alt="Online store"
-            ></Image>
-          </div>
+          <Image
+            src={'navegador-light.png'}
+            width={605}
+            height={403}
+            alt="Online store"
+          ></Image>
         </div>
       </div>
     </>

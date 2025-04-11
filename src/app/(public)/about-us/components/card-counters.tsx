@@ -23,7 +23,7 @@ export function CardCounters() {
 
   return (
     <div className="w-11/12 max-w-7xl mx-auto flex flex-col border border-solid border-[#525252] justify-center my-10 lg:my-20 items-center p-5">
-      <div className="w-full flex flex-col lg:flex-row justify-evenly items-center py-6 gap-10">
+      <div className="w-full flex flex-col lg:flex-row justify-evenly items-center py-[65px] px-[41px] gap-10">
         {COUNTERS.map((el, idx) => (
           <div
             className="w-max flex justify-center items-center flex-col"
@@ -36,7 +36,7 @@ export function CardCounters() {
 
               <NumberTicker
                 value={el.count}
-                className="whitespace-pre-wrap text-4xl font-light font-hankenGrotesk leading-10 tracking-tighter bg-gradient-to-br from-[#FF7F00] from-20% to-[#508FF4] to-100% text-transparent bg-clip-text"
+                className="whitespace-pre-wrap text-8xl font-light font-hankenGrotesk leading-[64px] tracking-tighter bg-gradient-to-br from-[#FF7F00] from-20% to-[#508FF4] to-100% text-transparent bg-clip-text"
               />
             </div>
 
