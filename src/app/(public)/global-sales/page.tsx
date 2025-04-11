@@ -1,11 +1,11 @@
 'use client';
 
-import { CardCreateAccount } from '@/components/sections/card-create-account';
+import CardCreateAccount from '@/components/sections/card-create-account';
 import { AnimationStickyMarketing } from '../marketing/components/animation-sticky-marketing';
 import { EcommerceGrowthTools } from './components/ecommerce-growth-tools';
 import { GlobalSalesHero } from './components/global-sales-hero';
-import { StayInTouch } from '@/components/sections/stay-in-touch';
 import Footer from '@/components/footer';
+import StayInTouch from '@/components/sections/stay-in-touch';
 
 const GlobalSales = () => {
   return (

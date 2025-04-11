@@ -43,7 +43,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-  'group inline-flex h-max w-max !py-9 border-b-2 border-solid border-transparent hover:!border-[#FF5500]  data-[state=open]:border-[#FF5500] items-center justify-center bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-white data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent',
+  'group inline-flex h-max w-max !py-9 border-b-2 border-solid border-transparent hover:!border-[#FF5500] data-[state=open]:border-[#FF5500] items-center justify-center bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-white data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent',
 );
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -87,7 +87,7 @@ const NavigationMenuViewport = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      'w-[98vw] h-max data-[state=open]:bg-black fixed left-0 top-[149px] flex justify-center',
+      'w-[98vw] h-max data-[state=open]:bg-black fixed left-0 top-[149px] flex justify-center z-50',
     )}
   >
     <NavigationMenuPrimitive.Viewport

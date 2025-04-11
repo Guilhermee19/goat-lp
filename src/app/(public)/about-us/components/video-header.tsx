@@ -6,7 +6,7 @@ import Image from 'next/image';
 export function VideoHeader() {
   return (
     <>
-      <div className="w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10 lg:my-20">
+      <div className="relative w-11/12 max-w-7xl mx-auto rounded-lg lg:p-5 overflow-hidden my-10 lg:my-20">
         <div className="z-10 flex flex-col gap-4 items-center justify-center">
           <p className="max-w-2xl text-white text-4xl lg:text-8xl text-center !font-light font-hankenGrotesk leading-none">
             Revolucionando o jeito de{' '}
@@ -15,7 +15,7 @@ export function VideoHeader() {
             </span>
           </p>
 
-          <div className="relative w-full lg:max-w-5xl flex flex-col gap-4 mt-16">
+          <div className="relative w-full lg:max-w-5xl flex flex-col gap-4 mt-16 z-20">
             <Image
               src={'/block.png'}
               width={210}

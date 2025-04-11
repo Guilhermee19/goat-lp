@@ -5,8 +5,8 @@ import { ReportsHero } from './components/reports-hero';
 import { GridReports } from './components/grid-reports';
 import { AnimationStickyMarketing } from '../marketing/components/animation-sticky-marketing';
 import { AnnouncementCard } from '../plans/components/announcement-card';
-import { StayInTouch } from '@/components/sections/stay-in-touch';
 import Footer from '@/components/footer';
+import StayInTouch from '@/components/sections/stay-in-touch';
 
 const Reports = () => {
   return (

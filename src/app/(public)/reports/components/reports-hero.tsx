@@ -8,8 +8,8 @@ import Icon from '@/shared/icon/icon';
 
 export function ReportsHero() {
   return (
-    <div className="w-full rounded-lg lg:p-5 mt-0 mb-20 overflow-hidden">
-      <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-6">
+    <div className="w-full pt-[120px] pb-14">
+      <div className="relative w-full flex flex-col justify-start gap-4 lg:gap-8">
         <div className="rounded-full border max-w-max border-[#393939] bg-[#252525]">
           <p className="max-w-max text-base py-1 px-4 font-bold bg-gradient-to-r from-[#FFFFFF] to-[#999999] opacity-60 text-transparent bg-clip-text">
             Relatórios

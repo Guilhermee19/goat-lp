@@ -1,6 +1,6 @@
 'use client';
 
-import { StayInTouch } from '@/components/sections/stay-in-touch';
+import StayInTouch from '@/components/sections/stay-in-touch';
 import { AnimationStickyCard } from '../landing-page/components/animation-sticky-card';
 import { MapPoints } from '../landing-page/components/map-points';
 import { AnnouncementCard } from '../plans/components/announcement-card';

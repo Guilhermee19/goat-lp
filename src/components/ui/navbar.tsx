@@ -20,7 +20,6 @@ import {
 import {
   Sheet,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -273,10 +272,10 @@ const Navbar = ({
         </div>
       )}
 
-      <section className="py-0 px-3 border-b border-[rgba(255,255,255,0.2)]">
+      <section className="relative py-0 px-3 border-b border-[rgba(255,255,255,0.2)] z-50">
         <div className="w-full mx-auto">
           {/* Desktop Menu */}
-          <nav className="hidden max-w-7xl mx-auto justify-between lg:flex">
+          <nav className="hidden max-w-7xl mx-auto justify-between lg:flex z-50">
             <div className="flex items-center gap-6">
               <a href={logo.url} className=" flex items-center gap-2">
                 <Image
@@ -419,7 +418,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <a
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+      className="group inline-flex h-max w-max !py-9 border-b-2 text-label border-solid border-transparent hover:!border-[#FF5500] items-center justify-center bg-background px-4 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent hover:text-white focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 "
       href={item.url}
     >
       {item.title}
@@ -463,10 +462,10 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
     return (
       <a
         className={cn(
-          'lg:max-w-[350px] lg:border-none border-b-[1px]  border-[#7D7D7D4D]  border-solid flex flex-row w-full gap-4 p-3 leading-none no-underline transition-colors outline-none select-none  hover:text-accent-foreground',
+          'lg:max-w-[350px] lg:border-none border-b-[1px] border-[#7D7D7D4D] border-solid flex flex-row w-full gap-4 p-3 leading-none no-underline transition-colors outline-none select-none  hover:text-accent-foreground',
           { 'row-span-2': !item.title && !item.icon },
           {
-            'lg:border-b-[1px]  lg:border-[#7D7D7D4D]  lg:border-solid py-8 lg:py-0 !pb-8':
+            'lg:border-b-[1px]  lg:border-[#7D7D7D4D] lg:border-solid py-8 lg:py-0 !pb-8':
               item.with_border,
           },
           item?.class,
