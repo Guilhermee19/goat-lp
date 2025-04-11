@@ -9,7 +9,7 @@ import { useState } from 'react';
 // import TextAnimationDegrade from '../../app/_components/title-animation';
 import { TextDegrade } from '../text-degrade';
 
-export function Functionalities() {
+const Functionalities = () => {
   const tabs = [
     {
       title: 'Checkout Nacional',
@@ -59,7 +59,7 @@ export function Functionalities() {
       />
     </div>
   );
-}
+};
 
 const NacionalContent = () => {
   return (
@@ -259,3 +259,5 @@ const EcommercesContent = () => {
     </div>
   );
 };
+
+export default Functionalities;

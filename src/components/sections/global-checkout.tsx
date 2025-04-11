@@ -10,7 +10,7 @@ import { LINES } from '../../../public/mocks/lines';
 import { ShimmerButton } from '../magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
 
-export function GlobalCheckout() {
+const GlobalCheckout = () => {
   const globeConfig: GlobeConfig = {
     pointSize: 1, // Menor ponto para aumentar a quantidade
     globeColor: 'rgba(14, 51, 102, 0.5)', // Cor mais escura para o fundo
@@ -111,4 +111,6 @@ export function GlobalCheckout() {
       </div>
     </div>
   );
-}
+};
+
+export default GlobalCheckout;

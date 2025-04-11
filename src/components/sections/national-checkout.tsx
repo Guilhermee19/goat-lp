@@ -248,7 +248,7 @@ const VendaMundo = () => {
   );
 };
 
-export function NationalCheckout() {
+const NationalCheckout = () => {
   return (
     <div className="contanierPage !p-0 mt-20">
       <div className="z-10 lg:min-h-[600px]">
@@ -315,4 +315,6 @@ export function NationalCheckout() {
       </div>
     </div>
   );
-}
+};
+
+export default NationalCheckout;

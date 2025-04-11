@@ -42,7 +42,7 @@ function CardGrid({
   );
 }
 
-export function OnlineShop() {
+const OnlineShop = () => {
   return (
     <div className="contanierPage my-10 lg:my-20">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
@@ -123,4 +123,6 @@ export function OnlineShop() {
       </div>
     </div>
   );
-}
+};
+
+export default OnlineShop;

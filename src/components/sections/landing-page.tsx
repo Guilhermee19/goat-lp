@@ -36,7 +36,7 @@ function GridInfo({
   );
 }
 
-export function LandingPage() {
+const LandingPage = () => {
   return (
     <div className="contanierPage">
       <div className="z-10 min-h-[600px] flex flex-col gap-4 items-center justify-center">
@@ -124,4 +124,6 @@ export function LandingPage() {
       </div>
     </div>
   );
-}
+};
+
+export default LandingPage;

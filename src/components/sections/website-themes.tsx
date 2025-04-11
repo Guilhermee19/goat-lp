@@ -2,7 +2,7 @@
 
 import { HeroParallax } from '../hero-parallax';
 
-export function WebsiteThemes() {
+const WebsiteThemes = () => {
   const PRODUCTS = [
     { title: 'Pet', link: '', thumbnail: 'themes/animal-themes.png' },
     { title: 'Kids co.', link: '', thumbnail: 'themes/kids-themes.png' },
@@ -28,4 +28,6 @@ export function WebsiteThemes() {
       <HeroParallax products={PRODUCTS}></HeroParallax>
     </>
   );
-}
+};
+
+export default WebsiteThemes;

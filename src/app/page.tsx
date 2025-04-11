@@ -1,48 +1,102 @@
 'use client';
 
-import { CardScrollAnimation } from '@/components/card-scroll-animation';
+import dynamic from 'next/dynamic';
 import Footer from '@/components/footer';
-import { CardCreateAccount } from '@/components/sections/card-create-account';
-import { CardOurPlans } from '@/components/sections/card-our-plans';
-import { MarqueeTools } from '@/components/sections/carousel-tools';
-import { Functionalities } from '@/components/sections/functionalities';
-import { GlobalCheckout } from '@/components/sections/global-checkout';
-import Header from '@/components/sections/header';
-import { LandingPage } from '@/components/sections/landing-page';
-import { NationalCheckout } from '@/components/sections/national-checkout';
-import { OnlineShop } from '@/components/sections/online-shop';
-import { ScrollVelocity } from '@/components/sections/scroll-velocity';
-import { SlideRevolutionizing } from '@/components/sections/slide-revolutionizing';
-import { StayInTouch } from '@/components/sections/stay-in-touch';
-import { Testimonials } from '@/components/sections/testimonials';
-import { WebsiteThemes } from '@/components/sections/website-themes';
-import React from 'react';
+import { Suspense } from 'react';
+import { CardScrollAnimation } from '@/components/card-scroll-animation';
+import GoatAnimation from './_components/goat-animation';
+
+// Usando dynamic() com importação assíncrona
+const Header = dynamic(() => import('@/components/sections/header'), {
+  ssr: false,
+});
+
+const SlideRevolutionizing = dynamic(
+  () => import('@/components/sections/slide-revolutionizing'),
+  { ssr: false },
+);
+
+const MarqueeTools = dynamic(
+  () => import('@/components/sections/carousel-tools'),
+  { ssr: false },
+);
+const Functionalities = dynamic(
+  () => import('@/components/sections/functionalities'),
+  { ssr: false },
+);
+const NationalCheckout = dynamic(
+  () => import('@/components/sections/national-checkout'),
+  { ssr: false },
+);
+const GlobalCheckout = dynamic(
+  () => import('@/components/sections/global-checkout'),
+  { ssr: false },
+);
+const ScrollVelocity = dynamic(
+  () => import('@/components/sections/scroll-velocity'),
+  { ssr: false },
+);
+const LandingPage = dynamic(
+  () => import('@/components/sections/landing-page'),
+  { ssr: false },
+);
+const WebsiteThemes = dynamic(
+  () => import('@/components/sections/website-themes'),
+  { ssr: false },
+);
+const OnlineShop = dynamic(() => import('@/components/sections/online-shop'), {
+  ssr: false,
+});
+const CardCreateAccount = dynamic(
+  () => import('@/components/sections/card-create-account'),
+  { ssr: false },
+);
+const Testimonials = dynamic(
+  () => import('@/components/sections/testimonials'),
+  { ssr: false },
+);
+const CardOurPlans = dynamic(
+  () => import('@/components/sections/card-our-plans'),
+  { ssr: false },
+);
+const StayInTouch = dynamic(
+  () => import('@/components/sections/stay-in-touch'),
+  { ssr: false },
+);
 
 const Home = () => {
   return (
     <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <p className="text-white text-xs opacity-40 w-full text-center mt-4">
+          {' '}
+          Lazy Loading{' '}
+        </p>
+      </Suspense>
+
       <CardScrollAnimation imageSrc="/dashboard.png">
         <Header></Header>
       </CardScrollAnimation>
 
-      <MarqueeTools></MarqueeTools>
-      <Functionalities></Functionalities>
-      <SlideRevolutionizing key={0}></SlideRevolutionizing>
-      <NationalCheckout></NationalCheckout>
-      <GlobalCheckout></GlobalCheckout>
-      <ScrollVelocity></ScrollVelocity>
-      <LandingPage></LandingPage>
-      <WebsiteThemes></WebsiteThemes>
-      <OnlineShop></OnlineShop>
+      <MarqueeTools />
+      <Functionalities />
+      <SlideRevolutionizing key={0} />
+      <NationalCheckout />
+      <GlobalCheckout />
+      <ScrollVelocity />
+      <LandingPage />
+      <WebsiteThemes />
+      <OnlineShop />
       <CardCreateAccount
         title="Venda mais. Venda melhor. Venda como um GOAT!"
         description="O sucesso deixa pistas. Siga o caminho dos que mais faturam."
-      ></CardCreateAccount>
-      <Testimonials></Testimonials>
-      <CardOurPlans></CardOurPlans>
-      <StayInTouch></StayInTouch>
-      <Footer></Footer>
+      />
+      <Testimonials />
+      <CardOurPlans />
+      <StayInTouch />
+      <Footer />
     </>
   );
 };
+
 export default Home;

@@ -4,7 +4,7 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import Icon from '@/shared/icon/icon';
 import Image from 'next/image';
 
-export function StayInTouch() {
+const StayInTouch = () => {
   const SOCIAL = [
     { url: 'facebook.png', link: 'Facebook' },
     { url: 'instagram.png', link: 'Instagram' },
@@ -97,4 +97,6 @@ export function StayInTouch() {
       </div>
     </div>
   );
-}
+};
+
+export default StayInTouch;

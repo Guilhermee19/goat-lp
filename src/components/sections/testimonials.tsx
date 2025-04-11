@@ -4,7 +4,7 @@ import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 import { TextDegrade } from '../text-degrade';
 // import TextAnimationDegrade from '../../app/_components/title-animation';
 
-export function Testimonials() {
+const Testimonials = () => {
   const TESTIMONIALS = [
     {
       name: 'Lucas Almeida',
@@ -76,4 +76,6 @@ export function Testimonials() {
       </div>
     </div>
   );
-}
+};
+
+export default Testimonials;

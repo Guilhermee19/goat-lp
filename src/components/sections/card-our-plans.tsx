@@ -4,7 +4,7 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button';
 import { TextAnimate } from '@/components/magicui/text-animate';
 import Icon from '@/shared/icon/icon';
 
-export function CardOurPlans() {
+const CardOurPlans = () => {
   return (
     <div className="contanierPage rounded-[43px] my-6 lg:my-20">
       <div className="bg-ourPlansCard bg-left rounded-[43px] bg-no-repeat bg-cover">
@@ -56,4 +56,6 @@ export function CardOurPlans() {
       </div>
     </div>
   );
-}
+};
+
+export default CardOurPlans;
