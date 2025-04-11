@@ -4,18 +4,15 @@ import dynamic from 'next/dynamic';
 import Footer from '@/components/footer';
 import { Suspense } from 'react';
 import { CardScrollAnimation } from '@/components/card-scroll-animation';
-import GoatAnimation from './_components/goat-animation';
 
 // Usando dynamic() com importação assíncrona
 const Header = dynamic(() => import('@/components/sections/header'), {
   ssr: false,
 });
-
 const SlideRevolutionizing = dynamic(
   () => import('@/components/sections/slide-revolutionizing'),
   { ssr: false },
 );
-
 const MarqueeTools = dynamic(
   () => import('@/components/sections/carousel-tools'),
   { ssr: false },
@@ -73,25 +70,24 @@ const Home = () => {
         <Header></Header>
       </CardScrollAnimation>
 
-      <MarqueeTools />
-      <Functionalities />
-      <SlideRevolutionizing key={0} />
-      <NationalCheckout />
-      <GlobalCheckout />
-      <ScrollVelocity />
-      <LandingPage />
-      <WebsiteThemes />
-      <OnlineShop />
+      <MarqueeTools></MarqueeTools>
+      <Functionalities></Functionalities>
+      <SlideRevolutionizing key={0}></SlideRevolutionizing>
+      <NationalCheckout></NationalCheckout>
+      <GlobalCheckout></GlobalCheckout>
+      <ScrollVelocity></ScrollVelocity>
+      <LandingPage></LandingPage>
+      <WebsiteThemes></WebsiteThemes>
+      <OnlineShop></OnlineShop>
       <CardCreateAccount
         title="Venda mais. Venda melhor. Venda como um GOAT!"
         description="O sucesso deixa pistas. Siga o caminho dos que mais faturam."
-      />
-      <Testimonials />
-      <CardOurPlans />
-      <StayInTouch />
-      <Footer />
+      ></CardCreateAccount>
+      <Testimonials></Testimonials>
+      <CardOurPlans></CardOurPlans>
+      <StayInTouch></StayInTouch>
+      <Footer></Footer>
     </>
   );
 };
-
 export default Home;

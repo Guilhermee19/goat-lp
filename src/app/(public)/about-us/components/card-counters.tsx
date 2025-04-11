@@ -36,7 +36,7 @@ export function CardCounters() {
 
               <NumberTicker
                 value={el.count}
-                className="whitespace-pre-wrap text-4xl font-light font-hankenGrotesk tracking-tighter bg-gradient-to-br from-[#FF7F00] from-20% to-[#508FF4] to-100% text-transparent bg-clip-text"
+                className="whitespace-pre-wrap text-4xl font-light font-hankenGrotesk leading-10 tracking-tighter bg-gradient-to-br from-[#FF7F00] from-20% to-[#508FF4] to-100% text-transparent bg-clip-text"
               />
             </div>
 

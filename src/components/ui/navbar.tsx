@@ -84,11 +84,11 @@ const Navbar = ({
           url: '/checkout-national',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="shopping cart"
               src={'/shopping-cart.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           with_border: true,
@@ -101,11 +101,11 @@ const Navbar = ({
           url: '/checkout-global',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="global"
               src={'/global.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           with_border: true,
@@ -119,7 +119,7 @@ const Navbar = ({
               height={292}
               alt="shop"
               src={'/teste-gratis.png'}
-              className="max-w-lg size-full object-contain hidden lg:flex"
+              className="size-full object-contain hidden lg:flex"
             ></Image>
           ),
           url: '',
@@ -132,11 +132,11 @@ const Navbar = ({
           url: '/landing-page',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="Monochrome"
               src={'/Monochrome.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           class: 'py-8 lg:py-0',
@@ -148,11 +148,11 @@ const Navbar = ({
           url: '/online-shop',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="shop"
               src={'/shop.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           class: 'py-8 lg:py-0',
@@ -170,11 +170,11 @@ const Navbar = ({
           url: '/themes',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="Grid tablet"
               src={'/Grid-tablet.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           with_border: true,
@@ -186,11 +186,11 @@ const Navbar = ({
           url: '/global-sales',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="global"
               src={'/global.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           with_border: true,
@@ -203,11 +203,11 @@ const Navbar = ({
           url: '/marketing',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="Marketing"
               src={'/Marketing.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           with_border: true,
@@ -220,11 +220,11 @@ const Navbar = ({
           url: '/reports',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="Chat"
               src={'/Chat-icon.png'}
-              className="min-w-7 size-7 object-cover"
+              className="min-w-8 object-cover"
             ></Image>
           ),
           class: 'py-8 lg:py-0',
@@ -236,8 +236,8 @@ const Navbar = ({
           url: '/apps-and-integrations',
           icon: (
             <Image
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               alt="scan barcode"
               src={'/scan-barcode.png'}
               className="min-w-7 size-7 object-cover"
@@ -476,12 +476,12 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
         {item.title && item.icon && (
           <>
             <div className="text-white">{item.icon}</div>
-            <div>
-              <div className="text-sm font-semibold text-white">
+            <div className="flex flex-col gap-1">
+              <span className="text-xl  text-white font-sourceSans3">
                 {item.title}
-              </div>
+              </span>
               {item.description && (
-                <p className="text-sm leading-snug text-muted-foreground text-white">
+                <p className="text-lg leading-snug  text-muted-foreground font-sourceSans3 text-[#7D7D7D]">
                   {item.description}
                 </p>
               )}
@@ -504,7 +504,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
         href={item.url}
       >
         {!item.title && !item.icon && item.description && (
-          <figure> {item.description} </figure>
+          <figure className="min-w-[476px]"> {item.description} </figure>
         )}
       </a>
     );
