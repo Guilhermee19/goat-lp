@@ -258,6 +258,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
           </div>
 
           <motion.div
+            viewport={{ once: true }}
             initial={{ width: 0 }}
             animate={index !== activeItem ? 'w-px' : 'w-[calc(100%-100px)]'}
             transition={{

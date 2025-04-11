@@ -389,6 +389,7 @@ export function TextAnimate({
       >
         {segments.map((segment, i) => (
           <motion.span
+            viewport={{ once: true }}
             key={`${by}-${segment}-${i}`}
             variants={finalVariants.item}
             custom={i * staggerTimings[by]}

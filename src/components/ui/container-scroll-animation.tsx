@@ -66,7 +66,10 @@ const Header = ({
   titleComponent: string | React.ReactNode;
 }) => {
   return (
-    <motion.div className="div w-full mx-auto text-center">
+    <motion.div
+      viewport={{ once: true }}
+      className="div w-full mx-auto text-center"
+    >
       {titleComponent}
     </motion.div>
   );
@@ -84,6 +87,7 @@ const Card = ({
 }) => {
   return (
     <motion.div
+      viewport={{ once: true }}
       style={{
         rotateX: rotate,
         scale,

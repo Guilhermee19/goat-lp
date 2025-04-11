@@ -25,6 +25,7 @@ export const WobbleCard = ({
   };
   return (
     <motion.section
+      viewport={{ once: true }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => {
@@ -50,6 +51,7 @@ export const WobbleCard = ({
         }}
       >
         <motion.div
+          viewport={{ once: true }}
           style={{
             transform: isHovering
               ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0) scale3d(1.03, 1.03, 1)`

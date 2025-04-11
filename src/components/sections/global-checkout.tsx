@@ -63,7 +63,7 @@ const GlobalCheckout = () => {
           cabeça.
         </TextAnimate>
 
-        <div className="relative w-full aspect-square flex justify-center items-center">
+        <div className="relative w-full flex justify-center items-center">
           <div className="absolute z-30 flex flex-col justify-center items-center gap-[26px]">
             <p className="max-w-lg text-center font-hankenGrotesk leading-none text-4xl lg:text-[72px] font-light text-white">
               Seu negócio sem fronteiras
@@ -106,7 +106,9 @@ const GlobalCheckout = () => {
             <div class="text" id="coordinates"></div>
           </div> */}
 
-          <World data={LINES.pulls} globeConfig={globeConfig} />
+          <div className="w-full aspect-video overflow-hidden flex justify-center items-center">
+            <World data={LINES.pulls} globeConfig={globeConfig} />
+          </div>
         </div>
       </div>
     </div>

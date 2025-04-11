@@ -44,6 +44,7 @@ export const Tabs = ({
           >
             {tabIndex === idx && (
               <motion.div
+                viewport={{ once: true }}
                 layoutId="clickedbutton"
                 transition={{ type: 'spring', bounce: 0.3, duration: 0.6 }}
                 className={cn(

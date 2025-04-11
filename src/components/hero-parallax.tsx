@@ -77,13 +77,20 @@ export const HeroParallax = ({
           opacity,
         }}
         className=""
+        viewport={{ once: true }}
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4 mb-4">
+        <motion.div
+          className="flex flex-row-reverse space-x-reverse space-x-4 mb-4"
+          viewport={{ once: true }}
+        >
           {firstRow.map((product, idx) => (
             <ProductCard product={product} translate={translateX} key={idx} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-10 lg:mb-20 space-x-4 ">
+        <motion.div
+          className="flex flex-row mb-10 lg:mb-20 space-x-4 "
+          viewport={{ once: true }}
+        >
           {secondRow.map((product, idx) => (
             <ProductCard
               product={product}
@@ -92,7 +99,10 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4">
+        <motion.div
+          className="flex flex-row-reverse space-x-reverse space-x-4"
+          viewport={{ once: true }}
+        >
           {thirdRow.map((product, idx) => (
             <ProductCard product={product} translate={translateX} key={idx} />
           ))}
@@ -167,6 +177,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
+      viewport={{ once: true }}
       className="group/product aspect-thumbnail w-[24rem] lg:w-[38rem] relative shrink-0"
     >
       <Link

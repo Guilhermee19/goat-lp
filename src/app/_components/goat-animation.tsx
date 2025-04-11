@@ -45,6 +45,7 @@ export default function GoatAnimation({
       <motion.img
         src="animal-goat.png"
         alt="Goat Animation"
+        viewport={{ once: true }}
         className="w-full h-full object-contain"
         initial={{ opacity: 1, scale: 1, x: 0, y: 0, rotate: 0 }}
         animate={
@@ -59,6 +60,7 @@ export default function GoatAnimation({
       <motion.img
         src="balloon-chat.png"
         alt="Balão de conversa"
+        viewport={{ once: true }}
         className={cn('absolute top-3 right-3 w-36 md:w-40', classBallon)}
         initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
         animate={

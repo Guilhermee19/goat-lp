@@ -53,6 +53,7 @@ export const AnimatedTooltip = ({
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
               <motion.div
+                viewport={{ once: true }}
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                 animate={{
                   opacity: 1,

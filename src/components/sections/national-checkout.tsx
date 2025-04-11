@@ -298,13 +298,7 @@ const NationalCheckout = () => {
           </div>
         </div>
 
-        <motion.div
-          variants={fadeInScaleContainer} // Animação do container (stagger)
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }} // Permite reativação ao rolar e define quão visível precisa estar
-          className="w-full h-full flex flex-col lg:grid lg:grid-cols-4 gap-4 mt-7 lg:mt-14"
-        >
+        <motion.div className="w-full h-full flex flex-col lg:grid lg:grid-cols-4 gap-4 mt-7 lg:mt-14">
           <RecuperacaoVenda></RecuperacaoVenda>
           <SegurancaPonta></SegurancaPonta>
           <Pagamentos></Pagamentos>
