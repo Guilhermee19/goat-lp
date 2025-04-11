@@ -74,7 +74,7 @@ const ReviewCard = ({
   );
 };
 
-export function MarqueeTools() {
+const MarqueeTools = () => {
   return (
     <div className="w-full">
       <p className="text-base text-[#7D7D7D] w-full text-center my-3 lg:my-6">
@@ -92,4 +92,6 @@ export function MarqueeTools() {
       </div>
     </div>
   );
-}
+};
+
+export default MarqueeTools;

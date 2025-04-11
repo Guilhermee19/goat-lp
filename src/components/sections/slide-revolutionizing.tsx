@@ -50,10 +50,10 @@ const finalVariants: { container: Variants } = {
   },
 };
 
-export function SlideRevolutionizing({
+const SlideRevolutionizing = ({
   autoPlay = true,
   className,
-}: ExpandableProps) {
+}: ExpandableProps) => {
   const [activeItem, setActiveItem] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -205,7 +205,7 @@ export function SlideRevolutionizing({
       </div>
     </div>
   );
-}
+};
 
 const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
@@ -365,3 +365,5 @@ const CardItem = ({ item, className, index, ...props }: ImageProps) => {
     </div>
   );
 };
+
+export default SlideRevolutionizing;

@@ -4,13 +4,13 @@ import { TextAnimate } from '@/components/magicui/text-animate';
 import GoatAnimation from '../../app/_components/goat-animation';
 import { ShimmerButton } from '@/components/magicui/shimmer-button';
 
-export function CardCreateAccount({
+const CardCreateAccount = ({
   title,
   description,
 }: {
   title: string;
   description: string;
-}) {
+}) => {
   return (
     <div className="contanierPage relative pt-12 lg:pt-28 mx-auto overflow-x-hidden">
       <div className="flex justify-between items-center flex-col-reverse lg:flex-row rounded-3xl border border-solid border-[#525252]">
@@ -47,4 +47,6 @@ export function CardCreateAccount({
       </div>
     </div>
   );
-}
+};
+
+export default CardCreateAccount;
